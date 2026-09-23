@@ -13,4 +13,3 @@ class OrderNotPaidException extends HttpException
         parent::__construct(403, $message);
     }
 }
-

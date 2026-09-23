@@ -39,7 +39,7 @@ class ProcessPaymentWebhookAction
                 ->lockForUpdate()
                 ->first();
 
-            if (!$order) {
+            if (! $order) {
                 throw new InvalidArgumentException("Order [{$orderId}] referenced by webhook was not found.");
             }
 
@@ -98,9 +98,9 @@ class ProcessPaymentWebhookAction
         $statusCode = (string) ($payload['status_code'] ?? '');
         $grossAmount = (string) ($payload['gross_amount'] ?? '');
 
-        $expectedSignature = hash('sha512', $orderId . $statusCode . $grossAmount . $serverKey);
+        $expectedSignature = hash('sha512', $orderId.$statusCode.$grossAmount.$serverKey);
 
-        if (!hash_equals($expectedSignature, $incomingSignature)) {
+        if (! hash_equals($expectedSignature, $incomingSignature)) {
             throw new InvalidSignatureException('Midtrans webhook signature validation failed.');
         }
     }
@@ -145,4 +145,3 @@ class ProcessPaymentWebhookAction
         );
     }
 }
-

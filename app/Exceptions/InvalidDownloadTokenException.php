@@ -13,4 +13,3 @@ class InvalidDownloadTokenException extends HttpException
         parent::__construct(404, $message);
     }
 }
-

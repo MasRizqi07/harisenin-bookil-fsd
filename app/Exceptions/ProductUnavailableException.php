@@ -13,4 +13,3 @@ class ProductUnavailableException extends HttpException
         parent::__construct(422, $message);
     }
 }
-

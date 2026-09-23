@@ -13,4 +13,3 @@ class InvalidSignatureException extends HttpException
         parent::__construct(401, $message);
     }
 }
-

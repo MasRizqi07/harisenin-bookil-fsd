@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests\Feature\Actions;
 
 use App\Actions\Downloads\GenerateSecureDownloadAction;
-use App\Enums\OrderStatus;
 use App\Exceptions\DownloadQuotaExceededException;
 use App\Exceptions\DownloadTokenExpiredException;
 use App\Exceptions\InvalidDownloadTokenException;
@@ -88,7 +87,7 @@ it('rejects download attempts by unauthorized users', function (): void {
 
     $action = app(GenerateSecureDownloadAction::class);
 
-    expect(fn() => $action->execute($intruder, $rawToken))
+    expect(fn () => $action->execute($intruder, $rawToken))
         ->toThrow(UnauthorizedDownloadException::class);
 });
 
@@ -106,7 +105,7 @@ it('rejects downloads for unpaid orders', function (): void {
 
     $action = app(GenerateSecureDownloadAction::class);
 
-    expect(fn() => $action->execute($user, $rawToken))
+    expect(fn () => $action->execute($user, $rawToken))
         ->toThrow(OrderNotPaidException::class);
 });
 
@@ -125,7 +124,7 @@ it('rejects downloads when token has expired', function (): void {
 
     $action = app(GenerateSecureDownloadAction::class);
 
-    expect(fn() => $action->execute($user, $rawToken))
+    expect(fn () => $action->execute($user, $rawToken))
         ->toThrow(DownloadTokenExpiredException::class);
 });
 
@@ -145,7 +144,7 @@ it('rejects downloads when maximum download quota is exhausted', function (): vo
 
     $action = app(GenerateSecureDownloadAction::class);
 
-    expect(fn() => $action->execute($user, $rawToken))
+    expect(fn () => $action->execute($user, $rawToken))
         ->toThrow(DownloadQuotaExceededException::class);
 });
 
@@ -153,7 +152,6 @@ it('rejects download attempts with invalid or non-existent token', function (): 
     $user = User::factory()->create();
     $action = app(GenerateSecureDownloadAction::class);
 
-    expect(fn() => $action->execute($user, 'completely_unknown_token'))
+    expect(fn () => $action->execute($user, 'completely_unknown_token'))
         ->toThrow(InvalidDownloadTokenException::class);
 });
-

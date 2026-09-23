@@ -30,7 +30,7 @@ class CreateOrderAction
         $productIds = [];
         foreach ($items as $item) {
             if (is_array($item)) {
-                if (!isset($item['product_id'])) {
+                if (! isset($item['product_id'])) {
                     throw new InvalidArgumentException('Each item array must contain a product_id key.');
                 }
                 $productIds[] = (int) $item['product_id'];
@@ -61,7 +61,7 @@ class CreateOrderAction
                 $totalAmount = bcadd($totalAmount, (string) $product->price, 2);
             }
 
-            $orderNumber = 'ORD-' . strtoupper(Str::random(12));
+            $orderNumber = 'ORD-'.strtoupper(Str::random(12));
 
             $order = Order::create([
                 'order_number' => $orderNumber,
@@ -82,4 +82,3 @@ class CreateOrderAction
         });
     }
 }
-

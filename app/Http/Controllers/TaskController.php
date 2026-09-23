@@ -25,7 +25,7 @@ class TaskController extends Controller
 
         Task::create($validated);
 
-        return redirect()->route('tasks.index')->with('success', 'Task berhasil ditambahkan!');
+        return redirect('/')->with('success', 'Task berhasil ditambahkan!');
     }
 
     public function edit(Task $task): View
@@ -42,22 +42,22 @@ class TaskController extends Controller
 
         $task->update($validated);
 
-        return redirect()->route('tasks.index')->with('success', 'Task berhasil diperbarui!');
+        return redirect('/')->with('success', 'Task berhasil diperbarui!');
     }
 
     public function toggle(Task $task): RedirectResponse
     {
         $task->update([
-            'is_done' => ! $task->is_done,
+            'is_done' => !$task->is_done,
         ]);
 
-        return redirect()->route('tasks.index')->with('success', 'Status task diperbarui!');
+        return redirect('/')->with('success', 'Status task diperbarui!');
     }
 
     public function destroy(Task $task): RedirectResponse
     {
         $task->delete();
 
-        return redirect()->route('tasks.index')->with('success', 'Task berhasil dihapus!');
+        return redirect('/')->with('success', 'Task berhasil dihapus!');
     }
 }

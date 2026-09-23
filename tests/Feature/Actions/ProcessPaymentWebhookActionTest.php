@@ -28,7 +28,7 @@ function createWebhookPayload(Order $order, string $status = 'settlement', array
     $statusCode = '200';
     $grossAmount = (string) $order->total_amount;
     $orderId = $order->order_number;
-    $signature = hash('sha512', $orderId . $statusCode . $grossAmount . $serverKey);
+    $signature = hash('sha512', $orderId.$statusCode.$grossAmount.$serverKey);
 
     return array_merge([
         'order_id' => $orderId,
@@ -36,7 +36,7 @@ function createWebhookPayload(Order $order, string $status = 'settlement', array
         'gross_amount' => $grossAmount,
         'signature_key' => $signature,
         'transaction_status' => $status,
-        'transaction_id' => 'tx-midtrans-' . uniqid(),
+        'transaction_id' => 'tx-midtrans-'.uniqid(),
         'payment_type' => 'credit_card',
         'settlement_time' => now()->toDateTimeString(),
     ], $overrides);
@@ -56,7 +56,7 @@ it('successfully processes a settlement webhook and updates order to paid', func
         ->and($payment->transaction_status)->toBe(PaymentStatus::SETTLEMENT)
         ->and($payment->gross_amount)->toBe('150000.00');
 
-    Event::assertDispatched(OrderPaidEvent::class, fn(OrderPaidEvent $event) => $event->order->id === $order->id);
+    Event::assertDispatched(OrderPaidEvent::class, fn (OrderPaidEvent $event) => $event->order->id === $order->id);
 
     $this->assertDatabaseHas('payments', [
         'order_id' => $order->id,
@@ -96,7 +96,7 @@ it('rejects webhooks with spoofed or invalid signatures', function (): void {
 
     $action = app(ProcessPaymentWebhookAction::class);
 
-    expect(fn() => $action->execute($payload))
+    expect(fn () => $action->execute($payload))
         ->toThrow(InvalidSignatureException::class);
 
     expect($order->refresh()->status)->toBe(OrderStatus::PENDING);
@@ -142,4 +142,3 @@ it('maps cancel and deny statuses to failed order status', function (): void {
     expect($order->refresh()->status)->toBe(OrderStatus::FAILED)
         ->and($payment->transaction_status)->toBe(PaymentStatus::DENY);
 });
-

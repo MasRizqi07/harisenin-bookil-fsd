@@ -13,4 +13,3 @@ class DownloadQuotaExceededException extends HttpException
         parent::__construct(429, $message);
     }
 }
-

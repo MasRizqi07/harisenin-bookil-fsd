@@ -90,7 +90,7 @@ it('rejects order creation if any product is unpublished', function (): void {
 
     $action = app(CreateOrderAction::class);
 
-    expect(fn() => $action->execute($user, [$publishedProduct->id, $unpublishedProduct->id]))
+    expect(fn () => $action->execute($user, [$publishedProduct->id, $unpublishedProduct->id]))
         ->toThrow(ProductUnavailableException::class);
 });
 
@@ -99,7 +99,7 @@ it('rejects order creation if any product does not exist', function (): void {
 
     $action = app(CreateOrderAction::class);
 
-    expect(fn() => $action->execute($user, [999999]))
+    expect(fn () => $action->execute($user, [999999]))
         ->toThrow(ProductUnavailableException::class);
 });
 
@@ -107,7 +107,6 @@ it('rejects order creation with empty items', function (): void {
     $user = User::factory()->create();
     $action = app(CreateOrderAction::class);
 
-    expect(fn() => $action->execute($user, []))
+    expect(fn () => $action->execute($user, []))
         ->toThrow(InvalidArgumentException::class);
 });
-

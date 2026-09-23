@@ -30,7 +30,7 @@ class GenerateSecureDownloadAction
             ->orWhere('token', hash('sha256', $token))
             ->first();
 
-        if (!$lookupToken) {
+        if (! $lookupToken) {
             throw new InvalidDownloadTokenException('Download token not found or invalid.');
         }
 
@@ -79,4 +79,3 @@ class GenerateSecureDownloadAction
         });
     }
 }
-

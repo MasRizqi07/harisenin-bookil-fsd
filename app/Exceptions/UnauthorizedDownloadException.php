@@ -13,4 +13,3 @@ class UnauthorizedDownloadException extends HttpException
         parent::__construct(403, $message);
     }
 }
-

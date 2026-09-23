@@ -15,7 +15,5 @@ class OrderPaidEvent
 
     public function __construct(
         public Order $order,
-    ) {
-    }
+    ) {}
 }
-

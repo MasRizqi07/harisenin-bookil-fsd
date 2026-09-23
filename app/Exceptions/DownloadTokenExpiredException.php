@@ -13,4 +13,3 @@ class DownloadTokenExpiredException extends HttpException
         parent::__construct(410, $message);
     }
 }
-
