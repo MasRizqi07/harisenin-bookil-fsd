@@ -17,7 +17,7 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'order_number' => 'BK-'.Str::ulid(),
+            'order_number' => 'BK-' . Str::ulid(),
             'user_id' => User::factory(),
             // A bare order has no line items. Set a matching total when attaching items.
             'total_amount' => '0.00',
@@ -27,8 +27,23 @@ class OrderFactory extends Factory
         ];
     }
 
+    public function pending(): static
+    {
+        return $this->state(fn(array $attributes): array => ['status' => OrderStatus::PENDING]);
+    }
+
     public function paid(): static
     {
-        return $this->state(fn (array $attributes): array => ['status' => OrderStatus::PAID]);
+        return $this->state(fn(array $attributes): array => ['status' => OrderStatus::PAID]);
+    }
+
+    public function failed(): static
+    {
+        return $this->state(fn(array $attributes): array => ['status' => OrderStatus::FAILED]);
+    }
+
+    public function expired(): static
+    {
+        return $this->state(fn(array $attributes): array => ['status' => OrderStatus::EXPIRED]);
     }
 }
