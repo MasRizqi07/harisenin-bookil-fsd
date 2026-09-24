@@ -48,7 +48,7 @@ class TaskController extends Controller
     public function toggle(Task $task): RedirectResponse
     {
         $task->update([
-            'is_done' => !$task->is_done,
+            'is_done' => ! $task->is_done,
         ]);
 
         return redirect('/')->with('success', 'Status task diperbarui!');

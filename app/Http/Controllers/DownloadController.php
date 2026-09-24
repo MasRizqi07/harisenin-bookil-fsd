@@ -27,4 +27,3 @@ class DownloadController extends Controller
         return redirect()->away($presignedUrl);
     }
 }
-

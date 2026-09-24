@@ -25,7 +25,7 @@ it('processes a valid midtrans webhook via POST without CSRF verification', func
     $serverKey = (string) config('services.midtrans.server_key');
     $statusCode = '200';
     $grossAmount = '250000.00';
-    $signature = hash('sha512', $order->order_number . $statusCode . $grossAmount . $serverKey);
+    $signature = hash('sha512', $order->order_number.$statusCode.$grossAmount.$serverKey);
 
     $payload = [
         'order_id' => $order->order_number,
@@ -78,7 +78,7 @@ it('handles duplicate webhook notifications idempotently with HTTP 200', functio
     $serverKey = (string) config('services.midtrans.server_key');
     $statusCode = '200';
     $grossAmount = '150000.00';
-    $signature = hash('sha512', $order->order_number . $statusCode . $grossAmount . $serverKey);
+    $signature = hash('sha512', $order->order_number.$statusCode.$grossAmount.$serverKey);
 
     $payload = [
         'order_id' => $order->order_number,
@@ -99,4 +99,3 @@ it('handles duplicate webhook notifications idempotently with HTTP 200', functio
     $response->assertOk()
         ->assertJson(['status' => 'ok']);
 });
-

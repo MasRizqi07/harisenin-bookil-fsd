@@ -122,4 +122,3 @@ it('returns 404 for a non-existent download token', function (): void {
 
     $response->assertNotFound();
 });
-

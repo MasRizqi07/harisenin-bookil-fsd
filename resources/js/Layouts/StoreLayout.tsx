@@ -30,13 +30,35 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                                 </span>
                             </Link>
 
-                            <nav className="hidden md:flex space-x-6 text-sm font-medium">
+                            <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
                                 <Link
                                     href="/"
                                     className="text-slate-600 hover:text-indigo-600 transition-colors"
                                 >
                                     Katalog Buku
                                 </Link>
+                                {auth.user && (
+                                    <Link
+                                        href="/dashboard"
+                                        className="text-slate-600 hover:text-indigo-600 transition-colors flex items-center space-x-1.5"
+                                    >
+                                        <svg className="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                        </svg>
+                                        <span>Koleksi Saya</span>
+                                    </Link>
+                                )}
+                                {auth.user?.role === 'admin' && (
+                                    <Link
+                                        href="/admin/dashboard"
+                                        className="text-violet-700 hover:text-violet-900 font-semibold transition-colors flex items-center space-x-1.5 bg-violet-50 px-2.5 py-1 rounded-lg border border-violet-200"
+                                    >
+                                        <svg className="w-4 h-4 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                        </svg>
+                                        <span>Admin Portal</span>
+                                    </Link>
+                                )}
                             </nav>
                         </div>
 
@@ -71,9 +93,19 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                                     <Dropdown.Content>
                                         <div className="px-4 py-2 border-b border-slate-100 text-xs text-slate-500">
                                             Signed in as <strong className="text-slate-700">{auth.user.email}</strong>
+                                            {auth.user.role === 'admin' && (
+                                                <span className="block mt-1 text-[10px] font-bold uppercase tracking-wider text-violet-700 bg-violet-50 px-1.5 py-0.5 rounded w-max border border-violet-100">
+                                                    Administrator
+                                                </span>
+                                            )}
                                         </div>
-                                        <Dropdown.Link href="/dashboard">Dashboard</Dropdown.Link>
-                                        <Dropdown.Link href="/profile">Profile</Dropdown.Link>
+                                        {auth.user.role === 'admin' && (
+                                            <Dropdown.Link href="/admin/dashboard" className="text-violet-700 font-semibold bg-violet-50/50">
+                                                Admin Portal
+                                            </Dropdown.Link>
+                                        )}
+                                        <Dropdown.Link href="/dashboard">Koleksi Saya</Dropdown.Link>
+                                        <Dropdown.Link href="/profile">Profile Akun</Dropdown.Link>
                                         <Dropdown.Link href="/logout" method="post" as="button">
                                             Log Out
                                         </Dropdown.Link>
@@ -123,11 +155,16 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                         </Link>
                         {auth.user ? (
                             <>
-                                <Link href="/dashboard" className="block py-2 text-slate-700">
-                                    Dashboard
+                                {auth.user.role === 'admin' && (
+                                    <Link href="/admin/dashboard" className="block py-2 text-violet-700 font-semibold">
+                                        Admin Portal
+                                    </Link>
+                                )}
+                                <Link href="/dashboard" className="block py-2 text-slate-700 font-medium">
+                                    Koleksi Saya
                                 </Link>
                                 <Link href="/profile" className="block py-2 text-slate-700">
-                                    Profile
+                                    Profile Akun
                                 </Link>
                                 <Link href="/logout" method="post" as="button" className="block w-full text-left py-2 text-red-600">
                                     Log Out

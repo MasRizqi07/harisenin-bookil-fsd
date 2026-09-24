@@ -83,7 +83,7 @@ it('allows customer to view their order invoice', function (): void {
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Orders/Show')
             ->where('order.id', $order->id)
             ->where('order.order_number', $order->order_number)
@@ -99,4 +99,3 @@ it('forbids customers from viewing orders belonging to another user', function (
 
     $response->assertForbidden();
 });
-

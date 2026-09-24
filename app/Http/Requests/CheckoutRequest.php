@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Requests;
 
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -20,7 +21,7 @@ class CheckoutRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     * @return array<string, ValidationRule|array<mixed>|string>
      */
     public function rules(): array
     {
@@ -28,7 +29,7 @@ class CheckoutRequest extends FormRequest
             'product_id' => [
                 'required',
                 'integer',
-                Rule::exists('products', 'id')->where(fn($query) => $query->where('is_published', true)),
+                Rule::exists('products', 'id')->where(fn ($query) => $query->where('is_published', true)),
             ],
             'notes' => ['nullable', 'string', 'max:500'],
         ];
@@ -47,4 +48,3 @@ class CheckoutRequest extends FormRequest
         ];
     }
 }
-

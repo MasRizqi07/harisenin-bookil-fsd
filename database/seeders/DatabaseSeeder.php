@@ -16,6 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $this->call(BookilCatalogSeeder::class);
+        $this->call([
+            BookilCatalogSeeder::class,
+        ]);
+
+        if (!app()->runningUnitTests()) {
+            $this->call([
+                BookilProductionDemoSeeder::class,
+            ]);
+        }
     }
 }

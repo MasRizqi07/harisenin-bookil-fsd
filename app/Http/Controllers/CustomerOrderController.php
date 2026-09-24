@@ -34,7 +34,7 @@ class CustomerOrderController extends Controller
         ]);
 
         $snapToken = session('snap_token');
-        if (!$snapToken && $order->status === OrderStatus::PENDING) {
+        if (! $snapToken && $order->status === OrderStatus::PENDING) {
             try {
                 $snapData = $snapService->createTransaction($order);
                 $snapToken = $snapData['snap_token'];
@@ -52,4 +52,3 @@ class CustomerOrderController extends Controller
         ]);
     }
 }
-

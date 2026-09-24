@@ -18,7 +18,7 @@ it('displays published products on the storefront catalog', function (): void {
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Products/Index')
             ->has('products.data', 1)
             ->where('products.data.0.id', $publishedProduct->id)
@@ -39,7 +39,7 @@ it('does not leak unpublished products on the catalog', function (): void {
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Products/Index')
             ->has('products.data', 1)
             ->where('products.data.0.title', 'Published Ebook')
@@ -65,7 +65,7 @@ it('filters catalog products by category slug', function (): void {
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Products/Index')
             ->has('products.data', 1)
             ->where('products.data.0.id', $techProduct->id)
@@ -88,7 +88,7 @@ it('searches products by title and author', function (): void {
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Products/Index')
             ->has('products.data', 1)
             ->where('products.data.0.id', $targetProduct->id)
@@ -105,7 +105,7 @@ it('displays product detail page for a published product', function (): void {
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Products/Show')
             ->where('product.id', $product->id)
             ->where('product.title', 'Domain Driven Design with PHP')
@@ -121,4 +121,3 @@ it('returns 404 for unpublished product detail page', function (): void {
 
     $response->assertNotFound();
 });
-

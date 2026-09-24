@@ -10,4 +10,9 @@ enum OrderStatus: string
     case PAID = 'paid';
     case FAILED = 'failed';
     case EXPIRED = 'expired';
+
+    public function isFinal(): bool
+    {
+        return $this !== self::PENDING;
+    }
 }

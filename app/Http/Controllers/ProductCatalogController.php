@@ -22,7 +22,7 @@ class ProductCatalogController extends Controller
             ->where('is_published', true)
             ->with('category')
             ->when($request->filled('search'), function (Builder $query) use ($request): void {
-                $search = '%' . trim((string) $request->input('search')) . '%';
+                $search = '%'.trim((string) $request->input('search')).'%';
                 $query->where(function (Builder $subQuery) use ($search): void {
                     $subQuery->where('title', 'like', $search)
                         ->orWhere('author', 'like', $search)
@@ -35,9 +35,9 @@ class ProductCatalogController extends Controller
                         ->where('is_active', true);
                 });
             })
-            ->when($request->input('sort') === 'price_asc', fn(Builder $q) => $q->orderBy('price', 'asc'))
-            ->when($request->input('sort') === 'price_desc', fn(Builder $q) => $q->orderBy('price', 'desc'))
-            ->when(!in_array($request->input('sort'), ['price_asc', 'price_desc'], true), fn(Builder $q) => $q->latest())
+            ->when($request->input('sort') === 'price_asc', fn (Builder $q) => $q->orderBy('price', 'asc'))
+            ->when($request->input('sort') === 'price_desc', fn (Builder $q) => $q->orderBy('price', 'desc'))
+            ->when(! in_array($request->input('sort'), ['price_asc', 'price_desc'], true), fn (Builder $q) => $q->latest())
             ->paginate(12)
             ->withQueryString();
 
@@ -62,7 +62,7 @@ class ProductCatalogController extends Controller
      */
     public function show(Product $product): Response
     {
-        if (!$product->is_published) {
+        if (! $product->is_published) {
             abort(404, 'Produk tidak ditemukan atau belum dipublikasikan.');
         }
 
@@ -73,4 +73,3 @@ class ProductCatalogController extends Controller
         ]);
     }
 }
-

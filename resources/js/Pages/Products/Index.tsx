@@ -108,6 +108,57 @@ export default function Index({ products, categories, filters }: IndexProps) {
                             </svg>
                         </div>
                     </div>
+
+                    {/* Trust Highlights */}
+                    <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
+                        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/10 flex items-center space-x-3">
+                            <div className="w-9 h-9 rounded-xl bg-indigo-500/30 flex items-center justify-center flex-shrink-0 text-amber-300">
+                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 className="text-xs font-bold text-white">10.000+ Pembaca</h4>
+                                <p className="text-[11px] text-indigo-200">Dipercaya komunitas</p>
+                            </div>
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/10 flex items-center space-x-3">
+                            <div className="w-9 h-9 rounded-xl bg-indigo-500/30 flex items-center justify-center flex-shrink-0 text-emerald-300">
+                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 className="text-xs font-bold text-white">Unduhan Instan</h4>
+                                <p className="text-[11px] text-indigo-200">Presigned private link</p>
+                            </div>
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/10 flex items-center space-x-3">
+                            <div className="w-9 h-9 rounded-xl bg-indigo-500/30 flex items-center justify-center flex-shrink-0 text-cyan-300">
+                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 className="text-xs font-bold text-white">100% Legal & Asli</h4>
+                                <p className="text-[11px] text-indigo-200">Hak cipta terjamin</p>
+                            </div>
+                        </div>
+
+                        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-3.5 border border-white/10 flex items-center space-x-3">
+                            <div className="w-9 h-9 rounded-xl bg-indigo-500/30 flex items-center justify-center flex-shrink-0 text-fuchsia-300">
+                                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 className="text-xs font-bold text-white">Akses Permanen</h4>
+                                <p className="text-[11px] text-indigo-200">Koleksi tersimpan aman</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

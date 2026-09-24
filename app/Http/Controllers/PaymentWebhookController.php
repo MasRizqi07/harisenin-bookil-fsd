@@ -25,4 +25,3 @@ class PaymentWebhookController extends Controller
         ]);
     }
 }
-

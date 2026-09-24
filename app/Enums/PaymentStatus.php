@@ -18,4 +18,9 @@ enum PaymentStatus: string
     case PARTIAL_REFUND = 'partial_refund';
     case PARTIAL_CHARGEBACK = 'partial_chargeback';
     case AUTHORIZE = 'authorize';
+
+    public function isFinal(): bool
+    {
+        return ! in_array($this, [self::PENDING, self::AUTHORIZE], true);
+    }
 }

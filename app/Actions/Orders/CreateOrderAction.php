@@ -26,28 +26,14 @@ class CreateOrderAction
             throw new InvalidArgumentException('Order must contain at least one item.');
         }
 
-        // Normalize product IDs and eliminate any client-side duplicates
-        $productIds = [];
-        foreach ($items as $item) {
-            if (is_array($item)) {
-                if (! isset($item['product_id'])) {
-                    throw new InvalidArgumentException('Each item array must contain a product_id key.');
-                }
-                $productIds[] = (int) $item['product_id'];
-            } elseif (is_int($item) || is_numeric($item)) {
-                $productIds[] = (int) $item;
-            } else {
-                throw new InvalidArgumentException('Invalid item format provided.');
-            }
-        }
-
-        $productIds = array_values(array_unique($productIds));
+        $productIds = $this->normalizeProductIds($items);
 
         return DB::transaction(function () use ($user, $productIds, $notes): Order {
             // Lock published products to prevent race conditions during checkout
             $products = Product::query()
                 ->whereIn('id', $productIds)
                 ->where('is_published', true)
+                ->orderBy('id')
                 ->lockForUpdate()
                 ->get();
 
@@ -61,7 +47,7 @@ class CreateOrderAction
                 $totalAmount = bcadd($totalAmount, (string) $product->price, 2);
             }
 
-            $orderNumber = 'ORD-'.strtoupper(Str::random(12));
+            $orderNumber = 'BK-'.Str::ulid();
 
             $order = Order::create([
                 'order_number' => $orderNumber,
@@ -79,6 +65,33 @@ class CreateOrderAction
             }
 
             return $order->load(['items.product', 'user']);
-        });
+        }, attempts: 3);
+    }
+
+    /**
+     * @param  array<int, int|array{product_id: int}>  $items
+     * @return list<int>
+     */
+    private function normalizeProductIds(array $items): array
+    {
+        $productIds = [];
+
+        foreach ($items as $item) {
+            $productId = is_array($item) ? ($item['product_id'] ?? null) : $item;
+
+            if (is_string($productId) && ctype_digit($productId)) {
+                $productId = (int) $productId;
+            }
+
+            if (! is_int($productId) || $productId < 1) {
+                throw new InvalidArgumentException('Each order item must contain a positive integer product_id.');
+            }
+
+            $productIds[] = $productId;
+        }
+
+        sort($productIds, SORT_NUMERIC);
+
+        return array_values(array_unique($productIds));
     }
 }

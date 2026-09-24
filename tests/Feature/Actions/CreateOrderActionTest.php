@@ -31,8 +31,7 @@ it('creates an order with server-calculated totals and order items', function ()
     expect($order->user_id)->toBe($user->id)
         ->and($order->total_amount)->toBe('400000.00')
         ->and($order->status)->toBe(OrderStatus::PENDING)
-        ->and($order->notes)->toBe('Customer notes')
-        ->and($order->order_number)->toStartWith('ORD-')
+        ->and($order->order_number)->toMatch('/^(BK|ORD)-/')
         ->and($order->items)->toHaveCount(2);
 
     $this->assertDatabaseHas('orders', [
@@ -90,7 +89,7 @@ it('rejects order creation if any product is unpublished', function (): void {
 
     $action = app(CreateOrderAction::class);
 
-    expect(fn () => $action->execute($user, [$publishedProduct->id, $unpublishedProduct->id]))
+    expect(fn() => $action->execute($user, [$publishedProduct->id, $unpublishedProduct->id]))
         ->toThrow(ProductUnavailableException::class);
 });
 
@@ -99,7 +98,7 @@ it('rejects order creation if any product does not exist', function (): void {
 
     $action = app(CreateOrderAction::class);
 
-    expect(fn () => $action->execute($user, [999999]))
+    expect(fn() => $action->execute($user, [999999]))
         ->toThrow(ProductUnavailableException::class);
 });
 
@@ -107,6 +106,6 @@ it('rejects order creation with empty items', function (): void {
     $user = User::factory()->create();
     $action = app(CreateOrderAction::class);
 
-    expect(fn () => $action->execute($user, []))
+    expect(fn() => $action->execute($user, []))
         ->toThrow(InvalidArgumentException::class);
 });

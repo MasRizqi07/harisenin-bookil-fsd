@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Head, Link, useForm, usePage } from '@inertiajs/react';
 import StoreLayout from '@/Layouts/StoreLayout';
 import { formatRupiah } from '@/Components/ProductCard';
+import SamplePreviewModal from '@/Components/SamplePreviewModal';
 import { PageProps, Product } from '@/types';
 
 interface ShowProps {
@@ -19,14 +20,15 @@ function formatBytes(bytes: number, decimals = 1): string {
 
 export default function Show({ product }: ShowProps) {
     const { auth } = usePage<PageProps>().props;
+    const [previewOpen, setPreviewOpen] = useState(false);
 
     const { post, processing } = useForm({
         product_id: product.id,
         notes: '',
     });
 
-    const handleBuyNow = (e: React.FormEvent) => {
-        e.preventDefault();
+    const handleBuyNow = (e?: React.FormEvent) => {
+        if (e) e.preventDefault();
         post('/checkout');
     };
 
@@ -155,49 +157,68 @@ export default function Show({ product }: ShowProps) {
                                 </div>
                             </div>
 
-                            {/* Buy CTA */}
-                            <div className="mt-10 pt-6 border-t border-slate-100">
-                                {auth.user ? (
-                                    <form onSubmit={handleBuyNow}>
-                                        <button
-                                            type="submit"
-                                            disabled={processing}
-                                            className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold py-3.5 px-6 rounded-2xl shadow-lg shadow-indigo-200 transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
-                                        >
-                                            {processing ? (
-                                                <>
-                                                    <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                                                    </svg>
-                                                    <span>Memproses Pesanan...</span>
-                                                </>
-                                            ) : (
-                                                <>
-                                                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                                                    </svg>
-                                                    <span>Beli Sekarang ({formatRupiah(product.price)})</span>
-                                                </>
-                                            )}
-                                        </button>
-                                    </form>
-                                ) : (
-                                    <div className="bg-slate-50 p-4 rounded-2xl border border-slate-200 text-center">
-                                        <p className="text-xs text-slate-600 mb-3">Silakan masuk atau buat akun terlebih dahulu untuk membeli e-book ini.</p>
-                                        <Link
-                                            href={`/login?redirect=/products/${product.slug}`}
-                                            className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl text-sm transition-colors"
-                                        >
-                                            Masuk untuk Membeli
-                                        </Link>
-                                    </div>
-                                )}
+                            {/* Buy CTA & Preview CTA */}
+                            <div className="mt-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-3">
+                                <button
+                                    type="button"
+                                    onClick={() => setPreviewOpen(true)}
+                                    className="w-full sm:w-1/3 border border-indigo-200 bg-indigo-50/60 hover:bg-indigo-100/80 text-indigo-700 font-bold py-3.5 px-4 rounded-2xl transition-all flex items-center justify-center space-x-2"
+                                >
+                                    <svg className="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                    </svg>
+                                    <span>Baca Cuplikan</span>
+                                </button>
+
+                                <div className="w-full sm:w-2/3">
+                                    {auth.user ? (
+                                        <form onSubmit={handleBuyNow}>
+                                            <button
+                                                type="submit"
+                                                disabled={processing}
+                                                className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold py-3.5 px-6 rounded-2xl shadow-lg shadow-indigo-200 transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
+                                            >
+                                                {processing ? (
+                                                    <>
+                                                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
+                                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                                                        </svg>
+                                                        <span>Memproses Pesanan...</span>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                                        </svg>
+                                                        <span>Beli Sekarang ({formatRupiah(product.price)})</span>
+                                                    </>
+                                                )}
+                                            </button>
+                                        </form>
+                                    ) : (
+                                        <div className="bg-slate-50 p-3 sm:p-3.5 rounded-2xl border border-slate-200 text-center">
+                                            <Link
+                                                href={`/login?redirect=/products/${product.slug}`}
+                                                className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition-colors"
+                                            >
+                                                Masuk untuk Membeli
+                                            </Link>
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <SamplePreviewModal
+                product={product}
+                isOpen={previewOpen}
+                onClose={() => setPreviewOpen(false)}
+                onBuyNow={() => handleBuyNow()}
+            />
         </StoreLayout>
     );
 }

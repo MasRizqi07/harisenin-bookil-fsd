@@ -32,7 +32,7 @@ class CheckoutController extends Controller
 
         $snap = $snapService->createTransaction($order);
 
-        if ($request->wantsJson() && !$request->header('X-Inertia')) {
+        if ($request->wantsJson() && ! $request->header('X-Inertia')) {
             return response()->json([
                 'order' => $order,
                 'snap_token' => $snap['snap_token'],
@@ -46,4 +46,3 @@ class CheckoutController extends Controller
             ->with('success', 'Pesanan berhasil dibuat. Silakan selesaikan pembayaran.');
     }
 }
-

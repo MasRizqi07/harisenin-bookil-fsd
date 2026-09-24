@@ -36,7 +36,7 @@ class MidtransSnapService
                 'first_name' => $order->user->name,
                 'email' => $order->user->email,
             ],
-            'item_details' => $order->items->map(fn($item): array => [
+            'item_details' => $order->items->map(fn ($item): array => [
                 'id' => (string) $item->product_id,
                 'price' => (int) round((float) $item->price),
                 'quantity' => 1,
@@ -60,7 +60,7 @@ class MidtransSnapService
 
         // In local or test environments without a valid remote Midtrans key, provide a fallback mock token
         if (app()->environment(['local', 'testing']) && empty($serverKey)) {
-            $mockToken = 'mock-snap-' . Str::random(32);
+            $mockToken = 'mock-snap-'.Str::random(32);
 
             return [
                 'snap_token' => $mockToken,
@@ -73,4 +73,3 @@ class MidtransSnapService
         );
     }
 }
-
