@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "tertiary-fixed-dim": "#4edea3",
+        "primary-fixed": "#e2dfff",
+        "surface": "#faf8ff",
+        "surface-container-low": "#f2f3ff",
+        "primary-container": "#4f46e5",
+        "surface-container-highest": "#dae2fd",
+        "on-secondary-fixed-variant": "#2f2ebe",
+        "surface-container-lowest": "#ffffff",
+        "surface-container": "#eaedff",
+        "surface-bright": "#faf8ff",
+        "on-tertiary-container": "#67f4b7",
+        "on-tertiary": "#ffffff",
+        "background": "#faf8ff",
+        "secondary-fixed-dim": "#c0c1ff",
+        "error": "#ba1a1a",
+        "inverse-on-surface": "#eef0ff",
+        "surface-tint": "#4d44e3",
+        "on-secondary": "#ffffff",
+        "secondary": "#4648d4",
+        "secondary-fixed": "#e1e0ff",
+        "on-primary-fixed-variant": "#3323cc",
+        "on-secondary-fixed": "#07006c",
+        "primary-fixed-dim": "#c3c0ff",
+        "primary": "#3525cd",
+        "on-background": "#131b2e",
+        "surface-container-high": "#e2e7ff",
+        "on-primary-container": "#dad7ff",
+        "inverse-primary": "#c3c0ff",
+        "tertiary-fixed": "#6ffbbe",
+        "tertiary": "#005338",
+        "outline": "#777587",
+        "on-tertiary-fixed-variant": "#005236",
+        "surface-dim": "#d2d9f4",
+        "on-primary-fixed": "#0f0069",
+        "on-error-container": "#93000a",
+        "on-surface-variant": "#464555",
+        "on-primary": "#ffffff",
+        "on-tertiary-fixed": "#002113",
+        "outline-variant": "#c7c4d8",
+        "on-error": "#ffffff",
+        "secondary-container": "#6063ee",
+        "inverse-surface": "#283044",
+        "on-secondary-container": "#fffbff",
+        "error-container": "#ffdad6",
+        "surface-variant": "#dae2fd",
+        "on-surface": "#131b2e",
+        "tertiary-container": "#006e4b"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "spacing": {
+        "gutter": "1.5rem",
+        "margin": "3rem",
+        "space-xl": "2.5rem",
+        "margin-mobile": "1.25rem",
+        "gutter-mobile": "1rem",
+        "space-sm": "0.5rem",
+        "space-lg": "1.5rem",
+        "space-md": "1rem",
+        "space-xs": "0.25rem"
+      },
+      "fontFamily": {
+        "body-sm": ["Plus Jakarta Sans"],
+        "headline-sm": ["Plus Jakarta Sans"],
+        "display-hero-mobile": ["Plus Jakarta Sans"],
+        "display-hero": ["Plus Jakarta Sans"],
+        "body-md": ["Plus Jakarta Sans"],
+        "label-sm": ["Plus Jakarta Sans"],
+        "body-lg": ["Plus Jakarta Sans"],
+        "caption": ["Plus Jakarta Sans"],
+        "headline-xl-mobile": ["Plus Jakarta Sans"],
+        "headline-lg": ["Plus Jakarta Sans"],
+        "headline-xl": ["Plus Jakarta Sans"],
+        "headline-md": ["Plus Jakarta Sans"],
+        "label-md": ["Plus Jakarta Sans"]
+      },
+      "fontSize": {
+        "body-sm": ["14px", {"lineHeight": "22.4px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "headline-sm": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+        "display-hero-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+        "display-hero": ["56px", {"lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700"}],
+        "body-md": ["16px", {"lineHeight": "25.6px", "letterSpacing": "0em", "fontWeight": "400"}],
+        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600"}],
+        "body-lg": ["18px", {"lineHeight": "28.8px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+        "caption": ["11px", {"lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500"}],
+        "headline-xl-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700"}],
+        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "500"}]
+      }
+    }
+  }
+}</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface-container-lowest/85 backdrop-blur-md border-b border-outline-variant/60 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group" data-path="jelajahi-katalog" href="#"><img alt="Bookil Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1URw93eJ2MEaZ-MO6cyVWEGIaxv83xdjD0gHfKDwU5vDkshSPJPngXvjgs-JOeBXcwGpOikdIn8ncMZ2i8Vi0vFn01mQwWPpW8fTFLUa6rP27e3I3j3YfOKwSaAWtkqbA_Hun49_yJsrHIIdyi1BwLZV7tAfDfbG-f8jVuskvLoKjNzYIWyG1JfbknYgoj8MBk2jCBu3bT2-ZpDrHL7phO8SPRRgEQl7qeHGK8rNCJXKbjlAi_7VPQ6aOYL"/><span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface">Bookil</span></a><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-label-md text-label-md font-semibold relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:rounded-full"><a aria-current="page" class="transition-colors text-primary font-label-md text-label-md font-semibold relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-0.5 after:bg-primary after:rounded-full" data-path="jelajahi-katalog" href="#">Jelajahi Katalog</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="koleksi-unggulan" href="#">Koleksi Unggulan</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="bestseller" href="#">Bestseller</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="tentang-kami" href="#">Tentang Kami</a></nav></div><div class="flex items-center gap-space-md"><button class="hidden md:flex items-center justify-between w-64 lg:w-72 h-11 px-space-md rounded-lg bg-surface-container-lowest border border-outline-variant hover:border-outline text-on-surface-variant text-left shadow-sm transition-all focus:outline-none" type="button"><span class="flex items-center gap-space-sm text-label-sm font-label-sm truncate text-on-surface-variant"><span class="material-symbols-outlined text-[18px]">search</span>Cari buku, topik, penulis...</span><kbd class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-caption text-caption uppercase border border-outline-variant">⌘K</kbd></button><a class="relative inline-flex items-center gap-space-xs px-space-md h-11 rounded-lg bg-surface-container-lowest border border-outline-variant hover:bg-surface-container-low text-on-surface font-label-md text-label-md transition-all" data-path="perpustakaan-saya" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant">local_library</span><span class="hidden sm:inline">Perpustakaan Saya</span><span class="px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary font-caption text-caption">4</span></a><div class="relative flex items-center gap-space-sm pl-space-xs"><div class="relative"><img alt="Profile" class="w-9 h-9 rounded-full object-cover ring-2 ring-surface-container-lowest shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCONRwiELSqOY1OqjFm_13VmHFZY_cjluGU7CmVwToQWdfmF4ktbiQzFF0E2Yj0dMbxhMwTeOFGUVgreYWUdq7jGiIw9jsnEYHbSp5vUaTwqdI69xuRo-A7zjH0jcHkm8VbO7q2YmtbwdlyEp244qkStKjWTk6kHwLxl22QkqdhHzC81D56vJina7faVUmhFoOeqg21Kp617C8m-Ef1d47sJQOk03mnvmtpcLQhJaZ8GJRbrDyXE3Fogg"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-lowest"></span></div><div class="hidden lg:flex flex-col text-left"><span class="font-label-sm text-label-sm font-semibold text-on-surface leading-tight">Discerning Reader</span><span class="font-caption text-caption text-on-surface-variant leading-tight">Premium Member</span></div></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Bento Hero Section -->
+<section class="max-w-7xl mx-auto px-gutter w-full pb-space-xl pt-space-lg">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+<!-- Left Main Bento Block (col-span-8) -->
+<div class="lg:col-span-8 flex flex-col justify-between p-space-lg lg:p-space-xl rounded-xl bg-surface-container-lowest shadow-sm relative overflow-hidden">
+<!-- Ambient Decorative Glow -->
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute -left-12 -bottom-12 w-64 h-64 bg-tertiary-fixed-dim/20 rounded-full blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-start gap-space-md max-w-2xl">
+<!-- Live Badge Pill -->
+<div class="inline-flex items-center gap-space-xs px-3.5 py-1.5 rounded-full bg-surface-container-low text-on-surface">
+<span class="w-2 h-2 rounded-full bg-tertiary-container shadow-[0_0_8px_rgba(0,110,75,0.7)] animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide">Edisi Eksklusif Q4 2026 • 100% Bebas DRM Membatasi</span>
+</div>
+<!-- Editorial Headline -->
+<h1 class="font-display-hero text-headline-xl lg:text-display-hero text-on-surface tracking-tight leading-[1.08] mt-space-xs">
+            Buka Gerbang Pengetahuan Digital <span class="text-primary font-bold">Tanpa Batas.</span>
+</h1>
+<!-- Subtitle Copy -->
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Akses instan ribuan e-book teknis, rekayasa perangkat lunak, arsitektur cloud, dan strategi produk terkurasi. Beli sekali, unduh kapan saja dengan tokenized presigned URL aman.
+          </p>
+<!-- CTAs & Micro Actions -->
+<div class="flex flex-wrap items-center gap-space-sm pt-space-sm w-full">
+<a class="inline-flex items-center justify-center gap-2 px-6 h-12 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-all shadow-md" href="#katalog-buku">
+<span>Jelajahi Katalog E-Book</span>
+<span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+</a>
+<button class="inline-flex items-center justify-center gap-2 px-5 h-12 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md font-medium transition-colors" onclick="openPreviewModal('Mastering Laravel 13 &amp; React 19 Inertia', 'Mas Rizqi', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=700&amp;q=80')" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">menu_book</span>
+<span>Lihat Preview Sample</span>
+</button>
+</div>
+</div>
+<!-- Trust Metric Strip -->
+<div class="relative z-10 pt-space-lg mt-space-md flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">bolt</span>
+<span>Pembayaran Otomatis via QRIS &amp; Virtual Account Midtrans</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="flex -space-x-2 overflow-hidden">
+<img class="inline-block h-7 w-7 rounded-full object-cover" data-alt="Close up professional headshot of software engineer smiling against soft studio lighting with subtle slate blue background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnRY6J3GFzmNC2MMPlTmzbrL1W-FrEqYJgzufhuuNPH2VWsftk52w12ejl75YXTiEGfJwp8XA8_3dvi0B2MkrpLuTG5z5bQKiza_gQ0Esu7NDUK9E8ZlDFUmCBu4Z9Sto4hq3KW_cnJquT19R406TscSsjw6q8WZvvd6CpQCt9YmnbqEQABTVu80vypt-HuuqDd5kN2qRg6LDoZF4CKgp8eNPpg-mFKa5udCCaC3O2tUgjPkXCWficfA"/>
+<img class="inline-block h-7 w-7 rounded-full object-cover" data-alt="Portrait of Asian female developer wearing stylish glasses, minimal background, clean modern lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxq_v1lBqVbfvNZTQoJi58sQR6JLu09Xopu93wvbrt8zvwxugLgzDjlE1-Sx25x3MOTVJ2HjemL1hpr6iKdI9grfmx4sFRZ16CP6NWfVyPNIsryvJ3iVawkw9IS4VVTeG7mrHMv4UwN32I6f0aoOlKFRdpKeQSCF1Ws-zA3ok2ytwa4Wlsnu6wXPchZkDMSlbBywy85Nn0avLleTsEE8vRYffqvxCzvOY8ELSV_m2HRNzhVE_lh62qiA"/>
+<img class="inline-block h-7 w-7 rounded-full object-cover" data-alt="Portrait of senior tech lead outdoors in tech hub with warm ambient backlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZ8AccpS2PKMoviZeFQuRRcfspxCJiypEaS-zJ8AJg64yUwTWdFp3tNW8F7JctVVCAWvvqL4XtQPIZ_IQRPl-hKW2hZfLEh9BYwpY6VL_wQC8DqbR9dPrJSLWF1sN0SAjSXmZKP4r2MAazsRFxOWpGZTdYLH38DT4kRBv0AmIIjdHild2Qq_0flTvNKam1rxT6rjzr8jXvVE0sjankUs-SppGjRclG2qF5E_6OUTfTwT04_ZT3zqIMkg"/>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-medium">10.400+ Engineer Membaca</span>
+</div>
+</div>
+</div>
+<!-- Right Bento Stack (col-span-4) -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<!-- Bento Tile 1: Community Proof -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-caption text-caption font-bold">4.96 / 5.0</span>
+</div>
+<div class="my-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">10K+ Pembaca Puas</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 line-clamp-2">
+              “Materi clean code dan arsitektur di Bookil jauh melampaui tutorial biasa. Praktis dan langsung bisa diterapkan ke repo production.”
+            </p>
+</div>
+<div class="flex items-center justify-between pt-2 text-on-surface-variant">
+<span class="font-caption text-caption font-semibold text-on-surface">Doni Prasetyo</span>
+<span class="font-caption text-caption">Principal Architect @ FinTech</span>
+</div>
+</div>
+<!-- Bento Tile 2: Zero-DRM Feature Token -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex items-center gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-surface-container-low flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[26px]">key</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<h2 class="font-label-md text-label-md font-bold text-on-surface">Zero-DRM Instant Access</h2>
+<span class="px-1.5 py-0.2 rounded bg-tertiary-fixed-dim text-on-tertiary-fixed font-caption text-[10px] font-bold">SHA-256</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Milik Anda selamanya. Unduh format EPUB dan PDF tanpa watermark intrusive.</p>
+</div>
+</div>
+<!-- Bento Tile 3: Featured Release Spotlight -->
+<div class="p-space-lg rounded-xl bg-primary-container text-on-primary shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-6 -bottom-6 opacity-15 pointer-events-none">
+<span class="material-symbols-outlined text-[140px]">auto_stories</span>
+</div>
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="px-2 py-0.5 rounded-full bg-on-primary/20 text-on-primary font-caption text-caption font-semibold tracking-wide uppercase">Rilis Minggu Ini</span>
+<span class="font-caption text-caption text-on-primary/80">Edisi Baru</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm font-bold leading-tight mt-1">Enterprise Laravel &amp; Inertia Architecture</h2>
+<p class="font-body-sm text-body-sm text-on-primary/80 mt-1">Panduan lengkap domain-driven design, real-time events, dan multi-tenant scaling.</p>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between">
+<div>
+<span class="block font-caption text-caption text-on-primary/70">Harga Spesial</span>
+<span class="font-headline-sm text-headline-sm font-bold">Rp 189.000</span>
+</div>
+<button class="px-4 h-10 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold hover:bg-surface-container transition-colors shadow-sm" onclick="openCheckoutModal('Enterprise Laravel &amp; Inertia Architecture', 'Rp 189.000')" type="button">
+              Beli Sekarang
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sticky Taxonomy & Interactive Filter Bar -->
+<section class="sticky top-20 z-40 w-full bg-surface-container-lowest/90 backdrop-blur-md py-space-sm shadow-sm transition-all" id="katalog-buku">
+<div class="max-w-7xl mx-auto px-gutter flex flex-col lg:flex-row items-center justify-between gap-space-md">
+<!-- Category Pills -->
+<div class="flex items-center gap-space-xs overflow-x-auto w-full lg:w-auto pb-1 lg:pb-0 scrollbar-none" id="categoryPillContainer">
+<button class="category-pill active-pill px-4 h-9 rounded-full bg-surface-container text-primary font-label-sm text-label-sm font-semibold shrink-0 transition-all flex items-center gap-1.5" onclick="filterCategory('all', this)" type="button">
+<span>Semua Kategori</span>
+<span class="px-1.5 py-0.2 rounded-full bg-primary-container text-on-primary font-caption text-caption">8</span>
+</button>
+<button class="category-pill px-4 h-9 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 transition-all flex items-center gap-1.5" onclick="filterCategory('it', this)" type="button">
+<span>Pemrograman &amp; IT</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption">2</span>
+</button>
+<button class="category-pill px-4 h-9 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 transition-all flex items-center gap-1.5" onclick="filterCategory('architecture', this)" type="button">
+<span>Arsitektur Sistem</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption">2</span>
+</button>
+<button class="category-pill px-4 h-9 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 transition-all flex items-center gap-1.5" onclick="filterCategory('design', this)" type="button">
+<span>UI/UX &amp; Desain</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption">1</span>
+</button>
+<button class="category-pill px-4 h-9 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm shrink-0 transition-all flex items-center gap-1.5" onclick="filterCategory('business', this)" type="button">
+<span>Bisnis &amp; Karir</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container text-on-surface-variant font-caption text-caption">1</span>
+</button>
+</div>
+<!-- Live Search & Sort Controls -->
+<div class="flex items-center gap-space-sm w-full lg:w-auto shrink-0">
+<!-- Search Input -->
+<div class="relative flex-1 lg:w-80">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full h-10 pl-9 pr-8 rounded-lg bg-surface-container-low focus:bg-surface-container-lowest text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:shadow-[0_0_0_2px_#4f46e5] transition-all" id="bookSearchInput" oninput="handleSearch(this.value)" placeholder="Ketik judul, nama penulis, topik..." type="text"/>
+<button class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface" id="searchClearBtn" onclick="clearSearch()" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Sort Select -->
+<div class="relative shrink-0">
+<select class="h-10 px-3 pr-8 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm font-medium focus:outline-none focus:bg-surface-container-lowest appearance-none cursor-pointer" id="sortSelect" onchange="handleSort(this.value)">
+<option value="popular">Terbaru &amp; Populer</option>
+<option value="price-asc">Harga: Terendah</option>
+<option value="price-desc">Harga: Tertinggi</option>
+<option value="rating">Rating Tertinggi</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[16px]">unfold_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Product Catalog Grid Section -->
+<section class="max-w-7xl mx-auto px-gutter w-full py-space-xl">
+<!-- Catalog Header Stat Bar -->
+<div class="flex items-center justify-between mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Katalog Karya Digital</h2>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-medium" id="catalogCount">8 e-book terdaftar</span>
+</div>
+<div class="flex items-center gap-space-xs text-caption font-caption text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container">verified</span>
+<span>Lisensi Resmi Langsung dari Penulis</span>
+</div>
+</div>
+<!-- 4-Column Grid Container -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter" id="booksGrid">
+<!-- Book Card 1 -->
+<article class="book-card group flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden" data-author="Mas Rizqi" data-category="it" data-price="189000" data-rating="4.9" data-title="Mastering Laravel 13 &amp; React 19 Inertia">
+<div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Clean and professional book cover design for Mastering Laravel 13 with dark indigo geometric vector patterns, pristine typography, modern tech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAq8-QH2ekRBhVTiBu5YSoisKnCkjnsLheg0L7eFzU2a60awQ-LfkEWlLbWBAlB5VKitva5YYpJ6YmCmoT0WUDVxmL7rIf-HwjpUzJT-iSF6A1ZeN5gJrGRtY9bfe66LdCzl9UZAqV9kCNv9VWqL0DarT-0kjBEYr3hQNJRW7ilD3z4_Dq0yla9Mj1k-k5MBqsyW1GpQseL1TLyjKXHQfU85iCCkQum1GjiqS3chb-YNpT4v6kz_xiWhA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<!-- Top Floating Badges -->
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-amber-500 text-white font-caption text-caption font-bold shadow-sm">Bestseller</span>
+<span class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-caption text-caption font-medium">PDF • 24.5 MB</span>
+</div>
+<!-- Quick Action Preview Overlay -->
+<button class="absolute bottom-3 left-3 right-3 h-9 rounded-lg bg-white/90 hover:bg-white text-on-surface font-label-sm text-label-sm font-semibold opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity flex items-center justify-center gap-1.5 shadow-md" onclick="openPreviewModal('Mastering Laravel 13 &amp; React 19 Inertia', 'Mas Rizqi', 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&amp;fit=crop&amp;w=700&amp;q=80')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Pratinjau Cuplikan</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-caption text-caption font-medium">Pemrograman &amp; IT</span>
+<div class="flex items-center gap-1 text-amber-500 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface">4.9</span>
+<span class="text-on-surface-variant font-caption text-caption">(128)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+              Mastering Laravel 13 &amp; React 19 Inertia
+            </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>Mas Rizqi</span>
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div>
+<span class="block font-caption text-caption text-on-surface-variant">Harga E-Book</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 189.000</span>
+</div>
+<button class="px-3.5 h-9 rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" onclick="openCheckoutModal('Mastering Laravel 13 &amp; React 19 Inertia', 'Rp 189.000')" type="button">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Beli</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Book Card 2 -->
+<article class="book-card group flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden" data-author="Hendra Wijaya" data-category="architecture" data-price="210000" data-rating="5.0" data-title="Microservices &amp; Event-Driven Architecture with Go">
+<div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cover layout of a distributed systems book with cyan and deep navy minimalist grid and network topology diagram." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0rUmi5_Jle34Fqbl6O3ISVRJPvB6u1bb-kADCmQ5ExYhp0h0sSlWmBmikfW36CWjDCyHqKy17xtLgPOIN5u3Pn0F2M-s0Az_1Wby9X8RW2NaKE6pXr09GX5_s-SFenbpOhDiz75MFMjlYIUEGNG7MkHP67vuAN_Jv4FS8mJUP5lSlPKoE2wFhibNZNoJWzt2WlfXBN8M2qqsUJgI_rwUigBGuZ7H-BWF3xCgoe1mCcvLGsGIW3pt20w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-tertiary-container text-on-primary font-caption text-caption font-bold shadow-sm">Baru</span>
+<span class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-caption text-caption font-medium">EPUB • 16.2 MB</span>
+</div>
+<button class="absolute bottom-3 left-3 right-3 h-9 rounded-lg bg-white/90 hover:bg-white text-on-surface font-label-sm text-label-sm font-semibold opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity flex items-center justify-center gap-1.5 shadow-md" onclick="openPreviewModal('Microservices &amp; Event-Driven Architecture with Go', 'Hendra Wijaya', 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&amp;fit=crop&amp;w=700&amp;q=80')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Pratinjau Cuplikan</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-caption text-caption font-medium">Arsitektur Sistem</span>
+<div class="flex items-center gap-1 text-amber-500 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface">5.0</span>
+<span class="text-on-surface-variant font-caption text-caption">(94)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+              Microservices &amp; Event-Driven Architecture with Go
+            </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>Hendra Wijaya</span>
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div>
+<span class="block font-caption text-caption text-on-surface-variant">Harga E-Book</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 210.000</span>
+</div>
+<button class="px-3.5 h-9 rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" onclick="openCheckoutModal('Microservices &amp; Event-Driven Architecture with Go', 'Rp 210.000')" type="button">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Beli</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Book Card 3 -->
+<article class="book-card group flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden" data-author="Maya Savitri" data-category="design" data-price="165000" data-rating="4.8" data-title="Modern UI/UX Design Systems with Tailwind &amp; Figma">
+<div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Aesthetic book cover featuring vibrant typographic hierarchy and modular design layout in purple and soft pastel gradients." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkn45__tHsfghzcnSuveUDzCp1gHGvvkC57MVwGx1W7HYMxAEWhCitMhRXbMVQMW70HNag8sDUNqNBdP2VrL5rxn_R3N6fVrFhJa6dYXNlzn_S2zDGlHPQ6xOFtseCzZB-wBgc1a3Ph1w359saR7SDTscgkojwiXm1D5ZOUYcw5xVzYldpzDJRVMikSE9xm44PWk23PArhW8HrRfCPQCusIojyU9rXltC5kbJq4p9yCcJqAQXizuIsTQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-secondary-container text-on-secondary-container font-caption text-caption font-bold shadow-sm">Populer</span>
+<span class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-caption text-caption font-medium">PDF • 42.0 MB</span>
+</div>
+<button class="absolute bottom-3 left-3 right-3 h-9 rounded-lg bg-white/90 hover:bg-white text-on-surface font-label-sm text-label-sm font-semibold opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity flex items-center justify-center gap-1.5 shadow-md" onclick="openPreviewModal('Modern UI/UX Design Systems with Tailwind &amp; Figma', 'Maya Savitri', 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&amp;fit=crop&amp;w=700&amp;q=80')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Pratinjau Cuplikan</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-caption text-caption font-medium">UI/UX &amp; Desain</span>
+<div class="flex items-center gap-1 text-amber-500 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface">4.8</span>
+<span class="text-on-surface-variant font-caption text-caption">(215)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+              Modern UI/UX Design Systems with Tailwind &amp; Figma
+            </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>Maya Savitri</span>
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div>
+<span class="block font-caption text-caption text-on-surface-variant">Harga E-Book</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 165.000</span>
+</div>
+<button class="px-3.5 h-9 rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" onclick="openCheckoutModal('Modern UI/UX Design Systems with Tailwind &amp; Figma', 'Rp 165.000')" type="button">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Beli</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Book Card 4 -->
+<article class="book-card group flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden" data-author="Arga Pratama" data-category="architecture" data-price="235000" data-rating="4.9" data-title="Fintech Security &amp; OWASP Top 10 Defense">
+<div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High tech book cover illustrating cyber security locks, cryptographic circuits, dark violet and high contrast emerald highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfVqEzq0kMdsQRtqBrg2C3zSIXGPvBpK0ZWB6qFIfbL04yFMHdH62GgMOdAy5DWoJsT0kFiiKtRukK8_awa-M23oVuSR692vtOkof8Qo1SwkecCsL5uz3-TvBJdIvgpZrT3_HpedjSk4AAij4qpsiszsaWSHaOrAwZbLlBVej9S7WGgyT85wAQ3e5tIPbhp8Ubs9pS7U7jZbDxJry_K-nARJxCVRadTBLFkGfijEOk6ToiXLfziWdbvQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-3 left-3 right-3 flex items-center justify-between">
+<span class="px-2 py-0.5 rounded bg-primary text-on-primary font-caption text-caption font-bold shadow-sm">Eksklusif</span>
+<span class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-caption text-caption font-medium">PDF • 19.8 MB</span>
+</div>
+<button class="absolute bottom-3 left-3 right-3 h-9 rounded-lg bg-white/90 hover:bg-white text-on-surface font-label-sm text-label-sm font-semibold opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity flex items-center justify-center gap-1.5 shadow-md" onclick="openPreviewModal('Fintech Security &amp; OWASP Top 10 Defense', 'Arga Pratama', 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&amp;fit=crop&amp;w=700&amp;q=80')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Pratinjau Cuplikan</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-caption text-caption font-medium">Keamanan Siber</span>
+<div class="flex items-center gap-1 text-amber-500 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface">4.9</span>
+<span class="text-on-surface-variant font-caption text-caption">(88)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+              Fintech Security &amp; OWASP Top 10 Defense
+            </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>Arga Pratama</span>
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div>
+<span class="block font-caption text-caption text-on-surface-variant">Harga E-Book</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 235.000</span>
+</div>
+<button class="px-3.5 h-9 rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" onclick="openCheckoutModal('Fintech Security &amp; OWASP Top 10 Defense', 'Rp 235.000')" type="button">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Beli</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Book Card 5 -->
+<article class="book-card group flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden" data-author="Budi Santoso" data-category="it" data-price="149000" data-rating="4.7" data-title="Pragmatic Clean Code &amp; Domain-Driven Design in PHP">
+<div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Technical handbook cover featuring clean typography and minimal geometric isometric blocks representing clean architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACQXSmsya704xC-XfCbfVNmw6TE_0PRmRK8xesj-6wArGrsNff25ra0c-C3ROL-1BA-VsAVbDIHPHqAzTtOZ5PVBTJ1I--Iw8AsXYiwGdLJ_X3Qlc1IFHHmoLbi6vPVsWMG6DP3LgsqmPhnwOWQ-j9Z6fmIo99YK6nheP8AwOS90ewHwBSZZx6ByiSkVsH92i9LHXM_65Z0QK3Vb4niddW0eOQqkZdKwEc0H-kSjg2X-41zgFfBZHL6Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-3 left-3 right-3 flex items-center justify-end">
+<span class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-caption text-caption font-medium">EPUB • 12.4 MB</span>
+</div>
+<button class="absolute bottom-3 left-3 right-3 h-9 rounded-lg bg-white/90 hover:bg-white text-on-surface font-label-sm text-label-sm font-semibold opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity flex items-center justify-center gap-1.5 shadow-md" onclick="openPreviewModal('Pragmatic Clean Code &amp; Domain-Driven Design in PHP', 'Budi Santoso', 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&amp;fit=crop&amp;w=700&amp;q=80')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Pratinjau Cuplikan</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-caption text-caption font-medium">Pemrograman &amp; IT</span>
+<div class="flex items-center gap-1 text-amber-500 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface">4.7</span>
+<span class="text-on-surface-variant font-caption text-caption">(63)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+              Pragmatic Clean Code &amp; Domain-Driven Design in PHP
+            </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>Budi Santoso</span>
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div>
+<span class="block font-caption text-caption text-on-surface-variant">Harga E-Book</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 149.000</span>
+</div>
+<button class="px-3.5 h-9 rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" onclick="openCheckoutModal('Pragmatic Clean Code &amp; Domain-Driven Design in PHP', 'Rp 149.000')" type="button">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Beli</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Book Card 6 -->
+<article class="book-card group flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden" data-author="Dimas Aditya" data-category="architecture" data-price="275000" data-rating="4.9" data-title="Building Scalable Cloud Native Platforms on AWS &amp; Kubernetes">
+<div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="E-book cover showcasing intricate cloud infrastructure diagrams, high density nodes and container pods in vibrant teal and slate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALtJ3V3ghnBFoQ2UmQGlXT78elF0PFBu6SdeVQY6Ybc_Mmo1wZaoPvVut_brYFlJsVQ7e8YS_uJWp9MpiK6rUZrj1txkRadD6zAh7OZ7PAHzrj7fhhucB9GAgXDNxPR6L_b_7qQgKGfSefauvC25ZNfUGkf8I4H6MGBSn9aua71j4_XFT7MHWIEFZdCU3-OU6Aff2bChJMMCiLS1mf6GzYPsdsmIv63jHGCBw8VHqWHpDKtp-8DIXezw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-3 left-3 right-3 flex items-center justify-end">
+<span class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-caption text-caption font-medium">PDF • 35.1 MB</span>
+</div>
+<button class="absolute bottom-3 left-3 right-3 h-9 rounded-lg bg-white/90 hover:bg-white text-on-surface font-label-sm text-label-sm font-semibold opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity flex items-center justify-center gap-1.5 shadow-md" onclick="openPreviewModal('Building Scalable Cloud Native Platforms on AWS &amp; Kubernetes', 'Dimas Aditya', 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&amp;fit=crop&amp;w=700&amp;q=80')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Pratinjau Cuplikan</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-caption text-caption font-medium">Cloud &amp; DevOps</span>
+<div class="flex items-center gap-1 text-amber-500 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface">4.9</span>
+<span class="text-on-surface-variant font-caption text-caption">(142)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+              Building Scalable Cloud Native Platforms on AWS &amp; Kubernetes
+            </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>Dimas Aditya</span>
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div>
+<span class="block font-caption text-caption text-on-surface-variant">Harga E-Book</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 275.000</span>
+</div>
+<button class="px-3.5 h-9 rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" onclick="openCheckoutModal('Building Scalable Cloud Native Platforms on AWS &amp; Kubernetes', 'Rp 275.000')" type="button">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Beli</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Book Card 7 -->
+<article class="book-card group flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden" data-author="Sarah Jessica" data-category="business" data-price="179000" data-rating="4.8" data-title="The Art of Engineering Management &amp; Tech Leadership">
+<div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial book cover for engineering leadership featuring elegant Swiss typography, subtle marble texture and serene minimalist layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQu388Te1SVSPF0eGoYxbJ2_d9oKTrc3WSTyNtDHzLAiqIgRCxbAJftwF9Iwg_Js4a2m0No1jJcjCF3lssK1ND6yVjaF9C_mT-NFk_WdACOy-wnnKXgEk-TMScFW2BkRHegGt0AHWfH47kldD-Ufptd5ArYS81VhWIhHIlr1CpV9g-oESQT8F8zmaVU-_ld4KA63aOclTJ8AC8qejf-7wddoVQNvpd9wcQTX_d2-28U93rTCKHziDI7Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-3 left-3 right-3 flex items-center justify-end">
+<span class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-caption text-caption font-medium">PDF • 18.0 MB</span>
+</div>
+<button class="absolute bottom-3 left-3 right-3 h-9 rounded-lg bg-white/90 hover:bg-white text-on-surface font-label-sm text-label-sm font-semibold opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity flex items-center justify-center gap-1.5 shadow-md" onclick="openPreviewModal('The Art of Engineering Management &amp; Tech Leadership', 'Sarah Jessica', 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&amp;fit=crop&amp;w=700&amp;q=80')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Pratinjau Cuplikan</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-caption text-caption font-medium">Bisnis &amp; Karir</span>
+<div class="flex items-center gap-1 text-amber-500 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface">4.8</span>
+<span class="text-on-surface-variant font-caption text-caption">(77)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+              The Art of Engineering Management &amp; Tech Leadership
+            </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>Sarah Jessica</span>
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div>
+<span class="block font-caption text-caption text-on-surface-variant">Harga E-Book</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 179.000</span>
+</div>
+<button class="px-3.5 h-9 rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" onclick="openCheckoutModal('The Art of Engineering Management &amp; Tech Leadership', 'Rp 179.000')" type="button">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Beli</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Book Card 8 -->
+<article class="book-card group flex flex-col rounded-xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden" data-author="Kevin Sanjaya" data-category="architecture" data-price="195000" data-rating="4.9" data-title="Database Optimization &amp; High Concurrency SQL">
+<div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Technical monograph cover with dark futuristic relational database schema nodes, neon sapphire lighting, crisp academic typography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAi8B7kfhKCkIOA4P52xieIRBaYJUMwKrsptMlzAmB3-AXDzp80EPFXxDQDX0P6tIc-9Xb2wx9ohKGrBk5pv3Kwhho3bMQHw9y7tRAYxYAIeQVQcfDfauvLVrhSwxHxXZTFqL2shVZC-a1CuaC5hE0NT4X4UDMO_SHCgRahoDbfSe7m7q8YyPkwxg5_1JM-eqQENiM3gSGFUJipFuWJvAk8voXoBqvH_7zjhRVec001pit6ENeu5DNXQA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute top-3 left-3 right-3 flex items-center justify-end">
+<span class="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-md text-white font-caption text-caption font-medium">PDF • 28.6 MB</span>
+</div>
+<button class="absolute bottom-3 left-3 right-3 h-9 rounded-lg bg-white/90 hover:bg-white text-on-surface font-label-sm text-label-sm font-semibold opacity-0 group-hover:opacity-100 backdrop-blur-sm transition-opacity flex items-center justify-center gap-1.5 shadow-md" onclick="openPreviewModal('Database Optimization &amp; High Concurrency SQL', 'Kevin Sanjaya', 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?auto=format&amp;fit=crop&amp;w=700&amp;q=80')" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+<span>Pratinjau Cuplikan</span>
+</button>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between gap-space-sm">
+<div>
+<div class="flex items-center justify-between mb-1.5">
+<span class="px-2 py-0.5 rounded bg-surface-container text-primary font-caption text-caption font-medium">Basis Data</span>
+<div class="flex items-center gap-1 text-amber-500 font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-on-surface">4.9</span>
+<span class="text-on-surface-variant font-caption text-caption">(110)</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2 leading-snug">
+              Database Optimization &amp; High Concurrency SQL
+            </h3>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span>Kevin Sanjaya</span>
+<span class="material-symbols-outlined text-[14px] text-primary">verified</span>
+</div>
+</div>
+<div class="pt-space-xs flex items-center justify-between">
+<div>
+<span class="block font-caption text-caption text-on-surface-variant">Harga E-Book</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 195.000</span>
+</div>
+<button class="px-3.5 h-9 rounded-lg bg-primary-container hover:bg-secondary-container text-on-primary font-label-sm text-label-sm font-semibold transition-colors flex items-center gap-1" onclick="openCheckoutModal('Database Optimization &amp; High Concurrency SQL', 'Rp 195.000')" type="button">
+<span class="material-symbols-outlined text-[16px]">shopping_cart</span>
+<span>Beli</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<!-- Empty Search State -->
+<div class="hidden flex-col items-center justify-center p-space-xl text-center max-w-md mx-auto my-space-lg" id="emptyCatalogState">
+<div class="w-16 h-16 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant mb-space-sm">
+<span class="material-symbols-outlined text-[32px]">manage_search</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">E-book tidak ditemukan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 mb-space-md">
+        Coba gunakan kata kunci yang lebih umum atau atur ulang filter pencarian Anda.
+      </p>
+<button class="px-4 h-10 rounded-lg bg-surface-container-high hover:bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold transition-colors" onclick="resetFilters()" type="button">
+        Reset Semua Filter
+      </button>
+</div>
+</section>
+<!-- Value Proposition & Platform Pillars -->
+<section class="w-full bg-surface-container-low py-space-xl">
+<div class="max-w-7xl mx-auto px-gutter">
+<div class="max-w-2xl mx-auto text-center mb-space-xl">
+<span class="font-caption text-caption uppercase tracking-wider text-primary font-bold">Standard Keamanan &amp; Kemudahan</span>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface mt-1">Mengapa Memilih Ekosistem Bookil?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Dibuat khusus untuk pengembang dan profesional yang menghargai fleksibilitas format, kecepatan akses, dan integritas kepemilikan digital.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Pillar 1 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[22px]">link</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Presigned Download URL</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Tautan unduhan bertanda tangan kriptografis dengan masa aktif 15 menit untuk proteksi file terhadap pembajakan massal.</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1.5 text-tertiary-container font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>AWS S3 Token Verified</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[22px]">lock_open_right</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">100% Clean Zero-DRM</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Buka di Kindle, iPad, Kobo, atau pembaca favorit Anda. Tidak ada aplikasi khusus atau kunci enkripsi proprietary yang membatasi.</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1.5 text-tertiary-container font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Cross-Device Compatibility</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[22px]">account_balance_wallet</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Midtrans Instant Gateway</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Rekonsiliasi transaksi instan 24/7 melalui QRIS (GoPay, OVO, ShopeePay), BCA VA, Mandiri, dan Kartu Kredit dengan webhook andal.</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1.5 text-tertiary-container font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Konfirmasi &lt; 3 Detik</span>
+</div>
+</div>
+<!-- Pillar 4 -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary mb-space-md">
+<span class="material-symbols-outlined text-[22px]">cloud_sync</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">5x Quota per License</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">Kuota generate tautan unduh mandiri tanpa repot menghubungi customer support jika perangkat Anda berganti atau terformat.</p>
+</div>
+<div class="mt-space-md pt-space-xs flex items-center gap-1.5 text-tertiary-container font-caption text-caption font-semibold">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Self-Serve Dashboard</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Sample Preview Modal -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-space-md" id="previewModal">
+<div class="bg-surface-container-lowest w-full max-w-2xl rounded-2xl shadow-xl overflow-hidden flex flex-col max-h-[90vh]">
+<!-- Modal Header -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">menu_book</span>
+<div>
+<h3 class="font-headline-sm text-body-lg font-bold text-on-surface" id="modalBookTitle">Judul E-Book</h3>
+<p class="font-caption text-caption text-on-surface-variant" id="modalBookAuthor">Penulis</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:text-on-surface" onclick="closePreviewModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Modal Body (Reader Preview) -->
+<div class="p-space-lg overflow-y-auto flex flex-col gap-space-md">
+<div class="flex items-center justify-between px-3 py-2 rounded bg-surface-container text-caption font-caption text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">visibility</span> Mode Pratinjau 3 Halaman Awal</span>
+<span>Beli e-book lengkap untuk akses 340+ halaman</span>
+</div>
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-inner space-y-space-md font-body-md text-body-md text-on-surface">
+<h4 class="font-headline-md text-headline-md font-bold text-primary">Bab 1: Fondasi Arsitektur Modern</h4>
+<p class="leading-relaxed text-on-surface-variant">
+            Dalam lanskap rekayasa piranti lunak kontemporer, ketergantungan pada monolit tradisional seringkali dihadapkan pada batas skalabilitas tim dan keterikatan basis data yang rapat. Desain arsitektur modern berfokus pada isolasi domain, keterpisahan tanggung jawab, dan komunikasi asinkron yang toleran terhadap kegagalan.
+          </p>
+<div class="p-space-md rounded-lg bg-surface-container-high text-on-surface font-mono text-body-sm">
+<code>
+              // Contoh domain event payload<br/>
+              {<br/>
+                "event": "OrderCreated",<br/>
+                "aggregate_id": "ord_9876231",<br/>
+                "timestamp": 1729482031<br/>
+              }
+            </code>
+</div>
+<p class="leading-relaxed text-on-surface-variant">
+            Melalui pemisahan read model dan write model dengan pola CQRS, aplikasi berkapasitas tinggi dapat mengoptimalkan kueri agregasi secara instan tanpa mengunci transaksi inti operasional sistem...
+          </p>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">Format lengkap: PDF &amp; EPUB</span>
+<div class="flex items-center gap-space-xs">
+<button class="px-4 h-10 rounded-lg bg-surface-container text-on-surface font-label-md text-label-md" onclick="closePreviewModal()" type="button">Tutup</button>
+<button class="px-5 h-10 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-colors shadow-sm" onclick="proceedToCheckoutFromModal()" type="button">
+            Beli E-Book Penuh
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Instant Checkout Modal (Midtrans Simulator) -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60 backdrop-blur-sm p-space-md" id="checkoutModal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl shadow-xl overflow-hidden flex flex-col">
+<!-- Header -->
+<div class="p-space-md bg-primary-container text-on-primary flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[22px]">shopping_bag</span>
+<span class="font-label-md text-label-md font-bold">Ringkasan Pembelian E-Book</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-on-primary flex items-center justify-center" onclick="closeCheckoutModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Checkout Details -->
+<div class="p-space-lg flex flex-col gap-space-md">
+<div class="p-space-md rounded-xl bg-surface-container flex items-center justify-between">
+<div>
+<h4 class="font-label-md text-label-md font-bold text-on-surface" id="checkoutBookTitle">Judul</h4>
+<span class="font-caption text-caption text-tertiary-container flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">bolt</span> Lisensi Instan Siap Unduh
+            </span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary" id="checkoutBookPrice">Rp 0</span>
+</div>
+<!-- Customer Input -->
+<div class="space-y-space-xs">
+<label class="block font-label-sm text-label-sm font-semibold text-on-surface">Alamat Email Pengiriman Lisensi</label>
+<input class="w-full h-11 px-space-md rounded-lg bg-surface-container-low text-body-sm text-on-surface focus:outline-none focus:bg-surface-container-lowest" type="email" value="discerning.reader@bookil.id"/>
+<span class="font-caption text-caption text-on-surface-variant">Tautan presigned URL dan tanda terima pembayaran akan dikirimkan ke email ini.</span>
+</div>
+<!-- Payment Method Selection -->
+<div class="space-y-space-xs">
+<label class="block font-label-sm text-label-sm font-semibold text-on-surface">Metode Pembayaran (Midtrans Secured)</label>
+<div class="grid grid-cols-2 gap-space-xs">
+<label class="flex items-center gap-space-xs p-space-sm rounded-lg bg-surface-container cursor-pointer">
+<input checked="" class="accent-primary" name="paymentMethod" type="radio" value="qris"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">QRIS Instant</span>
+<span class="font-caption text-caption text-on-surface-variant">GoPay, OVO, BCA</span>
+</div>
+</label>
+<label class="flex items-center gap-space-xs p-space-sm rounded-lg bg-surface-container cursor-pointer">
+<input class="accent-primary" name="paymentMethod" type="radio" value="bca_va"/>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Virtual Account</span>
+<span class="font-caption text-caption text-on-surface-variant">BCA, Mandiri, BRI</span>
+</div>
+</label>
+</div>
+</div>
+</div>
+<!-- Action Footer -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<span class="font-caption text-caption text-on-surface-variant">256-bit SSL Encrypted</span>
+<button class="px-6 h-11 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-all flex items-center gap-2 shadow-sm" onclick="completeCheckoutSimulation()" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Bayar &amp; Dapatkan URL</span>
+</button>
+</div>
+</div>
+</div>
+<script>
+    // In-memory catalog states
+    let currentCategory = 'all';
+    let currentSearch = '';
+    let currentSort = 'popular';
+    let activeModalTitle = '';
+    let activeModalPrice = '';
+
+    function filterCategory(cat, element) {
+      currentCategory = cat;
+      
+      // Update UI active pill style
+      const pills = document.querySelectorAll('.category-pill');
+      pills.forEach(p => {
+        p.classList.remove('bg-surface-container', 'text-primary', 'font-semibold');
+        p.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+      });
+
+      element.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+      element.classList.add('bg-surface-container', 'text-primary', 'font-semibold');
+
+      applyCatalogFilter();
+    }
+
+    function handleSearch(val) {
+      currentSearch = val.toLowerCase().trim();
+      const clearBtn = document.getElementById('searchClearBtn');
+      if (currentSearch.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+      applyCatalogFilter();
+    }
+
+    function clearSearch() {
+      const input = document.getElementById('bookSearchInput');
+      input.value = '';
+      currentSearch = '';
+      document.getElementById('searchClearBtn').classList.add('hidden');
+      applyCatalogFilter();
+    }
+
+    function handleSort(sortVal) {
+      currentSort = sortVal;
+      const grid = document.getElementById('booksGrid');
+      const cards = Array.from(grid.querySelectorAll('.book-card'));
+
+      cards.sort((a, b) => {
+        const priceA = parseInt(a.getAttribute('data-price') || '0', 10);
+        const priceB = parseInt(b.getAttribute('data-price') || '0', 10);
+        const ratingA = parseFloat(a.getAttribute('data-rating') || '0');
+        const ratingB = parseFloat(b.getAttribute('data-rating') || '0');
+
+        if (currentSort === 'price-asc') return priceA - priceB;
+        if (currentSort === 'price-desc') return priceB - priceA;
+        if (currentSort === 'rating') return ratingB - ratingA;
+        return 0; // Default order
+      });
+
+      cards.forEach(c => grid.appendChild(c));
+    }
+
+    function applyCatalogFilter() {
+      const cards = document.querySelectorAll('.book-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardCategory = card.getAttribute('data-category');
+        const title = card.getAttribute('data-title').toLowerCase();
+        const author = card.getAttribute('data-author').toLowerCase();
+
+        const matchCat = (currentCategory === 'all') || (cardCategory === currentCategory);
+        const matchSearch = (currentSearch === '') || title.includes(currentSearch) || author.includes(currentSearch);
+
+        if (matchCat && matchSearch) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      const countEl = document.getElementById('catalogCount');
+      const emptyState = document.getElementById('emptyCatalogState');
+
+      if (countEl) {
+        countEl.textContent = `${visibleCount} e-book terdaftar`;
+      }
+
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+    }
+
+    function resetFilters() {
+      const allPill = document.querySelector('.category-pill');
+      if (allPill) {
+        filterCategory('all', allPill);
+      }
+      clearSearch();
+    }
+
+    // Modal Handlers
+    function openPreviewModal(title, author, coverUrl) {
+      activeModalTitle = title;
+      document.getElementById('modalBookTitle').textContent = title;
+      document.getElementById('modalBookAuthor').textContent = author;
+      
+      const modal = document.getElementById('previewModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closePreviewModal() {
+      const modal = document.getElementById('previewModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function proceedToCheckoutFromModal() {
+      closePreviewModal();
+      openCheckoutModal(activeModalTitle, 'Rp 189.000');
+    }
+
+    function openCheckoutModal(title, price) {
+      activeModalTitle = title;
+      activeModalPrice = price;
+      document.getElementById('checkoutBookTitle').textContent = title;
+      document.getElementById('checkoutBookPrice').textContent = price;
+
+      const modal = document.getElementById('checkoutModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById('checkoutModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function completeCheckoutSimulation() {
+      const btn = event.currentTarget;
+      btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> Memproses Gateway...`;
+      
+      setTimeout(() => {
+        alert(`✅ Pembayaran Berhasil!\n\nPresigned token untuk e-book "${activeModalTitle}" telah dibuat dengan masa aktif 15 menit. Anda diarahkan ke tab unduhan.`);
+        btn.innerHTML = `<span class="material-symbols-outlined text-[18px]">lock</span> Bayar & Dapatkan URL`;
+        closeCheckoutModal();
+      }, 900);
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/60 pt-space-xl pb-space-lg"><div class="max-w-7xl mx-auto px-gutter"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter mb-space-xl"><div class="lg:col-span-4 space-y-space-md"><div class="flex items-center gap-space-sm"><img alt="Bookil Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1URw93eJ2MEaZ-MO6cyVWEGIaxv83xdjD0gHfKDwU5vDkshSPJPngXvjgs-JOeBXcwGpOikdIn8ncMZ2i8Vi0vFn01mQwWPpW8fTFLUa6rP27e3I3j3YfOKwSaAWtkqbA_Hun49_yJsrHIIdyi1BwLZV7tAfDfbG-f8jVuskvLoKjNzYIWyG1JfbknYgoj8MBk2jCBu3bT2-ZpDrHL7phO8SPRRgEQl7qeHGK8rNCJXKbjlAi_7VPQ6aOYL"/><span class="font-headline-md text-headline-md font-bold text-on-surface">Bookil</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Platform kurasi karya literatur dan pengetahuan digital premium dengan pengalaman membaca tenang, tipografi orisinal, serta lisensi digital terverifikasi.</p><div class="flex items-center gap-space-sm text-on-surface-variant"><div class="flex items-center gap-1.5 px-space-sm py-1 rounded bg-surface-container-low text-caption font-caption"><span class="material-symbols-outlined text-[16px] text-tertiary-container">verified_user</span>Zero-Trust DRM</div><div class="flex items-center gap-1.5 px-space-sm py-1 rounded bg-surface-container-low text-caption font-caption"><span class="material-symbols-outlined text-[16px] text-tertiary-container">check_circle</span>100% Legal License</div></div></div><div class="lg:col-span-2 space-y-space-sm"><h3 class="font-label-md text-label-md font-semibold text-on-surface uppercase tracking-wider">Kategori Pilihan</h3><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="jelajahi-katalog" href="#">Bisnis &amp; Inovasi</a></li><li><a class="hover:text-primary transition-colors" data-path="jelajahi-katalog" href="#">Desain &amp; Arsitektur</a></li><li><a class="hover:text-primary transition-colors" data-path="jelajahi-katalog" href="#">Filsafat Kontemporer</a></li><li><a class="hover:text-primary transition-colors" data-path="jelajahi-katalog" href="#">Teknologi &amp; AI</a></li><li><a class="hover:text-primary transition-colors" data-path="jelajahi-katalog" href="#">Kesusastraan Dunia</a></li></ul></div><div class="lg:col-span-2 space-y-space-sm"><h3 class="font-label-md text-label-md font-semibold text-on-surface uppercase tracking-wider">Platform</h3><ul class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><li><a class="hover:text-primary transition-colors" data-path="tentang-kami" href="#">Manifesto Bookil</a></li><li><a class="hover:text-primary transition-colors" data-path="bestseller" href="#">Kurasi Mingguan</a></li><li><a class="hover:text-primary transition-colors" data-path="perpustakaan-saya" href="#">Aplikasi Web Reader</a></li><li><a class="hover:text-primary transition-colors" data-path="tentang-kami" href="#">Untuk Penerbit</a></li><li><a class="hover:text-primary transition-colors" data-path="tentang-kami" href="#">Pedoman Komunitas</a></li></ul></div><div class="lg:col-span-4 space-y-space-md"><h3 class="font-label-md text-label-md font-semibold text-on-surface uppercase tracking-wider">Warta Editorial Bookil</h3><p class="font-body-sm text-body-sm text-on-surface-variant">Terima ringkasan esai, rilis buku eksklusif, dan diskursus intelektual langsung di kotak masuk Anda setiap Jumat.</p><form class="flex flex-col sm:flex-row gap-space-xs"><input class="flex-1 h-11 px-space-md rounded-lg bg-surface border border-outline-variant text-body-sm font-body-sm text-on-surface focus:outline-none focus:border-primary-container focus:ring-1 focus:ring-primary-container" placeholder="Masukkan alamat surel..." type="email"/><button class="h-11 px-space-md rounded-lg bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:bg-secondary-container transition-all flex items-center justify-center gap-1.5 shadow-sm" type="button">Langganan</button></form><span class="font-caption text-caption text-on-surface-variant block">Privasi terjamin. Bebas spam, berhenti kapan saja dengan satu klik.</span></div></div><div class="pt-space-lg border-t border-outline-variant/50 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant"><div class="flex flex-wrap items-center gap-space-md font-caption text-caption"><span>© 2025 Bookil Technologies Ltd. Seluruh hak cipta dilindungi.</span><span class="hidden sm:inline">•</span><span>Zero-Trust DRM Guarantee</span><span class="hidden sm:inline">•</span><span>Midtrans Payment Gateway Compliance</span></div><div class="flex items-center gap-space-lg font-label-sm text-label-sm"><a class="hover:text-on-surface transition-colors" data-path="tentang-kami" href="#">Ketentuan Layanan</a><a class="hover:text-on-surface transition-colors" data-path="tentang-kami" href="#">Kebijakan Privasi</a><a class="hover:text-on-surface transition-colors" data-path="tentang-kami" href="#">Lisensi Hak Cipta</a></div></div></div></footer></body></html>

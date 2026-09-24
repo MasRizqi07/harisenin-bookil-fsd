@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#faf8ff", "on-secondary-fixed": "#07006c", "secondary-container": "#6063ee", "error": "#ba1a1a", "surface-container-low": "#f2f3ff", "on-tertiary-fixed": "#002113", "primary-container": "#4f46e5", "inverse-on-surface": "#eef0ff", "surface-container-highest": "#dae2fd", "surface-bright": "#faf8ff", "primary-fixed-dim": "#c3c0ff", "surface-container-high": "#e2e7ff", "on-primary-container": "#dad7ff", "secondary": "#4648d4", "on-secondary-fixed-variant": "#2f2ebe", "on-primary-fixed": "#0f0069", "outline": "#777587", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "inverse-surface": "#283044", "on-tertiary-container": "#67f4b7", "primary-fixed": "#e2dfff", "tertiary-container": "#006e4b", "surface-tint": "#4d44e3", "on-secondary-container": "#fffbff", "primary": "#3525cd", "tertiary-fixed-dim": "#4edea3", "on-surface-variant": "#464555", "surface-variant": "#dae2fd", "on-secondary": "#ffffff", "surface": "#faf8ff", "inverse-primary": "#c3c0ff", "on-primary-fixed-variant": "#3323cc", "secondary-fixed": "#e1e0ff", "tertiary-fixed": "#6ffbbe", "surface-dim": "#d2d9f4", "secondary-fixed-dim": "#c0c1ff", "surface-container-lowest": "#ffffff", "on-surface": "#131b2e", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#005236", "tertiary": "#005338", "surface-container": "#eaedff", "on-background": "#131b2e", "outline-variant": "#c7c4d8", "on-primary": "#ffffff", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "gutter": "1.5rem", "space-md": "1rem", "margin": "3rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "caption": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["14px", { "lineHeight": "22.4px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-md": ["16px", { "lineHeight": "25.6px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28.8px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-40 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="katalog" href="#"><img alt="Brand logo. - Primary color: #4f46e5
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwu9JkXSvWd5mgVl2y7F4viuOfvT63PZDyikUFEqkO3NKcgm0oaw5HGvXaxBH66dsoepjWZUbAozR2tDdV7OW8XS7GnCX8RszpnohOMCgTFzbl0pnBC4azZSSe5quXSP53r6o5njcoFlKCEMEpFymTSu9_WaYANnEMCRHq-8VSZlimeKbKBIDrShD55WyC_EQ2rO5z5L4_mCSn79pm6Hx9mMUqQwyDEyXBkV-sKxAF"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Bookil</span></a><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="katalog" href="#">Katalog</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="perpustakaan-saya" href="#">Perpustakaan Saya</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="bantuan" href="#">Bantuan</a></nav></div><div class="flex items-center gap-space-md"><button class="hidden sm:flex items-center justify-between gap-space-sm w-48 h-10 px-space-sm bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] text-on-surface-variant hover:text-on-surface transition-all focus:outline-none focus:ring-2 focus:ring-primary/20" id="search-spotlight-btn" type="button"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-sm text-label-sm text-on-surface-variant">Cari buku...</span></div><kbd class="px-1.5 py-0.5 bg-surface-container rounded text-[10px] font-semibold text-on-surface-variant">⌘K</kbd></button><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs p-1 rounded-full hover:bg-surface-container-high transition-colors" data-path="profile" href="#"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkdsMKzbGfSlz_suHfemMAS2xozSDRHcjXjoHG0DjqZ9YQ1_kJUn9U17dNtvaX10hwuQ-MNTtgBQh0vgWgPQu6aJVtY_4MrFXWlIL-o2I4FoB_g9JNpguwih0rTa6ZneU2TDAzU6jtIfI39WkKFrYi7fxo1iLyAZCIbGrg3VXCdn6RBAyodDGyQiNujraNwsPfZZV_bD0Ev8ADH_yn9Vaymxff9qQfIlKF3hkKjpYk"/><span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-primary rounded-full flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[10px]">verified</span></span></div><span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_drop_down</span></a></div></div></div></header><main class="w-full pt-16 bg-background flex-1 relative"><div class="flex flex-col w-full">
+<!-- Interactive & Print Styles -->
+<style>
+    @media print {
+      header, footer, #document-actions, #toc-sidebar, #tab-navigation-bar, .no-print {
+        display: none !important;
+      }
+      body, main, .print-full-width {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        color: #000000 !important;
+      }
+      .print-border {
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+      }
+    }
+  </style>
+<!-- Section: Header Banner & Hero Notice -->
+<div class="relative w-full bg-gradient-to-b from-surface-container-low via-surface to-background px-6 lg:px-12 pt-10 pb-12 overflow-hidden">
+<!-- Subtle architectural background glow -->
+<div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+<div class="absolute top-1/2 -left-20 w-80 h-80 rounded-full bg-tertiary/5 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto relative z-10">
+<!-- Regulatory Pill Badge -->
+<div class="flex flex-wrap items-center gap-space-sm mb-4">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container-lowest shadow-sm text-primary">
+<span class="material-symbols-outlined text-[16px] text-primary">verified_user</span>
+<span class="font-label-sm text-label-sm font-semibold tracking-wide">DOKUMEN KEPATUHAN RESMI</span>
+</div>
+<span class="text-outline text-xs hidden sm:inline">•</span>
+<span class="font-caption text-caption text-on-surface-variant tracking-wider uppercase">Standar Regulasi Bank Indonesia &amp; Midtrans Production Sandbox 2026</span>
+</div>
+<!-- Main Header Title -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-6">
+<div class="max-w-3xl space-y-3">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+            Pusat Kepatuhan, Lisensi &amp; Ketentuan Layanan
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            Transparansi penuh mengenai hak kepemilikan aset digital, privasi tanpa penyimpanan kartu, lisensi Zero-DRM etis, dan regulasi transaksi pembayaran berstandar hukum Republik Indonesia.
+          </p>
+</div>
+<!-- Action Buttons (Print & Download PDF) -->
+<div class="flex items-center gap-space-sm self-start lg:self-end flex-shrink-0" id="document-actions">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container-high transition-colors text-on-surface shadow-sm font-label-md text-label-md font-medium" onclick="window.print()">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Cetak Dokumen</span>
+</button>
+<a class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-primary hover:bg-primary-container text-on-primary transition-all shadow-sm font-label-md text-label-md font-medium" href="#section-9">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Kontak Legal</span>
+</a>
+</div>
+</div>
+<!-- Status Metadata Ribbon -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex flex-wrap items-center justify-between gap-4 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex flex-wrap items-center gap-4">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">history</span>
+<span>Terakhir Diperbarui: <strong class="text-on-surface font-semibold">28 Februari 2026</strong></span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">article</span>
+<span>Versi Legal: <strong class="text-on-surface font-semibold">v2.4-Enterprise</strong></span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">security</span>
+<span>PCI-DSS Level 1 &amp; UU PDP No. 27/2022 Verified</span>
+</div>
+</div>
+<div class="flex items-center gap-2 text-tertiary font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span>Status Onboarding: Production-Ready Active</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Interactive Tab Switcher Navigation -->
+<div class="sticky top-16 z-30 w-full bg-surface/90 backdrop-blur-md shadow-sm" id="tab-navigation-bar">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4 overflow-x-auto no-scrollbar py-3">
+<div class="flex items-center gap-2 min-w-max">
+<a class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-semibold transition-all shadow-sm" href="#doc-terms">
+<span class="material-symbols-outlined text-[18px]">gavel</span>
+<span>1. Syarat &amp; Ketentuan Layanan</span>
+</a>
+<a class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all" href="#section-7">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>2. Kebijakan Privasi Data</span>
+</a>
+<a class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all" href="#section-4">
+<span class="material-symbols-outlined text-[18px]">currency_exchange</span>
+<span>3. Kebijakan Pengembalian Dana (Refund)</span>
+</a>
+<a class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-md text-label-md transition-all" href="#section-5">
+<span class="material-symbols-outlined text-[18px]">copyright</span>
+<span>4. Lisensi Zero-DRM Etis</span>
+</a>
+</div>
+<div class="hidden lg:flex items-center gap-2 text-xs text-on-surface-variant font-mono">
+<span>BOOKIL_DOC_REF_2026_MIDTRANS</span>
+</div>
+</div>
+</div>
+<!-- Section: Main Content Grid (TOC Sticky Sidebar + Legal Corpus) -->
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-10 w-full">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Sticky Table of Contents & Compliance Widgets (3 cols) -->
+<aside class="lg:col-span-4 xl:col-span-3 sticky top-32 space-y-6" id="toc-sidebar">
+<!-- Navigation Card -->
+<nav class="p-5 rounded-xl bg-surface-container-lowest shadow-sm space-y-4">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<span class="font-caption text-caption uppercase tracking-wider text-outline font-bold">Daftar Isi Dokumen</span>
+<span class="material-symbols-outlined text-[16px] text-outline">format_list_bulleted</span>
+</div>
+<ul class="space-y-1 font-label-sm text-label-sm text-on-surface-variant">
+<li>
+<a class="flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors text-on-surface font-medium" href="#section-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>1. Definisi &amp; Ketentuan Umum</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors" href="#section-2">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span>
+<span>2. Kewajiban &amp; Integritas Akun</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors" href="#section-3">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>3. Gateway Midtrans (PCI-DSS)</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors text-primary font-semibold" href="#section-4">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+<span>4. Kebijakan Refund &amp; Garansi</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors" href="#section-5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>5. Lisensi Zero-DRM Etis</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors" href="#section-6">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span>
+<span>6. Larangan &amp; Penyalahgunaan</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors" href="#section-7">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span>
+<span>7. Perlindungan Data (UU PDP)</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors" href="#section-8">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span>
+<span>8. Hukum &amp; Yurisdiksi Sengketa</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-2 px-2.5 py-2 rounded-lg hover:bg-surface-container hover:text-primary transition-colors" href="#section-9">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-variant"></span>
+<span>9. Kontak Resmi Tim Legal</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Compliance & Security Assurance Badge Card -->
+<div class="p-5 rounded-xl bg-surface-container-lowest shadow-sm space-y-4">
+<div class="flex items-center gap-2 text-primary font-headline-sm text-headline-sm">
+<span class="material-symbols-outlined text-[22px]">verified</span>
+<span class="font-bold text-[16px] text-on-surface">Validasi Kepatuhan</span>
+</div>
+<div class="space-y-3 font-body-sm text-body-sm text-on-surface-variant">
+<div class="p-3 rounded-lg bg-surface-container-low space-y-1">
+<span class="font-caption text-caption uppercase tracking-wider text-outline block">Gateway Finansial Mitra</span>
+<p class="font-medium text-on-surface">PT Midtrans (GoTo Financial)</p>
+<p class="text-xs text-on-surface-variant">Izin Bank Indonesia PJP Kategori 1 (No. 23/343/DKSP/Srt/B)</p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low space-y-1">
+<span class="font-caption text-caption uppercase tracking-wider text-outline block">Keamanan Kriptografis</span>
+<p class="font-medium text-on-surface">Enkripsi SHA-512 Signature</p>
+<p class="text-xs text-on-surface-variant">Koneksi end-to-end TLS 1.3 bergaransi sertifikat DigiCert High Assurance.</p>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low space-y-1">
+<span class="font-caption text-caption uppercase tracking-wider text-outline block">Penyimpanan Kredensial</span>
+<p class="font-medium text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Zero Cardholder Storage</span>
+</p>
+<p class="text-xs text-on-surface-variant">Bookil tidak menyimpan nomor kartu kredit atau token plaintext pelanggan.</p>
+</div>
+</div>
+</div>
+<!-- Download Certificate Callout -->
+<div class="p-4 rounded-xl bg-primary-container text-on-primary space-y-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">shield_with_heart</span>
+<span class="font-label-md text-label-md font-bold">Klausul Integritas Pembeli</span>
+</div>
+<p class="font-caption text-caption opacity-90 leading-relaxed">
+            Setiap unduhan e-book memuat watermark kriptografis yang membuktikan kepemilikan lisensi sah akun Anda.
+          </p>
+</div>
+</aside>
+<!-- Right Column: Prose Legal Content (8-9 cols) -->
+<main class="lg:col-span-8 xl:col-span-9 space-y-12 print-full-width">
+<!-- SECTION 1 -->
+<section class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm space-y-6" id="section-1">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary text-sm">01</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Definisi &amp; Ketentuan Umum</h2>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-caption text-caption uppercase tracking-wider">Klausul Dasar</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Perjanjian ini mengatur hubungan hukum antara Anda sebagai pengguna akhir ("Pembaca", "Pengguna", atau "Konsumen") dengan <strong>Bookil Inc.</strong> (selanjutnya disebut "Bookil", "Kami", atau "Platform") terkait penggunaan situs katalog, akun pembaca, perolehan lisensi karya digital, dan seluruh sistem checkout yang difasilitasi oleh kanal pembayaran terintegrasi.
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+<div class="p-4 rounded-xl bg-surface-container-low space-y-2">
+<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Produk Digital</span>
+</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Naskah intelektual berformat non-fisik (PDF, EPUB, mobi, audio archive) yang diterbitkan secara resmi melalui kemitraan kurasi Bookil.
+              </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low space-y-2">
+<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">key</span>
+<span>Token Unduh Presigned</span>
+</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Akses unduhan berbasis hash kriptografis dengan masa aktif terukur yang diterbitkan seketika setelah pembayaran berstatus sukses.
+              </p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low space-y-2">
+<span class="font-label-sm text-label-sm font-bold text-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">receipt_long</span>
+<span>Ledger Pesanan</span>
+</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Catatan mutasi transaksi digital permanen dengan pengidentifikasi unik <code class="font-mono text-xs bg-surface-container px-1 py-0.5 rounded text-primary">BK-ULID-XXXXXXXX</code> untuk bukti rekonsiliasi.
+              </p>
+</div>
+</div>
+</section>
+<!-- SECTION 2 -->
+<section class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm space-y-6" id="section-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary text-sm">02</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Kewajiban Akun &amp; Integritas Akses</h2>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-caption text-caption uppercase tracking-wider">Akses Pengguna</span>
+</div>
+<div class="space-y-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<p>
+              Untuk menjaga integritas katalog dan melindungi hak cipta penulis kami, setiap pengguna yang mengakses atau melakukan transaksi di Bookil menyetujui batasan operasional berikut:
+            </p>
+<ul class="space-y-3 font-body-sm text-body-sm text-on-surface list-none pl-0">
+<li class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">check</span>
+<div>
+<strong>Kelayakan Usia &amp; Legalitas:</strong> Anda berusia sekurang-kurangnya 18 (delapan belas) tahun atau memiliki persetujuan wali hukum untuk melakukan perikatan pembayaran digital melalui saluran keuangan yang sah.
+                </div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">check</span>
+<div>
+<strong>Integritas Perhitungan Harga (Server-Side Price Validation):</strong> Bookil memberlakukan validasi harga ketat di sisi server. Segala upaya memanipulasi payload HTTP, nilai mata uang, atau bypass voucher promo akan memicu pembatalan sepihak dan pembekuan akun permanen.
+                </div>
+</li>
+<li class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-low">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5">check</span>
+<div>
+<strong>Larangan Otomatisasi &amp; Scraping:</strong> Dilarang keras menggunakan script crawler, bot ekstraksi, atau automated harvester untuk menyalin database katalog dan berkas pratinjau Bookil tanpa persetujuan tertulis.
+                </div>
+</li>
+</ul>
+</div>
+</section>
+<!-- SECTION 3 (MIDTRANS GATEWAY COMPLIANCE - CRITICAL) -->
+<section class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm space-y-6" id="section-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary text-sm">03</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Transaksi &amp; Gateway Pembayaran Midtrans</h2>
+</div>
+<span class="px-2.5 py-1 rounded bg-secondary-fixed text-on-secondary-fixed font-caption text-caption uppercase tracking-wider font-bold">Midtrans Snap Integrated</span>
+</div>
+<!-- Zero Cardholder Data Callout (Crucial for Midtrans audit) -->
+<div class="p-5 rounded-xl bg-surface-container-high space-y-3">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[20px]">enhanced_encryption</span>
+<span>PENEGASAN MUTLAK: ZERO CARDHOLDER DATA STORAGE</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface leading-relaxed">
+              Bookil <strong>TIDAK PERNAH</strong> mencatat, memproses secara manual, maupun menyimpan nomor kartu kredit/debit, kode CVV/CVC, tanggal kedaluwarsa, PIN, atau kredensial autentikasi perbankan pengguna dalam server, database lokal, maupun log aplikasi kami.
+            </p>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Seluruh sesi transaksi checkout dienkripsi dan dialihkan langsung melalui widget modal <strong>Midtrans Snap</strong> milik <strong>PT Midtrans (GoTo Financial)</strong> yang berizin resmi Bank Indonesia sebagai Penyedia Jasa Pembayaran (PJP) Kategori 1 dan memegang sertifikasi audit keamanan tertinggi <strong>PCI-DSS Level 1</strong>.
+            </p>
+</div>
+<div class="space-y-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Metode Pembayaran Resmi yang Difasilitasi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Setiap tagihan yang diterbitkan memiliki validitas real-time maksimal 24 (dua puluh empat) jam sebelum kedaluwarsa secara otomatis di gateway.
+            </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">qr_code_2</span>
+<div>
+<h4 class="font-label-md text-label-md font-semibold text-on-surface">QRIS Standar Nasional (ASPI &amp; BI)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Mendukung pembayaran langsung dari dompet digital terdaftar: GoPay, OVO, Dana, LinkAja, ShopeePay, AstraPay, serta seluruh mobile banking berkemampuan scan QRIS.
+                  </p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[24px]">account_balance</span>
+<div>
+<h4 class="font-label-md text-label-md font-semibold text-on-surface">Virtual Account (Bank Transfer Otomatis)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    Rekonsiliasi otomatis 24/7 melalui Virtual Account resmi bank mitra: BCA, Bank Mandiri, BNI, BRI, Permata Bank, dan CIMB Niaga.
+                  </p>
+</div>
+</div>
+</div>
+<!-- Midtrans Signature Verification Explainer -->
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between flex-wrap gap-4 text-xs font-mono text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified</span>
+<span>Webhook Signature Verification: SHA-512(order_id + status_code + gross_amount + ServerKey)</span>
+</div>
+<span class="text-tertiary font-bold">100% Anti-Tampering Secured</span>
+</div>
+</div>
+</section>
+<!-- SECTION 4 (REFUND POLICY - CRITICAL COMPLIANCE FOR MIDTRANS) -->
+<section class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm space-y-6" id="section-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-error text-sm">04</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Kebijakan Pengembalian Dana (Refund Policy)</h2>
+</div>
+<span class="px-2.5 py-1 rounded bg-error-container text-on-error-container font-caption text-caption uppercase tracking-wider font-bold">Wajib Baca</span>
+</div>
+<!-- Highlighted Explicit Non-Refundable Box -->
+<div class="p-6 rounded-xl bg-surface-container-high space-y-3">
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-primary text-[22px]">policy</span>
+<span>PERNYATAAN TEGAS ATAS PRODUK DIGITAL (INTANGIBLE ASSETS)</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed">
+              Mengingat sifat produk Bookil merupakan <strong>aset digital berlisensi seketika</strong> yang langsung dapat diakses, didekripsi, dan diunduh secara penuh sesaat setelah transaksi berstatus <em>"Settlement"</em> di gateway Midtrans, maka:
+            </p>
+<div class="p-4 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface font-medium leading-relaxed">
+              Seluruh pembelian e-book yang telah berhasil diterbitkan token unduhannya bersifat <strong>FINAL dan NON-REFUNDABLE</strong>. Pengembalian dana tidak dapat diproses atas dasar perubahan keputusan pribadi (change of mind), kelalaian membaca deskripsi buku, atau kesalahan pemilihan judul oleh pembaca.
+            </div>
+</div>
+<!-- Valid Exceptions for Claims -->
+<div class="space-y-4">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Pengecualian Sah untuk Penggantian Berkas atau Refund</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Bookil menjamin hak konsumen dengan memfasilitasi penggantian berkas baru atau pengembalian dana penuh dalam kondisi luar biasa berikut:
+            </p>
+<div class="space-y-3 font-body-sm text-body-sm">
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary text-xs flex-shrink-0 mt-0.5">A</span>
+<div>
+<strong class="text-on-surface">Kerusakan Berkas Teknis (Corrupted Asset):</strong>
+<p class="text-on-surface-variant mt-0.5">
+                    Berkas EPUB/PDF yang diunduh tidak dapat dibuka, file terpotong, atau halaman kosong permanen, dan tim teknis Bookil gagal menyediakan tautan berkas pengganti yang berfungsi dalam kurun waktu 1x24 jam kerja sejak laporan diterima.
+                  </p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary text-xs flex-shrink-0 mt-0.5">B</span>
+<div>
+<strong class="text-on-surface">Ketidaksesuaian Edisi Kritis:</strong>
+<p class="text-on-surface-variant mt-0.5">
+                    Isi buku berbeda secara substansial dari halaman etalase katalog (misal: edisi terpotong hanya memuat bab 1, atau terjadi salah pemetaan berkas naskah oleh sistem katalog).
+                  </p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-3">
+<span class="w-6 h-6 rounded-full bg-surface-container flex items-center justify-center font-bold text-primary text-xs flex-shrink-0 mt-0.5">C</span>
+<div>
+<strong class="text-on-surface">Pemotongan Dana Ganda (Double Billing Terbukti):</strong>
+<p class="text-on-surface-variant mt-0.5">
+                    Terjadi pendebetan berulang dari rekening pengguna untuk satu ID Pesanan yang identik akibat latensi transmisi jaringan antara Midtrans dan perbankan penerbit. Dana kelebihan akan dikembalikan 100% tanpa potongan administrasi.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Dispute Resolution SLA Table -->
+<div class="space-y-3 pt-2">
+<h4 class="font-label-md text-label-md font-semibold text-on-surface">Prosedur dan SLA Pengajuan Klaim Resmi</h4>
+<div class="p-4 rounded-xl bg-surface-container-low space-y-2 text-on-surface-variant font-body-sm text-body-sm">
+<p>
+                1. Kirimkan email ke <a class="text-primary underline font-medium" href="mailto:legal@bookil.com">legal@bookil.com</a> dengan subjek: <code class="font-mono text-xs bg-surface-container px-1 py-0.5 rounded text-on-surface">KLAIM REFUND - [NO_FAKTUR_BK_ULID]</code>.
+              </p>
+<p>
+                2. Lampirkan bukti pembayaran Midtrans yang sah serta tangkapan layar (screenshot) pesan error kerusakan berkas.
+              </p>
+<p>
+                3. Tim Compliance Bookil akan menyelesaikan audit log unduhan maksimal dalam <strong>3 x 24 Jam Kerja</strong>. Jika disetujui, refund dikembalikan ke instrumen asal (melalui Midtrans Refund API untuk GoPay/ShopeePay atau transfer manual untuk Virtual Account).
+              </p>
+</div>
+</div>
+</section>
+<!-- SECTION 5 (LICENSING & ZERO-DRM) -->
+<section class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm space-y-6" id="section-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary text-sm">05</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Lisensi Tunggal &amp; Filosofi Zero-DRM Etis</h2>
+</div>
+<span class="px-2.5 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-caption text-caption uppercase tracking-wider font-bold">Zero-DRM Certified</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Bookil memperjuangkan kemerdekaan membaca digital. Kami menolak teknologi DRM proprietari yang membatasi hak milik pembaca dan memperlambat gawai Anda.
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-5 rounded-xl bg-surface-container-low space-y-3">
+<div class="flex items-center gap-2 text-tertiary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[20px]">lock_open_right</span>
+<span>Hak Kebebasan Pembaca (Zero-DRM)</span>
+</div>
+<ul class="space-y-2 font-body-sm text-body-sm text-on-surface-variant">
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[16px]">check</span>
+<span>Bebas dipindahkan ke Kindle, Kobo, iPad, Android, Mac, atau PC.</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[16px]">check</span>
+<span>Bebas dibaca menggunakan aplikasi e-reader favorit pilihan Anda.</span>
+</li>
+<li class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[16px]">check</span>
+<span>Tidak memerlukan instalasi software pemantau latar belakang.</span>
+</li>
+</ul>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low space-y-3">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[20px]">fingerprint</span>
+<span>Watermark Digital Kriptografis</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                Bebas DRM <strong>bukan berarti bebas hak cipta</strong>. Setiap berkas yang diterbitkan disematkan penanda steganografi digital berisi <em>ID Lisensi Tunggal</em> dan email terenkripsi untuk mengidentifikasi kepemilikan sah naskah.
+              </p>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container text-on-surface font-body-sm text-body-sm">
+<strong>Batasan Lisensi:</strong> Lisensi yang diberikan adalah lisensi non-eksklusif, personal, dan tidak dapat dipindahtangankan kepada orang lain. Anda tidak diperkenankan menjual kembali, mengunggah ke repositori terbuka (Google Drive/Torrent), atau memanfaatkan naskah untuk pelatihan model kecerdasan buatan (AI/LLM training).
+          </div>
+</section>
+<!-- SECTION 6 (PROHIBITED CONDUCT) -->
+<section class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm space-y-6" id="section-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary text-sm">06</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Aktivitas Terlarang (Prohibited Uses)</h2>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-caption text-caption uppercase tracking-wider">Penegakan Aturan</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Pelanggaran terhadap ketentuan di bawah ini akan berakibat pada pemutusan akun seketika, pembatalan seluruh lisensi tanpa ganti rugi, serta pelaporan kepada pihak berwajib atas dasar UU ITE Republik Indonesia:
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 font-body-sm text-body-sm text-on-surface">
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px]">block</span>
+<span>Melakukan serangan brute-force atau enumerasi terhadap pola token unduhan presigned storage.</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px]">block</span>
+<span>Mengedarkan berkas unduhan ke forum publik, bot Telegram, atau situs warez bajakan.</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px]">block</span>
+<span>Melakukan reverse-engineering atau dekompilasi terhadap API endpoint transaksi Bookil.</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex items-start gap-2.5">
+<span class="material-symbols-outlined text-error text-[20px]">block</span>
+<span>Menyalahgunakan saluran chargeback perbankan secara curang padahal berkas telah berhasil diunduh.</span>
+</div>
+</div>
+</section>
+<!-- SECTION 7 (DATA PRIVACY & UU PDP) -->
+<section class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm space-y-6" id="section-7">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary text-sm">07</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Keamanan Data &amp; Kepatuhan UU PDP No. 27/2022</h2>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-caption text-caption uppercase tracking-wider">Privasi Pengguna</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Bookil tunduk penuh pada <strong>Undang-Undang Pelindungan Data Pribadi (UU PDP No. 27 Tahun 2022)</strong>. Kami meminimalkan pengumpulan data hanya pada parameter esensial pemenuhan transaksi:
+          </p>
+<div class="space-y-3 font-body-sm text-body-sm">
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-medium text-on-surface">Data Identitas Transaksi:</span>
+<span class="text-on-surface-variant">Nama, Alamat Email Aktif, dan Log IP saat Checkout</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-medium text-on-surface">Tujuan Pengolahan:</span>
+<span class="text-on-surface-variant">Penerbitan faktur pajak digital &amp; verifikasi lisensi unduhan</span>
+</div>
+<div class="p-3.5 rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-medium text-on-surface">Masa Retensi Log:</span>
+<span class="text-on-surface-variant">5 (lima) tahun sesuai kepatuhan hukum pembukuan keuangan</span>
+</div>
+</div>
+<p class="font-caption text-caption text-outline">
+            Setiap saat Anda memiliki hak mengajukan penghapusan akun atau permintaan ekspor data arsip dengan melayangkan permohonan tertulis kepada Petugas Pelindungan Data (DPO) kami.
+          </p>
+</section>
+<!-- SECTION 8 (GOVERNING LAW) -->
+<section class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm space-y-6" id="section-8">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary text-sm">08</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Hukum yang Berlaku &amp; Penyelesaian Sengketa</h2>
+</div>
+<span class="px-2.5 py-1 rounded bg-surface-container-low text-on-surface-variant font-caption text-caption uppercase tracking-wider">Yurisdiksi RI</span>
+</div>
+<div class="space-y-4 font-body-md text-body-md text-on-surface-variant leading-relaxed">
+<p>
+              Syarat dan Ketentuan Layanan ini diatur, ditafsirkan, dan dilaksanakan sepenuhnya berdasarkan ketentuan perundang-undangan Negara Kesatuan Republik Indonesia.
+            </p>
+<p class="font-body-sm text-body-sm">
+              Apabila timbul perselisihan dalam pelaksanaan perjanjian ini, para pihak sepakat untuk mengutamakan musyawarah untuk mufakat dalam jangka waktu 30 (tiga puluh) hari kalender. Apabila mufakat tidak tercapai, sengketa akan diselesaikan secara final melalui yurisdiksi eksklusif Pengadilan Negeri Jakarta Selatan.
+            </p>
+</div>
+</section>
+<!-- SECTION 9 (CONTACT & ESCALATION) -->
+<section class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm space-y-6" id="section-9">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center font-bold text-primary text-sm">09</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Layanan Bantuan &amp; Kontak Resmi Legal</h2>
+</div>
+<span class="px-2.5 py-1 rounded bg-tertiary-fixed text-on-tertiary-fixed font-caption text-caption uppercase tracking-wider font-bold">Respon &lt; 24 Jam</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Untuk keperluan audit kepatuhan, klarifikasi nota transaksi Midtrans, permintaan faktur pajak instansi, atau pengaduan pelanggaran hak cipta naskah, hubungi saluran perwakilan hukum kami:
+          </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-5 rounded-xl bg-surface-container-low space-y-3">
+<span class="font-caption text-caption uppercase tracking-wider text-outline block">Departemen Kepatuhan &amp; Legal</span>
+<div class="space-y-1">
+<p class="font-label-md text-label-md font-bold text-on-surface">PT Bookil Aksara Sanctuary</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Menara Sentraya Lt. 18, Kawasan Blok M</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Jl. Iskandarsyah Raya No. 1A, Kebayoran Baru</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Jakarta Selatan, DKI Jakarta 12160 - Indonesia</p>
+</div>
+</div>
+<div class="p-5 rounded-xl bg-surface-container-low space-y-3">
+<span class="font-caption text-caption uppercase tracking-wider text-outline block">Kanal Kontak Elektronik</span>
+<div class="space-y-2">
+<a class="flex items-center gap-2 font-label-md text-label-md text-primary hover:underline" href="mailto:legal@bookil.com">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+<span>legal@bookil.com</span>
+</a>
+<a class="flex items-center gap-2 font-label-md text-label-md text-primary hover:underline" href="mailto:compliance@bookil.com">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>compliance@bookil.com</span>
+</a>
+<div class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-tertiary">chat</span>
+<span>Hotline Whatsapp Khusus Legal: +62 812-8800-2026</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Acceptance Banner -->
+<div class="p-6 rounded-2xl bg-gradient-to-r from-primary-container to-secondary text-on-primary shadow-md flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="space-y-1 text-center sm:text-left">
+<h3 class="font-headline-sm text-headline-sm font-bold">Membutuhkan Ringkasan Legalitas Bisnis?</h3>
+<p class="font-body-sm text-body-sm opacity-90">
+              Dokumen ini disahkan secara digital untuk memenuhi verifikasi onboarding mitra Midtrans Production.
+            </p>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0">
+<button class="px-5 py-2.5 rounded-lg bg-surface-container-lowest text-primary font-label-md text-label-md font-bold hover:bg-surface-container transition-colors shadow-sm" onclick="window.print()">
+              Cetak Dokumen Lengkap
+            </button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</div>
+<script>
+  // Simple active anchor observer for Table of Contents
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('#toc-sidebar a');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 180;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('bg-surface-container', 'text-primary', 'font-semibold');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('bg-surface-container', 'text-primary', 'font-semibold');
+        }
+      });
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-12 mt-auto"><div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6"><div class="flex flex-col items-center md:items-start gap-1"><span class="font-headline-sm text-headline-sm text-on-surface">Bookil</span><p class="font-body-sm text-body-sm text-on-surface-variant">Sanctuari membaca digital bebas hambatan dan terverifikasi.</p></div><div class="flex flex-wrap items-center justify-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-[16px] text-tertiary">lock_open_right</span><span>Zero-DRM Certified</span></div><div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-[16px] text-primary">verified_user</span><span>Midtrans Certified</span></div></div><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="ketentuan-layanan" href="#">Ketentuan Layanan</a><a class="hover:text-on-surface transition-colors" data-path="kebijakan-privasi" href="#">Kebijakan Privasi</a></div></div><div class="max-w-7xl mx-auto px-6 lg:px-12 pt-6 text-center text-on-surface-variant font-caption text-caption">© 2025 Bookil Inc. Hak cipta dilindungi.</div></footer></body></html>

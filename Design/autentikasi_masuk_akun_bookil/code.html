@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_blank" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#faf8ff", "on-secondary-fixed": "#07006c", "secondary-container": "#6063ee", "error": "#ba1a1a", "surface-container-low": "#f2f3ff", "on-tertiary-fixed": "#002113", "primary-container": "#4f46e5", "inverse-on-surface": "#eef0ff", "surface-container-highest": "#dae2fd", "surface-bright": "#faf8ff", "primary-fixed-dim": "#c3c0ff", "surface-container-high": "#e2e7ff", "on-primary-container": "#dad7ff", "secondary": "#4648d4", "on-secondary-fixed-variant": "#2f2ebe", "on-primary-fixed": "#0f0069", "outline": "#777587", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "inverse-surface": "#283044", "on-tertiary-container": "#67f4b7", "primary-fixed": "#e2dfff", "tertiary-container": "#006e4b", "surface-tint": "#4d44e3", "on-secondary-container": "#fffbff", "primary": "#3525cd", "tertiary-fixed-dim": "#4edea3", "on-surface-variant": "#464555", "surface-variant": "#dae2fd", "on-secondary": "#ffffff", "surface": "#faf8ff", "inverse-primary": "#c3c0ff", "on-primary-fixed-variant": "#3323cc", "secondary-fixed": "#e1e0ff", "tertiary-fixed": "#6ffbbe", "surface-dim": "#d2d9f4", "secondary-fixed-dim": "#c0c1ff", "surface-container-lowest": "#ffffff", "on-surface": "#131b2e", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#005236", "tertiary": "#005338", "surface-container": "#eaedff", "on-background": "#131b2e", "outline-variant": "#c7c4d8", "on-primary": "#ffffff", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "gutter": "1.5rem", "space-md": "1rem", "margin": "3rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "caption": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["14px", { "lineHeight": "22.4px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-md": ["16px", { "lineHeight": "25.6px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28.8px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen"><main class="w-full bg-background"><div class="flex flex-col w-full">
+<div class="min-h-screen w-full flex flex-col lg:flex-row bg-surface">
+<!-- LEFT SHOWCASE PANEL (45% on desktop) -->
+<div class="relative w-full lg:w-[45%] bg-gradient-to-br from-[#241f69] via-[#1a144e] to-[#0c0a27] text-on-primary flex flex-col justify-between p-8 lg:p-14 overflow-hidden">
+<!-- Ambient Glow and Mesh Patterns -->
+<div class="absolute -top-24 -left-24 w-96 h-96 bg-primary-container/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute bottom-10 right-0 w-80 h-80 bg-secondary-container/20 rounded-full blur-2xl pointer-events-none"></div>
+<svg class="absolute inset-0 w-full h-full opacity-10 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="48" id="grid-auth" patternunits="userSpaceOnUse" width="48">
+<path d="M 48 0 L 0 0 0 48" fill="none" stroke="currentColor" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid-auth)" height="100%" width="100%"></rect>
+</svg>
+<!-- Panel Header: Logo & Back Link -->
+<div class="relative z-10 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-container flex items-center justify-center shadow-lg shadow-primary-container/40">
+<span class="material-symbols-outlined text-on-primary text-2xl">menu_book</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-headline-md tracking-tight font-bold text-white">Bookil<span class="text-primary-fixed-dim">.</span></span>
+<span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-full text-caption font-caption bg-white/10 backdrop-blur-md text-primary-fixed-dim">
+              Platform v1.2
+            </span>
+</div>
+</div>
+<a class="group flex items-center gap-1.5 text-body-sm font-label-md text-slate-300 hover:text-white transition-colors duration-150" href="#katalog">
+<span class="material-symbols-outlined text-sm group-hover:-translate-x-1 transition-transform">arrow_back</span>
+<span class="hidden sm:inline">Katalog Publik</span>
+</a>
+</div>
+<!-- Panel Center: Value Proposition & Social Proof -->
+<div class="relative z-10 my-10 lg:my-0 flex flex-col gap-8 max-w-xl">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-caption font-label-sm text-secondary-fixed">
+<span class="material-symbols-outlined text-xs text-tertiary-fixed-dim">verified_user</span>
+            Arsitektur Zero-DRM &amp; Aset Seumur Hidup
+          </div>
+<h1 class="font-display-hero text-headline-xl lg:text-display-hero font-bold tracking-tight text-white leading-tight">
+            Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.
+          </h1>
+<p class="font-body-lg text-body-lg text-slate-300 leading-relaxed">
+            Akses instan berkas privat zero-DRM, pembaruan lisensi seumur hidup, dan presigned download URL berkecepatan tinggi tanpa friksi.
+          </p>
+</div>
+<!-- Translucent Customer Testimonial Card -->
+<div class="backdrop-blur-md bg-white/10 rounded-2xl p-6 shadow-2xl space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex text-amber-400 gap-0.5">
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-caption font-caption text-slate-400">Pembeli Terverifikasi</span>
+</div>
+<blockquote class="font-body-md text-body-md text-slate-200 italic leading-snug">
+            “Bookil mengubah cara tim engineering kami mengakses literatur teknis mendalam tanpa repot DRM kaku. Ekosistem pembelian langsung dan unduhan presigned-nya luar biasa andal.”
+          </blockquote>
+<div class="flex items-center gap-3 pt-2">
+<img class="w-11 h-11 rounded-full object-cover shadow-md" data-alt="Portrait of an Indonesian professional tech lead wearing modern glasses and a navy sweater in a bright architectural office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL7I1ThylvHhM0CJQ0KNVfzcp19o7GZClClD70ku0NuRZOePM0dgZO4DbSCPtXEw6GT743etoEa8vaVprGcDXEo28G8Oty7SxFcwXj-uH_dbwblezfYknkjn9KfYT-ghUQP9YKjmlWXZVSVh9Uye657rCfTqq4tB0Imb0hc4g-vk_drA4tVdo5F5VudkNWIr75bQSeKrwi_Fgt_cwElUFPVX-R2o9Pn_eZ0rYSbT_S"/>
+<div class="min-w-0">
+<h2 class="font-label-md text-label-md font-bold text-white truncate">Hendra Wijaya</h2>
+<p class="font-caption text-caption text-slate-400 truncate">Principal Architect di TechCorp ID</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Panel Footer: Trust Indicators -->
+<div class="relative z-10 pt-4 flex flex-wrap items-center justify-between gap-4 text-slate-400 text-caption font-caption">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-base text-tertiary-fixed-dim">enhanced_encryption</span>
+<span>256-Bit SSL Encryption &amp; Zero-Trust Token</span>
+</div>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5">
+<span class="material-symbols-outlined text-sm text-tertiary-fixed-dim">check_circle</span>
+<span class="text-slate-300 font-label-sm">Midtrans Verified Gateway</span>
+</div>
+</div>
+</div>
+<!-- RIGHT FORM CONTAINER (55% on desktop) -->
+<div class="w-full lg:w-[55%] flex items-center justify-center p-6 sm:p-10 lg:p-16 bg-surface">
+<div class="w-full max-w-md flex flex-col gap-6">
+<!-- Header Section -->
+<div class="flex flex-col gap-2">
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight" id="form-heading">
+            Masuk ke Akun Anda
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant" id="form-subheading">
+            Lanjutkan akses rak buku digital dan riwayat lisensi Anda.
+          </p>
+</div>
+<!-- Interactive Tab Switcher -->
+<div class="bg-surface-container-low p-1 rounded-xl flex items-center shadow-inner">
+<button class="flex-1 py-2 text-center rounded-lg font-label-md text-label-md font-semibold transition-all duration-200 bg-surface text-primary shadow-sm" id="tab-login" type="button">
+            Masuk (Login)
+          </button>
+<button class="flex-1 py-2 text-center rounded-lg font-label-md text-label-md font-medium text-on-surface-variant hover:text-on-surface transition-all duration-200" id="tab-register" type="button">
+            Daftar Akun Baru
+          </button>
+</div>
+<!-- Google SSO Action -->
+<button class="w-full h-11 px-4 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-semibold shadow-sm hover:bg-surface-container-low flex items-center justify-center gap-3 transition-all duration-150" type="button">
+<svg class="w-5 h-5" viewbox="0 0 24 24">
+<path d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.5 1 3.7 3.6 1.9 7.3l3.7 2.9C6.5 7.2 9 5 12 5z" fill="#EA4335"></path>
+<path d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.7l3.7 2.9c2.2-2 3.7-5 3.7-8.8z" fill="#4285F4"></path>
+<path d="M5.6 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.9 7.3C.7 9.7 0 12.3 0 15.2c0 2.8.7 5.5 1.9 7.9l3.7-3.3z" fill="#FBBC05"></path>
+<path d="M12 23.5c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3 0-5.5-2.2-6.4-5.2L1.9 16.5C3.7 20.4 7.5 23.5 12 23.5z" fill="#34A853"></path>
+</svg>
+<span>Lanjutkan dengan Google</span>
+</button>
+<!-- Divider -->
+<div class="relative flex items-center justify-center my-1">
+<div class="w-full h-[1px] bg-surface-container-highest"></div>
+<span class="absolute px-3 bg-surface text-caption font-caption uppercase tracking-wider text-on-surface-variant">atau masuk dengan email</span>
+</div>
+<!-- Accessible Validation Alert Banner -->
+<div class="p-3.5 rounded-xl bg-error-container text-on-error-container flex items-start gap-3 shadow-sm" id="auth-alert">
+<span class="material-symbols-outlined text-lg text-error mt-0.5">error</span>
+<div class="flex-1 text-label-sm font-label-sm">
+<p class="font-bold">Gagal Mengotentikasi</p>
+<p class="font-normal opacity-90">Kredensial yang diberikan tidak cocok dengan data kami. Silakan cek kembali email &amp; kata sandi.</p>
+</div>
+<button class="text-error hover:opacity-75" onclick="document.getElementById('auth-alert').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<!-- Dynamic Form -->
+<form class="flex flex-col gap-4" id="auth-form" onsubmit="event.preventDefault(); simulateAuth();">
+<!-- Extra Field for Register Mode (Name) -->
+<div class="hidden flex-col gap-1.5" id="name-field-group">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between" for="fullname">
+<span>Nama Lengkap <span class="text-error">*</span></span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant pointer-events-none text-xl">badge</span>
+<input class="w-full h-11 pl-10 pr-4 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-outline" id="fullname" placeholder="Contoh: Budi Pratama" type="text"/>
+</div>
+</div>
+<!-- Email Input -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-md text-label-md font-semibold text-on-surface flex items-center justify-between" for="email">
+<span>Alamat Email <span class="text-error">*</span></span>
+<span class="text-caption font-caption text-tertiary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">verified</span> Valid Format
+              </span>
+</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant pointer-events-none text-xl">mail</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-outline" id="email" placeholder="nama@domain.com" required="" type="email" value="customer@bookil.com"/>
+<span class="material-symbols-outlined absolute right-3 text-tertiary text-lg">check_circle</span>
+</div>
+</div>
+<!-- Password Input -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-label-md text-label-md font-semibold text-on-surface" for="password">
+                Kata Sandi <span class="text-error">*</span>
+</label>
+<a class="font-label-sm text-label-sm font-semibold text-primary hover:underline" href="#lupa-sandi" id="forgot-link">
+                Lupa Kata Sandi?
+              </a>
+</div>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant pointer-events-none text-xl">lock</span>
+<input class="w-full h-11 pl-10 pr-10 rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-outline" id="password" placeholder="Minimal 8 karakter" required="" type="password" value="SuperSecure123!"/>
+<button class="absolute right-3 text-on-surface-variant hover:text-on-surface p-1" id="toggle-password" onclick="togglePasswordVisibility()" type="button">
+<span class="material-symbols-outlined text-xl" id="eye-icon">visibility</span>
+</button>
+</div>
+<!-- Password Strength Indicator (Interactive Demo) -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="flex items-center justify-between text-caption font-caption">
+<span class="text-on-surface-variant">Kekuatan Sandi:</span>
+<span class="font-semibold text-tertiary" id="strength-label">Sangat Kuat (12+ Karakter)</span>
+</div>
+<div class="grid grid-cols-4 gap-1.5 h-1.5 w-full">
+<div class="rounded-full bg-tertiary"></div>
+<div class="rounded-full bg-tertiary"></div>
+<div class="rounded-full bg-tertiary"></div>
+<div class="rounded-full bg-tertiary"></div>
+</div>
+</div>
+</div>
+<!-- Remember Me & Terms Checkbox -->
+<div class="flex items-center justify-between pt-1">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded bg-surface-container text-primary accent-primary focus:ring-primary cursor-pointer" type="checkbox"/>
+<span class="font-label-md text-label-md text-on-surface">Ingat saya selama 30 hari</span>
+</label>
+</div>
+<!-- Primary CTA Button with Loading State -->
+<button class="relative mt-2 w-full h-12 rounded-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-bold shadow-md shadow-primary/20 flex items-center justify-center gap-2 transition-all duration-150" id="submit-button" type="submit">
+<span class="flex items-center gap-2" id="button-label">
+<span class="material-symbols-outlined text-lg">local_library</span>
+<span>Masuk ke Rak Buku Digital</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</span>
+<div class="hidden items-center gap-2" id="button-spinner">
+<svg class="animate-spin h-5 w-5 text-white" fill="none" viewbox="0 0 24 24">
+<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+<path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path>
+</svg>
+<span>Mengautentikasi...</span>
+</div>
+</button>
+</form>
+<!-- Terms Footer Note -->
+<p class="text-caption font-caption text-center text-on-surface-variant leading-relaxed">
+          Dengan melanjutkan, Anda menyetujui <a class="text-primary underline" href="#syarat">Ketentuan Layanan</a> serta <a class="text-primary underline" href="#privasi">Kebijakan Privasi</a> lisensi Buku Digital Bookil.
+        </p>
+<!-- Quick Demo Account Seeder Bar -->
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-caption font-label-sm font-semibold text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">terminal</span>
+              Akun Pengujian Demo (Klik Cepat):
+            </span>
+<span class="text-[10px] text-tertiary uppercase font-bold tracking-wider">Tersedia</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex-1 py-1.5 px-2 rounded bg-surface text-caption font-caption font-medium text-on-surface hover:bg-surface-container-high transition-colors text-center shadow-xs" onclick="fillCredential('customer@bookil.com')" type="button">
+              Customer: <span class="text-primary font-semibold">customer@bookil.com</span>
+</button>
+<button class="flex-1 py-1.5 px-2 rounded bg-surface text-caption font-caption font-medium text-on-surface hover:bg-surface-container-high transition-colors text-center shadow-xs" onclick="fillCredential('admin@bookil.com')" type="button">
+              Admin: <span class="text-primary font-semibold">admin@bookil.com</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let isRegisterMode = false;
+
+  const tabLogin = document.getElementById('tab-login');
+  const tabRegister = document.getElementById('tab-register');
+  const formHeading = document.getElementById('form-heading');
+  const formSubheading = document.getElementById('form-subheading');
+  const nameFieldGroup = document.getElementById('name-field-group');
+  const forgotLink = document.getElementById('forgot-link');
+  const buttonLabel = document.getElementById('button-label');
+
+  function setMode(register) {
+    isRegisterMode = register;
+    if (register) {
+      tabRegister.classList.add('bg-surface', 'text-primary', 'shadow-sm', 'font-semibold');
+      tabRegister.classList.remove('text-on-surface-variant', 'font-medium');
+      
+      tabLogin.classList.remove('bg-surface', 'text-primary', 'shadow-sm', 'font-semibold');
+      tabLogin.classList.add('text-on-surface-variant', 'font-medium');
+
+      formHeading.textContent = 'Daftar Akun Baru';
+      formSubheading.textContent = 'Mulai bangun perpustakaan digital zero-DRM Anda hari ini.';
+      nameFieldGroup.classList.remove('hidden');
+      nameFieldGroup.classList.add('flex');
+      forgotLink.classList.add('hidden');
+      buttonLabel.innerHTML = `
+        <span class="material-symbols-outlined text-lg">person_add</span>
+        <span>Buat Akun Bookil Gratis</span>
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      `;
+    } else {
+      tabLogin.classList.add('bg-surface', 'text-primary', 'shadow-sm', 'font-semibold');
+      tabLogin.classList.remove('text-on-surface-variant', 'font-medium');
+      
+      tabRegister.classList.remove('bg-surface', 'text-primary', 'shadow-sm', 'font-semibold');
+      tabRegister.classList.add('text-on-surface-variant', 'font-medium');
+
+      formHeading.textContent = 'Masuk ke Akun Anda';
+      formSubheading.textContent = 'Lanjutkan akses rak buku digital dan riwayat lisensi Anda.';
+      nameFieldGroup.classList.add('hidden');
+      nameFieldGroup.classList.remove('flex');
+      forgotLink.classList.remove('hidden');
+      buttonLabel.innerHTML = `
+        <span class="material-symbols-outlined text-lg">local_library</span>
+        <span>Masuk ke Rak Buku Digital</span>
+        <span class="material-symbols-outlined text-base">arrow_forward</span>
+      `;
+    }
+  }
+
+  tabLogin.addEventListener('click', () => setMode(false));
+  tabRegister.addEventListener('click', () => setMode(true));
+
+  function togglePasswordVisibility() {
+    const passwordInput = document.getElementById('password');
+    const eyeIcon = document.getElementById('eye-icon');
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      eyeIcon.textContent = 'visibility_off';
+    } else {
+      passwordInput.type = 'password';
+      eyeIcon.textContent = 'visibility';
+    }
+  }
+
+  function fillCredential(emailValue) {
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    emailInput.value = emailValue;
+    passwordInput.value = 'BookilSecret2025!';
+    
+    // Quick highlight animation
+    emailInput.classList.add('ring-2', 'ring-primary');
+    setTimeout(() => {
+      emailInput.classList.remove('ring-2', 'ring-primary');
+    }, 600);
+  }
+
+  function simulateAuth() {
+    const btn = document.getElementById('submit-button');
+    const label = document.getElementById('button-label');
+    const spinner = document.getElementById('button-spinner');
+    
+    label.classList.add('hidden');
+    spinner.classList.remove('hidden');
+    spinner.classList.add('flex');
+    btn.disabled = true;
+
+    setTimeout(() => {
+      spinner.classList.add('hidden');
+      spinner.classList.remove('flex');
+      label.classList.remove('hidden');
+      btn.disabled = false;
+      
+      // Toggle demo alert notification
+      const alertBox = document.getElementById('auth-alert');
+      alertBox.classList.remove('hidden');
+    }, 1200);
+  }
+</script></main></body></html>

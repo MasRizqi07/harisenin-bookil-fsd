@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#faf8ff", "on-secondary-fixed": "#07006c", "secondary-container": "#6063ee", "error": "#ba1a1a", "surface-container-low": "#f2f3ff", "on-tertiary-fixed": "#002113", "primary-container": "#4f46e5", "inverse-on-surface": "#eef0ff", "surface-container-highest": "#dae2fd", "surface-bright": "#faf8ff", "primary-fixed-dim": "#c3c0ff", "surface-container-high": "#e2e7ff", "on-primary-container": "#dad7ff", "secondary": "#4648d4", "on-secondary-fixed-variant": "#2f2ebe", "on-primary-fixed": "#0f0069", "outline": "#777587", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "inverse-surface": "#283044", "on-tertiary-container": "#67f4b7", "primary-fixed": "#e2dfff", "tertiary-container": "#006e4b", "surface-tint": "#4d44e3", "on-secondary-container": "#fffbff", "primary": "#3525cd", "tertiary-fixed-dim": "#4edea3", "on-surface-variant": "#464555", "surface-variant": "#dae2fd", "on-secondary": "#ffffff", "surface": "#faf8ff", "inverse-primary": "#c3c0ff", "on-primary-fixed-variant": "#3323cc", "secondary-fixed": "#e1e0ff", "tertiary-fixed": "#6ffbbe", "surface-dim": "#d2d9f4", "secondary-fixed-dim": "#c0c1ff", "surface-container-lowest": "#ffffff", "on-surface": "#131b2e", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#005236", "tertiary": "#005338", "surface-container": "#eaedff", "on-background": "#131b2e", "outline-variant": "#c7c4d8", "on-primary": "#ffffff", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "gutter": "1.5rem", "space-md": "1rem", "margin": "3rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "caption": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["14px", { "lineHeight": "22.4px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-md": ["16px", { "lineHeight": "25.6px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28.8px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-40 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="katalog" href="#"><img alt="Brand logo. - Primary color: #4f46e5
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwu9JkXSvWd5mgVl2y7F4viuOfvT63PZDyikUFEqkO3NKcgm0oaw5HGvXaxBH66dsoepjWZUbAozR2tDdV7OW8XS7GnCX8RszpnohOMCgTFzbl0pnBC4azZSSe5quXSP53r6o5njcoFlKCEMEpFymTSu9_WaYANnEMCRHq-8VSZlimeKbKBIDrShD55WyC_EQ2rO5z5L4_mCSn79pm6Hx9mMUqQwyDEyXBkV-sKxAF"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Bookil</span></a><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="katalog" href="#">Katalog</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="perpustakaan-saya" href="#">Perpustakaan Saya</a><a aria-current="page" class="transition-colors text-primary font-semibold" data-path="bantuan" href="#">Bantuan</a></nav></div><div class="flex items-center gap-space-md"><button class="hidden sm:flex items-center justify-between gap-space-sm w-48 h-10 px-space-sm bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] text-on-surface-variant hover:text-on-surface transition-all focus:outline-none focus:ring-2 focus:ring-primary/20" id="search-spotlight-btn" type="button"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-sm text-label-sm text-on-surface-variant">Cari buku...</span></div><kbd class="px-1.5 py-0.5 bg-surface-container rounded text-[10px] font-semibold text-on-surface-variant">⌘K</kbd></button><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs p-1 rounded-full hover:bg-surface-container-high transition-colors" data-path="profile" href="#"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkdsMKzbGfSlz_suHfemMAS2xozSDRHcjXjoHG0DjqZ9YQ1_kJUn9U17dNtvaX10hwuQ-MNTtgBQh0vgWgPQu6aJVtY_4MrFXWlIL-o2I4FoB_g9JNpguwih0rTa6ZneU2TDAzU6jtIfI39WkKFrYi7fxo1iLyAZCIbGrg3VXCdn6RBAyodDGyQiNujraNwsPfZZV_bD0Ev8ADH_yn9Vaymxff9qQfIlKF3hkKjpYk"/><span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-primary rounded-full flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[10px]">verified</span></span></div><span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_drop_down</span></a></div></div></div></header><main class="w-full pt-16 bg-background flex-1 relative"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[700px] h-[340px] bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Main Container -->
+<div class="max-w-7xl mx-auto px-6 lg:px-12 pt-8 pb-20 flex flex-col gap-12 relative z-10">
+<!-- Breadcrumbs & Header Hero -->
+<section class="flex flex-col items-center text-center max-w-3xl mx-auto pt-4">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 text-on-surface-variant font-caption text-caption uppercase tracking-wider mb-6">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">home</span>
+            Beranda
+          </a>
+<span>/</span>
+<span class="text-on-surface font-semibold">Pusat Bantuan &amp; Pertanyaan Umum</span>
+</nav>
+<!-- Dynamic Header Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm mb-4 shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">support_agent</span>
+<span>Bantuan Mandiri 24/7 &amp; Layanan Terintegrasi</span>
+</div>
+<!-- Headline & Subtitle -->
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-bold tracking-tight mb-4">
+          Pusat Bantuan &amp; Tanya Jawab Mandiri
+        </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed mb-8">
+          Temukan solusi instan seputar aktivasi lisensi, metode pembayaran Midtrans, pengelolaan kuota unduhan, dan perlindungan aset digital Anda.
+        </p>
+<!-- Central Interactive Search Bar -->
+<div class="w-full max-w-2xl relative mb-4">
+<div class="relative flex items-center bg-surface-container-lowest rounded-xl shadow-md p-2 transition-all focus-within:shadow-xl focus-within:ring-2 focus-within:ring-primary/20">
+<span class="material-symbols-outlined text-outline ml-3 text-[22px]">search</span>
+<input class="w-full bg-transparent px-3 py-2 text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none" id="faq-search-input" placeholder="Cari topik, kode kesalahan, atau kata kunci..." type="text"/>
+<button aria-label="Bersihkan pencarian" class="hidden text-outline hover:text-on-surface p-1.5 rounded-lg hover:bg-surface-container transition-colors mr-1" id="faq-clear-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+<div class="hidden sm:flex items-center gap-1 mr-2 px-2 py-1 bg-surface-container-low rounded font-caption text-caption text-outline">
+<span class="font-mono">ESC</span>
+</div>
+</div>
+</div>
+<!-- Suggestion Pills -->
+<div class="flex flex-wrap items-center justify-center gap-2">
+<span class="font-caption text-caption text-on-surface-variant mr-1">Paling dicari:</span>
+<button class="quick-pill px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm hover:shadow hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-all" data-query="Cara Bayar QRIS" type="button">
+            Cara Bayar QRIS
+          </button>
+<button class="quick-pill px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm hover:shadow hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-all" data-query="Tambah Kuota Unduh" type="button">
+            Tambah Kuota Unduh
+          </button>
+<button class="quick-pill px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm hover:shadow hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-all" data-query="Format EPUB di iPad" type="button">
+            Format EPUB di iPad
+          </button>
+<button class="quick-pill px-3 py-1.5 rounded-full bg-surface-container-lowest shadow-sm hover:shadow hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-all" data-query="Klaim Faktur Pajak" type="button">
+            Klaim Faktur Pajak
+          </button>
+</div>
+</section>
+<!-- Quick Navigation Topic Cards (4 Grid) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<a class="group flex flex-col p-6 bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" href="#kategori-pembayaran">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">account_balance_wallet</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2 group-hover:text-primary transition-colors">
+            Pembayaran &amp; Midtrans
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-1">
+            Panduan Virtual Account, QRIS Dinamis, penyelesaian pesanan otomatis, dan verifikasi webhook real-time.
+          </p>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span>Lihat Topik</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group flex flex-col p-6 bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" href="#kategori-unduhan">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-tertiary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">cloud_download</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2 group-hover:text-primary transition-colors">
+            Unduhan &amp; Kuota
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-1">
+            Tata cara pengelolaan batas 5x kuota unduh, tautan presigned S3 15 menit, dan pembacaan offline.
+          </p>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span>Lihat Topik</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="group flex flex-col p-6 bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" href="#kategori-perangkat">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-secondary mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">devices</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2 group-hover:text-primary transition-colors">
+            Perangkat &amp; Format
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-1">
+            Petunjuk sinkronisasi e-book di Kindle Paperwhite, Apple Books iOS, Kobo eReader, serta aplikasi Android.
+          </p>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span>Lihat Topik</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="group flex flex-col p-6 bg-surface-container-lowest rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300" href="#kategori-lisensi">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface mb-4 group-hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-[26px]">verified_user</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-2 group-hover:text-primary transition-colors">
+            Lisensi &amp; Keamanan
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 flex-1">
+            Standar transparansi Zero-DRM, hak kepemilikan personal abadi, dan mekanisme watermark kriptografis.
+          </p>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold">
+<span>Lihat Topik</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</a>
+</section>
+<!-- Categorized Interactive Accordion FAQ Section -->
+<section class="flex flex-col gap-10">
+<!-- Category A: Pembelian & Pembayaran -->
+<div class="flex flex-col gap-4 scroll-mt-24" id="kategori-pembayaran">
+<div class="flex items-center gap-3 pb-2">
+<span class="material-symbols-outlined text-primary text-[28px]">payments</span>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Pembelian &amp; Pembayaran</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Transaksi instan dan terenkripsi menggunakan Midtrans Payment Engine</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<!-- FAQ Item 1 (Default Expanded) -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl shadow-sm transition-all overflow-hidden" data-keywords="qris virtual account bca mandiri bni bri biaya gratis instan">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Bagaimana cara membayar via QRIS Dinamis dan Virtual Account?
+                </span>
+<span class="faq-icon material-symbols-outlined text-outline text-[24px] transition-transform duration-300 rotate-180">expand_more</span>
+</button>
+<div class="faq-content px-6 pb-6 pt-0 block">
+<div class="pt-2 text-on-surface-variant font-body-md text-body-md flex flex-col gap-4">
+<p>
+                    Setiap transaksi di Bookil didukung oleh gateway resmi Midtrans dengan verifikasi otomatis kurang dari 3 detik tanpa biaya transaksi tambahan.
+                  </p>
+<!-- Step List -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-bold">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-caption text-caption">1</span>
+<span>Pilih Metode</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pilih QRIS (GoPay, OVO, Dana, ShopeePay, BCA QR) atau nomor Virtual Account bank pilihan Anda saat checkout.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-bold">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-caption text-caption">2</span>
+<span>Pindai atau Salin</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pindai kode QRIS dinamis langsung dari layar atau salin 16 digit Virtual Account ke aplikasi m-Banking Anda.</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md font-bold">
+<span class="w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center font-caption text-caption">3</span>
+<span>Akses Instan</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sistem mengonfirmasi settlement dalam hitungan detik. Hak unduh e-book segera aktif di halaman Perpustakaan Saya.</p>
+</div>
+</div>
+<!-- Visual Badges Container -->
+<div class="flex flex-wrap items-center gap-3 pt-2">
+<span class="px-3 py-1 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant font-medium">BCA VA</span>
+<span class="px-3 py-1 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant font-medium">Mandiri Livin</span>
+<span class="px-3 py-1 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant font-medium">BRImo</span>
+<span class="px-3 py-1 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant font-medium">BNI Mobile</span>
+<span class="px-3 py-1 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant font-medium">QRIS Standar BI</span>
+<span class="text-tertiary flex items-center gap-1 font-label-sm text-label-sm font-semibold ml-auto">
+<span class="material-symbols-outlined text-[16px]">bolt</span>
+                      Settlement Real-time &lt; 3 Detik
+                    </span>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl shadow-sm transition-all overflow-hidden" data-keywords="batas waktu pending 24 jam kedaluwarsa pesanan batal">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Berapa lama batas waktu pembayaran sebelum pesanan kedaluwarsa?
+                </span>
+<span class="faq-icon material-symbols-outlined text-outline text-[24px] transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content px-6 pb-6 pt-0 hidden">
+<div class="pt-2 text-on-surface-variant font-body-md text-body-md flex flex-col gap-3">
+<p>
+                    Semua pesanan e-book memiliki jendela pelunasan selama <strong class="text-on-surface">24 jam penuh</strong> sejak faktur diterbitkan. Nomor Virtual Account atau kode QRIS tetap valid selama jangka waktu tersebut.
+                  </p>
+<p class="font-body-sm text-body-sm">
+                    Jika melewati 24 jam tanpa pembayaran, pesanan akan dibatalkan otomatis oleh server guna menjaga integritas inventaris lisensi. Anda dapat membuat pesanan baru kapan saja tanpa penalti apa pun.
+                  </p>
+</div>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl shadow-sm transition-all overflow-hidden" data-keywords="bukti transfer manual konfirmasi webhook sha-512 otomatis kirim struk">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Apakah saya perlu mengunggah bukti transfer secara manual?
+                </span>
+<span class="faq-icon material-symbols-outlined text-outline text-[24px] transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content px-6 pb-6 pt-0 hidden">
+<div class="pt-2 text-on-surface-variant font-body-md text-body-md flex flex-col gap-3">
+<p>
+<strong class="text-tertiary">Tidak perlu sama sekali.</strong> Bookil beroperasi 100% otomatis. Saat Anda menyelesaikan pembayaran di bank atau dompet digital, Midtrans mengirimkan notifikasi server-to-server terenkripsi (Webhook SHA-512) ke sistem kami.
+                  </p>
+<p class="font-body-sm text-body-sm">
+                    Koleksi e-book Anda akan segera tersedia di menu <span class="text-primary font-medium">Perpustakaan Saya</span> seketika tanpa verifikasi manusia atau unggah struk manual.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Category B: Akses Berkas & Kuota Unduhan -->
+<div class="flex flex-col gap-4 scroll-mt-24" id="kategori-unduhan">
+<div class="flex items-center gap-3 pb-2">
+<span class="material-symbols-outlined text-tertiary text-[28px]">folder_zip</span>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Akses Berkas &amp; Kuota Unduhan</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manajemen pengunduhan berkas aman dengan arsitektur Zero-DRM Vault</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<!-- FAQ Item 1 -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl shadow-sm transition-all overflow-hidden" data-keywords="kuota habis 5x unduhan reset minta tambahan fair use">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Apa yang harus saya lakukan jika kuota 5x unduhan saya habis?
+                </span>
+<span class="faq-icon material-symbols-outlined text-outline text-[24px] transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content px-6 pb-6 pt-0 hidden">
+<div class="pt-2 text-on-surface-variant font-body-md text-body-md flex flex-col gap-4">
+<p>
+                    Batas 5x unduhan diterapkan sebagai langkah preventif pencegahan distribusi massal bot tak berizin. Kami memahami perangkat Anda bisa saja hilang, rusak, atau berganti baru.
+                  </p>
+<div class="p-4 rounded-xl bg-surface-container flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-[20px] mt-0.5">info</span>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md text-on-surface font-bold">Tombol Minta Tambahan Kuota</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Buka tab <strong class="text-on-surface">Perpustakaan Saya</strong>, klik pada judul buku yang kuotanya habis, lalu tekan tombol <strong class="text-primary">"Minta Reset Kuota"</strong>. Tim support kami akan mengaktifkan 5 kuota tambahan secara gratis dalam waktu maksimal 2 jam kerja.
+                      </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl shadow-sm transition-all overflow-hidden" data-keywords="ipad kindle kobo airdrop send to kindle apple books epub pdf baca">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Bagaimana cara memindahkan berkas EPUB/PDF ke perangkat iPad atau Kindle?
+                </span>
+<span class="faq-icon material-symbols-outlined text-outline text-[24px] transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content px-6 pb-6 pt-0 hidden">
+<div class="pt-2 text-on-surface-variant font-body-md text-body-md flex flex-col gap-4">
+<p>
+                    Semua berkas di Bookil hadir dalam format murni EPUB 3.2 dan PDF terindeks. Anda bebas membacanya tanpa instalasi aplikasi proprietary khusus.
+                  </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Apple / iOS -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-primary text-[20px]">tablet_mac</span>
+<span>iPad &amp; iPhone (Apple Books)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Unduh berkas .epub melalui browser Safari, lalu ketuk berkas dan pilih <em>"Open in Books"</em> atau bagikan via <em>AirDrop</em> dari Mac Anda. Berkas otomatis tersinkronisasi ke seluruh perangkat Apple Anda.
+                      </p>
+</div>
+<!-- Kindle -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-primary text-[20px]">menu_book</span>
+<span>Amazon Kindle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                        Gunakan fitur <em>Send to Kindle</em> melalui email perangkat Anda (<code>@kindle.com</code>) atau laman web <code>amazon.com/sendtokindle</code> dengan mengunggah berkas .epub. Format akan diubah otomatis oleh Amazon.
+                      </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl shadow-sm transition-all overflow-hidden" data-keywords="masa berlaku kedaluwarsa link 15 menit seumur hidup abadi">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Apakah file e-book di Bookil memiliki masa kedaluwarsa?
+                </span>
+<span class="faq-icon material-symbols-outlined text-outline text-[24px] transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content px-6 pb-6 pt-0 hidden">
+<div class="pt-2 text-on-surface-variant font-body-md text-body-md flex flex-col gap-3">
+<p>
+<strong class="text-on-surface">Kepemilikan lisensi bersifat seumur hidup (Lifetime Ownership).</strong> E-book yang telah Anda unduh dapat disimpan secara lokal di hard disk, flash disk, atau cloud storage pribadi Anda selamanya.
+                  </p>
+<p class="font-body-sm text-body-sm">
+                    Yang memiliki masa kedaluwarsa hanyalah <em>tautan unduh (Presigned URL)</em> berdurasi 15 menit yang di-generate dari server S3 kami untuk mencegah pencurian bandwidth. Jika tautan kedaluwarsa sebelum selesai, cukup klik ulang tombol "Unduh" di web untuk membuat tautan baru secara instan.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Category C: Lisensi & Kebijakan Privasi -->
+<div class="flex flex-col gap-4 scroll-mt-24" id="kategori-lisensi">
+<div class="flex items-center gap-3 pb-2">
+<span class="material-symbols-outlined text-secondary text-[28px]">policy</span>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Lisensi, Hak Cipta &amp; Kebijakan</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Prinsip etis Zero-DRM dan perlindungan hak intelektual penulis</p>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<!-- FAQ Item 1 -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl shadow-sm transition-all overflow-hidden" data-keywords="bagikan teman kantor publik copyright watermark email nama lisensi personal">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Apakah saya boleh membagikan file buku ini ke rekan kerja atau publik?
+                </span>
+<span class="faq-icon material-symbols-outlined text-outline text-[24px] transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content px-6 pb-6 pt-0 hidden">
+<div class="pt-2 text-on-surface-variant font-body-md text-body-md flex flex-col gap-3">
+<p>
+                    Pembelian buku di Bookil memberikan Anda <strong class="text-on-surface">Lisensi Penggunaan Personal</strong>. Anda berhak membaca di seluruh gawai pribadi Anda, namun dilarang keras mengunggah ke grup publik, torrent, atau forum terbuka.
+                  </p>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<span class="font-label-md text-label-md text-on-surface font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified</span>
+                      Watermark Kriptografi Dinamis
+                    </span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                      Setiap berkas disematkan watermark tak kasat mata di halaman pembuka dan metadata berkas berisi Nama Lengkap, Email terdaftar, serta Transaksi ID Anda untuk melacak pelanggaran hak cipta.
+                    </p>
+</div>
+</div>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item bg-surface-container-lowest rounded-2xl shadow-sm transition-all overflow-hidden" data-keywords="refund pengembalian dana rusak corrupt garansi 7 hari salah beli">
+<button class="faq-toggle w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none" type="button">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+                  Bagaimana prosedur pengembalian dana (refund) jika berkas corrupt?
+                </span>
+<span class="faq-icon material-symbols-outlined text-outline text-[24px] transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content px-6 pb-6 pt-0 hidden">
+<div class="pt-2 text-on-surface-variant font-body-md text-body-md flex flex-col gap-3">
+<p>
+                    Kami menyediakan <strong class="text-tertiary">Garansi Integritas Berkas 7 Hari</strong>. Jika berkas yang Anda unduh mengalami cacat rendering, bab hilang, atau kerusakan teknis yang tidak dapat diperbaiki oleh tim teknik kami dalam waktu 24 jam, dana akan dikembalikan utuh (100% full refund) melalui saldo rekening bank asal atau e-wallet Anda.
+                  </p>
+<p class="font-body-sm text-body-sm">
+                    Klaim dapat diajukan dengan menyertakan Order ID langsung melalui kanal WhatsApp CS atau surel resmi kami.
+                  </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Empty Search Fallback State (Hidden by default) -->
+<div class="hidden flex-col items-center justify-center p-12 bg-surface-container-lowest rounded-2xl text-center" id="faq-empty-state">
+<span class="material-symbols-outlined text-[48px] text-outline mb-3">search_off</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-1">Pertanyaan tidak ditemukan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mb-6">
+          Tidak ada hasil untuk pencarian kata kunci tersebut. Coba gunakan frasa lain atau hubungi tim bantuan secara langsung.
+        </p>
+<button class="px-5 py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-secondary transition-colors" id="faq-reset-search" type="button">
+          Reset Pencarian
+        </button>
+</div>
+<!-- "Masih Butuh Bantuan?" Live Contact & Support Card -->
+<section class="w-full relative mt-4">
+<!-- Visual Accent Border / Gradient Card Container -->
+<div class="p-[1px] rounded-3xl bg-gradient-to-r from-primary/30 via-secondary/20 to-tertiary/30 shadow-xl">
+<div class="bg-surface-container-lowest rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8">
+<!-- Left Info -->
+<div class="flex flex-col gap-3 text-center lg:text-left max-w-xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm w-fit mx-auto lg:mx-0">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span>Customer Support Aktif Hari Ini</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
+                Belum menemukan jawaban yang Anda cari?
+              </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Tim teknis dan support Bookil siap mendampingi Anda 7 hari seminggu (08.00 – 22.00 WIB) untuk memastikan pengalaman membaca Anda tanpa hambatan.
+              </p>
+</div>
+<!-- Right Action Channels -->
+<div class="flex flex-col sm:flex-row lg:flex-col gap-3 w-full sm:w-auto min-w-[280px]">
+<!-- Channel 1: WhatsApp Hotline -->
+<a class="flex items-center justify-between px-5 py-3.5 rounded-xl bg-tertiary text-on-tertiary hover:opacity-95 shadow-md hover:shadow-lg transition-all group" href="https://wa.me/6281234567890" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-bold leading-tight">WhatsApp Hotline</span>
+<span class="font-caption text-caption text-tertiary-fixed font-normal">Respon cepat &lt; 5 menit</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+<!-- Channel 2: Email Support -->
+<a class="flex items-center justify-between px-5 py-3.5 rounded-xl bg-surface-container-high text-on-surface hover:bg-surface-variant shadow-sm hover:shadow transition-all group" href="mailto:support@bookil.com">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">mail</span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-bold leading-tight">Email Support</span>
+<span class="font-caption text-caption text-on-surface-variant font-normal">support@bookil.com (Maks. 2 jam)</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+<!-- Channel 3: Telegram Community -->
+<a class="flex items-center justify-between px-5 py-3.5 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container shadow-sm hover:shadow transition-all group" href="https://t.me/bookil_readers" rel="noopener noreferrer" target="_blank">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[22px]">forum</span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-bold leading-tight">Komunitas Telegram</span>
+<span class="font-caption text-caption text-on-surface-variant font-normal">Diskusi 12.000+ pembaca</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer Security & Compliance Strip -->
+<section class="flex flex-wrap items-center justify-center gap-6 py-6 px-8 rounded-2xl bg-surface-container-low">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">enhanced_encryption</span>
+<span class="font-semibold text-on-surface">256-Bit SSL Encryption</span>
+<span class="hidden sm:inline text-outline">• Standar Keamanan Perbankan</span>
+</div>
+<div class="hidden md:block w-px h-4 bg-outline-variant"></div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-tertiary text-[20px]">verified</span>
+<span class="font-semibold text-on-surface">Midtrans Certified Gateway</span>
+<span class="hidden sm:inline text-outline">• ISO 27001 PCI DSS Level 1</span>
+</div>
+<div class="hidden md:block w-px h-4 bg-outline-variant"></div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-secondary text-[20px]">lock_open</span>
+<span class="font-semibold text-on-surface">Zero-DRM Guarantee</span>
+<span class="hidden sm:inline text-outline">• Berkas Bebas Kunci Vendor</span>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Interactive Client-side Script -->
+<script>
+  (function() {
+    const searchInput = document.getElementById('faq-search-input');
+    const clearBtn = document.getElementById('faq-clear-btn');
+    const faqItems = document.querySelectorAll('.faq-item');
+    const emptyState = document.getElementById('faq-empty-state');
+    const resetBtn = document.getElementById('faq-reset-search');
+    const quickPills = document.querySelectorAll('.quick-pill');
+
+    // Accordion Toggle Logic
+    faqItems.forEach(item => {
+      const toggle = item.querySelector('.faq-toggle');
+      const content = item.querySelector('.faq-content');
+      const icon = item.querySelector('.faq-icon');
+
+      toggle.addEventListener('click', () => {
+        const isHidden = content.classList.contains('hidden');
+        if (isHidden) {
+          content.classList.remove('hidden');
+          content.classList.add('block');
+          icon.classList.add('rotate-180');
+        } else {
+          content.classList.remove('block');
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-180');
+        }
+      });
+    });
+
+    // Real-time Search Filter Logic
+    function filterFaq(query) {
+      const normalizedQuery = query.toLowerCase().trim();
+      let visibleCount = 0;
+
+      if (normalizedQuery === '') {
+        clearBtn.classList.add('hidden');
+      } else {
+        clearBtn.classList.remove('hidden');
+      }
+
+      faqItems.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const keywords = item.getAttribute('data-keywords') || '';
+        const match = text.includes(normalizedQuery) || keywords.toLowerCase().includes(normalizedQuery);
+
+        if (match) {
+          item.classList.remove('hidden');
+          visibleCount++;
+          // auto expand matched items if search isn't empty
+          if (normalizedQuery.length > 2) {
+            const content = item.querySelector('.faq-content');
+            const icon = item.querySelector('.faq-icon');
+            content.classList.remove('hidden');
+            content.classList.add('block');
+            icon.classList.add('rotate-180');
+          }
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      // Show/Hide Empty State
+      if (visibleCount === 0) {
+        emptyState.classList.remove('hidden');
+        emptyState.classList.add('flex');
+      } else {
+        emptyState.classList.add('hidden');
+        emptyState.classList.remove('flex');
+      }
+    }
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        filterFaq(e.target.value);
+      });
+
+      // Keyboard shortcuts
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && document.activeElement === searchInput) {
+          searchInput.value = '';
+          filterFaq('');
+          searchInput.blur();
+        }
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        filterFaq('');
+        searchInput.focus();
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        filterFaq('');
+        searchInput.focus();
+      });
+    }
+
+    // Quick suggestion pills click handler
+    quickPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const query = pill.getAttribute('data-query');
+        if (searchInput && query) {
+          searchInput.value = query;
+          filterFaq(query);
+          searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+  })();
+</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-12 mt-auto"><div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6"><div class="flex flex-col items-center md:items-start gap-1"><span class="font-headline-sm text-headline-sm text-on-surface">Bookil</span><p class="font-body-sm text-body-sm text-on-surface-variant">Sanctuari membaca digital bebas hambatan dan terverifikasi.</p></div><div class="flex flex-wrap items-center justify-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-[16px] text-tertiary">lock_open_right</span><span>Zero-DRM Certified</span></div><div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-[16px] text-primary">verified_user</span><span>Midtrans Certified</span></div></div><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="ketentuan-layanan" href="#">Ketentuan Layanan</a><a class="hover:text-on-surface transition-colors" data-path="kebijakan-privasi" href="#">Kebijakan Privasi</a></div></div><div class="max-w-7xl mx-auto px-6 lg:px-12 pt-6 text-center text-on-surface-variant font-caption text-caption">© 2025 Bookil Inc. Hak cipta dilindungi.</div></footer></body></html>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"surface-container-lowest":"#ffffff","inverse-on-surface":"#eef0ff","primary-container":"#4f46e5","surface-container-low":"#f2f3ff","tertiary-fixed":"#6ffbbe","secondary-fixed":"#e1e0ff","on-surface-variant":"#464555","primary-fixed":"#e2dfff","surface-container-highest":"#dae2fd","on-primary-container":"#dad7ff","on-secondary-fixed":"#07006c","surface-container":"#eaedff","on-tertiary-fixed":"#002113","tertiary":"#005338","on-tertiary-container":"#67f4b7","primary":"#3525cd","surface-variant":"#dae2fd","on-tertiary-fixed-variant":"#005236","tertiary-fixed-dim":"#4edea3","error-container":"#ffdad6","on-background":"#131b2e","primary-fixed-dim":"#c3c0ff","error":"#ba1a1a","background":"#faf8ff","on-secondary":"#ffffff","on-tertiary":"#ffffff","inverse-surface":"#283044","on-error":"#ffffff","on-primary":"#ffffff","on-secondary-container":"#fffbff","surface":"#faf8ff","on-surface":"#131b2e","surface-tint":"#4d44e3","on-secondary-fixed-variant":"#2f2ebe","secondary-fixed-dim":"#c0c1ff","outline-variant":"#c7c4d8","surface-bright":"#faf8ff","on-primary-fixed-variant":"#3323cc","secondary":"#4648d4","on-error-container":"#93000a","secondary-container":"#6063ee","outline":"#777587","tertiary-container":"#006e4b","on-primary-fixed":"#0f0069","surface-container-high":"#e2e7ff","surface-dim":"#d2d9f4","inverse-primary":"#c3c0ff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","space-lg":"1.5rem","margin-mobile":"1.25rem","gutter-mobile":"1rem","space-sm":"0.5rem","space-md":"1rem","gutter":"1.5rem","space-xl":"2.5rem","margin":"3rem"},"fontFamily":{"body-md":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"caption":["Plus Jakarta Sans"],"display-hero":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"]},"fontSize":{"body-md":["16px",{"lineHeight":"25.6px","letterSpacing":"0em","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"500"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"22.4px","letterSpacing":"0em","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-xl-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28.8px","letterSpacing":"-0.01em","fontWeight":"400"}],"caption":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}],"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"700"}]}}}}</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-screen w-72 bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col justify-between overflow-hidden"><div class="flex flex-col"><div class="h-16 px-space-lg flex items-center justify-between bg-surface-container-lowest"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #4f46e5
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WeZre_MdxFRIxcyj4E4LWuiWGCeyi1y2y5ioyZSPuRqGcrkhcozQ-15BBw_V_0hYRoo7rWRI5l7X2oT7uTZrHEP5EZdMz4OD8ZCZeg2LgIoDdvdfSZsKzCY8lk12MahncTpj4EQbG1SiV4nFWx_qNWZChuyYGYfz1c39p5UvVQ4eTwagPIFhF_zgRAmlu5EE7-xGuHEkWX2SXosnnSQXvkD6q6M33uAu8y2bqY8J-IvU1hbGqNME4wSrWI"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Bookil</span></div><span class="px-space-sm py-0.5 bg-primary-fixed text-on-primary-fixed font-caption text-caption rounded-full uppercase tracking-wider font-semibold">Admin</span></div><div class="px-space-md py-space-sm"><p class="px-space-sm font-caption text-caption uppercase tracking-wider text-outline mb-space-xs font-semibold">Enterprise Portal</p><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-semibold shadow-sm"><a aria-current="page" class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg transition-colors bg-primary-container text-on-primary font-semibold shadow-sm" data-path="executive-dashboard" href="#"><span class="material-symbols-outlined text-[20px]">space_dashboard</span><span>Executive Dashboard</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="manajemen-katalog-&amp;-produk" href="#"><span class="material-symbols-outlined text-[20px]">auto_stories</span><span>Katalog &amp; Produk</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="taksonomi-kategori" href="#"><span class="material-symbols-outlined text-[20px]">account_tree</span><span>Taksonomi Kategori</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="audit-ledger-pesanan" href="#"><span class="material-symbols-outlined text-[20px]">receipt_long</span><span>Ledger Pesanan</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="laporan-finansial-&amp;-csv" href="#"><span class="material-symbols-outlined text-[20px]">monitoring</span><span>Laporan Finansial</span></a><a class="flex items-center gap-space-sm px-space-sm py-2 rounded-lg font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pengaturan-sistem-&amp;-midtrans" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span>Pengaturan &amp; Midtrans</span></a></nav></div></div><div class="p-space-md m-space-md bg-surface-container-low rounded-xl"><div class="flex items-center justify-between mb-space-sm"><span class="font-caption text-caption uppercase tracking-wider text-outline font-semibold">Health Metrics</span><span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed-dim opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span></span></div><div class="space-y-1.5 font-label-sm text-label-sm"><div class="flex items-center justify-between text-on-surface-variant"><span>Database Cluster</span><span class="font-semibold text-tertiary">99.98%</span></div><div class="flex items-center justify-between text-on-surface-variant"><span>Midtrans Webhook</span><span class="font-semibold text-tertiary">SHA-512 OK</span></div><div class="flex items-center justify-between text-on-surface-variant"><span>Private S3 Vault</span><span class="font-semibold text-tertiary">Synced</span></div></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 px-space-lg flex items-center justify-between"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs font-label-md text-label-md text-outline"><span class="material-symbols-outlined text-[18px]">home</span><span>/</span><span class="text-on-surface-variant">Admin Console</span><span>/</span><span class="text-primary font-semibold">Overview</span></div><div class="hidden md:flex items-center gap-space-sm px-space-md py-1.5 bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><span class="material-symbols-outlined text-outline text-[18px]">search</span><input class="bg-transparent outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline w-64" placeholder="Cmd+K to search orders, products..." readonly="" type="text"/><kbd class="font-caption text-caption px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">⌘K</kbd></div></div><div class="flex items-center gap-space-md"><div class="hidden sm:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest rounded-full shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><span class="h-2 w-2 rounded-full bg-tertiary"></span><span class="font-label-sm text-label-sm font-semibold text-on-surface-variant">Production Live</span></div><button aria-label="Notifications" class="relative p-2 text-on-surface-variant hover:text-on-surface rounded-lg hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-error"></span></button><div class="flex items-center gap-space-sm pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1XRknSUk5xEAaPs3Zq6JyAN022w7UYqOWWxwT42fzws6Kfl_G0foa601d9wJer6A8ItENwLtzWsMQPVGACYOes_BVvPlo2y_ow7AwIRMlfRgso_uzLks0vi0FlKmCc51PwLY4cQv9zzSONoM_TlFMs6dFmljZ6QlHfgSXnl7ZxbjZX9kex86TLhGZgIePQoIEzefaFz8xs3uqKxXwuq4Ayc2mat7uzam1baARWBf73M_mO3n5ZF-hR1QrAw"/><div class="hidden lg:flex flex-col text-left"><span class="font-label-md text-label-md font-semibold text-on-surface leading-tight">Admin User</span><span class="font-caption text-caption text-primary font-semibold">Administrator / Owner</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-lg py-space-md"><div class="flex flex-col w-full pb-space-xl">
+<!-- Command Header Bar -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md mb-space-lg">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">Executive Overview &amp; Sales Analytics</h1>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high">
+<span class="flex h-2 w-2 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed-dim opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-tertiary"></span>
+</span>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold uppercase tracking-wider">Real-time Sync</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Konsolidasi metrik perputaran transaksi digital, lisensi e-book, dan integrasi Midtrans Gateway.</p>
+</div>
+<!-- Actions & Filter Pills -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<!-- Period Selector -->
+<div class="inline-flex p-1 bg-surface-container-high rounded-xl">
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" type="button">7 Hari Terakhir</button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm bg-surface-container-lowest text-primary shadow-sm font-semibold transition-all" type="button">Bulan Ini</button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" type="button">Kuartal 3 2026</button>
+<button class="px-3 py-1.5 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all" type="button">Sepanjang Waktu</button>
+</div>
+<div class="flex items-center gap-2">
+<!-- Export CSV Button -->
+<button class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container hover:shadow transition-all group" id="btnExportCsv" type="button">
+<span class="material-symbols-outlined text-[19px] text-primary">table_view</span>
+<span>Ekspor CSV</span>
+<span class="font-caption text-caption px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant font-semibold">UTF-8 BOM</span>
+</button>
+<!-- Refresh Button -->
+<button class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-surface-container-lowest text-on-surface font-label-sm text-label-sm shadow-sm hover:bg-surface-container transition-all" id="btnRefresh" title="Perbarui data instan" type="button">
+<span class="material-symbols-outlined text-[18px] text-outline transition-transform duration-500" id="iconRefresh">refresh</span>
+<span class="hidden sm:inline text-on-surface-variant font-medium">Terakhir diperbarui: <strong class="text-on-surface font-semibold">Baru saja</strong></span>
+</button>
+</div>
+</div>
+</div>
+<!-- Executive KPI Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md mb-space-lg">
+<!-- Card 1: Gross Revenue -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-outline">Total Pendapatan Kotor</span>
+<div class="h-8 w-8 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Rp 148.920.000</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+            +18.4%
+          </span>
+<span class="font-caption text-caption text-outline">vs bulan lalu</span>
+</div>
+<div class="pt-2 flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>Rekonsiliasi bersih Midtrans</span>
+<span class="font-semibold text-tertiary">99.9% Akurat</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Paid Orders -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-outline">Total Pesanan Lunas</span>
+<div class="h-8 w-8 rounded-lg bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">788 Transaksi</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+            +12.6%
+          </span>
+<span class="font-caption text-caption text-outline">774 Settlement</span>
+</div>
+<!-- Micro-bar settlement rate -->
+<div class="space-y-1 pt-1">
+<div class="flex justify-between font-caption text-caption">
+<span class="text-on-surface-variant">Settlement Rate</span>
+<span class="font-semibold text-on-surface">98.2%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 98.2%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3: Checkout Conversion -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-outline">Konversi Checkout</span>
+<div class="h-8 w-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">insights</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">72.4%</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+            +4.1%
+          </span>
+<span class="font-caption text-caption text-outline">Target KPI &gt;= 68%</span>
+</div>
+<div class="pt-2 flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>Abandoned Cart: 27.6%</span>
+<span class="text-tertiary font-semibold flex items-center gap-0.5"><span class="material-symbols-outlined text-[12px]">check_circle</span> Sehat</span>
+</div>
+</div>
+</div>
+<!-- Card 4: Active Digital Catalog -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-space-md shadow-sm flex flex-col justify-between">
+<div class="flex items-start justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-outline">Katalog Digital Aktif</span>
+<div class="h-8 w-8 rounded-lg bg-surface-container flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[20px]">verified</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2 mb-1">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">12 Judul E-Book</span>
+</div>
+<div class="flex items-center gap-2 mb-2">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px] text-tertiary">lock_open_right</span>
+            100% Zero-DRM Verified
+          </span>
+</div>
+<div class="pt-2 flex items-center justify-between font-caption text-caption text-on-surface-variant">
+<span>Hak Cipta Pelanggaran</span>
+<span class="font-semibold text-tertiary">0 Kasus (Aman)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Mid Section Split: 60% Analytics Chart + 40% Top Products Leaderboard -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg mb-space-lg">
+<!-- Left 60%: Interactive SVG Area Chart -->
+<div class="lg:col-span-7 xl:col-span-7 bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">Tren Pendapatan &amp; Volume Transaksi</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Agregasi harian omzet kotor dan frekuensi order sukses 30 hari.</p>
+</div>
+<div class="inline-flex p-1 bg-surface-container-high rounded-xl">
+<button class="px-2.5 py-1 rounded-lg font-label-sm text-label-sm bg-surface-container-lowest text-primary shadow-sm font-semibold" type="button">Metrik: Omzet</button>
+<button class="px-2.5 py-1 rounded-lg font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" type="button">Unit Terjual</button>
+</div>
+</div>
+<!-- Legend and summary stats -->
+<div class="flex items-center gap-space-md mb-space-md flex-wrap">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface">
+<span class="h-2.5 w-2.5 rounded-full bg-primary"></span>
+<span>Gross Revenue (Rupiah)</span>
+</div>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="h-2.5 w-2.5 rounded-full bg-secondary-container"></span>
+<span>Volume Pesanan Selesai</span>
+</div>
+<div class="ml-auto text-right font-caption text-caption text-outline">
+            Puncak: <strong class="text-on-surface font-semibold">28 Feb (Rp 6,24 Juta)</strong>
+</div>
+</div>
+<!-- Chart Area Container -->
+<div class="relative w-full h-72 select-none">
+<!-- Interactive Tooltip Overlay -->
+<div class="absolute left-[78%] top-6 -translate-x-1/2 z-20 pointer-events-none transition-all duration-200">
+<div class="bg-inverse-surface text-inverse-on-surface px-3 py-2 rounded-xl shadow-xl flex flex-col gap-0.5">
+<span class="font-caption text-caption text-slate-300 font-medium">Jumat, 28 Feb 2026</span>
+<span class="font-label-md text-label-md font-bold text-tertiary-fixed">Rp 6.240.000</span>
+<span class="font-caption text-caption text-slate-200">33 pesanan berbayar</span>
+</div>
+<div class="w-0.5 h-44 bg-primary/40 mx-auto mt-1"></div>
+</div>
+<!-- SVG Visual Representation -->
+<svg class="w-full h-full overflow-visible" fill="none" preserveaspectratio="none" viewbox="0 0 700 240">
+<defs>
+<lineargradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4f46e5" stop-opacity="0.38"></stop>
+<stop offset="60%" stop-color="#4f46e5" stop-opacity="0.08"></stop>
+<stop offset="100%" stop-color="#4f46e5" stop-opacity="0"></stop>
+</lineargradient>
+<lineargradient id="lineStroke" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#3525cd"></stop>
+<stop offset="50%" stop-color="#4f46e5"></stop>
+<stop offset="100%" stop-color="#6063ee"></stop>
+</lineargradient>
+</defs>
+<!-- Horizontal Background Guideline Grids -->
+<line stroke="#eaedff" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="20" y2="20"></line>
+<line stroke="#eaedff" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="75" y2="75"></line>
+<line stroke="#eaedff" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="130" y2="130"></line>
+<line stroke="#eaedff" stroke-dasharray="4 4" stroke-width="1" x1="0" x2="700" y1="185" y2="185"></line>
+<line stroke="#eaedff" stroke-width="1" x1="0" x2="700" y1="230" y2="230"></line>
+<!-- Shaded Area -->
+<path d="M 0 190 Q 60 170 110 145 T 230 150 T 350 95 T 460 120 T 550 55 T 640 45 L 700 38 L 700 230 L 0 230 Z" fill="url(#areaGradient)"></path>
+<!-- Main High-Def Line -->
+<path d="M 0 190 Q 60 170 110 145 T 230 150 T 350 95 T 460 120 T 550 55 T 640 45 L 700 38" fill="none" stroke="url(#lineStroke)" stroke-linecap="round" stroke-width="3"></path>
+<!-- Secondary Volume Bars Mini Sparklines -->
+<rect fill="#dae2fd" height="35" opacity="0.7" rx="3" width="8" x="80" y="195"></rect>
+<rect fill="#dae2fd" height="50" opacity="0.7" rx="3" width="8" x="140" y="180"></rect>
+<rect fill="#dae2fd" height="45" opacity="0.7" rx="3" width="8" x="200" y="185"></rect>
+<rect fill="#dae2fd" height="60" opacity="0.7" rx="3" width="8" x="260" y="170"></rect>
+<rect fill="#c3c0ff" height="90" opacity="0.9" rx="3" width="8" x="320" y="140"></rect>
+<rect fill="#dae2fd" height="70" opacity="0.7" rx="3" width="8" x="380" y="160"></rect>
+<rect fill="#dae2fd" height="80" opacity="0.7" rx="3" width="8" x="440" y="150"></rect>
+<rect fill="#c3c0ff" height="120" opacity="0.9" rx="3" width="8" x="500" y="110"></rect>
+<rect fill="#4f46e5" height="145" opacity="0.85" rx="3" width="8" x="560" y="85"></rect>
+<rect fill="#4f46e5" height="160" opacity="0.9" rx="3" width="8" x="620" y="70"></rect>
+<rect fill="#3525cd" height="170" rx="3" width="8" x="670" y="60"></rect>
+<!-- Marker Data Point for 28 Feb (Peak) -->
+<circle class="filter drop-shadow" cx="560" cy="55" fill="#3525cd" r="5" stroke="#ffffff" stroke-width="3"></circle>
+</svg>
+</div>
+<div class="flex justify-between items-center text-outline font-caption text-caption pt-2">
+<span>01 Feb</span>
+<span>07 Feb</span>
+<span>14 Feb</span>
+<span>21 Feb</span>
+<span class="font-semibold text-primary">28 Feb (Hari Ini)</span>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low p-space-sm rounded-xl">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">check_circle</span>
+<span>Rata-rata Order Harian: <strong class="text-on-surface font-semibold">26,2 transaksi</strong></span>
+</div>
+<div class="flex items-center gap-2">
+<span>Estimasi Run-rate Bulan Depan: <strong class="text-primary font-semibold">Rp 172.500.000</strong></span>
+</div>
+</div>
+</div>
+<!-- Right 40%: Top Selling Books Leaderboard -->
+<div class="lg:col-span-5 xl:col-span-5 bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">trophy</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">5 Produk Terlaris</h2>
+</div>
+<span class="font-caption text-caption font-semibold uppercase px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">Gross Contribution</span>
+</div>
+<!-- Leaderboard List Items -->
+<div class="space-y-3">
+<!-- Rank 1 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low hover:bg-surface-container transition-all flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container text-on-primary font-bold font-label-md text-label-md flex items-center justify-center shrink-0">
+              1
+            </div>
+<div class="w-10 h-14 shrink-0 overflow-hidden rounded shadow-sm bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Cover of high-end software development book Mastering Laravel 13 and React 19 Inertia with elegant dark indigo minimal typography and modern isometric abstract coding graphics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXgMghGleR_011B9X9te1UaJf0Z5nAYYg0SpW8tyP_mn2vklk5GORXcW3TLlM_-xREVHP0b1rFGea-vfk18oPUKj6kED6P4Mo7CSt0H2N1FjT1hgi_kf7exsuz6LfZ2zMqx7SKp5SoYylCuckjiR0qE56_sRZzKpSiHRRVkMHkVrBcZqcT8fj1ITEbJunszYZfHhugtylIeoxVQUKFBo5zpir4-dbarBwSDbB39SFi8hw82dD_KueGlA"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">Mastering Laravel 13 &amp; React 19</h3>
+<div class="flex items-center text-amber-500 font-label-sm text-label-sm font-semibold shrink-0">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption mt-0.5">
+<span>342 unit terjual</span>
+<span class="font-bold text-on-surface">Rp 64.638.000</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 43.4%"></div>
+</div>
+</div>
+</div>
+<!-- Rank 2 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant font-bold font-label-md text-label-md flex items-center justify-center shrink-0">
+              2
+            </div>
+<div class="w-10 h-14 shrink-0 overflow-hidden rounded shadow-sm bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Book cover mockup titled Refined Design Systems Enterprise Neo-SaaS featuring pristine white minimal modernist layouts with precise geometric typographic lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTngnd4btSS-xDn48rtwE8cUeXNe5lXMef2bdKlqZHu3FebyQP8w0apgUkxex-yqInE4A23Sx-ZQOJwfbkuX5acV-XQ_qiph4ZmhDnCEaLo-L786bpassJMxKtwV-1SUNavIEUUsy3BzHwdCyjyZmU8VhCLzMmaDFmnx9uk5JRolIop39CNvYqj0QlOU_Ym1yDPxcAow776kyAGkCx8ju3fy8yC4cLiuEoBgQOdmZoWAImNQzzlYpiyg"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">Refined Design Systems: Neo-SaaS</h3>
+<div class="flex items-center text-amber-500 font-label-sm text-label-sm font-semibold shrink-0">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>5.0</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption mt-0.5">
+<span>210 unit terjual</span>
+<span class="font-bold text-on-surface">Rp 31.290.000</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-secondary-container h-full rounded-full" style="width: 21.0%"></div>
+</div>
+</div>
+</div>
+<!-- Rank 3 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant font-bold font-label-md text-label-md flex items-center justify-center shrink-0">
+              3
+            </div>
+<div class="w-10 h-14 shrink-0 overflow-hidden rounded shadow-sm bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Cover of technical programming book High Concurrency Microservices with Go with sleek cyan gradient vector networks and dark editorial layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAomLuMh4kXDcj_r7C1ZUgSzH2ayeddeVEisvHV85_sU9WpQTB9eAbGyFUFSldRYdLtF991aGe9vzhdPkBMi38TNaicDqCmx-Dsxz_oYSAXRO5QdHenOColOSUFriRWqT19uYNnS3CrV3tnOfTzqO2oklweoAfPB9kSVs9Kvr_BIOLpzGWIWDZcE2rZ8ocNNlFoHoMuiEsbFqq6YzuXEwACY30zlLah7ORLD9x-lih4auYzWepJS_08ug"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">High-Concurrency with Go</h3>
+<div class="flex items-center text-amber-500 font-label-sm text-label-sm font-semibold shrink-0">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.8</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption mt-0.5">
+<span>114 unit terjual</span>
+<span class="font-bold text-on-surface">Rp 23.940.000</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-primary-fixed-dim h-full rounded-full" style="width: 16.1%"></div>
+</div>
+</div>
+</div>
+<!-- Rank 4 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant font-bold font-label-md text-label-md flex items-center justify-center shrink-0">
+              4
+            </div>
+<div class="w-10 h-14 shrink-0 overflow-hidden rounded shadow-sm bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Cybersecurity engineering handbook cover Practical Fintech Security and OWASP Top 10 with deep navy theme and security cryptography glyphs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDPgurVXro2MPxUi5X9lu-IEWTr_Slq8yXn4sjBGwujDOvXdnt-e5TYiuu1adqx8XqrR4CDhJkoVcOAg2GchgLhpbJYG3SclIZ8eQt90otN6cUWUz515pDH9AHy7gyLzAW4rIiWWmj1w-TRXvl4uaNuADZUYfbvfRDjIrXrDw4zWPfE6NuEJzpu7DwGrBX9K6vxstmJ36xyDxlzGleOqG6lv1GGy5B3EFTYr7Xqfw84pn9en4kO7gydw"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">Practical Fintech Security &amp; OWASP</h3>
+<div class="flex items-center text-amber-500 font-label-sm text-label-sm font-semibold shrink-0">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption mt-0.5">
+<span>86 unit terjual</span>
+<span class="font-bold text-on-surface">Rp 17.114.000</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-surface-container-highest h-full rounded-full" style="width: 11.5%"></div>
+</div>
+</div>
+</div>
+<!-- Rank 5 -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest hover:bg-surface-container-low transition-all flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant font-bold font-label-md text-label-md flex items-center justify-center shrink-0">
+              5
+            </div>
+<div class="w-10 h-14 shrink-0 overflow-hidden rounded shadow-sm bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Cloud engineering manual cover Building Scalable Cloud Native Platforms AWS in sleek vibrant purple gradients with minimalist cloud architecture schema" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAenQRTtCQAz1bujeySwTNXF2JL-kHwAL_NxvqbGuRlZsDkZ6AbI_X8qJtquzBxBZzjzE9CEpD745RQa4gi_iVlu1ddrEKpHAlQAqkBptiIlsSgWLaStds2c9TAhVU-s2AKqIltwDL_a5IhclVQ50JbOorQ8n4OPV4bSI7vwc21ysCDWFXwREQD59VL_a3TgZr2lzK250k1ZOeutMMGwYav8yaEI_bzw_nHh9RoVrhIw_xEkw4mABb_Jw"/>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-1">
+<h3 class="font-label-md text-label-md font-semibold text-on-surface truncate">Scalable Cloud Native AWS</h3>
+<div class="flex items-center text-amber-500 font-label-sm text-label-sm font-semibold shrink-0">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>4.9</span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-caption text-caption mt-0.5">
+<span>36 unit terjual</span>
+<span class="font-bold text-on-surface">Rp 11.938.000</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1 rounded-full mt-1.5 overflow-hidden">
+<div class="bg-surface-container-highest h-full rounded-full" style="width: 8.0%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-2">
+<a class="w-full py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high font-label-md text-label-md text-primary font-semibold text-center block transition-colors" href="#">
+          Lihat Seluruh 12 Judul E-Book →
+        </a>
+</div>
+</div>
+</div>
+<!-- Recent Orders Real-time Ticker & Audit Ledger Table -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md mb-space-md">
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">receipt</span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">10 Transaksi Terakhir</h2>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1.5">
+<span class="h-1.5 w-1.5 rounded-full bg-tertiary"></span>
+          Audit Ledger Real-time
+        </span>
+</div>
+<!-- Quick Filter Pills -->
+<div class="flex items-center gap-2 flex-wrap">
+<div class="inline-flex p-0.5 bg-surface-container rounded-lg">
+<button class="px-3 py-1 rounded-md font-label-sm text-label-sm bg-surface-container-lowest text-on-surface font-semibold shadow-sm" type="button">Semua</button>
+<button class="px-3 py-1 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" type="button">Lunas</button>
+<button class="px-3 py-1 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" type="button">Menunggu</button>
+<button class="px-3 py-1 rounded-md font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface" type="button">Expired</button>
+</div>
+<button class="p-1.5 text-on-surface-variant hover:text-on-surface hover:bg-surface-container rounded-lg transition-colors" title="Pencarian cepat" type="button">
+<span class="material-symbols-outlined text-[20px]">filter_list</span>
+</button>
+</div>
+</div>
+<!-- Table Container -->
+<div class="overflow-x-auto -mx-space-lg px-space-lg">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">
+<th class="py-3 px-4 rounded-l-xl">Nomor Pesanan</th>
+<th class="py-3 px-4">Pelanggan</th>
+<th class="py-3 px-4">Waktu (WIB)</th>
+<th class="py-3 px-4">Kanal Pembayaran</th>
+<th class="py-3 px-4 text-right">Nominal Total</th>
+<th class="py-3 px-4 text-center">Status</th>
+<th class="py-3 px-4 text-center rounded-r-xl">Aksi</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>BK-01J8K3R49P2Q8X</span>
+<button class="text-outline hover:text-primary" title="Salin ULID" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Rizqi Pratama</span>
+<span class="text-on-surface-variant font-caption text-caption">customer@bookil.com</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex flex-col">
+<span>28 Feb 2026</span>
+<span class="font-caption text-caption font-mono">14:32:10 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+                BCA Virtual Account
+              </span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">
+              Rp 189.000
+            </td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">check</span>
+                Lunas
+              </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-all" onclick="openAuditModal('BK-01J8K3R49P2Q8X', 'Rizqi Pratama', 'Rp 189.000', 'BCA Virtual Account', 'LUNAS')" type="button">
+                Detail Audit
+              </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>BK-01J8K2M19A7R4P</span>
+<button class="text-outline hover:text-primary" title="Salin ULID" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Hendra Wijaya</span>
+<span class="text-on-surface-variant font-caption text-caption">hendra@techcorp.id</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex flex-col">
+<span>28 Feb 2026</span>
+<span class="font-caption text-caption font-mono">13:15:44 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-secondary-container"></span>
+                QRIS Dinamis
+              </span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">
+              Rp 210.000
+            </td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">check</span>
+                Lunas
+              </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-all" onclick="openAuditModal('BK-01J8K2M19A7R4P', 'Hendra Wijaya', 'Rp 210.000', 'QRIS Dinamis', 'LUNAS')" type="button">
+                Detail Audit
+              </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>BK-01J8K1N88Z3V1T</span>
+<button class="text-outline hover:text-primary" title="Salin ULID" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Nadia Safitri</span>
+<span class="text-on-surface-variant font-caption text-caption">nadia.ux@studio.design</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex flex-col">
+<span>28 Feb 2026</span>
+<span class="font-caption text-caption font-mono">11:42:02 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-tertiary"></span>
+                GoPay Instant
+              </span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">
+              Rp 149.000
+            </td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">check</span>
+                Lunas
+              </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-all" onclick="openAuditModal('BK-01J8K1N88Z3V1T', 'Nadia Safitri', 'Rp 149.000', 'GoPay Instant', 'LUNAS')" type="button">
+                Detail Audit
+              </button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>BK-01J8J9P77X2M9Q</span>
+<button class="text-outline hover:text-primary" title="Salin ULID" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Budi Santoso</span>
+<span class="text-on-surface-variant font-caption text-caption">budi.s@fintech.co.id</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex flex-col">
+<span>28 Feb 2026</span>
+<span class="font-caption text-caption font-mono">09:20:18 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-amber-500"></span>
+                Mandiri Bill
+              </span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">
+              Rp 189.000
+            </td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-700 font-label-sm text-label-sm font-semibold">
+<span class="h-1.5 w-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+                Menunggu Bayar
+              </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-all" onclick="openAuditModal('BK-01J8J9P77X2M9Q', 'Budi Santoso', 'Rp 189.000', 'Mandiri Bill', 'PENDING')" type="button">
+                Detail Audit
+              </button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>BK-01J8H8T66W1L8S</span>
+<button class="text-outline hover:text-primary" title="Salin ULID" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Dimas Arya</span>
+<span class="text-on-surface-variant font-caption text-caption">dimas@cloudnative.dev</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex flex-col">
+<span>27 Feb 2026</span>
+<span class="font-caption text-caption font-mono">21:04:55 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-primary"></span>
+                BCA Virtual Account
+              </span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">
+              Rp 275.000
+            </td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">check</span>
+                Lunas
+              </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-all" onclick="openAuditModal('BK-01J8H8T66W1L8S', 'Dimas Arya', 'Rp 275.000', 'BCA Virtual Account', 'LUNAS')" type="button">
+                Detail Audit
+              </button>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-3.5 px-4 font-mono font-semibold text-on-surface">
+<div class="flex items-center gap-1.5">
+<span>BK-01J8G7S55V0K7R</span>
+<button class="text-outline hover:text-primary" title="Salin ULID" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<div class="flex flex-col">
+<span class="font-semibold text-on-surface">Sarah Jessica</span>
+<span class="text-on-surface-variant font-caption text-caption">sarah.j@lead.io</span>
+</div>
+</td>
+<td class="py-3.5 px-4 text-on-surface-variant">
+<div class="flex flex-col">
+<span>27 Feb 2026</span>
+<span class="font-caption text-caption font-mono">18:33:12 WIB</span>
+</div>
+</td>
+<td class="py-3.5 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-surface-container font-label-sm text-label-sm text-on-surface font-medium">
+<span class="h-2 w-2 rounded-full bg-error"></span>
+                ShopeePay
+              </span>
+</td>
+<td class="py-3.5 px-4 text-right font-bold text-on-surface">
+              Rp 179.000
+            </td>
+<td class="py-3.5 px-4 text-center">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[13px]">check</span>
+                Lunas
+              </span>
+</td>
+<td class="py-3.5 px-4 text-center">
+<button class="px-2.5 py-1 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-sm text-label-sm font-semibold transition-all" onclick="openAuditModal('BK-01J8G7S55V0K7R', 'Sarah Jessica', 'Rp 179.000', 'ShopeePay', 'LUNAS')" type="button">
+                Detail Audit
+              </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer with Pagination Link -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm pt-space-md mt-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2">
+<span class="font-medium">Menampilkan <strong class="text-on-surface font-semibold">6</strong> dari <strong class="text-on-surface font-semibold">788</strong> transaksi terlindung Midtrans SHA-512</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-caption text-caption text-outline">Halaman 1 dari 132</span>
+<a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-bold text-primary hover:text-secondary transition-colors" href="#">
+<span>Buka Audit Ledger Lengkap</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Inspection Modal Drawer for Ledger Detail -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-inverse-surface/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-200" id="auditModal">
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl w-full max-w-lg p-space-lg mx-space-md transform scale-95 transition-transform duration-200" id="modalCard">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">verified_user</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Audit Ledger Inspeksi</h3>
+</div>
+<button class="p-1 rounded-lg text-outline hover:text-on-surface hover:bg-surface-container transition-colors" onclick="closeAuditModal()" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="space-y-3 font-body-sm text-body-sm mb-space-lg">
+<div class="flex justify-between py-1.5 px-3 rounded-lg bg-surface-container-low">
+<span class="text-on-surface-variant">Nomor Order ULID</span>
+<span class="font-mono font-bold text-on-surface" id="modalUlid">-</span>
+</div>
+<div class="flex justify-between py-1.5 px-3 rounded-lg bg-surface-container-low">
+<span class="text-on-surface-variant">Nama Pembeli</span>
+<span class="font-semibold text-on-surface" id="modalCustomer">-</span>
+</div>
+<div class="flex justify-between py-1.5 px-3 rounded-lg bg-surface-container-low">
+<span class="text-on-surface-variant">Total Nominal</span>
+<span class="font-bold text-primary" id="modalAmount">-</span>
+</div>
+<div class="flex justify-between py-1.5 px-3 rounded-lg bg-surface-container-low">
+<span class="text-on-surface-variant">Metode Midtrans</span>
+<span class="font-medium text-on-surface" id="modalPayment">-</span>
+</div>
+<div class="flex justify-between py-1.5 px-3 rounded-lg bg-surface-container-low">
+<span class="text-on-surface-variant">Status Settlement</span>
+<span class="font-semibold text-tertiary uppercase" id="modalStatus">-</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-container text-on-surface-variant font-caption text-caption flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0 mt-0.5">lock</span>
+<span>Integritas hash transaksi terverifikasi melalui webhook callback signature Midtrans SHA-512 dengan status HTTP 200 OK. E-book file delivery langsung ter-generate ke S3 Signed URL.</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2">
+<button class="px-4 py-2 rounded-xl bg-surface-container font-label-md text-label-md font-semibold text-on-surface hover:bg-surface-container-high transition-colors" onclick="closeAuditModal()" type="button">
+          Tutup
+        </button>
+<button class="px-4 py-2 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md font-semibold hover:opacity-90 shadow-sm transition-all flex items-center gap-1.5" onclick="alert('Bukti audit log dan raw payload Midtrans berhasil disalin ke clipboard.'); closeAuditModal();" type="button">
+<span class="material-symbols-outlined text-[18px]">file_download</span>
+<span>Unduh Log Signature</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function openAuditModal(ulid, customer, amount, payment, status) {
+    document.getElementById('modalUlid').textContent = ulid;
+    document.getElementById('modalCustomer').textContent = customer;
+    document.getElementById('modalAmount').textContent = amount;
+    document.getElementById('modalPayment').textContent = payment;
+    document.getElementById('modalStatus').textContent = status;
+
+    const modal = document.getElementById('auditModal');
+    const card = document.getElementById('modalCard');
+    modal.classList.remove('opacity-0', 'pointer-events-none');
+    modal.classList.add('opacity-100');
+    card.classList.remove('scale-95');
+    card.classList.add('scale-100');
+  }
+
+  function closeAuditModal() {
+    const modal = document.getElementById('auditModal');
+    const card = document.getElementById('modalCard');
+    modal.classList.add('opacity-0', 'pointer-events-none');
+    modal.classList.remove('opacity-100');
+    card.classList.add('scale-95');
+    card.classList.remove('scale-100');
+  }
+
+  // Refresh animation micro-interaction
+  document.getElementById('btnRefresh')?.addEventListener('click', function() {
+    const icon = document.getElementById('iconRefresh');
+    icon.classList.add('rotate-180');
+    setTimeout(() => {
+      icon.classList.remove('rotate-180');
+    }, 500);
+  });
+
+  // Export CSV mock feedback
+  document.getElementById('btnExportCsv')?.addEventListener('click', function() {
+    const originalText = this.innerHTML;
+    this.innerHTML = '<span class="material-symbols-outlined text-[18px] text-tertiary animate-spin">sync</span><span>Menyiapkan UTF-8 BOM...</span>';
+    setTimeout(() => {
+      this.innerHTML = '<span class="material-symbols-outlined text-[18px] text-tertiary">check</span><span>CSV Siap!</span>';
+      setTimeout(() => {
+        this.innerHTML = originalText;
+      }, 2000);
+    }, 800);
+  });
+</script></main></div></body></html>

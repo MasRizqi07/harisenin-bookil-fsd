@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "background": "#faf8ff", "on-secondary-fixed": "#07006c", "secondary-container": "#6063ee", "error": "#ba1a1a", "surface-container-low": "#f2f3ff", "on-tertiary-fixed": "#002113", "primary-container": "#4f46e5", "inverse-on-surface": "#eef0ff", "surface-container-highest": "#dae2fd", "surface-bright": "#faf8ff", "primary-fixed-dim": "#c3c0ff", "surface-container-high": "#e2e7ff", "on-primary-container": "#dad7ff", "secondary": "#4648d4", "on-secondary-fixed-variant": "#2f2ebe", "on-primary-fixed": "#0f0069", "outline": "#777587", "on-error-container": "#93000a", "on-tertiary": "#ffffff", "inverse-surface": "#283044", "on-tertiary-container": "#67f4b7", "primary-fixed": "#e2dfff", "tertiary-container": "#006e4b", "surface-tint": "#4d44e3", "on-secondary-container": "#fffbff", "primary": "#3525cd", "tertiary-fixed-dim": "#4edea3", "on-surface-variant": "#464555", "surface-variant": "#dae2fd", "on-secondary": "#ffffff", "surface": "#faf8ff", "inverse-primary": "#c3c0ff", "on-primary-fixed-variant": "#3323cc", "secondary-fixed": "#e1e0ff", "tertiary-fixed": "#6ffbbe", "surface-dim": "#d2d9f4", "secondary-fixed-dim": "#c0c1ff", "surface-container-lowest": "#ffffff", "on-surface": "#131b2e", "on-error": "#ffffff", "on-tertiary-fixed-variant": "#005236", "tertiary": "#005338", "surface-container": "#eaedff", "on-background": "#131b2e", "outline-variant": "#c7c4d8", "on-primary": "#ffffff", "error-container": "#ffdad6" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-lg": "1.5rem", "space-xs": "0.25rem", "margin-mobile": "1.25rem", "gutter": "1.5rem", "space-md": "1rem", "margin": "3rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-xl": "2.5rem" }, "fontFamily": { "body-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-xl-mobile": ["Plus Jakarta Sans"], "caption": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "display-hero": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "display-hero-mobile": ["Plus Jakarta Sans"] }, "fontSize": { "body-sm": ["14px", { "lineHeight": "22.4px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.015em", "fontWeight": "600" }], "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "caption": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-md": ["16px", { "lineHeight": "25.6px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "display-hero": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "700" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "-0.005em", "fontWeight": "500" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28.8px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.025em", "fontWeight": "700" }], "display-hero-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.025em", "fontWeight": "700" }] } } } };</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen flex flex-col"><header class="fixed top-0 w-full z-40 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm" data-path="katalog" href="#"><img alt="Brand logo. - Primary color: #4f46e5
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwu9JkXSvWd5mgVl2y7F4viuOfvT63PZDyikUFEqkO3NKcgm0oaw5HGvXaxBH66dsoepjWZUbAozR2tDdV7OW8XS7GnCX8RszpnohOMCgTFzbl0pnBC4azZSSe5quXSP53r6o5njcoFlKCEMEpFymTSu9_WaYANnEMCRHq-8VSZlimeKbKBIDrShD55WyC_EQ2rO5z5L4_mCSn79pm6Hx9mMUqQwyDEyXBkV-sKxAF"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Bookil</span></a><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="katalog" href="#">Katalog</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="perpustakaan-saya" href="#">Perpustakaan Saya</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="bantuan" href="#">Bantuan</a></nav></div><div class="flex items-center gap-space-md"><button class="hidden sm:flex items-center justify-between gap-space-sm w-48 h-10 px-space-sm bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] text-on-surface-variant hover:text-on-surface transition-all focus:outline-none focus:ring-2 focus:ring-primary/20" id="search-spotlight-btn" type="button"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-label-sm text-label-sm text-on-surface-variant">Cari buku...</span></div><kbd class="px-1.5 py-0.5 bg-surface-container rounded text-[10px] font-semibold text-on-surface-variant">⌘K</kbd></button><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-xs p-1 rounded-full hover:bg-surface-container-high transition-colors" data-path="profile" href="#"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkdsMKzbGfSlz_suHfemMAS2xozSDRHcjXjoHG0DjqZ9YQ1_kJUn9U17dNtvaX10hwuQ-MNTtgBQh0vgWgPQu6aJVtY_4MrFXWlIL-o2I4FoB_g9JNpguwih0rTa6ZneU2TDAzU6jtIfI39WkKFrYi7fxo1iLyAZCIbGrg3VXCdn6RBAyodDGyQiNujraNwsPfZZV_bD0Ev8ADH_yn9Vaymxff9qQfIlKF3hkKjpYk"/><span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-primary rounded-full flex items-center justify-center text-on-primary"><span class="material-symbols-outlined text-[10px]">verified</span></span></div><span class="material-symbols-outlined text-[18px] text-on-surface-variant">arrow_drop_down</span></a></div></div></div></header><main class="w-full pt-16 bg-background flex-1 relative"><div class="flex flex-col w-full">
+<!-- Simulation State & Ambient Hero Aura -->
+<div class="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 lg:py-12">
+<!-- Atmospheric Glow Backgrounds (contained strictly) -->
+<div class="absolute top-12 left-1/4 w-96 h-96 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none -z-10 transition-all duration-700" id="ambient-glow-1"></div>
+<div class="absolute top-24 right-1/4 w-80 h-80 bg-secondary-fixed/40 rounded-full blur-3xl pointer-events-none -z-10 transition-all duration-700" id="ambient-glow-2"></div>
+<!-- Simulator Control Ribbon (Neo-SaaS Pills Bar) -->
+<div class="w-full mb-10">
+<div class="flex flex-col md:flex-row items-center justify-between gap-4 p-2.5 rounded-2xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-2 px-3 py-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px] text-primary">tune</span>
+<span class="font-semibold text-on-surface">Simulator Status Error:</span>
+<span class="hidden sm:inline text-outline">Pilih skenario simulasi di bawah</span>
+</div>
+<!-- Error Scenario Tabs -->
+<div class="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-none" id="error-tab-container">
+<button class="tab-btn flex items-center gap-1.5 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all duration-200 bg-primary-fixed text-primary font-semibold shadow-xs" data-err="404" type="button">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>404 Not Found</span>
+</button>
+<button class="tab-btn flex items-center gap-1.5 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all duration-200 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low" data-err="403" type="button">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span>403 Forbidden</span>
+</button>
+<button class="tab-btn flex items-center gap-1.5 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all duration-200 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low" data-err="410" type="button">
+<span class="material-symbols-outlined text-[16px]">history_toggle_off</span>
+<span>410 Link Expired</span>
+</button>
+<button class="tab-btn flex items-center gap-1.5 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all duration-200 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low" data-err="429" type="button">
+<span class="material-symbols-outlined text-[16px]">data_saver_on</span>
+<span>429 Quota Exceeded</span>
+</button>
+<button class="tab-btn flex items-center gap-1.5 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all duration-200 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low" data-err="500" type="button">
+<span class="material-symbols-outlined text-[16px]">precision_manufacturing</span>
+<span>500 Server Error</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Editorial Error Canvas (Bento Split Panel) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-surface-container-lowest rounded-2xl p-6 sm:p-10 lg:p-14 shadow-sm transition-all duration-300 relative overflow-hidden">
+<!-- Top Decorative Monospace Metadata Bar -->
+<div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-primary via-secondary-container to-tertiary-fixed"></div>
+<!-- Left Column: Illustration & Interactive Visual State -->
+<div class="lg:col-span-6 flex flex-col items-center justify-center relative p-4 sm:p-8 bg-surface-container-low/60 rounded-2xl min-h-[380px] lg:min-h-[440px] overflow-hidden">
+<!-- Background Ambient Grid Pattern Inside Illustration Card -->
+<div class="absolute inset-0 opacity-[0.03] pointer-events-none" style="background-image: radial-gradient(#131b2e 1px, transparent 1px); background-size: 20px 20px;"></div>
+<!-- 404 SVG Illustration: Empty Stylized Bookshelf with floating magnifying glass -->
+<div class="error-illustration flex flex-col items-center justify-center w-full max-w-md transition-opacity duration-300" id="ill-404">
+<svg class="w-full max-w-[340px] h-auto drop-shadow-md" fill="none" viewbox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<!-- Wall subtle line -->
+<path d="M40 250H360" stroke="#c7c4d8" stroke-dasharray="4 4" stroke-width="2"></path>
+<!-- Wooden Bookshelf Structure -->
+<rect fill="#464555" height="190" rx="3" width="14" x="70" y="70"></rect>
+<rect fill="#464555" height="190" rx="3" width="14" x="316" y="70"></rect>
+<!-- Top shelf -->
+<rect fill="#283044" height="12" rx="2" width="272" x="64" y="90"></rect>
+<!-- Middle shelf -->
+<rect fill="#283044" height="12" rx="2" width="272" x="64" y="170"></rect>
+<!-- Bottom shelf -->
+<rect fill="#131b2e" height="14" rx="2" width="272" x="64" y="240"></rect>
+<!-- Remaining books on bottom shelf -->
+<rect fill="#4f46e5" height="44" rx="2" width="16" x="88" y="196"></rect>
+<rect fill="#6063ee" height="38" rx="2" width="14" x="106" y="202"></rect>
+<rect fill="#dae2fd" height="50" rx="2" width="20" x="122" y="190"></rect>
+<!-- Empty Middle Shelf with dashed placeholder ghost -->
+<rect fill="#faf8ff" height="56" rx="4" stroke="#4f46e5" stroke-dasharray="6 4" stroke-opacity="0.3" stroke-width="2" width="70" x="160" y="114"></rect>
+<text fill="#4f46e5" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" opacity="0.6" text-anchor="middle" x="195" y="146">TIDAK ADA</text>
+<!-- Ghost Dust Floating -->
+<circle cx="270" cy="140" fill="#c3c0ff" r="3"></circle>
+<circle cx="150" cy="80" fill="#c3c0ff" r="2.5"></circle>
+<circle cx="285" cy="115" fill="#c3c0ff" r="2"></circle>
+<!-- Floating Magnifying Glass -->
+<g class="animate-bounce" style="animation-duration: 3s;">
+<circle cx="210" cy="130" fill="#faf8ff" fill-opacity="0.85" r="44" stroke="#3525cd" stroke-width="6"></circle>
+<circle cx="210" cy="130" fill="#4f46e5" fill-opacity="0.08" r="34"></circle>
+<path d="M242 162L274 194" stroke="#3525cd" stroke-linecap="round" stroke-width="8"></path>
+<path d="M200 120L220 140" stroke="#ba1a1a" stroke-linecap="round" stroke-width="3"></path>
+<path d="M220 120L200 140" stroke="#ba1a1a" stroke-linecap="round" stroke-width="3"></path>
+</g>
+</svg>
+</div>
+<!-- 403 SVG Illustration: Locked Book / Vault Shield Emblem -->
+<div class="error-illustration hidden flex-col items-center justify-center w-full max-w-md transition-opacity duration-300" id="ill-403">
+<svg class="w-full max-w-[340px] h-auto drop-shadow-md" fill="none" viewbox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<!-- Shadow base -->
+<ellipse cx="200" cy="255" fill="#dae2fd" fill-opacity="0.5" rx="110" ry="14"></ellipse>
+<!-- Book Spine & Pages -->
+<rect fill="#131b2e" height="170" rx="12" width="180" x="110" y="70"></rect>
+<rect fill="#283044" height="158" rx="8" width="168" x="118" y="76"></rect>
+<!-- Book Edge / Pages -->
+<path d="M280 82C288 82 292 86 292 94V218C292 226 288 230 280 230" stroke="#c7c4d8" stroke-width="3"></path>
+<!-- Decorative Gold Emboss on Book -->
+<circle cx="202" cy="155" r="48" stroke="#6063ee" stroke-dasharray="4 4" stroke-opacity="0.4" stroke-width="2"></circle>
+<!-- Floating Golden / Brass Padlock & Security Shield -->
+<path d="M202 110V96C202 85 193 76 182 76C171 76 162 85 162 96V110" stroke="#4f46e5" stroke-linecap="round" stroke-width="7"></path>
+<rect fill="#3525cd" height="88" rx="16" width="104" x="150" y="110"></rect>
+<circle cx="202" cy="148" fill="#faf8ff" r="10"></circle>
+<path d="M202 158V172" stroke="#faf8ff" stroke-linecap="round" stroke-width="4"></path>
+<!-- Shield Ribbon -->
+<g transform="translate(230, 160)">
+<circle cx="20" cy="20" fill="#eaedff" r="22"></circle>
+<path d="M20 9L29 13V19C29 25 25 30 20 32C15 30 11 25 11 19V13L20 9Z" fill="#ba1a1a"></path>
+<path d="M17 20L19 22L24 17" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</g>
+</svg>
+</div>
+<!-- 410 SVG Illustration: Expired Calendar 30 Hari & Hourglass -->
+<div class="error-illustration hidden flex-col items-center justify-center w-full max-w-md transition-opacity duration-300" id="ill-410">
+<svg class="w-full max-w-[340px] h-auto drop-shadow-md" fill="none" viewbox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<!-- Calendar Body -->
+<rect fill="#ffffff" height="190" rx="14" stroke="#c7c4d8" stroke-width="2" width="220" x="90" y="60"></rect>
+<rect fill="#4f46e5" height="48" rx="14" width="220" x="90" y="60"></rect>
+<!-- Binder Rings -->
+<rect fill="#131b2e" height="22" rx="6" width="12" x="130" y="50"></rect>
+<rect fill="#131b2e" height="22" rx="6" width="12" x="200" y="50"></rect>
+<rect fill="#131b2e" height="22" rx="6" width="12" x="270" y="50"></rect>
+<!-- 30 Hari Big Watermark Text -->
+<text fill="#eaedff" font-family="Plus Jakarta Sans" font-size="70" font-weight="700" text-anchor="middle" x="200" y="180">30</text>
+<text fill="#777587" font-family="Plus Jakarta Sans" font-size="14" font-weight="600" text-anchor="middle" x="200" y="210">HARI KEDALUWARSA</text>
+<!-- Hourglass Floating Expired -->
+<g transform="translate(250, 150)">
+<rect fill="#faf8ff" height="74" rx="8" stroke="#ba1a1a" stroke-width="2" width="60" x="0" y="0"></rect>
+<!-- Hourglass glass paths -->
+<path d="M12 12H48L30 37L12 12Z" fill="#dae2fd"></path>
+<path d="M12 62H48L30 37L12 62Z" fill="#ffdad6"></path>
+<circle cx="30" cy="56" fill="#ba1a1a" r="4"></circle>
+<line stroke="#ba1a1a" stroke-linecap="round" stroke-width="3" x1="8" x2="52" y1="10" y2="10"></line>
+<line stroke="#ba1a1a" stroke-linecap="round" stroke-width="3" x1="8" x2="52" y1="64" y2="64"></line>
+</g>
+</svg>
+</div>
+<!-- 429 SVG Illustration: Download Progress Card 5/5 Capacity -->
+<div class="error-illustration hidden flex-col items-center justify-center w-full max-w-md transition-opacity duration-300" id="ill-429">
+<svg class="w-full max-w-[340px] h-auto drop-shadow-md" fill="none" viewbox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<!-- Progress Card Container -->
+<rect fill="#ffffff" height="175" rx="16" stroke="#c7c4d8" stroke-width="2" width="270" x="65" y="70"></rect>
+<!-- Cloud Icon with Alert -->
+<circle cx="200" cy="115" fill="#f2f3ff" r="30"></circle>
+<path d="M185 125H215C222 125 227 120 227 113C227 107 222 102 216 102C215 95 209 90 201 90C194 90 188 94 186 100C180 101 175 106 175 112C175 119 180 125 185 125Z" fill="#3525cd"></path>
+<path d="M200 108V122M200 122L195 117M200 122L205 117" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Capacity Full Indicator: 5 of 5 Slots Filled -->
+<text fill="#131b2e" font-family="Plus Jakarta Sans" font-size="13" font-weight="600" x="85" y="166">Kapasitas Unduhan</text>
+<text fill="#ba1a1a" font-family="Plus Jakarta Sans" font-size="13" font-weight="700" text-anchor="end" x="315" y="166">5/5 (100% Penuh)</text>
+<!-- Bar full with warning state -->
+<rect fill="#ffdad6" height="10" rx="5" width="230" x="85" y="178"></rect>
+<rect fill="#ba1a1a" height="10" rx="5" width="230" x="85" y="178"></rect>
+<!-- Device slot icons dots -->
+<circle cx="100" cy="205" fill="#ba1a1a" r="4"></circle>
+<circle cx="145" cy="205" fill="#ba1a1a" r="4"></circle>
+<circle cx="200" cy="205" fill="#ba1a1a" r="4"></circle>
+<circle cx="255" cy="205" fill="#ba1a1a" r="4"></circle>
+<circle cx="300" cy="205" fill="#ba1a1a" r="4"></circle>
+<text fill="#777587" font-family="Plus Jakarta Sans" font-size="11" text-anchor="middle" x="200" y="228">Limit: 3 Perangkat Terdaftar</text>
+</svg>
+</div>
+<!-- 500 SVG Illustration: Engineering Workbench Gears & Pulse Line -->
+<div class="error-illustration hidden flex-col items-center justify-center w-full max-w-md transition-opacity duration-300" id="ill-500">
+<svg class="w-full max-w-[340px] h-auto drop-shadow-md" fill="none" viewbox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+<!-- Server Machine Box -->
+<rect fill="#131b2e" height="180" rx="14" width="240" x="80" y="65"></rect>
+<rect fill="#283044" height="70" rx="8" width="212" x="94" y="80"></rect>
+<!-- Heartbeat telemetry line that breaks -->
+<path d="M104 115H135L144 95L154 135L164 105L174 125L184 115H215L225 100L232 115H294" stroke="#ba1a1a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle class="animate-ping" cx="232" cy="115" fill="#ba1a1a" r="4"></circle>
+<!-- Rotating Cog Gears -->
+<g transform="translate(140, 185)">
+<circle cx="20" cy="20" r="16" stroke="#c3c0ff" stroke-dasharray="7 5" stroke-width="5"></circle>
+<circle cx="20" cy="20" fill="#c3c0ff" r="8"></circle>
+</g>
+<g transform="translate(180, 175)">
+<circle cx="24" cy="24" r="22" stroke="#4f46e5" stroke-dasharray="9 6" stroke-width="6"></circle>
+<circle cx="24" cy="24" fill="#4f46e5" r="10"></circle>
+</g>
+<!-- Wrench Cross -->
+<path d="M255 170L275 190M275 170L255 190" stroke="#dae2fd" stroke-linecap="round" stroke-width="3"></path>
+<text fill="#67f4b7" font-family="Plus Jakarta Sans" font-size="11" font-weight="600" text-anchor="middle" x="200" y="235">TELEMETRY: AUTO-LOGGED (TRACE ID #91823)</text>
+</svg>
+</div>
+<!-- Floating Live Status Indicator Badge -->
+<div class="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-lowest/90 backdrop-blur-md shadow-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary-container animate-pulse" id="status-pulse-dot"></span>
+<span class="font-caption text-caption text-on-surface-variant font-medium tracking-wide uppercase" id="status-latency-indicator">Sistem Berjalan: Telemetri Aktif</span>
+</div>
+</div>
+<!-- Right Column: Editorial Typographic Hierarchy & Action Triggers -->
+<div class="lg:col-span-6 flex flex-col justify-center">
+<!-- Error Pill / Code Badge -->
+<div class="flex items-center gap-3 mb-4">
+<span class="px-3.5 py-1 rounded-full font-label-sm text-label-sm font-bold tracking-wider bg-surface-container-high text-primary" id="badge-code">
+            HTTP 404 ERROR
+          </span>
+<span class="font-caption text-caption text-outline uppercase tracking-wider font-semibold" id="badge-severity">
+            Status: Resource Not Found
+          </span>
+</div>
+<!-- Primary Heading -->
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-3 tracking-tight" id="error-title">
+          Buku atau Halaman Tidak Ditemukan
+        </h1>
+<!-- Empathetic Indonesian Copywriting -->
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed" id="error-description">
+          Halaman yang Anda cari mungkin telah dipindahkan, berganti judul, atau tidak lagi tersedia di katalog kami. Jangan biarkan petualangan membaca Anda terhenti.
+        </p>
+<!-- Dynamic Action Trigger Container -->
+<div class="flex flex-col gap-4" id="action-container">
+<!-- 404 Actions (Default) -->
+<div class="error-actions flex flex-col sm:flex-row items-stretch sm:items-center gap-3" id="actions-404">
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm" data-path="katalog" href="#">
+<span class="material-symbols-outlined text-[20px]">explore</span>
+<span>Cari Buku di Katalog</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all" data-path="katalog" href="#">
+<span class="material-symbols-outlined text-[20px]">home</span>
+<span>Kembali ke Beranda</span>
+</a>
+</div>
+<!-- 403 Actions -->
+<div class="error-actions hidden flex-col sm:flex-row items-stretch sm:items-center gap-3" id="actions-403">
+<button class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm" onclick="alert('Mengarahkan ke halaman autentikasi Bookil...')" type="button">
+<span class="material-symbols-outlined text-[20px]">switch_account</span>
+<span>Masuk dengan Akun Lain</span>
+</button>
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all" data-path="bantuan" href="#">
+<span class="material-symbols-outlined text-[20px]">support_agent</span>
+<span>Pusat Bantuan Lisensi</span>
+</a>
+</div>
+<!-- 410 Actions -->
+<div class="error-actions hidden flex-col sm:flex-row items-stretch sm:items-center gap-3" id="actions-410">
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm" data-path="perpustakaan-saya" href="#">
+<span class="material-symbols-outlined text-[20px]">auto_stories</span>
+<span>Buka Perpustakaan Saya</span>
+</a>
+<button class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all" onclick="document.getElementById('order-lookup-modal').classList.remove('hidden')" type="button">
+<span class="material-symbols-outlined text-[20px]">restart_alt</span>
+<span>Permohonan Tautan Baru</span>
+</button>
+</div>
+<!-- 429 Actions -->
+<div class="error-actions hidden flex-col sm:flex-row items-stretch sm:items-center gap-3" id="actions-429">
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-tertiary-container text-on-tertiary font-label-md text-label-md hover:bg-tertiary transition-all shadow-sm" href="https://wa.me/628123456789?text=Halo%20Bookil%2C%20saya%20ingin%20reset%20kuota%20unduhan" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Hubungi Customer Care (Reset Kuota)</span>
+</a>
+<a class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container font-label-md text-label-md transition-all" data-path="perpustakaan-saya" href="#">
+<span class="material-symbols-outlined text-[20px]">shelves</span>
+<span>Kembali ke Rak Buku</span>
+</a>
+</div>
+<!-- 500 Actions -->
+<div class="error-actions hidden flex-col sm:flex-row items-stretch sm:items-center gap-3" id="actions-500">
+<button class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-all shadow-sm" onclick="location.reload()" type="button">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+<span>Muat Ulang Halaman</span>
+</button>
+<div class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>Cloud Status: All Other Systems Operational</span>
+</div>
+</div>
+</div>
+<!-- Contextual Quick Tool (Search Bar for 404, Help snippet for others) -->
+<div class="mt-8 pt-6" id="contextual-tool">
+<div class="flex flex-col gap-2" id="tool-search">
+<label class="font-label-sm text-label-sm text-on-surface-variant" for="book-quick-search">Atau langsung cari judul buku favorit Anda:</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3.5 text-outline text-[20px]">search</span>
+<input class="w-full h-11 pl-11 pr-24 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/30 transition-all" id="book-quick-search" placeholder="Ketik judul, pengarang (mis. Pramoedya, Filosofi Teras...)" type="text"/>
+<button class="absolute right-1.5 px-3 py-1.5 bg-primary text-on-primary rounded-md font-label-sm text-label-sm hover:bg-primary-container transition-all" type="button">
+                Cari
+              </button>
+</div>
+</div>
+<div class="hidden p-3.5 rounded-xl bg-surface-container-low text-on-surface-variant font-body-sm text-body-sm flex items-start gap-2.5" id="tool-support-note">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0 mt-0.5">verified_user</span>
+<div>
+<span class="font-semibold text-on-surface">Jaminan Pembaca Bookil:</span> Seluruh kepemilikan buku Anda tersimpan aman dan terenkripsi. Hak baca Zero-DRM seumur hidup Anda tidak pernah hangus.
+            </div>
+</div>
+</div>
+</div>
+</div>
+<!-- Conversion Rescue: Curated Recommendations Strip ("Mungkin Anda tertarik membaca ini") -->
+<div class="mt-14 mb-10">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-2">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Rekomendasi Terkurasi</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-0.5">
+            Mungkin Anda Tertarik Membaca Ini
+          </h2>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-semibold hover:underline" data-path="katalog" href="#">
+<span>Lihat Semua Katalog</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</a>
+</div>
+<!-- Book Grid 3 Cards with 3:4 aspect ratio -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Book Card 1 -->
+<div class="group flex gap-4 p-4 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-low/80 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
+<!-- 3:4 aspect ratio cover container -->
+<div class="w-28 shrink-0 aspect-[3/4] rounded-lg overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A modern minimalist editorial book cover titled Filosofi Teras with serene geometric marble textures, deep indigo and golden hues, clean typography, photorealistic studio lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXtzpDs2VHmVEZ2atlouGeZ8ne6SJYnGFASR0h8rJZlz7DKQdzoaW7rVhUiu5HkHBbT46TJWoPZOHWxcgRwn1vLTs3gdHYnmg383V3ENxOhIu6bzZzqrwsfzv-RmTyj7EksvqvxnZme0iPbjcj68E4o6Zg7JW21khnyJ1DgyUchBPBxwt2O2-7TYv0B0GdhGC45PoLZs69gsRQV-kaEnKR-a603YG4qotyFzFhrdOk"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur-md text-on-surface font-caption text-caption font-semibold">4.9 ★</span>
+</div>
+<div class="flex flex-col justify-between py-1 min-w-0">
+<div>
+<span class="font-caption text-caption text-primary font-semibold uppercase tracking-wider">Pengembangan Diri</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors mt-0.5">
+                Filosofi Teras
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Henry Manampiring</p>
+</div>
+<div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-caption text-caption mb-2">
+<span class="material-symbols-outlined text-[14px] text-tertiary">lock_open_right</span>
+<span>Zero-DRM PDF &amp; EPUB</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Rp 88.000</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Book Card 2 -->
+<div class="group flex gap-4 p-4 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-low/80 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
+<div class="w-28 shrink-0 aspect-[3/4] rounded-lg overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="An artful literary book cover titled Bumi Manusia showing vintage Javanese colonial silhouette and rich dark green and bronze accents, editorial typography, soft natural light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDm8tIQbiejBkoGw2BNA3GglUGa9DWE74U-SthzCtgFCRxdCN7dxDDKdBMkis9iKoMABB4fC9NyU3I28UckoO-6xET035dypIfbqkxiHz_SQ3gGuqPhhdvfltRVO3K20iugiqaM5AUJmSuugCNEjkSVcequDc0wf2sKnx6m_3ByQXntl-NF1PUUOL_vv4AhD59AnYE-MGfD-ExMIMtYEW6VMw7cA8wvkm5eon27B7YT"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur-md text-on-surface font-caption text-caption font-semibold">5.0 ★</span>
+</div>
+<div class="flex flex-col justify-between py-1 min-w-0">
+<div>
+<span class="font-caption text-caption text-primary font-semibold uppercase tracking-wider">Sastra Klasik</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors mt-0.5">
+                Bumi Manusia
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Pramoedya Ananta Toer</p>
+</div>
+<div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-caption text-caption mb-2">
+<span class="material-symbols-outlined text-[14px] text-tertiary">lock_open_right</span>
+<span>Edisi Restorasi Digital</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Rp 115.000</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Book Card 3 -->
+<div class="group flex gap-4 p-4 rounded-2xl bg-surface-container-lowest hover:bg-surface-container-low/80 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer">
+<div class="w-28 shrink-0 aspect-[3/4] rounded-lg overflow-hidden relative shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Clean tech typography book cover titled Desain Antarmuka Masa Depan with sleek dark blue gradients, fine wireframes, soft neon accents, ultra high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHK0IuYYmtTeCm3Y9IDAf2qkJ9-GfLalOmXpR5koCP3SyJlLCyQlsbpgbvdp5kTY-jzc1L-pDXenJf00cIW3OtH5TXPamIPfE2KGrNBg_cXQM_9NliQvFJlWwGAInEDSSnYOizMgjhjTrwxVV97FjgUl-3hw_DuGHwJDgSGD4HQaHgmH0KNvst5yG0jdKWusUaFJX1ll51sGfiNjwLQZclbo9qtBnNmqyp-Xlf4QY7"/>
+<span class="absolute top-2 left-2 px-1.5 py-0.5 rounded bg-surface/90 backdrop-blur-md text-on-surface font-caption text-caption font-semibold">4.8 ★</span>
+</div>
+<div class="flex flex-col justify-between py-1 min-w-0">
+<div>
+<span class="font-caption text-caption text-primary font-semibold uppercase tracking-wider">Desain &amp; Teknologi</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate group-hover:text-primary transition-colors mt-0.5">
+                Desain Antarmuka
+              </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Studio Riset Interaksi</p>
+</div>
+<div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-caption text-caption mb-2">
+<span class="material-symbols-outlined text-[14px] text-tertiary">lock_open_right</span>
+<span>Multi-format Sync</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md font-bold text-on-surface">Rp 99.000</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors text-[20px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Diagnostic & Emergency Help Tray -->
+<div class="w-full p-6 rounded-2xl bg-surface-container-low/70 flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3 font-caption text-caption text-on-surface-variant">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">tag</span>
+<span>Incident ID:</span>
+<code class="px-2 py-0.5 bg-surface-container-lowest rounded font-bold text-on-surface" id="incident-id-display">ERR-2026-BK-91823</code>
+</span>
+<span class="hidden sm:inline text-outline">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">schedule</span>
+<span id="incident-timestamp">2025-05-18 14:32:01 WIB</span>
+</span>
+<span class="hidden sm:inline text-outline">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">dns</span>
+<span>Region: JKT-1 (Edge)</span>
+</span>
+</div>
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-all shadow-2xs" href="https://wa.me/628123456789" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-tertiary">chat</span>
+<span>Bantuan WhatsApp</span>
+</a>
+<a class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-all shadow-2xs" href="https://t.me/bookil_support" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px] text-secondary">send</span>
+<span>Telegram</span>
+</a>
+</div>
+</div>
+<!-- Order Reference Modal (410 Helper Trigger) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-inverse-surface/40 backdrop-blur-xs" id="order-lookup-modal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-2xl p-6 shadow-xl">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">history_toggle_off</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Perbarui Link Unduhan</h3>
+</div>
+<button class="p-1 rounded-full text-on-surface-variant hover:bg-surface-container" onclick="document.getElementById('order-lookup-modal').classList.add('hidden')" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">
+          Masukkan Invoice ID atau Email akun Bookil Anda. Tautan unduhan privat terenkripsi baru akan otomatis dikirimkan ke kotak masuk Anda.
+        </p>
+<div class="flex flex-col gap-3">
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1" for="modal-input-ref">Invoice ID atau Email</label>
+<input class="w-full h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary/20" id="modal-input-ref" placeholder="mis. INV-BK-884920 atau nama@email.com" type="text"/>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-all" onclick="alert('Permintaan berhasil diproses! Silakan periksa inbox email Anda.'); document.getElementById('order-lookup-modal').classList.add('hidden');" type="button">
+            Kirim Tautan Baru
+          </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript Suite for Instant Dynamic Scenario Switching -->
+<script>
+    (function initErrorSuite() {
+      const errorConfigs = {
+        '404': {
+          badgeCode: 'HTTP 404 ERROR',
+          badgeSeverity: 'Status: Resource Not Found',
+          badgeClasses: 'bg-surface-container-high text-primary',
+          title: 'Buku atau Halaman Tidak Ditemukan',
+          description: 'Halaman yang Anda cari mungkin telah dipindahkan, berganti judul, atau tidak lagi tersedia di katalog kami. Jangan biarkan petualangan membaca Anda terhenti.',
+          statusIndicator: 'Sistem Berjalan: Telemetri Aktif',
+          pulseColor: 'bg-tertiary',
+          glow1: '#4f46e5',
+          glow2: '#6063ee',
+          showSearchTool: true
+        },
+        '403': {
+          badgeCode: 'HTTP 403 FORBIDDEN',
+          badgeSeverity: 'Status: Unauthorized Access',
+          badgeClasses: 'bg-error-container text-on-error-container',
+          title: 'Akses Dibatasi & Memerlukan Izin',
+          description: 'Anda tidak memiliki izin akses untuk membuka halaman atau berkas ini. Pastikan Anda masuk dengan akun yang memiliki lisensi yang sah atau hubungi administrator sistem.',
+          statusIndicator: 'Otorisasi Gagal: Akun Belum Terverifikasi',
+          pulseColor: 'bg-error',
+          glow1: '#ba1a1a',
+          glow2: '#4f46e5',
+          showSearchTool: false
+        },
+        '410': {
+          badgeCode: 'HTTP 410 GONE',
+          badgeSeverity: 'Status: Expired Resource Link',
+          badgeClasses: 'bg-surface-container-highest text-on-surface-variant',
+          title: 'Masa Berlaku Link Unduhan Telah Berakhir',
+          description: 'Tautan unduhan privat ini telah melewati masa aktif 30 hari kalender demi perlindungan integritas hak cipta dan lisensi Zero-DRM. Anda dapat mengajukan permohonan tautan baru melalui dashboard akun.',
+          statusIndicator: 'Expired Token: Masa Aktif 30 Hari Lewat',
+          pulseColor: 'bg-secondary',
+          glow1: '#6063ee',
+          glow2: '#c0c1ff',
+          showSearchTool: false
+        },
+        '429': {
+          badgeCode: 'HTTP 429 TOO MANY REQUESTS',
+          badgeSeverity: 'Status: Quota Exceeded (5/5 Slots)',
+          badgeClasses: 'bg-error-container text-on-error-container',
+          title: 'Batas Kuota Unduhan Telah Tercapai',
+          description: 'Anda telah menggunakan seluruh jatah 5x unduhan untuk buku ini. Jika Anda kehilangan berkas karena kendala teknis perangkat, tim customer care kami siap membuka kembali kuota Anda.',
+          statusIndicator: 'Rate Limit: Kuota 5x Unduhan Terpakai',
+          pulseColor: 'bg-error',
+          glow1: '#ba1a1a',
+          glow2: '#dae2fd',
+          showSearchTool: false
+        },
+        '500': {
+          badgeCode: 'HTTP 500 SERVER ERROR',
+          badgeSeverity: 'Status: Internal System Glitch',
+          badgeClasses: 'bg-surface-container-high text-primary',
+          title: 'Terjadi Kendala Teknis pada Sistem',
+          description: 'Sistem kami sedang mengalami gangguan internal sesaat. Tim engineering Bookil telah menerima laporan telemetri otomatis ini dan sedang melakukan penanganan.',
+          statusIndicator: 'Auto Telemetry: Error Logged to Sentry',
+          pulseColor: 'bg-primary',
+          glow1: '#3525cd',
+          glow2: '#005338',
+          showSearchTool: false
+        }
+      };
+
+      const tabButtons = document.querySelectorAll('#error-tab-container .tab-btn');
+      const badgeCode = document.getElementById('badge-code');
+      const badgeSeverity = document.getElementById('badge-severity');
+      const errorTitle = document.getElementById('error-title');
+      const errorDesc = document.getElementById('error-description');
+      const statusIndicator = document.getElementById('status-latency-indicator');
+      const pulseDot = document.getElementById('status-pulse-dot');
+      const toolSearch = document.getElementById('tool-search');
+      const toolSupportNote = document.getElementById('tool-support-note');
+      const incidentIdDisplay = document.getElementById('incident-id-display');
+      const incidentTimestamp = document.getElementById('incident-timestamp');
+
+      function switchErrorScenario(code) {
+        const conf = errorConfigs[code];
+        if (!conf) return;
+
+        // 1. Update Tabs styling
+        tabButtons.forEach(btn => {
+          const btnErr = btn.getAttribute('data-err');
+          if (btnErr === code) {
+            btn.className = 'tab-btn flex items-center gap-1.5 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all duration-200 bg-primary text-on-primary font-semibold shadow-xs';
+          } else {
+            btn.className = 'tab-btn flex items-center gap-1.5 px-3.5 py-2 rounded-full font-label-sm text-label-sm transition-all duration-200 bg-surface-container-lowest text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low';
+          }
+        });
+
+        // 2. Switch Illustrations
+        document.querySelectorAll('.error-illustration').forEach(el => el.classList.add('hidden'));
+        const targetIll = document.getElementById('ill-' + code);
+        if (targetIll) {
+          targetIll.classList.remove('hidden');
+        }
+
+        // 3. Switch Action Buttons
+        document.querySelectorAll('.error-actions').forEach(el => el.classList.add('hidden'));
+        const targetActions = document.getElementById('actions-' + code);
+        if (targetActions) {
+          targetActions.classList.remove('hidden');
+        }
+
+        // 4. Update Copy & Badges
+        badgeCode.innerText = conf.badgeCode;
+        badgeCode.className = 'px-3.5 py-1 rounded-full font-label-sm text-label-sm font-bold tracking-wider ' + conf.badgeClasses;
+        badgeSeverity.innerText = conf.badgeSeverity;
+        errorTitle.innerText = conf.title;
+        errorDesc.innerText = conf.description;
+        statusIndicator.innerText = conf.statusIndicator;
+
+        // Pulse dot
+        pulseDot.className = 'w-2.5 h-2.5 rounded-full animate-pulse ' + conf.pulseColor;
+
+        // Contextual tool toggle
+        if (conf.showSearchTool) {
+          toolSearch.classList.remove('hidden');
+          toolSupportNote.classList.add('hidden');
+        } else {
+          toolSearch.classList.add('hidden');
+          toolSupportNote.classList.remove('hidden');
+        }
+
+        // Randomize diagnostic ref for realism
+        const rand = Math.floor(10000 + Math.random() * 90000);
+        incidentIdDisplay.innerText = 'ERR-2026-BK-' + rand;
+        
+        // Fresh timestamp
+        const now = new Date();
+        const dateStr = now.toISOString().split('T')[0] + ' ' + now.toTimeString().split(' ')[0] + ' WIB';
+        incidentTimestamp.innerText = dateStr;
+      }
+
+      // Attach click events to tabs
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const errCode = btn.getAttribute('data-err');
+          switchErrorScenario(errCode);
+        });
+      });
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)] py-12 mt-auto"><div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-6"><div class="flex flex-col items-center md:items-start gap-1"><span class="font-headline-sm text-headline-sm text-on-surface">Bookil</span><p class="font-body-sm text-body-sm text-on-surface-variant">Sanctuari membaca digital bebas hambatan dan terverifikasi.</p></div><div class="flex flex-wrap items-center justify-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-[16px] text-tertiary">lock_open_right</span><span>Zero-DRM Certified</span></div><div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low"><span class="material-symbols-outlined text-[16px] text-primary">verified_user</span><span>Midtrans Certified</span></div></div><div class="flex items-center gap-space-md font-label-sm text-label-sm text-on-surface-variant"><a class="hover:text-on-surface transition-colors" data-path="ketentuan-layanan" href="#">Ketentuan Layanan</a><a class="hover:text-on-surface transition-colors" data-path="kebijakan-privasi" href="#">Kebijakan Privasi</a></div></div><div class="max-w-7xl mx-auto px-6 lg:px-12 pt-6 text-center text-on-surface-variant font-caption text-caption">© 2025 Bookil Inc. Hak cipta dilindungi.</div></footer></body></html>

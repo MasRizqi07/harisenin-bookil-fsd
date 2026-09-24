@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><title>Bookil</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"inverse-on-surface":"#eef0ff","surface-bright":"#faf8ff","on-primary-container":"#dad7ff","secondary":"#4648d4","surface-tint":"#4d44e3","surface-container-high":"#e2e7ff","tertiary-fixed":"#6ffbbe","on-primary-fixed-variant":"#3323cc","surface-dim":"#d2d9f4","tertiary-fixed-dim":"#4edea3","secondary-container":"#6063ee","on-error-container":"#93000a","outline":"#777587","on-tertiary-container":"#67f4b7","on-secondary":"#ffffff","secondary-fixed-dim":"#c0c1ff","error-container":"#ffdad6","background":"#faf8ff","error":"#ba1a1a","on-background":"#131b2e","outline-variant":"#c7c4d8","surface":"#faf8ff","inverse-primary":"#c3c0ff","surface-container-highest":"#dae2fd","on-tertiary":"#ffffff","on-primary-fixed":"#0f0069","on-surface":"#131b2e","tertiary-container":"#006e4b","surface-container-low":"#f2f3ff","on-surface-variant":"#464555","primary-container":"#4f46e5","surface-variant":"#dae2fd","on-tertiary-fixed":"#002113","surface-container-lowest":"#ffffff","tertiary":"#005338","on-primary":"#ffffff","on-tertiary-fixed-variant":"#005236","primary-fixed-dim":"#c3c0ff","primary":"#3525cd","surface-container":"#eaedff","secondary-fixed":"#e1e0ff","primary-fixed":"#e2dfff","on-secondary-fixed":"#07006c","inverse-surface":"#283044","on-secondary-fixed-variant":"#2f2ebe","on-secondary-container":"#fffbff","on-error":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-sm":"0.5rem","margin-mobile":"1.25rem","gutter":"1.5rem","space-xl":"2.5rem","space-lg":"1.5rem","space-xs":"0.25rem","gutter-mobile":"1rem","space-md":"1rem","margin":"3rem"},"fontFamily":{"display-hero":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"caption":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-xl-mobile":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"display-hero-mobile":["Plus Jakarta Sans"],"headline-xl":["Plus Jakarta Sans"]},"fontSize":{"display-hero":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"25.6px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"22.4px","letterSpacing":"0em","fontWeight":"400"}],"caption":["11px",{"lineHeight":"14px","letterSpacing":"0.04em","fontWeight":"500"}],"body-lg":["18px",{"lineHeight":"28.8px","letterSpacing":"-0.01em","fontWeight":"400"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-xl-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"-0.005em","fontWeight":"500"}],"display-hero-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-xl":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"700"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col justify-between"><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-lg"><a class="flex items-center gap-space-sm group focus:outline-none" data-path="katalog" href="#"><img alt="Brand logo. - Primary color: #4f46e5
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WeZre_MdxFRIxcyj4E4LWuiWGCeyi1y2y5ioyZSPuRqGcrkhcozQ-15BBw_V_0hYRoo7rWRI5l7X2oT7uTZrHEP5EZdMz4OD8ZCZeg2LgIoDdvdfSZsKzCY8lk12MahncTpj4EQbG1SiV4nFWx_qNWZChuyYGYfz1c39p5UvVQ4eTwagPIFhF_zgRAmlu5EE7-xGuHEkWX2SXosnnSQXvkD6q6M33uAu8y2bqY8J-IvU1hbGqNME4wSrWI"/><span class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Bookil</span></a><nav class="hidden md:flex items-center gap-space-xs" data-active-classes="bg-surface-container text-primary font-semibold rounded-lg"><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg transition-all" data-path="katalog" href="#">Katalog</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg transition-all" data-path="perpustakaan-saya" href="#">Perpustakaan Saya</a><a class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant hover:bg-surface-container hover:text-on-surface rounded-lg transition-all" data-path="bantuan" href="#">Bantuan</a></nav></div><div class="flex items-center gap-space-md"><button aria-label="Pencarian cepat" class="hidden sm:flex items-center gap-space-md h-10 px-space-md bg-surface-container-low text-on-surface-variant rounded-lg hover:bg-surface-container transition-colors focus:outline-none" type="button"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-outline" style="font-size: 18px;">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">Cari e-book, jurnal...</span></div><span class="font-caption text-caption bg-surface-container-lowest text-on-surface-variant px-space-xs py-0.5 rounded shadow-[0_1px_2px_rgba(0,0,0,0.05)]">⌘K</span></button><div class="flex items-center gap-space-sm pl-space-xs"><div class="relative flex items-center justify-center"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_1px_3px_rgba(0,0,0,0.08)]" src="https://lh3.googleusercontent.com/aida/AEtjO1XRknSUk5xEAaPs3Zq6JyAN022w7UYqOWWxwT42fzws6Kfl_G0foa601d9wJer6A8ItENwLtzWsMQPVGACYOes_BVvPlo2y_ow7AwIRMlfRgso_uzLks0vi0FlKmCc51PwLY4cQv9zzSONoM_TlFMs6dFmljZ6QlHfgSXnl7ZxbjZX9kex86TLhGZgIePQoIEzefaFz8xs3uqKxXwuq4Ayc2mat7uzam1baARWBf73M_mO3n5ZF-hR1QrAw"/><span class="absolute -bottom-0.5 -right-0.5 w-3.5 h-3.5 bg-primary rounded-full flex items-center justify-center shadow-[0_1px_2px_rgba(0,0,0,0.12)]" title="Pengguna Terverifikasi"><span class="material-symbols-outlined text-on-primary" style="font-size: 9px;">check</span></span></div></div></div></div></header><main class="w-full max-w-[1440px] mx-auto px-margin-mobile md:px-margin pt-16 flex-1"><div class="flex flex-col w-full">
+<!-- Interactive State Controller Bar (Reviewer Tooling) -->
+<div class="w-full max-w-4xl mx-auto mb-6">
+<div class="p-2 bg-surface-container-high/60 backdrop-blur-md rounded-2xl flex flex-wrap items-center justify-between gap-3 shadow-sm">
+<div class="flex items-center gap-2 pl-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Simulasi Status Order:</span>
+</div>
+<div class="flex items-center gap-1.5 p-1 bg-surface-container-lowest rounded-xl shadow-inner" id="state-toggle-group">
+<button class="px-3.5 py-1.5 rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 bg-primary text-on-primary shadow-sm" id="btn-state-pending" onclick="switchState('pending')" type="button">
+<span class="w-2 h-2 rounded-full bg-amber-300"></span>
+          Menunggu Pembayaran
+        </button>
+<button class="px-3.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" id="btn-state-paid" onclick="switchState('paid')" type="button">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed"></span>
+          Pembayaran Berhasil
+        </button>
+<button class="px-3.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5" id="btn-state-expired" onclick="switchState('expired')" type="button">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+          Kedaluwarsa
+        </button>
+</div>
+</div>
+</div>
+<!-- Main Invoice Canvas -->
+<div class="w-full max-w-4xl mx-auto pb-16 flex flex-col gap-6">
+<!-- Top Metadata Bar & Quick Utility -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex flex-col gap-1">
+<nav class="flex items-center gap-2 text-on-surface-variant font-caption text-caption uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Perpustakaan</a>
+<span>/</span>
+<a class="hover:text-primary transition-colors" href="#">Riwayat Pesanan</a>
+<span>/</span>
+<span class="text-on-surface font-semibold">BK-01J8K3R49P</span>
+</nav>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold">Faktur Pesanan Resmi</h1>
+</div>
+<div class="flex items-center gap-2.5">
+<button class="px-4 py-2.5 bg-surface-container-lowest hover:bg-surface-container text-on-surface rounded-xl font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all hover:scale-[1.01] active:scale-[0.99]" onclick="window.print()" type="button">
+<span class="material-symbols-outlined text-outline" style="font-size: 19px;">print</span>
+<span>Cetak Salinan</span>
+</button>
+<button class="px-4 py-2.5 bg-surface-container-low hover:bg-surface-container-high text-primary rounded-xl font-label-md text-label-md flex items-center gap-2 shadow-sm transition-all" id="btn-pdf-download" onclick="simulateDownloadReceipt()" type="button">
+<span class="material-symbols-outlined" style="font-size: 19px;">picture_as_pdf</span>
+<span>Unduh PDF</span>
+</button>
+</div>
+</div>
+<!-- Official Receipt Master Card -->
+<div class="bg-surface-container-lowest rounded-2xl shadow-xl overflow-hidden flex flex-col">
+<!-- Receipt Top Decorative Security Pattern Header -->
+<div class="h-2 bg-gradient-to-r from-primary via-secondary to-tertiary-container"></div>
+<!-- Receipt Head Details -->
+<div class="p-6 md:p-8 bg-surface-container-lowest flex flex-col gap-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex flex-col gap-1.5">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-widest font-semibold">Nomor Identifikasi Transaksi</span>
+<div class="flex items-center gap-2.5">
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-on-surface select-all" id="order-code">BK-01J8K3R49P2Q8X</span>
+<button class="p-2 bg-surface-container hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-primary transition-all flex items-center justify-center" id="copy-btn" onclick="copyOrderNumber()" title="Salin Nomor Pesanan" type="button">
+<span class="material-symbols-outlined" id="copy-icon" style="font-size: 18px;">content_copy</span>
+</button>
+<span class="opacity-0 transition-opacity font-caption text-caption text-tertiary font-bold bg-tertiary-fixed/30 px-2 py-0.5 rounded" id="copy-feedback">Tersalin!</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-outline" style="font-size: 16px;">schedule</span>
+<span>Dibuat pada 28 Februari 2026, 14:32 WIB</span>
+<span>•</span>
+<span class="text-outline font-mono text-caption">SHA256: 9b2d...e41f</span>
+</div>
+</div>
+<!-- Dynamic Status Badges Slot -->
+<div id="status-badge-container">
+<!-- Pending Badge (Default) -->
+<div class="flex flex-col items-end gap-1.5" id="badge-pending">
+<div class="px-3.5 py-1.5 rounded-full bg-amber-500/10 text-amber-900 flex items-center gap-2 shadow-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+<span class="font-label-md text-label-md font-bold">Menunggu Pembayaran</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-amber-800 bg-amber-500/10 px-2.5 py-0.5 rounded-md">
+<span class="material-symbols-outlined text-amber-700" style="font-size: 15px;">hourglass_top</span>
+<span>Kedaluwarsa dalam: <strong class="font-mono" id="countdown-timer">23:48:12</strong></span>
+</div>
+</div>
+<!-- Paid Badge (Hidden initially) -->
+<div class="hidden flex-col items-end gap-1.5" id="badge-paid">
+<div class="px-4 py-1.5 rounded-full bg-tertiary-container/15 text-tertiary-container flex items-center gap-2 shadow-xs">
+<span class="material-symbols-outlined text-tertiary-container" style="font-size: 17px; font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-md text-label-md font-bold">Lunas &amp; Terverifikasi</span>
+</div>
+<span class="font-caption text-caption text-tertiary font-semibold">Terselesaikan pada 28 Feb 2026, 14:35 WIB</span>
+</div>
+<!-- Expired Badge (Hidden initially) -->
+<div class="hidden flex-col items-end gap-1.5" id="badge-expired">
+<div class="px-4 py-1.5 rounded-full bg-error-container text-on-error-container flex items-center gap-2 shadow-xs">
+<span class="material-symbols-outlined text-error" style="font-size: 17px;">cancel</span>
+<span class="font-label-md text-label-md font-bold">Sesi Pembayaran Kedaluwarsa</span>
+</div>
+<span class="font-caption text-caption text-on-surface-variant font-medium">Batas waktu pembayaran telah terlampaui</span>
+</div>
+</div>
+</div>
+<!-- Horizontal Step Wizard / Transaction Timeline -->
+<div class="pt-4 pb-2">
+<div class="grid grid-cols-4 gap-2 relative">
+<!-- Step 1: Pesanan Dibuat -->
+<div class="flex flex-col items-center text-center gap-2 group">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md relative z-10 transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-surface">1. Dibuat</span>
+<span class="font-caption text-caption text-outline">14:32:10 WIB</span>
+</div>
+</div>
+<!-- Step 2: Pembayaran Midtrans -->
+<div class="flex flex-col items-center text-center gap-2 group" id="step-node-payment">
+<div class="w-9 h-9 rounded-full bg-amber-500 text-surface-container-lowest flex items-center justify-center shadow-md ring-4 ring-amber-500/20 relative z-10 animate-bounce">
+<span class="material-symbols-outlined" style="font-size: 18px;">credit_card</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-amber-900" id="step-label-payment">2. Menunggu Bayar</span>
+<span class="font-caption text-caption text-amber-700 font-semibold" id="step-sub-payment">Sedang Berlangsung</span>
+</div>
+</div>
+<!-- Step 3: Verifikasi Webhook -->
+<div class="flex flex-col items-center text-center gap-2" id="step-node-webhook">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-outline flex items-center justify-center relative z-10" id="step-icon-webhook">
+<span class="material-symbols-outlined" style="font-size: 18px;">lock_clock</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-outline" id="step-label-webhook">3. Webhook SHA-512</span>
+<span class="font-caption text-caption text-outline" id="step-sub-webhook">Antrean Sistem</span>
+</div>
+</div>
+<!-- Step 4: Aset Siap Diunduh -->
+<div class="flex flex-col items-center text-center gap-2" id="step-node-asset">
+<div class="w-9 h-9 rounded-full bg-surface-container-high text-outline flex items-center justify-center relative z-10" id="step-icon-asset">
+<span class="material-symbols-outlined" style="font-size: 18px;">download_for_offline</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-outline" id="step-label-asset">4. Lisensi &amp; Unduh</span>
+<span class="font-caption text-caption text-outline" id="step-sub-asset">Terkunci</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- STATE BLOCK A: PENDING (MIDTRANS SNAP PAYMENT TRIGGER) -->
+<div class="p-6 md:p-8 bg-surface-container-low flex flex-col gap-6" id="section-pending-state">
+<div class="bg-surface-container-lowest rounded-2xl p-6 shadow-sm flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-primary-container text-on-primary flex items-center justify-center shadow-md">
+<span class="material-symbols-outlined" style="font-size: 26px;">account_balance_wallet</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Instruksi Pembayaran Otomatis</span>
+<span class="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-caption text-caption uppercase font-bold tracking-wider">Midtrans Snap</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Selesaikan pesanan Anda dengan gateway resmi berlisensi Bank Indonesia</span>
+</div>
+</div>
+<div class="text-left sm:text-right">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider block">Total Pembayaran</span>
+<span class="font-headline-md text-headline-md font-bold text-primary">Rp 189.000</span>
+</div>
+</div>
+<!-- Big Primary Snap Action Trigger -->
+<div class="flex flex-col gap-3">
+<button class="w-full py-4 px-6 rounded-xl bg-primary hover:bg-secondary text-on-primary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 cursor-pointer" onclick="openMidtransModal()" type="button">
+<span class="material-symbols-outlined" style="font-size: 24px;">bolt</span>
+<span>Buka Jendela Pembayaran (Midtrans Snap)</span>
+<span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+</button>
+<p class="font-caption text-caption text-center text-on-surface-variant">
+              Popup pembayaran aman dibuka langsung di peramban Anda. Tidak memerlukan unggah bukti transfer manual.
+            </p>
+</div>
+<!-- Supported Channels Matrix -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-size: 20px;">account_balance</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Virtual Account (VA 24/7)</span>
+</div>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container-lowest font-semibold text-secondary">Real-time</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                BCA, Mandiri, BNI, BRI, &amp; Permata. Terverifikasi instan dalam hitungan detik setelah transfer sukses.
+              </p>
+<div class="flex items-center gap-2 pt-1">
+<span class="px-2 py-1 bg-surface-container-lowest rounded text-caption font-mono text-on-surface-variant font-semibold">BCA VA</span>
+<span class="px-2 py-1 bg-surface-container-lowest rounded text-caption font-mono text-on-surface-variant font-semibold">Mandiri Bill</span>
+<span class="px-2 py-1 bg-surface-container-lowest rounded text-caption font-mono text-on-surface-variant font-semibold">BRIVA</span>
+<span class="px-2 py-1 bg-surface-container-lowest rounded text-caption font-mono text-on-surface-variant font-semibold">BNI VA</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary-container" style="font-size: 20px;">qr_code_scanner</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">QRIS Dinamis</span>
+</div>
+<span class="font-caption text-caption px-2 py-0.5 rounded bg-surface-container-lowest font-semibold text-tertiary-container">Scan &amp; Go</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Dapat dipindai oleh GoPay, OVO, ShopeePay, DANA, BCA Mobile, Livin', dan semua aplikasi berbasis QRIS.
+              </p>
+<div class="flex items-center gap-2 pt-1">
+<span class="px-2 py-1 bg-surface-container-lowest rounded text-caption font-mono text-on-surface-variant font-semibold">GoPay</span>
+<span class="px-2 py-1 bg-surface-container-lowest rounded text-caption font-mono text-on-surface-variant font-semibold">ShopeePay</span>
+<span class="px-2 py-1 bg-surface-container-lowest rounded text-caption font-mono text-on-surface-variant font-semibold">DANA</span>
+<span class="px-2 py-1 bg-surface-container-lowest rounded text-caption font-mono text-on-surface-variant font-semibold">OVO</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- STATE BLOCK B: PAID (SUCCESS CELEBRATION & INSTANT DOWNLOAD) -->
+<div class="hidden p-6 md:p-8 bg-surface-container-low flex-col gap-6" id="section-paid-state">
+<div class="bg-gradient-to-br from-tertiary-container/10 via-surface-container-lowest to-surface-container-lowest rounded-2xl p-6 md:p-8 shadow-sm flex flex-col gap-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-container text-on-tertiary flex items-center justify-center shadow-lg shrink-0">
+<span class="material-symbols-outlined" style="font-size: 32px; font-variation-settings: 'FILL' 1;">task_alt</span>
+</div>
+<div class="flex flex-col gap-1">
+<div class="inline-flex items-center gap-2">
+<span class="font-caption text-caption font-bold uppercase tracking-wider text-tertiary-container bg-tertiary-fixed/30 px-2 py-0.5 rounded">Settlement Berhasil</span>
+<span class="font-caption text-caption text-on-surface-variant">Ref ID: MID-8912839218</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Pembayaran Berhasil Diverifikasi!</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                  Lisensi personal Anda telah aktif seumur hidup. Seluruh arsip digital dan repositori kode telah disinkronkan ke perpustakaan Anda.
+                </p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
+<button class="px-6 py-3.5 rounded-xl bg-tertiary-container hover:bg-tertiary text-on-tertiary font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2.5 shadow-md transition-all duration-150 hover:scale-[1.02] active:scale-[0.98]" onclick="triggerDownloadAsset()" type="button">
+<span class="material-symbols-outlined" style="font-size: 22px;">download</span>
+<span>Unduh Bundle Lengkap</span>
+</button>
+</div>
+</div>
+<!-- Digital Cryptographic Token & Safety Bar -->
+<div class="p-4 bg-surface-container-lowest rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 font-mono text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-2 overflow-hidden text-ellipsis">
+<span class="material-symbols-outlined text-tertiary shrink-0" style="font-size: 18px;">key</span>
+<span class="font-caption text-caption uppercase text-outline">Token Lisensi SHA-256:</span>
+<span class="text-on-surface font-semibold truncate">c89f4b182d92ee48ab931a0fc12903e1</span>
+</div>
+<div class="flex items-center gap-2 shrink-0 font-label-sm text-label-sm text-tertiary-container font-semibold">
+<span class="material-symbols-outlined" style="font-size: 16px;">verified</span>
+<span>Sisa Kuota Presigned URL: 5x Unduh</span>
+</div>
+</div>
+</div>
+</div>
+<!-- STATE BLOCK C: EXPIRED (TIME-OUT NOTICE & RE-ORDER) -->
+<div class="hidden p-6 md:p-8 bg-error-container/20 flex-col gap-6" id="section-expired-state">
+<div class="bg-surface-container-lowest rounded-2xl p-6 md:p-8 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-error-container text-on-error-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-size: 28px;">timer_off</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Invoice Telah Kedaluwarsa</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Batas waktu 24 jam untuk transaksi ini telah habis. Data pemesanan dibatalkan otomatis oleh sistem Midtrans.
+              </p>
+</div>
+</div>
+<button class="px-5 py-3 rounded-xl bg-primary text-on-primary font-label-md text-label-md font-bold flex items-center gap-2 shadow-md transition-all hover:bg-secondary shrink-0" onclick="recreateOrder()" type="button">
+<span class="material-symbols-outlined" style="font-size: 18px;">refresh</span>
+<span>Buat Pesanan Baru</span>
+</button>
+</div>
+</div>
+<!-- Itemized Bill Breakdown (Receipt Core) -->
+<div class="p-6 md:p-8 bg-surface-container-lowest flex flex-col gap-6">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Rincian Pembelian Produk</h3>
+<!-- Responsive Item Table -->
+<div class="w-full overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low rounded-xl">
+<th class="py-3 px-4 font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold rounded-l-xl">Item E-Book &amp; Modul</th>
+<th class="py-3 px-4 font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">Format Terbitan</th>
+<th class="py-3 px-4 font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold text-center">Jml</th>
+<th class="py-3 px-4 font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold text-right rounded-r-xl">Harga Bersih</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent">
+<tr class="group hover:bg-surface-container-low/40 transition-colors">
+<td class="py-4 px-4 align-top">
+<div class="flex items-start gap-3.5">
+<!-- Book Cover Thumbnail with 3:4 aspect -->
+<div class="w-14 h-[75px] rounded-md overflow-hidden shadow-sm shrink-0 relative bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Cover of technical programming book Mastering Laravel 13 and React 19 Inertia modern minimalist tech editorial design in dark indigo background with glowing typographic accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrA_2SRJkN5qS3y8I5V9B3i2QR78SDvyf-qK1wX3LIgi2Dog4If6Xz_060IpebfV-yPx9pa6LPQEhzCBPO_M0i9lymnoi7GEhN2-6qEFrYbW34H2arv-0iAK-07TuOoEypuvqTBt8uFefZ0MsD31JJWqZGqiHXX8iE_3FrGlNOlKe7uzjWSN606l94NUUU24yYI1dQuKy363fe4-rLqJhDrHLDJsbZzSaCMCXrteTPZb3I1DAJwncIXA"/>
+<span class="absolute top-1 right-1 bg-surface-tint text-on-primary font-caption text-caption px-1 py-0.2 rounded font-bold">2026</span>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-label-md text-label-md font-bold text-on-surface">Mastering Laravel 13 &amp; React 19 Inertia</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Penulis: Rizqi &amp; Tim Riset Bookil Labs • Edisi Arsitektur V2</span>
+<div class="flex items-center gap-2 mt-1">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-caption text-caption font-semibold">DRM-Free</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-caption text-caption font-semibold">Akses Lifetime</span>
+</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-4 align-top">
+<div class="flex flex-col gap-0.5">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">EPUB + PDF + Repo GitHub</span>
+<span class="font-caption text-caption text-outline">Paket Digital Lengkap</span>
+</div>
+</td>
+<td class="py-4 px-4 align-top text-center font-label-md text-label-md text-on-surface font-semibold">
+                  1
+                </td>
+<td class="py-4 px-4 align-top text-right font-headline-sm text-headline-sm font-bold text-on-surface">
+                  Rp 189.000
+                </td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Settlement Calculations -->
+<div class="p-6 bg-surface-container-low rounded-2xl flex flex-col md:flex-row justify-between gap-6">
+<div class="flex flex-col gap-2 max-w-sm">
+<div class="flex items-center gap-2 text-on-surface font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">receipt_long</span>
+<span>Informasi Pajak &amp; Biaya Gerbang</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Harga final sudah mencakup seluruh biaya administrasi payment gateway dan PPN 0% untuk distribusi produk digital terverifikasi.
+            </p>
+</div>
+<div class="flex flex-col gap-2.5 w-full md:w-80">
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Subtotal Item</span>
+<span class="text-on-surface font-medium">Rp 189.000</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Diskon Promosi Peluncuran</span>
+<span class="text-tertiary font-semibold">-Rp 0</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Biaya Layanan Midtrans</span>
+<span class="text-on-surface font-medium">Rp 0 (Gratis)</span>
+</div>
+<div class="flex items-center justify-between font-body-sm text-body-sm text-on-surface-variant">
+<span>Pajak Pertambahan Nilai (PPN 0%)</span>
+<span class="text-on-surface font-medium">Rp 0</span>
+</div>
+<!-- Grand Total Strip -->
+<div class="pt-3 mt-1 bg-surface-container-lowest p-3.5 rounded-xl shadow-xs flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-bold">Total Tagihan Final</span>
+<span class="font-caption text-caption text-outline">Mata Uang: IDR (Rupiah)</span>
+</div>
+<span class="font-headline-lg text-headline-lg font-bold text-primary">Rp 189.000</span>
+</div>
+</div>
+</div>
+<!-- Customer & Settlement Details Two-Column Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Buyer Identity -->
+<div class="p-5 rounded-2xl bg-surface-container-low flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-size: 20px;">badge</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Data Pemesan / Lisensi</span>
+</div>
+<div class="flex flex-col gap-1.5 font-body-sm text-body-sm">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Nama Pemesan:</span>
+<span class="text-on-surface font-semibold">Rizqi Pratama</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Email Terdaftar:</span>
+<span class="text-on-surface font-semibold">customer@bookil.com</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Tipe Akun:</span>
+<span class="text-on-surface font-semibold">Bookil Pro Member</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Domisili Pajak:</span>
+<span class="text-on-surface font-semibold">DKI Jakarta, Indonesia</span>
+</div>
+</div>
+</div>
+<!-- Transaction Security & Integrity Info -->
+<div class="p-5 rounded-2xl bg-surface-container-low flex flex-col gap-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary" style="font-size: 20px;">security</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Validasi &amp; Kredensial Keamanan</span>
+</div>
+<div class="flex flex-col gap-1.5 font-body-sm text-body-sm">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Gateway Enkripsi:</span>
+<span class="text-on-surface font-semibold">Midtrans Snap TLS 1.3</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Penyimpanan Berkas:</span>
+<span class="text-on-surface font-semibold">AWS S3 Presigned URL</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Perlindungan DB:</span>
+<span class="text-on-surface font-semibold">Pessimistic Row Lock</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Audit Signature:</span>
+<span class="font-mono text-caption text-secondary font-bold truncate max-w-[140px]">MID-SHA512-VERIFIED</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Direct Action Toolbar inside Receipt footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
+<a class="flex items-center gap-2 text-primary font-label-md text-label-md hover:underline font-semibold" href="#">
+<span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+<span>Kembali ke Katalog E-Book</span>
+</a>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" onclick="refreshStatus()" type="button">
+<span class="material-symbols-outlined" id="refresh-spinner" style="font-size: 17px;">sync</span>
+<span>Cek Status Terkini</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Need Help & Concierge Strip -->
+<div class="p-5 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-tertiary-container/10 text-tertiary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" style="font-size: 22px;">support_agent</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Butuh bantuan seputar faktur atau konfirmasi ini?</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tim Support Finansial Bookil aktif 24/7 mendampingi kelancaran akses Anda.</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<a class="px-3.5 py-2 rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors" href="mailto:support@bookil.com">
+<span class="material-symbols-outlined text-outline" style="font-size: 17px;">mail</span>
+<span>support@bookil.com</span>
+</a>
+<a class="px-3.5 py-2 rounded-lg bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-md text-label-md flex items-center gap-1.5 transition-colors shadow-xs" href="https://wa.me/6281234567890" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined" style="font-size: 17px;">chat</span>
+<span>WhatsApp Hotline</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Simulated Midtrans Snap Interactive Modal Dialog -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/60 backdrop-blur-sm hidden items-center justify-center p-4" id="midtrans-modal">
+<div class="bg-surface-container-lowest w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden flex flex-col animate-in fade-in zoom-in-95 duration-200">
+<!-- Snap Modal Header -->
+<div class="p-4 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-lg bg-primary text-on-primary flex items-center justify-center font-bold font-mono text-caption">M</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">Midtrans Payment Checkout</span>
+<span class="font-caption text-caption text-on-surface-variant">Merchant: Bookil Digital Platform</span>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg hover:bg-surface-container flex items-center justify-center text-on-surface-variant" onclick="closeMidtransModal()" type="button">
+<span class="material-symbols-outlined" style="font-size: 20px;">close</span>
+</button>
+</div>
+<!-- Snap Modal Content -->
+<div class="p-6 flex flex-col gap-5">
+<div class="p-4 rounded-xl bg-primary/5 flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-caption text-caption text-on-surface-variant">Nomor Pesanan</span>
+<span class="font-label-md text-label-md font-mono font-bold text-primary">BK-01J8K3R49P2Q8X</span>
+</div>
+<div class="text-right">
+<span class="font-caption text-caption text-on-surface-variant">Total Tagihan</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Rp 189.000</span>
+</div>
+</div>
+<span class="font-label-md text-label-md font-bold text-on-surface">Pilih Opsi Pembayaran Sandbox:</span>
+<div class="grid grid-cols-1 gap-2.5">
+<button class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center justify-between transition-colors group" onclick="simulateSuccessfulPayment()" type="button">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" style="font-size: 22px;">qr_code_2</span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-bold text-on-surface">QRIS Instant (Simulasi Bayar)</span>
+<span class="font-caption text-caption text-on-surface-variant">Selesaikan langsung secara instan</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+<button class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center justify-between transition-colors group" onclick="simulateSuccessfulPayment()" type="button">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 22px;">account_balance</span>
+<div class="flex flex-col text-left">
+<span class="font-label-md text-label-md font-bold text-on-surface">BCA / Mandiri Virtual Account</span>
+<span class="font-caption text-caption text-on-surface-variant">Nomor VA: 8077 0812 3491 0021</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+<div class="p-3 bg-surface-container rounded-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" style="font-size: 16px;">lock</span>
+<span class="font-caption text-caption text-on-surface-variant">256-bit SSL Secure Encryption via Midtrans Core API v2</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Toast Notification -->
+<div class="fixed bottom-6 right-6 z-50 hidden items-center gap-3 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-xl shadow-xl transition-all" id="toast-message">
+<span class="material-symbols-outlined text-tertiary-fixed" id="toast-icon">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium" id="toast-text">Tersimpan</span>
+</div>
+<!-- Client-side state transitions & interactivity script -->
+<script>
+    let currentMockState = 'pending';
+    let countdownSeconds = 23 * 3600 + 48 * 60 + 12;
+
+    // Countdown Timer logic
+    function updateCountdown() {
+      if (countdownSeconds <= 0) return;
+      countdownSeconds--;
+      const hours = String(Math.floor(countdownSeconds / 3600)).padStart(2, '0');
+      const minutes = String(Math.floor((countdownSeconds % 3600) / 60)).padStart(2, '0');
+      const seconds = String(countdownSeconds % 60).padStart(2, '0');
+      const timerEl = document.getElementById('countdown-timer');
+      if (timerEl) {
+        timerEl.textContent = `${hours}:${minutes}:${seconds}`;
+      }
+    }
+    setInterval(updateCountdown, 1000);
+
+    // State Switcher Function
+    function switchState(state) {
+      currentMockState = state;
+
+      // Reset button styles
+      const btnPending = document.getElementById('btn-state-pending');
+      const btnPaid = document.getElementById('btn-state-paid');
+      const btnExpired = document.getElementById('btn-state-expired');
+
+      [btnPending, btnPaid, btnExpired].forEach(b => {
+        b.className = 'px-3.5 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all flex items-center gap-1.5';
+      });
+
+      // Hide all states & badges
+      document.getElementById('section-pending-state').classList.add('hidden');
+      document.getElementById('section-paid-state').classList.add('hidden');
+      document.getElementById('section-expired-state').classList.add('hidden');
+
+      document.getElementById('badge-pending').classList.add('hidden');
+      document.getElementById('badge-paid').classList.add('hidden');
+      document.getElementById('badge-expired').classList.add('hidden');
+
+      // Timeline Nodes
+      const paymentNode = document.getElementById('step-node-payment');
+      const paymentLabel = document.getElementById('step-label-payment');
+      const paymentSub = document.getElementById('step-sub-payment');
+
+      const webhookNode = document.getElementById('step-node-webhook');
+      const webhookIcon = document.getElementById('step-icon-webhook');
+      const webhookLabel = document.getElementById('step-label-webhook');
+      const webhookSub = document.getElementById('step-sub-webhook');
+
+      const assetNode = document.getElementById('step-node-asset');
+      const assetIcon = document.getElementById('step-icon-asset');
+      const assetLabel = document.getElementById('step-label-asset');
+      const assetSub = document.getElementById('step-sub-asset');
+
+      if (state === 'pending') {
+        btnPending.className = 'px-3.5 py-1.5 rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 bg-primary text-on-primary shadow-sm';
+        document.getElementById('section-pending-state').classList.remove('hidden');
+        document.getElementById('badge-pending').classList.remove('hidden');
+
+        // Timeline: Step 2 active, others inactive
+        paymentNode.querySelector('div').className = 'w-9 h-9 rounded-full bg-amber-500 text-surface-container-lowest flex items-center justify-center shadow-md ring-4 ring-amber-500/20 relative z-10 animate-bounce';
+        paymentLabel.textContent = '2. Menunggu Bayar';
+        paymentLabel.className = 'font-label-sm text-label-sm font-bold text-amber-900';
+        paymentSub.textContent = 'Sedang Berlangsung';
+        paymentSub.className = 'font-caption text-caption text-amber-700 font-semibold';
+
+        webhookIcon.className = 'w-9 h-9 rounded-full bg-surface-container-high text-outline flex items-center justify-center relative z-10';
+        webhookLabel.className = 'font-label-sm text-label-sm font-semibold text-outline';
+        webhookSub.textContent = 'Antrean Sistem';
+
+        assetIcon.className = 'w-9 h-9 rounded-full bg-surface-container-high text-outline flex items-center justify-center relative z-10';
+        assetLabel.className = 'font-label-sm text-label-sm font-semibold text-outline';
+        assetSub.textContent = 'Terkunci';
+
+      } else if (state === 'paid') {
+        btnPaid.className = 'px-3.5 py-1.5 rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 bg-tertiary-container text-on-tertiary shadow-sm';
+        document.getElementById('section-paid-state').classList.remove('hidden');
+        document.getElementById('section-paid-state').classList.add('flex');
+        document.getElementById('badge-paid').classList.remove('hidden');
+        document.getElementById('badge-paid').classList.add('flex');
+
+        // Timeline: All completed
+        paymentNode.querySelector('div').className = 'w-9 h-9 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-md relative z-10';
+        paymentNode.querySelector('div').innerHTML = '<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: \'FILL\' 1;">check</span>';
+        paymentLabel.textContent = '2. Lunas';
+        paymentLabel.className = 'font-label-sm text-label-sm font-bold text-tertiary';
+        paymentSub.textContent = 'Settled';
+        paymentSub.className = 'font-caption text-caption text-tertiary';
+
+        webhookIcon.className = 'w-9 h-9 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-md relative z-10';
+        webhookIcon.innerHTML = '<span class="material-symbols-outlined" style="font-size: 18px; font-variation-settings: \'FILL\' 1;">verified</span>';
+        webhookLabel.className = 'font-label-sm text-label-sm font-bold text-tertiary';
+        webhookSub.textContent = 'Verified SHA512';
+        webhookSub.className = 'font-caption text-caption text-tertiary font-mono';
+
+        assetIcon.className = 'w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-md relative z-10 animate-pulse';
+        assetIcon.innerHTML = '<span class="material-symbols-outlined" style="font-size: 18px;">cloud_done</span>';
+        assetLabel.className = 'font-label-sm text-label-sm font-bold text-primary';
+        assetSub.textContent = 'Siap Diunduh';
+        assetSub.className = 'font-caption text-caption text-primary font-bold';
+
+      } else if (state === 'expired') {
+        btnExpired.className = 'px-3.5 py-1.5 rounded-lg font-label-md text-label-md transition-all flex items-center gap-1.5 bg-error text-on-error shadow-sm';
+        document.getElementById('section-expired-state').classList.remove('hidden');
+        document.getElementById('section-expired-state').classList.add('flex');
+        document.getElementById('badge-expired').classList.remove('hidden');
+        document.getElementById('badge-expired').classList.add('flex');
+
+        // Timeline: Failed at step 2
+        paymentNode.querySelector('div').className = 'w-9 h-9 rounded-full bg-error text-on-error flex items-center justify-center shadow-md relative z-10';
+        paymentNode.querySelector('div').innerHTML = '<span class="material-symbols-outlined" style="font-size: 18px;">close</span>';
+        paymentLabel.textContent = '2. Kedaluwarsa';
+        paymentLabel.className = 'font-label-sm text-label-sm font-bold text-error';
+        paymentSub.textContent = 'Batas Waktu Habis';
+        paymentSub.className = 'font-caption text-caption text-error';
+
+        webhookIcon.className = 'w-9 h-9 rounded-full bg-surface-container-high text-outline flex items-center justify-center relative z-10';
+        webhookLabel.className = 'font-label-sm text-label-sm font-semibold text-outline';
+        webhookSub.textContent = 'Dibatalkan';
+
+        assetIcon.className = 'w-9 h-9 rounded-full bg-surface-container-high text-outline flex items-center justify-center relative z-10';
+        assetLabel.className = 'font-label-sm text-label-sm font-semibold text-outline';
+        assetSub.textContent = 'Tidak Tersedia';
+      }
+    }
+
+    // Copy to clipboard
+    function copyOrderNumber() {
+      const code = document.getElementById('order-code').innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        const feedback = document.getElementById('copy-feedback');
+        feedback.classList.remove('opacity-0');
+        feedback.classList.add('opacity-100');
+        showToast('Nomor pesanan berhasil disalin ke papan klip!', 'content_copy');
+        setTimeout(() => {
+          feedback.classList.remove('opacity-100');
+          feedback.classList.add('opacity-0');
+        }, 2000);
+      });
+    }
+
+    // Modal Snap Controls
+    function openMidtransModal() {
+      const modal = document.getElementById('midtrans-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeMidtransModal() {
+      const modal = document.getElementById('midtrans-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    function simulateSuccessfulPayment() {
+      closeMidtransModal();
+      showToast('Memproses webhook notifikasi dari Midtrans...', 'sync');
+      setTimeout(() => {
+        switchState('paid');
+        showToast('Pembayaran Dikonfirmasi! Lisensi aktif.', 'verified');
+      }, 1200);
+    }
+
+    function recreateOrder() {
+      showToast('Membuat sesi pembayaran baru...', 'autorenew');
+      setTimeout(() => {
+        countdownSeconds = 24 * 3600;
+        switchState('pending');
+      }, 800);
+    }
+
+    function simulateDownloadReceipt() {
+      showToast('Menyiapkan berkas faktur resmi PDF...', 'download');
+      setTimeout(() => {
+        showToast('Faktur Bookil-BK-01J8K3.pdf siap diunduh.', 'check_circle');
+      }, 1000);
+    }
+
+    function triggerDownloadAsset() {
+      showToast('Memverifikasi presigned token AWS S3...', 'cloud_download');
+      setTimeout(() => {
+        showToast('Mendownload: Mastering-Laravel13-React19-Bundle.zip (84 MB)', 'file_download_done');
+      }, 1200);
+    }
+
+    function refreshStatus() {
+      const spinner = document.getElementById('refresh-spinner');
+      spinner.classList.add('animate-spin');
+      setTimeout(() => {
+        spinner.classList.remove('animate-spin');
+        showToast('Status sinkron dengan gateway Midtrans.', 'done_all');
+      }, 800);
+    }
+
+    // Lightweight Toast helper
+    function showToast(message, icon = 'info') {
+      const toast = document.getElementById('toast-message');
+      const toastText = document.getElementById('toast-text');
+      const toastIcon = document.getElementById('toast-icon');
+
+      toastText.textContent = message;
+      toastIcon.textContent = icon;
+
+      toast.classList.remove('hidden');
+      toast.classList.add('flex');
+
+      setTimeout(() => {
+        toast.classList.add('hidden');
+        toast.classList.remove('flex');
+      }, 3200);
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl shadow-[0_-1px_8px_rgba(0,0,0,0.02)]"><div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin py-space-lg flex flex-col md:flex-row items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-wrap justify-center md:justify-start"><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-tertiary" style="font-size: 16px;">lock</span><span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">256-Bit SSL Enkripsi</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-secondary" style="font-size: 16px;">verified_user</span><span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">Midtrans Certified</span></div><div class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest rounded-lg shadow-[0_1px_3px_rgba(0,0,0,0.04)]"><span class="material-symbols-outlined text-primary" style="font-size: 16px;">menu_book</span><span class="font-caption text-caption text-on-surface-variant uppercase tracking-wider font-semibold">Zero-DRM Guarantee</span></div></div><div class="flex items-center gap-space-sm text-center md:text-right"><span class="font-caption text-caption text-on-surface-variant">© 2024 Bookil Digital Platform. Seluruh hak cipta dilindungi undang-undang.</span></div></div></footer></body></html>
