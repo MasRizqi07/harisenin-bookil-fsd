@@ -102,6 +102,7 @@ export default function Index({ products, categories, filters }: IndexProps) {
             {/* Instant Checkout Buy-Now Modal */}
             {selectedProductForCheckout && (
                 <InstantCheckoutModal
+                    key={selectedProductForCheckout.id}
                     isOpen={!!selectedProductForCheckout}
                     onClose={() => setSelectedProductForCheckout(null)}
                     product={selectedProductForCheckout}

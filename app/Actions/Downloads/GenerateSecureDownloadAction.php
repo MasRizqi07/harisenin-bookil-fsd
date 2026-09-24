@@ -70,12 +70,29 @@ class GenerateSecureDownloadAction
 
             // Generate time-limited presigned URL (15 minutes expiration)
             $diskName = (string) config('filesystems.private_disk', 's3');
-            $disk = Storage::disk($diskName);
 
-            return $disk->temporaryUrl(
-                $product->file_path,
-                CarbonImmutable::now()->addMinutes(15)
-            );
+            // Fallback to local disk if S3 bucket is unconfigured (common in local/testing environments)
+            if ($diskName === 's3' && empty(config('filesystems.disks.s3.bucket'))) {
+                $diskName = 'local';
+            }
+
+            try {
+                return Storage::disk($diskName)->temporaryUrl(
+                    $product->file_path,
+                    CarbonImmutable::now()->addMinutes(15)
+                );
+            } catch (\Throwable $e) {
+                if ($diskName !== 'local' && app()->environment(['local', 'testing'])) {
+                    report($e);
+
+                    return Storage::disk('local')->temporaryUrl(
+                        $product->file_path,
+                        CarbonImmutable::now()->addMinutes(15)
+                    );
+                }
+
+                throw $e;
+            }
         });
     }
 }

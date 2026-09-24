@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Head, Link, router } from '@inertiajs/react';
 import StoreLayout from '@/Layouts/StoreLayout';
 import { formatRupiah } from '@/Components/ProductCard';
+import BookCoverImage from '@/Components/BookCoverImage';
 import StatusBadge from '@/Components/StatusBadge';
 import { Order } from '@/types';
 
@@ -64,7 +65,12 @@ export default function Show({
                 },
             });
         } else {
-            alert('Memuat modul Midtrans Snap... Silakan klik kembali beberapa saat lagi.');
+            const confirmSimulate = confirm(
+                'Modul Midtrans Snap belum aktif atau berjalan dalam mode Sandbox lokal. Ingin mensimulasikan pembayaran lunas (settlement) sekarang untuk menguji unduhan lisensi buku?'
+            );
+            if (confirmSimulate) {
+                router.post(route('dev.orders.simulate-paid', order.order_number));
+            }
         }
     };
 
@@ -193,14 +199,28 @@ export default function Show({
                                     </div>
                                 </div>
 
-                                <button
-                                    type="button"
-                                    onClick={handlePayNow}
-                                    className="h-11 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 shrink-0"
-                                >
-                                    <span>Bayar Sekarang (Snap)</span>
-                                    <span className="material-symbols-outlined text-[18px]">flash_on</span>
-                                </button>
+                                <div className="flex items-center gap-2 flex-wrap">
+                                    <button
+                                        type="button"
+                                        onClick={handlePayNow}
+                                        className="h-11 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 shrink-0"
+                                    >
+                                        <span>Bayar Sekarang (Snap)</span>
+                                        <span className="material-symbols-outlined text-[18px]">flash_on</span>
+                                    </button>
+
+                                    {!midtransIsProduction && (
+                                        <button
+                                            type="button"
+                                            onClick={() => router.post(route('dev.orders.simulate-paid', order.order_number))}
+                                            className="h-11 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-1.5 shrink-0"
+                                            title="Simulasikan notifikasi webhook settlement berhasil dari Midtrans"
+                                        >
+                                            <span className="material-symbols-outlined text-[16px]">check_circle</span>
+                                            <span>Simulasi Lunas (Dev)</span>
+                                        </button>
+                                    )}
+                                </div>
                             </div>
                         )}
                     </div>
@@ -215,18 +235,12 @@ export default function Show({
                             {order.items?.map((item) => (
                                 <div key={item.id} className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                     <div className="flex items-center gap-4 min-w-0">
-                                        <div className="w-12 h-16 rounded-lg bg-indigo-900 overflow-hidden shrink-0 shadow">
-                                            {item.product?.cover_image_path ? (
-                                                <img
-                                                    src={`/storage/${item.product.cover_image_path}`}
-                                                    alt={item.product.title}
-                                                    className="w-full h-full object-cover"
-                                                />
-                                            ) : (
-                                                <div className="w-full h-full flex items-center justify-center text-white bg-indigo-800">
-                                                    <span className="material-symbols-outlined text-lg">auto_stories</span>
-                                                </div>
-                                            )}
+                                        <div className="w-12 h-16 rounded-lg overflow-hidden shrink-0 shadow">
+                                            <BookCoverImage
+                                                coverPath={item.product?.cover_image_path}
+                                                title={item.product?.title}
+                                                fileType={item.product?.file_type}
+                                            />
                                         </div>
 
                                         <div className="min-w-0">

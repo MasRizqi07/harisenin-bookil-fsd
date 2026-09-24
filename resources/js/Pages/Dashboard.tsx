@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Head, Link, usePage } from '@inertiajs/react';
 import StoreLayout from '@/Layouts/StoreLayout';
 import { formatRupiah, formatFileSize } from '@/Components/ProductCard';
+import BookCoverImage from '@/Components/BookCoverImage';
 import StatusBadge from '@/Components/StatusBadge';
 import QuotaProgressBar from '@/Components/QuotaProgressBar';
 import { Order, OrderItem, PageProps, PaginatedData } from '@/types';
@@ -156,18 +157,12 @@ export default function Dashboard({ library, orders, stats }: DashboardProps) {
                                     >
                                         <div className="flex gap-4">
                                             {/* Mini Book Cover */}
-                                            <div className="w-20 h-28 rounded-xl bg-indigo-900 overflow-hidden shrink-0 shadow-md">
-                                                {item.product?.cover_image_path ? (
-                                                    <img
-                                                        src={`/storage/${item.product.cover_image_path}`}
-                                                        alt={item.product.title}
-                                                        className="w-full h-full object-cover"
-                                                    />
-                                                ) : (
-                                                    <div className="w-full h-full bg-gradient-to-br from-indigo-800 to-indigo-950 flex flex-col items-center justify-center p-2 text-white text-center">
-                                                        <span className="material-symbols-outlined text-2xl">auto_stories</span>
-                                                    </div>
-                                                )}
+                                            <div className="w-20 h-28 rounded-xl overflow-hidden shrink-0 shadow-md">
+                                                <BookCoverImage
+                                                    coverPath={item.product?.cover_image_path}
+                                                    title={item.product?.title}
+                                                    fileType={item.product?.file_type}
+                                                />
                                             </div>
 
                                             {/* Info */}

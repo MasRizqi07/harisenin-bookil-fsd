@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import StoreLayout from '@/Layouts/StoreLayout';
-import { formatRupiah, formatFileSize } from '@/Components/ProductCard';
+import { formatRupiah, formatFileSize, getCoverImageUrl } from '@/Components/ProductCard';
 import SamplePreviewModal from '@/Components/SamplePreviewModal';
 import InstantCheckoutModal from '@/Components/InstantCheckoutModal';
 import { PageProps, Product } from '@/types';
@@ -14,6 +14,20 @@ export default function Show({ product }: ShowProps) {
     const { auth } = usePage<PageProps>().props;
     const [previewOpen, setPreviewOpen] = useState(false);
     const [checkoutOpen, setCheckoutOpen] = useState(false);
+    const [imgSrc, setImgSrc] = useState<string | null>(
+        () => (product.cover_image_path ? getCoverImageUrl(product.cover_image_path) : null)
+    );
+
+    const handleImgError = () => {
+        if (imgSrc && imgSrc.startsWith('/storage/')) {
+            const fallback = imgSrc.replace('/storage/', '/images/');
+            if (fallback !== imgSrc) {
+                setImgSrc(fallback);
+                return;
+            }
+        }
+        setImgSrc(null);
+    };
 
     const handleBuyNow = () => {
         if (!auth.user) {
@@ -80,10 +94,11 @@ export default function Show({ product }: ShowProps) {
                         {/* Left Column: Book Cover Presentation (5 cols) */}
                         <div className="lg:col-span-5 flex flex-col items-center">
                             <div className="w-full max-w-sm aspect-[3/4] rounded-2xl bg-gradient-to-tr from-slate-100 via-indigo-50/50 to-slate-100 p-6 shadow-xl relative overflow-hidden border border-slate-100 flex items-center justify-center group">
-                                {product.cover_image_path ? (
+                                {imgSrc ? (
                                     <img
-                                        src={`/storage/${product.cover_image_path}`}
+                                        src={imgSrc}
                                         alt={product.title}
+                                        onError={handleImgError}
                                         className="h-full w-full object-cover rounded-xl shadow-md transform group-hover:scale-102 transition-transform duration-300"
                                     />
                                 ) : (
@@ -120,6 +135,61 @@ export default function Show({ product }: ShowProps) {
                                 <span className="material-symbols-outlined text-[18px]">menu_book</span>
                                 <span>Baca Cuplikan Bab Gratis</span>
                             </button>
+
+                            {/* Quick Specifications Grid (2x2) */}
+                            <div className="mt-6 w-full max-w-sm grid grid-cols-2 gap-3">
+                                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70 shadow-sm flex flex-col gap-1">
+                                    <span className="text-[11px] text-slate-500 uppercase font-semibold flex items-center gap-1">
+                                        <span className="material-symbols-outlined text-[15px] text-indigo-600">description</span>
+                                        Format File
+                                    </span>
+                                    <span className="text-xs font-bold text-slate-900">{product.file_type.toUpperCase()} (Zero-DRM)</span>
+                                </div>
+                                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70 shadow-sm flex flex-col gap-1">
+                                    <span className="text-[11px] text-slate-500 uppercase font-semibold flex items-center gap-1">
+                                        <span className="material-symbols-outlined text-[15px] text-indigo-600">auto_stories</span>
+                                        Halaman
+                                    </span>
+                                    <span className="text-xs font-bold text-slate-900">350+ Halaman Lengkap</span>
+                                </div>
+                                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70 shadow-sm flex flex-col gap-1">
+                                    <span className="text-[11px] text-slate-500 uppercase font-semibold flex items-center gap-1">
+                                        <span className="material-symbols-outlined text-[15px] text-indigo-600">folder_zip</span>
+                                        Ukuran Berkas
+                                    </span>
+                                    <span className="text-xs font-bold text-slate-900">{formatFileSize(product.file_size)}</span>
+                                </div>
+                                <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70 shadow-sm flex flex-col gap-1">
+                                    <span className="text-[11px] text-slate-500 uppercase font-semibold flex items-center gap-1">
+                                        <span className="material-symbols-outlined text-[15px] text-indigo-600">translate</span>
+                                        Bahasa
+                                    </span>
+                                    <span className="text-xs font-bold text-slate-900">Bahasa Indonesia</span>
+                                </div>
+                            </div>
+
+                            {/* Author Info Mini Card */}
+                            <div className="mt-4 w-full max-w-sm p-4 rounded-xl bg-slate-50 border border-slate-200/70 shadow-sm flex items-center gap-3.5">
+                                <div className="relative flex-shrink-0">
+                                    <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-indigo-600 to-violet-600 text-white font-extrabold text-base flex items-center justify-center ring-2 ring-indigo-200 shadow">
+                                        {product.author.charAt(0)}
+                                    </div>
+                                    <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-600 rounded-full flex items-center justify-center text-white ring-2 ring-white">
+                                        <span className="material-symbols-outlined text-[11px]">check</span>
+                                    </span>
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                    <div className="flex items-center gap-1.5 flex-wrap">
+                                        <h3 className="text-xs font-bold text-slate-900 truncate">{product.author}</h3>
+                                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-700 font-semibold">
+                                            Penulis Terverifikasi
+                                        </span>
+                                    </div>
+                                    <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">
+                                        Praktisi &amp; Penulis Buku Spesialis Rekayasa Perangkat Lunak, Arsitektur Sistem, dan Kepemimpinan Teknologi.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
                         {/* Right Column: Metadata & Purchase Action (7 cols) */}

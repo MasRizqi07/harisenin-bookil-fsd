@@ -44,21 +44,7 @@ class MidtransSnapService
             ])->values()->all(),
         ];
 
-        $response = Http::withBasicAuth($serverKey, '')
-            ->acceptJson()
-            ->asJson()
-            ->post($endpoint, $payload);
-
-        if ($response->successful()) {
-            $data = $response->json();
-
-            return [
-                'snap_token' => (string) ($data['token'] ?? ''),
-                'redirect_url' => (string) ($data['redirect_url'] ?? ''),
-            ];
-        }
-
-        // In local or test environments without a valid remote Midtrans key, provide a fallback mock token
+        // In local or test environments without a valid remote Midtrans key, provide a fallback mock token immediately
         if (app()->environment(['local', 'testing']) && empty($serverKey)) {
             $mockToken = 'mock-snap-'.Str::random(32);
 
@@ -68,8 +54,55 @@ class MidtransSnapService
             ];
         }
 
-        throw new RuntimeException(
-            "Midtrans Snap API request failed: [{$response->status()}] {$response->body()}"
-        );
+        try {
+            $httpClient = Http::withBasicAuth($serverKey, '')
+                ->acceptJson()
+                ->asJson()
+                ->timeout(10);
+
+            // Bypass SSL certificate verification in non-production environments to avoid Windows cURL error 60
+            if (! $isProduction) {
+                $httpClient = $httpClient->withoutVerifying();
+            }
+
+            $response = $httpClient->post($endpoint, $payload);
+
+            if ($response->successful()) {
+                $data = $response->json();
+
+                return [
+                    'snap_token' => (string) ($data['token'] ?? ''),
+                    'redirect_url' => (string) ($data['redirect_url'] ?? ''),
+                ];
+            }
+
+            if (app()->environment(['local', 'testing'])) {
+                report(new RuntimeException("Midtrans API Error [{$response->status()}]: {$response->body()}"));
+
+                $mockToken = 'mock-snap-'.Str::random(32);
+
+                return [
+                    'snap_token' => $mockToken,
+                    'redirect_url' => "https://app.sandbox.midtrans.com/snap/v2/vtweb/{$mockToken}",
+                ];
+            }
+
+            throw new RuntimeException(
+                "Midtrans Snap API request failed: [{$response->status()}] {$response->body()}"
+            );
+        } catch (\Throwable $e) {
+            if (app()->environment(['local', 'testing'])) {
+                report($e);
+
+                $mockToken = 'mock-snap-'.Str::random(32);
+
+                return [
+                    'snap_token' => $mockToken,
+                    'redirect_url' => "https://app.sandbox.midtrans.com/snap/v2/vtweb/{$mockToken}",
+                ];
+            }
+
+            throw $e;
+        }
     }
 }

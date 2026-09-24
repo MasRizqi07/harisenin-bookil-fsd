@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from '@inertiajs/react';
 import { Product, User } from '@/types';
-import { formatRupiah } from '@/Components/ProductCard';
+import { formatRupiah, getCoverImageUrl } from '@/Components/ProductCard';
 
 interface InstantCheckoutModalProps {
     isOpen: boolean;
@@ -17,6 +17,20 @@ export default function InstantCheckoutModal({
     user,
 }: InstantCheckoutModalProps) {
     const [agreed, setAgreed] = useState(true);
+    const [imgSrc, setImgSrc] = useState<string | null>(
+        () => (product.cover_image_path ? getCoverImageUrl(product.cover_image_path) : null)
+    );
+
+    const handleImgError = () => {
+        if (imgSrc && imgSrc.startsWith('/storage/')) {
+            const fallback = imgSrc.replace('/storage/', '/images/');
+            if (fallback !== imgSrc) {
+                setImgSrc(fallback);
+                return;
+            }
+        }
+        setImgSrc(null);
+    };
 
     const { data, setData, post, processing } = useForm({
         product_id: product.id,
@@ -71,10 +85,11 @@ export default function InstantCheckoutModal({
                     {/* Book Summary Card */}
                     <div className="flex gap-4 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80">
                         <div className="w-16 h-22 rounded-lg overflow-hidden bg-indigo-900 shrink-0 shadow-md">
-                            {product.cover_image_path ? (
+                            {imgSrc ? (
                                 <img
-                                    src={`/storage/${product.cover_image_path}`}
+                                    src={imgSrc}
                                     alt={product.title}
+                                    onError={handleImgError}
                                     className="w-full h-full object-cover"
                                 />
                             ) : (
@@ -108,7 +123,7 @@ export default function InstantCheckoutModal({
                     </div>
 
                     {/* Customer Identity Strip */}
-                    {user && (
+                    {user ? (
                         <div className="p-3 rounded-xl bg-indigo-50/70 border border-indigo-100 flex items-center justify-between">
                             <div className="flex items-center gap-2.5 min-w-0">
                                 <div className="w-8 h-8 rounded-full bg-indigo-600 text-white font-bold text-xs flex items-center justify-center shrink-0">
@@ -123,6 +138,13 @@ export default function InstantCheckoutModal({
                                 <span className="material-symbols-outlined text-[14px]">verified</span>
                                 Terikat Akun
                             </span>
+                        </div>
+                    ) : (
+                        <div className="p-3.5 rounded-xl bg-amber-50 border border-amber-200/80 flex items-center gap-3">
+                            <span className="material-symbols-outlined text-amber-600 text-[20px] shrink-0">account_circle</span>
+                            <div className="text-xs text-amber-900">
+                                <span className="font-bold">Belum Masuk:</span> Anda akan otomatis diarahkan untuk masuk/mendaftar agar lisensi e-book terikat ke rak digital Anda.
+                            </div>
                         </div>
                     )}
 

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bmBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#451a03" />
+      <stop offset="50%" stop-color="#292524" />
+      <stop offset="100%" stop-color="#0c0a09" />
+    </linearGradient>
+    <linearGradient id="bmAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="spine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#bmBg)" />
+  <rect x="0" y="0" width="30" height="800" fill="url(#spine)" />
+  <line x1="30" y1="0" x2="30" y2="800" stroke="#78350f" stroke-width="1" />
+
+  <g transform="translate(60, 60)">
+    <rect width="180" height="30" rx="15" fill="#78350f" opacity="0.8" />
+    <text x="90" y="20" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#fde68a" text-anchor="middle" letter-spacing="1">TETRALOGI BURU</text>
+  </g>
+
+  <text x="60" y="290" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="600" fill="#fbbf24" letter-spacing="4">MASTERPIECE SASTRA</text>
+  <text x="60" y="350" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="52" font-weight="900" fill="#ffffff" letter-spacing="-1">Bumi Manusia</text>
+  <text x="60" y="405" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="700" fill="url(#bmAccent)">Epik Perjuangan dan Martabat</text>
+
+  <text x="60" y="465" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="15" font-weight="400" fill="#d6d3d1">
+    <tspan x="60" dy="0">Kisah Pergulatan Batin Minke dan Nyai Ontosoroh</tspan>
+    <tspan x="60" dy="24">dalam Menentang Kolonialisme dan Menegakkan Martabat.</tspan>
+  </text>
+
+  <rect x="60" y="535" width="80" height="4" rx="2" fill="url(#bmAccent)" />
+
+  <g transform="translate(60, 660)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" fill="#a8a29e" letter-spacing="2">PENULIS</text>
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Pramoedya Ananta Toer</text>
+  </g>
+
+  <g transform="translate(450, 680)">
+    <text x="90" y="0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="end" letter-spacing="1">Bookil<tspan fill="#d97706">.</tspan></text>
+    <text x="90" y="16" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600" fill="#a8a29e" text-anchor="end" letter-spacing="1">WARISAN BANGSA</text>
+  </g>
+</svg>

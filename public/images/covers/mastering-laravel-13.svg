@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="40%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="spine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="800" fill="url(#bgGrad)" />
+
+  <!-- Spine Shadow -->
+  <rect x="0" y="0" width="30" height="800" fill="url(#spine)" />
+  <line x1="30" y1="0" x2="30" y2="800" stroke="#334155" stroke-width="1" opacity="0.4" />
+
+  <!-- Ambient Glow -->
+  <circle cx="450" cy="200" r="220" fill="#6366f1" opacity="0.15" />
+  <circle cx="150" cy="650" r="180" fill="#ec4899" opacity="0.1" />
+
+  <!-- Geometric Grid Pattern -->
+  <g opacity="0.12" stroke="#cbd5e1" stroke-width="1">
+    <line x1="60" y1="80" x2="540" y2="80" stroke-dasharray="4 4" />
+    <line x1="60" y1="720" x2="540" y2="720" stroke-dasharray="4 4" />
+    <circle cx="300" cy="400" r="140" fill="none" stroke-width="1.5" />
+    <circle cx="300" cy="400" r="90" fill="none" stroke-dasharray="3 3" />
+    <polygon points="300,280 400,460 200,460" fill="none" stroke-width="1" />
+  </g>
+
+  <!-- Series Badge -->
+  <g transform="translate(60, 60)">
+    <rect width="180" height="32" rx="16" fill="#312e81" opacity="0.8" />
+    <text x="90" y="21" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#a5b4fc" text-anchor="middle" letter-spacing="2">ENTERPRISE EDITION</text>
+  </g>
+
+  <g transform="translate(430, 60)">
+    <rect width="110" height="32" rx="16" fill="#4338ca" opacity="0.8" />
+    <text x="55" y="21" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#c7d2fe" text-anchor="middle" letter-spacing="1">LARAVEL 13</text>
+  </g>
+
+  <!-- Book Title -->
+  <text x="60" y="220" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="600" fill="#818cf8" letter-spacing="4">THE ARCHITECTURE MANUAL</text>
+  
+  <text x="60" y="280" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="46" font-weight="800" fill="#ffffff" letter-spacing="-1">Mastering</text>
+  <text x="60" y="335" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="46" font-weight="800" fill="url(#accentGrad)" letter-spacing="-1">Laravel 13</text>
+  <text x="60" y="390" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="46" font-weight="800" fill="#ffffff" letter-spacing="-1">&amp; React 19</text>
+
+  <!-- Subtitle -->
+  <text x="60" y="445" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="15" font-weight="400" fill="#94a3b8">
+    <tspan x="60" dy="0">Panduan Praktis Arsitektur Monolitik Modern,</tspan>
+    <tspan x="60" dy="24">Domain Actions, dan Integrasi Midtrans Engine.</tspan>
+  </text>
+
+  <!-- Decorative Separator -->
+  <rect x="60" y="520" width="80" height="4" rx="2" fill="url(#accentGrad)" />
+
+  <!-- Author & Imprint -->
+  <g transform="translate(60, 660)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" fill="#64748b" letter-spacing="2">PENULIS UTAMA</text>
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="700" fill="#f8fafc">Taylor Otwell &amp; Tim Architect</text>
+  </g>
+
+  <!-- Publisher Mark -->
+  <g transform="translate(450, 680)">
+    <text x="90" y="0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="end" letter-spacing="1">Bookil<tspan fill="#6366f1">.</tspan></text>
+    <text x="90" y="16" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="end" letter-spacing="1">PRESS 2026</text>
+  </g>
+</svg>

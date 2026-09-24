@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="40%" stop-color="#312e81" />
+      <stop offset="80%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="25%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#10b981" />
+      <stop offset="75%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="spine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#lpBg)" />
+  <rect x="0" y="0" width="30" height="800" fill="url(#spine)" />
+  <line x1="30" y1="0" x2="30" y2="800" stroke="#3730a3" stroke-width="1" />
+
+  <!-- Rainbow Arc Motif -->
+  <g transform="translate(300, 380)" opacity="0.2" fill="none" stroke-width="4">
+    <ellipse rx="180" ry="120" stroke="url(#rainbow)" stroke-dasharray="12 6" />
+    <ellipse rx="160" ry="105" stroke="url(#rainbow)" stroke-dasharray="8 4" />
+  </g>
+
+  <g transform="translate(60, 60)">
+    <rect width="180" height="30" rx="15" fill="#312e81" opacity="0.8" />
+    <text x="90" y="20" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#c7d2fe" text-anchor="middle" letter-spacing="1">SASTRA INDONESIA</text>
+  </g>
+
+  <text x="60" y="290" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="600" fill="#818cf8" letter-spacing="4">NOVEL INSPIRATIF</text>
+  <text x="60" y="350" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="52" font-weight="900" fill="#ffffff" letter-spacing="-1">Laskar Pelangi</text>
+  <text x="60" y="405" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="700" fill="url(#rainbow)">Menembus Keterbatasan Mimpi</text>
+
+  <text x="60" y="465" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="15" font-weight="400" fill="#cbd5e1">
+    <tspan x="60" dy="0">Kisah Epik Sepuluh Anak Belitung dalam Merajut Harapan,</tspan>
+    <tspan x="60" dy="24">Pendidikan, Persahabatan, dan Keteguhan Jiwa.</tspan>
+  </text>
+
+  <rect x="60" y="535" width="80" height="4" rx="2" fill="url(#rainbow)" />
+
+  <g transform="translate(60, 660)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" fill="#94a3b8" letter-spacing="2">PENULIS</text>
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Andrea Hirata</text>
+  </g>
+
+  <g transform="translate(450, 680)">
+    <text x="90" y="0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="end" letter-spacing="1">Bookil<tspan fill="#f59e0b">.</tspan></text>
+    <text x="90" y="16" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600" fill="#94a3b8" text-anchor="end" letter-spacing="1">LITERATURE</text>
+  </g>
+</svg>

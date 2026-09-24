@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ahBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="50%" stop-color="#172554" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="ahAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="spine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#ahBg)" />
+  <rect x="0" y="0" width="30" height="800" fill="url(#spine)" />
+  <line x1="30" y1="0" x2="30" y2="800" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Particle field -->
+  <g opacity="0.15" fill="#fde68a">
+    <circle cx="200" cy="300" r="3" />
+    <circle cx="220" cy="320" r="4" />
+    <circle cx="280" cy="280" r="5" />
+    <circle cx="340" cy="340" r="6" />
+    <circle cx="380" cy="300" r="7" />
+    <circle cx="420" cy="360" r="8" />
+  </g>
+
+  <g transform="translate(60, 60)">
+    <rect width="180" height="30" rx="15" fill="#1e1b4b" stroke="#3730a3" stroke-width="1" />
+    <text x="90" y="20" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#fde68a" text-anchor="middle" letter-spacing="1">BESTSELLER DUNIA</text>
+  </g>
+
+  <text x="60" y="290" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="600" fill="#fcd34d" letter-spacing="4">BEHAVIORAL SCIENCE</text>
+  <text x="60" y="350" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="52" font-weight="900" fill="#ffffff" letter-spacing="-1">Atomic Habits</text>
+  <text x="60" y="405" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="22" font-weight="700" fill="url(#ahAccent)">Perubahan Kecil Berdampak Dahsyat</text>
+
+  <text x="60" y="465" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="15" font-weight="400" fill="#94a3b8">
+    <tspan x="60" dy="0">Cara Mudah dan Terbukti Membangun Kebiasaan Baik</tspan>
+    <tspan x="60" dy="24">dan Menghilangkan Kebiasaan Buruk secara Konsisten.</tspan>
+  </text>
+
+  <rect x="60" y="535" width="80" height="4" rx="2" fill="url(#ahAccent)" />
+
+  <g transform="translate(60, 660)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" fill="#64748b" letter-spacing="2">PENULIS</text>
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="700" fill="#f8fafc">James Clear</text>
+  </g>
+
+  <g transform="translate(450, 680)">
+    <text x="90" y="0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="end" letter-spacing="1">Bookil<tspan fill="#f59e0b">.</tspan></text>
+    <text x="90" y="16" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="end" letter-spacing="1">SELF-DEV</text>
+  </g>
+</svg>

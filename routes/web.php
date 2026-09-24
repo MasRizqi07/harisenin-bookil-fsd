@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Actions\Payments\ProcessPaymentWebhookAction;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminOrderController;
@@ -14,7 +15,9 @@ use App\Http\Controllers\PaymentWebhookController;
 use App\Http\Controllers\ProductCatalogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 // 1. Storefront & Public Catalog
@@ -82,6 +85,30 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
 // 4. Midtrans Webhook (Excluded from CSRF in bootstrap/app.php)
 Route::post('/webhooks/midtrans', [PaymentWebhookController::class, 'handle'])->name('webhooks.midtrans');
+
+// Local Development Payment Simulator for Sandbox & Manual Testing
+if (app()->environment(['local', 'testing'])) {
+    Route::post('/dev/orders/{order:order_number}/simulate-paid', function (Order $order, ProcessPaymentWebhookAction $action) {
+        $serverKey = (string) config('services.midtrans.server_key');
+        $statusCode = '200';
+        $grossAmount = (string) (int) round((float) $order->total_amount);
+        $sig = hash('sha512', $order->order_number.$statusCode.$grossAmount.$serverKey);
+
+        $action->execute([
+            'order_id' => $order->order_number,
+            'transaction_id' => 'sim-'.Str::uuid(),
+            'transaction_status' => 'settlement',
+            'status_code' => $statusCode,
+            'gross_amount' => $grossAmount,
+            'payment_type' => 'qris',
+            'signature_key' => $sig,
+            'settlement_time' => now()->toIso8601String(),
+        ]);
+
+        return redirect()->route('orders.show', $order->order_number)
+            ->with('success', 'Simulasi pembayaran Midtrans berhasil diselesaikan! E-book kini dapat langsung diunduh.');
+    })->name('dev.orders.simulate-paid');
+}
 
 // 5. Legacy Task Routes (Preserved for compatibility)
 Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');

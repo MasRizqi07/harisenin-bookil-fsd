@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Head, Link, router } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { formatRupiah } from '@/Components/ProductCard';
+import BookCoverImage from '@/Components/BookCoverImage';
 import { Category, PaginatedData, Product } from '@/types';
 
 interface ProductItem extends Product {
@@ -145,16 +146,12 @@ export default function Index({ products, categories, filters }: IndexProps) {
                                     <tr key={product.id} className="hover:bg-slate-900/60 transition-colors">
                                         <td className="px-6 py-4">
                                             <div className="flex items-center space-x-3">
-                                                <div className="w-10 h-14 rounded-lg bg-gradient-to-tr from-violet-600 to-indigo-600 flex items-center justify-center flex-shrink-0 text-[10px] font-bold text-white uppercase overflow-hidden shadow">
-                                                    {product.cover_image_path ? (
-                                                        <img
-                                                            src={`/storage/${product.cover_image_path}`}
-                                                            alt={product.title}
-                                                            className="w-full h-full object-cover"
-                                                        />
-                                                    ) : (
-                                                        product.file_type
-                                                    )}
+                                                <div className="w-10 h-14 rounded-lg overflow-hidden flex-shrink-0 shadow">
+                                                    <BookCoverImage
+                                                        coverPath={product.cover_image_path}
+                                                        title={product.title}
+                                                        fileType={product.file_type}
+                                                    />
                                                 </div>
                                                 <div className="min-w-0">
                                                     <h4 className="font-bold text-white truncate max-w-xs">

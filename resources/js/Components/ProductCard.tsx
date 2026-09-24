@@ -24,15 +24,45 @@ export function formatFileSize(bytes: number): string {
     return (bytes / 1024).toFixed(0) + ' KB';
 }
 
+export function getCoverImageUrl(path?: string | null): string {
+    if (!path) return '';
+    if (path.startsWith('http://') || path.startsWith('https://') || path.startsWith('data:')) {
+        return path;
+    }
+    if (path.startsWith('/')) {
+        return path;
+    }
+    if (path.startsWith('covers/')) {
+        return `/images/${path}`;
+    }
+    return `/storage/${path}`;
+}
+
 export default function ProductCard({ product, onQuickBuy }: ProductCardProps) {
+    const [imgSrc, setImgSrc] = React.useState<string | null>(
+        () => (product.cover_image_path ? getCoverImageUrl(product.cover_image_path) : null)
+    );
+
+    const handleImgError = () => {
+        if (imgSrc && imgSrc.startsWith('/storage/')) {
+            const fallback = imgSrc.replace('/storage/', '/images/');
+            if (fallback !== imgSrc) {
+                setImgSrc(fallback);
+                return;
+            }
+        }
+        setImgSrc(null);
+    };
+
     return (
         <div className="group bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden relative">
             {/* Top 3:4 Aspect Ratio Cover Area */}
             <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-100 flex items-center justify-center">
-                {product.cover_image_path ? (
+                {imgSrc ? (
                     <img
-                        src={`/storage/${product.cover_image_path}`}
+                        src={imgSrc}
                         alt={product.title}
+                        onError={handleImgError}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                 ) : (

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="phpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#030712" />
+    </linearGradient>
+    <linearGradient id="phpAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+    <linearGradient id="spine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="800" fill="url(#phpBg)" />
+  <rect x="0" y="0" width="30" height="800" fill="url(#spine)" />
+  <line x1="30" y1="0" x2="30" y2="800" stroke="#1f2937" stroke-width="1" />
+
+  <circle cx="480" cy="180" r="200" fill="#3b82f6" opacity="0.12" />
+  <circle cx="120" cy="620" r="160" fill="#06b6d4" opacity="0.08" />
+
+  <!-- Code Decor -->
+  <g opacity="0.15" font-family="monospace" font-size="12" fill="#38bdf8">
+    <text x="60" y="140">&lt;?php declare(strict_types=1);</text>
+    <text x="60" y="165">final readonly class HighPerformanceEngine {</text>
+    <text x="80" y="190">public function __construct(private JITCompiler $jit) {}</text>
+    <text x="60" y="215">}</text>
+  </g>
+
+  <!-- Tag -->
+  <g transform="translate(60, 60)">
+    <rect width="140" height="30" rx="15" fill="#1e3a8a" opacity="0.8" />
+    <text x="70" y="20" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="700" fill="#93c5fd" text-anchor="middle" letter-spacing="1">PHP 8.5+</text>
+  </g>
+
+  <!-- Title -->
+  <text x="60" y="300" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="20" font-weight="600" fill="#38bdf8" letter-spacing="4">SYSTEM REFACTORING</text>
+  <text x="60" y="360" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="44" font-weight="800" fill="#ffffff" letter-spacing="-1">High-Performance</text>
+  <text x="60" y="415" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="44" font-weight="800" fill="url(#phpAccent)" letter-spacing="-1">Clean PHP 8.5</text>
+
+  <!-- Subtitle -->
+  <text x="60" y="470" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="15" font-weight="400" fill="#94a3b8">
+    <tspan x="60" dy="0">Eksplorasi Mendalam Fitur JIT, Static Typing Ketat,</tspan>
+    <tspan x="60" dy="24">dan Pola Desain Domain Modern Berkinerja Tinggi.</tspan>
+  </text>
+
+  <rect x="60" y="540" width="80" height="4" rx="2" fill="url(#phpAccent)" />
+
+  <g transform="translate(60, 660)">
+    <text x="0" y="0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="11" font-weight="600" fill="#64748b" letter-spacing="2">PENULIS</text>
+    <text x="0" y="24" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="18" font-weight="700" fill="#f8fafc">Brent Roose</text>
+  </g>
+
+  <g transform="translate(450, 680)">
+    <text x="90" y="0" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="end" letter-spacing="1">Bookil<tspan fill="#38bdf8">.</tspan></text>
+    <text x="90" y="16" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9" font-weight="600" fill="#64748b" text-anchor="end" letter-spacing="1">PRESS 2026</text>
+  </g>
+</svg>

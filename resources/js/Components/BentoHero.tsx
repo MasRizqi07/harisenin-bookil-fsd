@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from '@inertiajs/react';
 import { Product } from '@/types';
-import { formatRupiah } from '@/Components/ProductCard';
+import { formatRupiah, getCoverImageUrl } from '@/Components/ProductCard';
 
 interface BentoHeroProps {
     featuredProduct?: Product | null;
@@ -12,6 +12,25 @@ export default function BentoHero({
     featuredProduct,
     onSearchClick,
 }: BentoHeroProps) {
+    const [imgSrc, setImgSrc] = React.useState<string | null>(
+        () => (featuredProduct?.cover_image_path ? getCoverImageUrl(featuredProduct.cover_image_path) : null)
+    );
+
+    React.useEffect(() => {
+        setImgSrc(featuredProduct?.cover_image_path ? getCoverImageUrl(featuredProduct.cover_image_path) : null);
+    }, [featuredProduct?.cover_image_path]);
+
+    const handleImgError = () => {
+        if (imgSrc && imgSrc.startsWith('/storage/')) {
+            const fallback = imgSrc.replace('/storage/', '/images/');
+            if (fallback !== imgSrc) {
+                setImgSrc(fallback);
+                return;
+            }
+        }
+        setImgSrc(null);
+    };
+
     return (
         <section className="relative overflow-hidden pt-8 pb-12">
             {/* Ambient background glows */}
@@ -36,9 +55,9 @@ export default function BentoHero({
                             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
                                 Buka Pintu Pengetahuan Digital <span className="text-indigo-600">Tanpa Batas.</span>
                             </h1>
-                            <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
+                            <p className="mt-4 text-base sm:lg text-slate-600 leading-relaxed">
                                 Platform e-book arsitektur software, teknologi modern, dan kepemimpinan bisnis terlengkap di Indonesia. 
-                                Format PDF & EPUB murni, tanpa DRM mengikat, unduh instan ke perangkat Anda.
+                                Format PDF &amp; EPUB murni, tanpa DRM mengikat, unduh instan ke perangkat Anda.
                             </p>
                         </div>
 
@@ -86,10 +105,11 @@ export default function BentoHero({
                             <div className="my-6 z-10 flex flex-col items-center text-center">
                                 {/* Book Cover Presentation with 3D feel */}
                                 <div className="w-32 h-44 rounded-xl overflow-hidden shadow-2xl ring-2 ring-white/20 transform hover:scale-105 transition-all duration-300 bg-indigo-800">
-                                    {featuredProduct.cover_image_path ? (
+                                    {imgSrc ? (
                                         <img
-                                            src={`/storage/${featuredProduct.cover_image_path}`}
+                                            src={imgSrc}
                                             alt={featuredProduct.title}
+                                            onError={handleImgError}
                                             className="w-full h-full object-cover"
                                         />
                                     ) : (
