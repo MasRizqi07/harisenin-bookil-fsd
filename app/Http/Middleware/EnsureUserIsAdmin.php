@@ -20,7 +20,7 @@ class EnsureUserIsAdmin
     {
         $user = $request->user();
 
-        if (!$user || $user->role !== UserRole::ADMIN) {
+        if (! $user || $user->role !== UserRole::ADMIN) {
             abort(403, 'Akses terbatas hanya untuk Administrator sistem.');
         }
 

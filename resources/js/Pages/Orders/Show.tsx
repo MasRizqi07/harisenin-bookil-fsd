@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Head, Link, router } from '@inertiajs/react';
 import StoreLayout from '@/Layouts/StoreLayout';
 import { formatRupiah } from '@/Components/ProductCard';
+import StatusBadge from '@/Components/StatusBadge';
 import { Order } from '@/types';
 
 interface OrderShowProps {
@@ -17,6 +18,9 @@ export default function Show({
     midtransClientKey,
     midtransIsProduction,
 }: OrderShowProps) {
+    const [copied, setCopied] = useState(false);
+    const [downloadingToken, setDownloadingToken] = useState<string | null>(null);
+
     // Dynamically inject Midtrans Snap script
     useEffect(() => {
         if (!midtransClientKey) return;
@@ -36,10 +40,6 @@ export default function Show({
             script.async = true;
             document.body.appendChild(script);
         }
-
-        return () => {
-            // Keep script cached in DOM
-        };
     }, [midtransClientKey, midtransIsProduction]);
 
     const handlePayNow = () => {
@@ -60,162 +60,216 @@ export default function Show({
                     alert('Pembayaran mengalami kendala. Silakan coba kembali.');
                 },
                 onClose: () => {
-                    // Dialog closed by user
+                    // Closed popup
                 },
             });
         } else {
-            alert('Memuat modul pembayaran Midtrans... Silakan coba sesaat lagi.');
+            alert('Memuat modul Midtrans Snap... Silakan klik kembali beberapa saat lagi.');
         }
     };
 
-    const getStatusBadge = (status: Order['status']) => {
-        switch (status) {
-            case 'paid':
-                return (
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">
-                        <span className="w-2 h-2 mr-1.5 rounded-full bg-emerald-500" />
-                        Lunas
-                    </span>
-                );
-            case 'pending':
-                return (
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200">
-                        <span className="w-2 h-2 mr-1.5 rounded-full bg-amber-500 animate-pulse" />
-                        Menunggu Pembayaran
-                    </span>
-                );
-            case 'failed':
-                return (
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-rose-100 text-rose-800 border border-rose-200">
-                        <span className="w-2 h-2 mr-1.5 rounded-full bg-rose-500" />
-                        Gagal
-                    </span>
-                );
-            case 'expired':
-                return (
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-800 border border-slate-200">
-                        <span className="w-2 h-2 mr-1.5 rounded-full bg-slate-400" />
-                        Kedaluwarsa
-                    </span>
-                );
-        }
+    const copyOrderCode = () => {
+        navigator.clipboard.writeText(order.order_number);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
     };
+
+    const isPaid = order.status === 'paid';
+    const isPending = order.status === 'pending';
 
     return (
         <StoreLayout>
-            <Head title={`Invoice #${order.order_number} - Bookil`} />
+            <Head title={`Faktur #${order.order_number} — Bookil`} />
 
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-                {/* Header Information */}
-                <div className="bg-white rounded-3xl border border-slate-200 shadow-sm p-6 sm:p-8 mb-8">
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-100">
-                        <div>
-                            <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                                Nomor Pesanan
-                            </span>
-                            <h1 className="text-xl sm:text-2xl font-extrabold text-slate-900 mt-0.5">
-                                #{order.order_number}
-                            </h1>
-                            <p className="text-xs text-slate-500 mt-1">
-                                Dibuat pada {new Date(order.created_at).toLocaleDateString('id-ID', {
-                                    day: 'numeric',
-                                    month: 'long',
-                                    year: 'numeric',
-                                    hour: '2-digit',
-                                    minute: '2-digit',
-                                })}
-                            </p>
-                        </div>
-                        <div className="flex sm:flex-col sm:items-end gap-2">
-                            {getStatusBadge(order.status)}
-                            {order.payment_method && (
-                                <span className="text-xs font-medium text-slate-500">
-                                    Metode: <strong className="uppercase">{order.payment_method}</strong>
-                                </span>
-                            )}
-                        </div>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 space-y-6">
+                {/* Breadcrumbs & Title */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div className="space-y-1">
+                        <nav className="flex items-center gap-2 text-xs text-slate-500 font-medium">
+                            <Link href="/" className="hover:text-indigo-600 transition-colors">
+                                Beranda
+                            </Link>
+                            <span>/</span>
+                            <Link href={route('dashboard')} className="hover:text-indigo-600 transition-colors">
+                                Riwayat Pesanan
+                            </Link>
+                            <span>/</span>
+                            <span className="text-slate-800 font-semibold">{order.order_number}</span>
+                        </nav>
+                        <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                            Faktur Pesanan Resmi
+                        </h1>
                     </div>
 
-                    {/* Pending Payment Notice & Snap Button */}
-                    {order.status === 'pending' && (
-                        <div className="mt-6 p-5 rounded-2xl bg-amber-50 border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-                            <div className="flex items-center space-x-3 text-amber-800 text-sm">
-                                <svg className="w-6 h-6 text-amber-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                </svg>
-                                <div>
-                                    <strong className="block font-semibold">Selesaikan Pembayaran Anda</strong>
-                                    <span className="text-xs text-amber-700">
-                                        Klik tombol bayar untuk membuka gateway pembayaran aman Midtrans.
-                                    </span>
-                                </div>
-                            </div>
+                    <div className="flex items-center gap-2">
+                        <button
+                            type="button"
+                            onClick={() => window.print()}
+                            className="h-10 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-700 text-xs font-semibold border border-slate-200 shadow-sm transition-all flex items-center gap-2"
+                        >
+                            <span className="material-symbols-outlined text-[18px]">print</span>
+                            <span>Cetak Salinan</span>
+                        </button>
+                    </div>
+                </div>
 
-                            <button
-                                type="button"
-                                onClick={handlePayNow}
-                                className="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-sm shadow-md shadow-amber-200 transition-colors flex items-center justify-center space-x-2"
-                            >
-                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-                                </svg>
-                                <span>Bayar Sekarang</span>
-                            </button>
-                        </div>
-                    )}
+                {/* Master Invoice Receipt Card */}
+                <div className="bg-white rounded-3xl border border-slate-200/80 shadow-xl overflow-hidden flex flex-col">
+                    {/* Top Security Gradient Stripe */}
+                    <div className="h-2.5 bg-gradient-to-r from-indigo-600 via-violet-600 to-emerald-500" />
 
-                    {/* Paid Success Notice */}
-                    {order.status === 'paid' && (
-                        <div className="mt-6 p-5 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center space-x-3 text-emerald-800 text-sm">
-                            <svg className="w-6 h-6 text-emerald-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <div>
-                                <strong className="block font-semibold">Pembayaran Terverifikasi</strong>
-                                <span className="text-xs text-emerald-700">
-                                    Aset digital Anda telah aktif. Silakan gunakan link unduhan di bawah ini.
+                    {/* Receipt Head */}
+                    <div className="p-6 sm:p-8 border-b border-slate-100 space-y-6">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div className="space-y-1">
+                                <span className="text-[10px] uppercase font-bold tracking-widest text-slate-400">
+                                    Nomor Transaksi
                                 </span>
+                                <div className="flex items-center gap-2">
+                                    <span className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight font-mono">
+                                        {order.order_number}
+                                    </span>
+                                    <button
+                                        type="button"
+                                        onClick={copyOrderCode}
+                                        title="Salin Nomor Pesanan"
+                                        className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 transition-colors"
+                                    >
+                                        <span className="material-symbols-outlined text-[16px]">content_copy</span>
+                                    </button>
+                                    {copied && (
+                                        <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">
+                                            Tersalin!
+                                        </span>
+                                    )}
+                                </div>
+                                <p className="text-xs text-slate-500">
+                                    Dibuat pada {new Date(order.created_at).toLocaleString('id-ID', { dateStyle: 'long', timeStyle: 'short' })} WIB
+                                </p>
+                            </div>
+
+                            <div className="sm:text-right">
+                                <StatusBadge status={order.status} size="md" />
                             </div>
                         </div>
-                    )}
 
-                    {/* Purchased Items List */}
-                    <div className="mt-8">
-                        <h2 className="text-sm font-bold uppercase tracking-wider text-slate-800 mb-4">
-                            Daftar Produk
-                        </h2>
-                        <div className="divide-y divide-slate-100 border border-slate-100 rounded-2xl overflow-hidden">
+                        {/* Paid Celebration Banner */}
+                        {isPaid && (
+                            <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                                        <span className="material-symbols-outlined text-[24px]">verified</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-sm font-bold text-emerald-900">Pembayaran Terkonfirmasi Lunas</h3>
+                                        <p className="text-xs text-emerald-700">
+                                            Aset digital telah disinkronkan ke perpustakaan Anda dan siap diunduh kapan saja.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <Link
+                                    href={route('customer.library')}
+                                    className="h-10 px-5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-sm transition-all flex items-center justify-center gap-1.5 shrink-0"
+                                >
+                                    <span>Buka di Perpustakaan</span>
+                                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                                </Link>
+                            </div>
+                        )}
+
+                        {/* Pending Payment Action Banner */}
+                        {isPending && snapToken && (
+                            <div className="p-5 rounded-2xl bg-indigo-50/80 border border-indigo-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-md animate-pulse">
+                                        <span className="material-symbols-outlined text-[24px]">payments</span>
+                                    </div>
+                                    <div>
+                                        <h3 className="text-sm font-bold text-indigo-900">Selesaikan Pembayaran Anda</h3>
+                                        <p className="text-xs text-indigo-700">
+                                            Pilih Virtual Account (BCA, Mandiri, BRI) atau QRIS / GoPay melalui jendela Midtrans Snap.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button
+                                    type="button"
+                                    onClick={handlePayNow}
+                                    className="h-11 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 shrink-0"
+                                >
+                                    <span>Bayar Sekarang (Snap)</span>
+                                    <span className="material-symbols-outlined text-[18px]">flash_on</span>
+                                </button>
+                            </div>
+                        )}
+                    </div>
+
+                    {/* Purchased Items Table */}
+                    <div className="p-6 sm:p-8 space-y-4">
+                        <h3 className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+                            Rincian Pembelian
+                        </h3>
+
+                        <div className="divide-y divide-slate-100">
                             {order.items?.map((item) => (
-                                <div key={item.id} className="p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50/50">
-                                    <div className="flex items-center space-x-4">
-                                        <div className="w-12 h-16 rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white font-bold text-xs uppercase shadow-sm">
-                                            {item.product?.file_type || 'PDF'}
+                                <div key={item.id} className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                                    <div className="flex items-center gap-4 min-w-0">
+                                        <div className="w-12 h-16 rounded-lg bg-indigo-900 overflow-hidden shrink-0 shadow">
+                                            {item.product?.cover_image_path ? (
+                                                <img
+                                                    src={`/storage/${item.product.cover_image_path}`}
+                                                    alt={item.product.title}
+                                                    className="w-full h-full object-cover"
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full flex items-center justify-center text-white bg-indigo-800">
+                                                    <span className="material-symbols-outlined text-lg">auto_stories</span>
+                                                </div>
+                                            )}
                                         </div>
-                                        <div>
-                                            <h3 className="font-semibold text-slate-900 text-sm">
+
+                                        <div className="min-w-0">
+                                            <h4 className="font-bold text-sm text-slate-900 truncate">
                                                 {item.product?.title || 'E-Book Digital'}
-                                            </h3>
+                                            </h4>
                                             <p className="text-xs text-slate-500">
                                                 Penulis: {item.product?.author || '-'}
                                             </p>
+                                            <div className="flex items-center gap-2 mt-1">
+                                                <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-slate-100 text-slate-600">
+                                                    {item.product?.file_type}
+                                                </span>
+                                                <span className="text-[10px] text-emerald-600 font-semibold flex items-center gap-0.5">
+                                                    <span className="material-symbols-outlined text-[12px]">verified</span>
+                                                    Lisensi Penuh
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center justify-between sm:justify-end sm:space-x-6">
-                                        <span className="text-sm font-bold text-slate-800">
+                                    <div className="text-right shrink-0">
+                                        <span className="text-base font-extrabold text-slate-900 block">
                                             {formatRupiah(item.price)}
                                         </span>
 
-                                        {/* Download button if paid */}
-                                        {order.status === 'paid' && item.download_token && (
+                                        {isPaid && item.download_token && (
                                             <a
-                                                href={`/downloads/${item.download_token.token}`}
-                                                className="inline-flex items-center px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs shadow-sm transition-colors"
+                                                href={route('downloads.process', item.download_token.token)}
+                                                onClick={() => setDownloadingToken(item.download_token?.token || '')}
+                                                className="inline-flex items-center gap-1 mt-2 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-bold border border-emerald-200 transition-colors"
                                             >
-                                                <svg className="w-4 h-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                                                </svg>
-                                                Download ({item.download_token.max_downloads - item.download_token.download_count} sisa)
+                                                {downloadingToken === item.download_token.token ? (
+                                                    <>
+                                                        <span className="animate-spin h-3.5 w-3.5 rounded-full border-2 border-emerald-600 border-t-transparent" />
+                                                        <span>Menyiapkan...</span>
+                                                    </>
+                                                ) : (
+                                                    <>
+                                                        <span className="material-symbols-outlined text-[15px]">download</span>
+                                                        <span>Unduh ({item.download_token.max_downloads - item.download_token.download_count}x sisa)</span>
+                                                    </>
+                                                )}
                                             </a>
                                         )}
                                     </div>
@@ -224,23 +278,29 @@ export default function Show({
                         </div>
                     </div>
 
-                    {/* Total Summary */}
-                    <div className="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
-                        <span className="text-sm font-medium text-slate-600">Total Pembayaran:</span>
-                        <span className="text-2xl font-extrabold text-indigo-700">
-                            {formatRupiah(order.total_amount)}
-                        </span>
+                    {/* Breakdown & Totals */}
+                    <div className="p-6 sm:p-8 bg-slate-50/80 border-t border-slate-100 space-y-3">
+                        <div className="flex justify-between text-xs text-slate-600">
+                            <span>Subtotal Pembelian</span>
+                            <span className="font-semibold text-slate-900">{formatRupiah(order.total_amount)}</span>
+                        </div>
+                        <div className="flex justify-between text-xs text-slate-600">
+                            <span>Biaya Gateway (Midtrans Snap)</span>
+                            <span className="font-semibold text-emerald-600">Rp 0 (Gratis)</span>
+                        </div>
+                        <div className="flex justify-between text-xs text-slate-600">
+                            <span>PPN Digital Indonesia (11%)</span>
+                            <span className="font-semibold text-slate-500">Termasuk</span>
+                        </div>
+                        <div className="flex justify-between items-baseline pt-3 border-t border-slate-200">
+                            <span className="text-sm font-bold text-slate-900">Total Pembayaran:</span>
+                            <span className="text-2xl font-black text-indigo-600">
+                                {formatRupiah(order.total_amount)}
+                            </span>
+                        </div>
                     </div>
-                </div>
-
-                {/* Back to Catalog Link */}
-                <div className="text-center">
-                    <Link href="/" className="text-xs font-semibold text-indigo-600 hover:text-indigo-700">
-                        &larr; Kembali ke Katalog Utama
-                    </Link>
                 </div>
             </div>
         </StoreLayout>
     );
 }
-

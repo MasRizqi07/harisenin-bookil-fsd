@@ -46,6 +46,7 @@ export interface OrderItem {
     price: string;
     product?: Product;
     download_token?: DownloadToken;
+    order?: Order;
 }
 
 export interface Payment {

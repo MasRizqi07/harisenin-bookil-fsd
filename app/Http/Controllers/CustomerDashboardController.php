@@ -31,7 +31,7 @@ class CustomerDashboardController extends Controller
             ->with([
                 'product.category',
                 'downloadToken',
-                'order' => fn($q) => $q->select(['id', 'order_number', 'updated_at']),
+                'order' => fn ($q) => $q->select(['id', 'order_number', 'updated_at']),
             ])
             ->latest()
             ->get();
@@ -52,7 +52,7 @@ class CustomerDashboardController extends Controller
         $totalOrders = Order::query()->where('user_id', $user->id)->count();
         $activeDownloads = $libraryItems->filter(function (OrderItem $item): bool {
             $token = $item->downloadToken;
-            if (!$token) {
+            if (! $token) {
                 return false;
             }
 

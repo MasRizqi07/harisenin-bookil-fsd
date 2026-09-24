@@ -65,7 +65,7 @@ it('displays customer personal digital library with active tokens and order hist
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Dashboard')
             ->has('library', 1)
             ->where('library.0.product_id', $productA->id)

@@ -25,7 +25,7 @@ class AdminOrderController extends Controller
                 $query->where('status', $request->input('status'));
             })
             ->when($request->filled('search'), function (Builder $query) use ($request): void {
-                $search = '%' . trim((string) $request->input('search')) . '%';
+                $search = '%'.trim((string) $request->input('search')).'%';
                 $query->where(function (Builder $sub) use ($search): void {
                     $sub->where('order_number', 'like', $search)
                         ->orWhereHas('user', function (Builder $userQuery) use ($search): void {

@@ -15,10 +15,18 @@ use App\Http\Controllers\ProductCatalogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 // 1. Storefront & Public Catalog
 Route::get('/', [ProductCatalogController::class, 'index'])->name('products.index');
 Route::get('/products/{product:slug}', [ProductCatalogController::class, 'show'])->name('products.show');
+
+// Public Support & Legal Pages
+Route::get('/faq', fn () => Inertia::render('Support/Faq'))->name('support.faq');
+Route::get('/terms', fn () => Inertia::render('Legal/Terms'))->name('legal.terms');
+Route::get('/privacy', fn () => Inertia::render('Legal/Privacy'))->name('legal.privacy');
+Route::get('/refund-policy', fn () => Inertia::render('Legal/RefundPolicy'))->name('legal.refund-policy');
+Route::get('/errors/{code?}', fn ($code = 404) => Inertia::render('Errors/ErrorPage', ['status' => (int) $code]))->name('errors.show');
 
 // 2. Customer Portal & Checkout (Authenticated)
 Route::middleware('auth')->group(function (): void {
@@ -83,4 +91,4 @@ Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.upda
 Route::patch('/tasks/{task}/toggle', [TaskController::class, 'toggle'])->name('tasks.toggle');
 Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

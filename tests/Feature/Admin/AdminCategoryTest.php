@@ -17,7 +17,7 @@ it('displays category listing for admin', function (): void {
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Admin/Categories/Index')
             ->has('categories', 1)
             ->where('categories.0.id', $category->id)

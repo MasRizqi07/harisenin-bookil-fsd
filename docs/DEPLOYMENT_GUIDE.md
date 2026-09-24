@@ -10,13 +10,25 @@
 
 ## 📑 Daftar Isi
 
-1. [Topologi Infrastruktur Produksi](#1-topologi-infrastruktur-produksi)
-2. [Daftar Variabel Lingkungan Produksi (`.env.production`)](#2-daftar-variabel-lingkungan-produksi-envproduction)
-3. [Prosedur Rilis Produksi Langkah-demi-Langkah](#3-prosedur-rilis-produksi-langkah-demi-langkah)
-4. [Konfigurasi Cloud Storage Privat (AWS S3 / Cloudflare R2)](#4-konfigurasi-cloud-storage-privat-aws-s3--cloudflare-r2)
-5. [Manajemen Daemon Queue Worker & Scheduler (Supervisor & Cron)](#5-manajemen-daemon-queue-worker--scheduler-supervisor--cron)
-6. [Konfigurasi Web Server (Nginx & PHP 8.5-FPM)](#6-konfigurasi-web-server-nginx--php-85-fpm)
-7. [Prosedur Pencadangan & Pemulihan Bencana (Backup & Disaster Recovery)](#7-prosedur-pencadangan--pemulihan-bencana-backup--disaster-recovery)
+- [🚀 Production Deployment \& Operations Guide — Bookil](#-production-deployment--operations-guide--bookil)
+  - [📑 Daftar Isi](#-daftar-isi)
+  - [1. Topologi Infrastruktur Produksi](#1-topologi-infrastruktur-produksi)
+  - [2. Daftar Variabel Lingkungan Produksi (`.env.production`)](#2-daftar-variabel-lingkungan-produksi-envproduction)
+  - [3. Prosedur Rilis Produksi Langkah-demi-Langkah](#3-prosedur-rilis-produksi-langkah-demi-langkah)
+    - [Langkah 1: Unduh Kode Terbaru \& Pasang Dependensi](#langkah-1-unduh-kode-terbaru--pasang-dependensi)
+    - [Langkah 2: Migrasi Basis Data \& Pembuatan Symbolic Link](#langkah-2-migrasi-basis-data--pembuatan-symbolic-link)
+    - [Langkah 3: Warmup Cache Aplikasi (Performa Maksimal)](#langkah-3-warmup-cache-aplikasi-performa-maksimal)
+    - [Langkah 4: Restart Background Service \& Matikan Maintenance Mode](#langkah-4-restart-background-service--matikan-maintenance-mode)
+  - [4. Konfigurasi Cloud Storage Privat (AWS S3 / Cloudflare R2)](#4-konfigurasi-cloud-storage-privat-aws-s3--cloudflare-r2)
+    - [Mengapa Cloudflare R2 Sangat Direkomendasikan?](#mengapa-cloudflare-r2-sangat-direkomendasikan)
+    - [Kebijakan Ember (*Bucket Policy \& CORS*):](#kebijakan-ember-bucket-policy--cors)
+  - [5. Manajemen Daemon Queue Worker \& Scheduler (Supervisor \& Cron)](#5-manajemen-daemon-queue-worker--scheduler-supervisor--cron)
+    - [Konfigurasi Supervisor Daemon (`/etc/supervisor/conf.d/bookil-worker.conf`)](#konfigurasi-supervisor-daemon-etcsupervisorconfdbookil-workerconf)
+    - [Konfigurasi Cron Scheduler Linux (`crontab -e -u www-data`)](#konfigurasi-cron-scheduler-linux-crontab--e--u-www-data)
+  - [6. Konfigurasi Web Server (Nginx \& PHP 8.5-FPM)](#6-konfigurasi-web-server-nginx--php-85-fpm)
+  - [7. Prosedur Pencadangan \& Pemulihan Bencana (Backup \& Disaster Recovery)](#7-prosedur-pencadangan--pemulihan-bencana-backup--disaster-recovery)
+    - [1. Pencadangan Harian Otomatis Basis Data (MySQL Dump)](#1-pencadangan-harian-otomatis-basis-data-mysql-dump)
+    - [2. Prosedur Pemulihan Bencana (Restore Runbook)](#2-prosedur-pemulihan-bencana-restore-runbook)
 
 ---
 
@@ -90,8 +102,8 @@ AWS_ENDPOINT=https://<account_id>.r2.cloudflarestorage.com
 AWS_USE_PATH_STYLE_ENDPOINT=false
 
 # Kredensial Resmi Midtrans Produksi
-MIDTRANS_SERVER_KEY=Mid-server-xxxxxxxxxxxxxxxxxxxxxxxx
-MIDTRANS_CLIENT_KEY=Mid-client-xxxxxxxxxxxxxxxxxxxxxxxx
+MIDTRANS_SERVER_KEY=SB-Mid-server-YourKeyHere
+MIDTRANS_CLIENT_KEY=Mid-client-YourKeyHere
 MIDTRANS_IS_PRODUCTION=true
 MIDTRANS_IS_SANITIZED=true
 MIDTRANS_IS_3DS=true

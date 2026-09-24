@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
             BookilCatalogSeeder::class,
         ]);
 
-        if (!app()->runningUnitTests()) {
+        if (! app()->runningUnitTests()) {
             $this->call([
                 BookilProductionDemoSeeder::class,
             ]);

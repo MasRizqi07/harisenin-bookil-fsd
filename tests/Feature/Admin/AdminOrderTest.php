@@ -29,7 +29,7 @@ it('displays orders list on admin order index with filtering', function (): void
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Admin/Orders/Index')
             ->has('orders.data', 1)
             ->where('orders.data.0.id', $paidOrder->id)
@@ -64,7 +64,7 @@ it('displays order detail and payment audit ledger for admin', function (): void
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Admin/Orders/Show')
             ->where('order.id', $order->id)
             ->where('order.order_number', 'BK-AUDIT-999')

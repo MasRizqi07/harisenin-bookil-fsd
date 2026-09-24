@@ -28,7 +28,7 @@ class AdminProductController extends Controller
             ->with('category')
             ->withCount('orderItems')
             ->when($request->filled('search'), function (Builder $query) use ($request): void {
-                $search = '%' . trim((string) $request->input('search')) . '%';
+                $search = '%'.trim((string) $request->input('search')).'%';
                 $query->where(function (Builder $sub) use ($search): void {
                     $sub->where('title', 'like', $search)
                         ->orWhere('author', 'like', $search);
@@ -74,7 +74,7 @@ class AdminProductController extends Controller
         $data = $request->validated();
 
         if (empty($data['slug'])) {
-            $data['slug'] = Str::slug($data['title']) . '-' . Str::random(5);
+            $data['slug'] = Str::slug($data['title']).'-'.Str::random(5);
         }
 
         // Handle Cover Image Upload (Public Disk)
@@ -155,7 +155,7 @@ class AdminProductController extends Controller
     public function togglePublish(Product $product): RedirectResponse
     {
         $product->update([
-            'is_published' => !$product->is_published,
+            'is_published' => ! $product->is_published,
         ]);
 
         $statusText = $product->is_published ? 'dipublikasikan' : 'disimpan sebagai draf';

@@ -21,7 +21,7 @@ it('displays products list on admin product index', function (): void {
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Admin/Products/Index')
             ->has('products.data', 1)
             ->where('products.data.0.id', $product->id)

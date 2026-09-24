@@ -61,7 +61,7 @@ class AdminDashboardController extends Controller
      */
     public function exportCsv(Request $request): StreamedResponse
     {
-        $fileName = 'bookil-sales-report-' . now()->format('Y-m-d-His') . '.csv';
+        $fileName = 'bookil-sales-report-'.now()->format('Y-m-d-His').'.csv';
 
         $headers = [
             'Content-Type' => 'text/csv; charset=UTF-8',

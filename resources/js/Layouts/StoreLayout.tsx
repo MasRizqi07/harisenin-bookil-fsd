@@ -2,6 +2,8 @@ import React, { PropsWithChildren, useState } from 'react';
 import { Link, usePage } from '@inertiajs/react';
 import { PageProps } from '@/types';
 import Dropdown from '@/Components/Dropdown';
+import ApplicationLogo from '@/Components/ApplicationLogo';
+import CommandPalette from '@/Components/CommandPalette';
 
 interface StoreLayoutProps {
     title?: string;
@@ -10,219 +12,384 @@ interface StoreLayoutProps {
 export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutProps>) {
     const { auth, flash } = usePage<PageProps>().props;
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [commandPaletteOpen, setCommandPaletteOpen] = useState(false);
+    const [toastDismissed, setToastDismissed] = useState(false);
 
     return (
-        <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans">
+        <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans antialiased selection:bg-indigo-500 selection:text-white">
+            {/* Global Command Palette */}
+            <CommandPalette
+                isOpen={commandPaletteOpen}
+                onClose={() => setCommandPaletteOpen(false)}
+            />
+
             {/* Header Navigation */}
-            <header className="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200">
+            <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-[0_1px_8px_rgba(0,0,0,0.03)]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between h-16 items-center">
-                        {/* Logo */}
-                        <div className="flex items-center space-x-8">
-                            <Link href="/" className="flex items-center space-x-2 group">
-                                <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-600 flex items-center justify-center text-white shadow-md shadow-indigo-100 group-hover:scale-105 transition-transform">
-                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                    </svg>
-                                </div>
-                                <span className="text-xl font-bold tracking-tight bg-gradient-to-r from-indigo-700 to-violet-800 bg-clip-text text-transparent">
-                                    Bookil
-                                </span>
+                    <div className="flex justify-between h-20 items-center gap-4">
+                        {/* Left: Logo & Nav Links */}
+                        <div className="flex items-center gap-8">
+                            <Link href="/" className="flex items-center gap-2 group focus:outline-none">
+                                <ApplicationLogo className="h-9 w-auto transform group-hover:scale-105 transition-transform" />
                             </Link>
 
-                            <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
+                            <nav className="hidden lg:flex items-center gap-6 text-sm font-semibold">
                                 <Link
-                                    href="/"
+                                    href={route('products.index')}
                                     className="text-slate-600 hover:text-indigo-600 transition-colors"
                                 >
-                                    Katalog Buku
+                                    Jelajahi Katalog
+                                </Link>
+                                <a
+                                    href="/#katalog"
+                                    className="text-slate-600 hover:text-indigo-600 transition-colors"
+                                >
+                                    Koleksi Unggulan
+                                </a>
+                                <Link
+                                    href="/faq"
+                                    className="text-slate-600 hover:text-indigo-600 transition-colors"
+                                >
+                                    Bantuan &amp; FAQ
                                 </Link>
                                 {auth.user && (
                                     <Link
-                                        href="/dashboard"
-                                        className="text-slate-600 hover:text-indigo-600 transition-colors flex items-center space-x-1.5"
+                                        href={route('customer.library')}
+                                        className="text-indigo-600 hover:text-indigo-700 transition-colors flex items-center gap-1.5"
                                     >
-                                        <svg className="w-4 h-4 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                        </svg>
-                                        <span>Koleksi Saya</span>
+                                        <span className="material-symbols-outlined text-[18px]">local_library</span>
+                                        <span>Perpustakaan Saya</span>
                                     </Link>
                                 )}
                                 {auth.user?.role === 'admin' && (
                                     <Link
-                                        href="/admin/dashboard"
-                                        className="text-violet-700 hover:text-violet-900 font-semibold transition-colors flex items-center space-x-1.5 bg-violet-50 px-2.5 py-1 rounded-lg border border-violet-200"
+                                        href={route('admin.dashboard')}
+                                        className="text-violet-700 hover:text-violet-900 font-bold transition-colors flex items-center gap-1.5 bg-violet-50 px-3 py-1 rounded-lg border border-violet-200"
                                     >
-                                        <svg className="w-4 h-4 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                        </svg>
+                                        <span className="material-symbols-outlined text-[16px]">admin_panel_settings</span>
                                         <span>Admin Portal</span>
                                     </Link>
                                 )}
                             </nav>
                         </div>
 
-                        {/* Right Auth / User Area */}
-                        <div className="hidden sm:flex items-center space-x-4">
-                            {auth.user ? (
-                                <Dropdown>
-                                    <Dropdown.Trigger>
-                                        <button
-                                            type="button"
-                                            className="inline-flex items-center px-3 py-2 border border-slate-200 text-sm leading-4 font-medium rounded-lg text-slate-700 bg-white hover:bg-slate-50 focus:outline-none transition ease-in-out duration-150"
-                                        >
-                                            <span className="mr-2 w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-semibold text-xs">
-                                                {auth.user.name.charAt(0).toUpperCase()}
-                                            </span>
-                                            {auth.user.name}
-                                            <svg
-                                                className="ms-2 -me-0.5 h-4 w-4 text-slate-400"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                viewBox="0 0 20 20"
-                                                fill="currentColor"
-                                            >
-                                                <path
-                                                    fillRule="evenodd"
-                                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                                    clipRule="evenodd"
-                                                />
-                                            </svg>
-                                        </button>
-                                    </Dropdown.Trigger>
+                        {/* Middle/Right: Search Spotlight Trigger & Auth Area */}
+                        <div className="flex items-center gap-3 sm:gap-4">
+                            {/* Command Palette Trigger Button */}
+                            <button
+                                type="button"
+                                onClick={() => setCommandPaletteOpen(true)}
+                                className="hidden sm:flex items-center justify-between gap-3 w-56 md:w-64 h-11 px-3.5 rounded-xl bg-slate-100 hover:bg-slate-200/70 border border-slate-200 text-slate-500 text-xs font-medium transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                            >
+                                <span className="flex items-center gap-2 truncate">
+                                    <span className="material-symbols-outlined text-slate-400 text-[18px]">search</span>
+                                    <span>Cari e-book, topik...</span>
+                                </span>
+                                <kbd className="px-1.5 py-0.5 rounded bg-white text-slate-500 text-[10px] font-bold border border-slate-200 uppercase">
+                                    ⌘K
+                                </kbd>
+                            </button>
 
-                                    <Dropdown.Content>
-                                        <div className="px-4 py-2 border-b border-slate-100 text-xs text-slate-500">
-                                            Signed in as <strong className="text-slate-700">{auth.user.email}</strong>
-                                            {auth.user.role === 'admin' && (
-                                                <span className="block mt-1 text-[10px] font-bold uppercase tracking-wider text-violet-700 bg-violet-50 px-1.5 py-0.5 rounded w-max border border-violet-100">
-                                                    Administrator
-                                                </span>
-                                            )}
-                                        </div>
-                                        {auth.user.role === 'admin' && (
-                                            <Dropdown.Link href="/admin/dashboard" className="text-violet-700 font-semibold bg-violet-50/50">
-                                                Admin Portal
-                                            </Dropdown.Link>
-                                        )}
-                                        <Dropdown.Link href="/dashboard">Koleksi Saya</Dropdown.Link>
-                                        <Dropdown.Link href="/profile">Profile Akun</Dropdown.Link>
-                                        <Dropdown.Link href="/logout" method="post" as="button">
-                                            Log Out
-                                        </Dropdown.Link>
-                                    </Dropdown.Content>
-                                </Dropdown>
-                            ) : (
-                                <div className="flex items-center space-x-3 text-sm">
+                            {/* Mobile search icon button */}
+                            <button
+                                type="button"
+                                onClick={() => setCommandPaletteOpen(true)}
+                                className="sm:hidden p-2.5 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 focus:outline-none"
+                                aria-label="Cari"
+                            >
+                                <span className="material-symbols-outlined text-[20px]">search</span>
+                            </button>
+
+                            {/* User Authentication Options */}
+                            {auth.user ? (
+                                <div className="flex items-center gap-3">
                                     <Link
-                                        href="/login"
-                                        className="text-slate-600 hover:text-indigo-600 font-medium px-3 py-2 rounded-lg"
+                                        href={route('customer.library')}
+                                        className="relative hidden md:inline-flex items-center gap-1.5 px-3.5 h-11 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-700 font-bold text-xs hover:bg-indigo-100 transition-colors"
+                                    >
+                                        <span className="material-symbols-outlined text-[18px]">auto_stories</span>
+                                        <span>Rak Buku</span>
+                                    </Link>
+
+                                    <Dropdown>
+                                        <Dropdown.Trigger>
+                                            <button
+                                                type="button"
+                                                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700 shadow-sm focus:outline-none"
+                                            >
+                                                <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-600 to-indigo-800 text-white font-bold flex items-center justify-center text-xs shadow-sm">
+                                                    {auth.user.name.charAt(0).toUpperCase()}
+                                                </div>
+                                                <span className="hidden sm:inline max-w-[120px] truncate">
+                                                    {auth.user.name}
+                                                </span>
+                                                <span className="material-symbols-outlined text-slate-400 text-[18px]">
+                                                    arrow_drop_down
+                                                </span>
+                                            </button>
+                                        </Dropdown.Trigger>
+
+                                        <Dropdown.Content width="56">
+                                            <div className="px-4 py-3 border-b border-slate-100 text-xs">
+                                                <p className="font-bold text-slate-900 truncate">{auth.user.name}</p>
+                                                <p className="text-slate-500 truncate">{auth.user.email}</p>
+                                                {auth.user.role === 'admin' && (
+                                                    <span className="inline-block mt-1.5 px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-violet-50 text-violet-700 border border-violet-200">
+                                                        Administrator
+                                                    </span>
+                                                )}
+                                            </div>
+
+                                            <Dropdown.Link href={route('dashboard')}>
+                                                <div className="flex items-center gap-2 text-xs">
+                                                    <span className="material-symbols-outlined text-[16px]">local_library</span>
+                                                    <span>Perpustakaan Saya</span>
+                                                </div>
+                                            </Dropdown.Link>
+
+                                            <Dropdown.Link href={route('profile.edit')}>
+                                                <div className="flex items-center gap-2 text-xs">
+                                                    <span className="material-symbols-outlined text-[16px]">person</span>
+                                                    <span>Pengaturan Profil</span>
+                                                </div>
+                                            </Dropdown.Link>
+
+                                            {auth.user.role === 'admin' && (
+                                                <Dropdown.Link href={route('admin.dashboard')}>
+                                                    <div className="flex items-center gap-2 text-xs font-bold text-violet-700">
+                                                        <span className="material-symbols-outlined text-[16px]">dashboard</span>
+                                                        <span>Admin Executive Portal</span>
+                                                    </div>
+                                                </Dropdown.Link>
+                                            )}
+
+                                            <div className="border-t border-slate-100">
+                                                <Dropdown.Link href={route('logout')} method="post" as="button">
+                                                    <div className="flex items-center gap-2 text-xs text-rose-600">
+                                                        <span className="material-symbols-outlined text-[16px]">logout</span>
+                                                        <span>Keluar</span>
+                                                    </div>
+                                                </Dropdown.Link>
+                                            </div>
+                                        </Dropdown.Content>
+                                    </Dropdown>
+                                </div>
+                            ) : (
+                                <div className="flex items-center gap-2 sm:gap-3">
+                                    <Link
+                                        href={route('login')}
+                                        className="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors"
                                     >
                                         Masuk
                                     </Link>
                                     <Link
-                                        href="/register"
-                                        className="bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 py-2 rounded-lg shadow-sm shadow-indigo-200 transition-colors"
+                                        href={route('register')}
+                                        className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm hover:shadow transition-all"
                                     >
-                                        Daftar
+                                        Daftar Gratis
                                     </Link>
                                 </div>
                             )}
-                        </div>
 
-                        {/* Mobile Menu Button */}
-                        <div className="flex items-center sm:hidden">
+                            {/* Mobile menu button */}
                             <button
+                                type="button"
                                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                                className="p-2 rounded-lg text-slate-600 hover:bg-slate-100"
+                                className="lg:hidden p-2 rounded-xl text-slate-500 hover:bg-slate-100 focus:outline-none"
                             >
-                                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    {mobileMenuOpen ? (
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                                    ) : (
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                                    )}
-                                </svg>
+                                <span className="material-symbols-outlined text-[24px]">
+                                    {mobileMenuOpen ? 'close' : 'menu'}
+                                </span>
                             </button>
                         </div>
                     </div>
                 </div>
 
-                {/* Mobile Dropdown */}
+                {/* Mobile Drawer Navigation */}
                 {mobileMenuOpen && (
-                    <div className="sm:hidden border-t border-slate-200 bg-white px-4 pt-2 pb-4 space-y-2">
-                        <Link href="/" className="block py-2 text-slate-700 font-medium">
-                            Katalog Buku
+                    <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+                        <Link
+                            href={route('products.index')}
+                            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600"
+                        >
+                            Jelajahi Katalog
                         </Link>
-                        {auth.user ? (
-                            <>
-                                {auth.user.role === 'admin' && (
-                                    <Link href="/admin/dashboard" className="block py-2 text-violet-700 font-semibold">
-                                        Admin Portal
-                                    </Link>
-                                )}
-                                <Link href="/dashboard" className="block py-2 text-slate-700 font-medium">
-                                    Koleksi Saya
-                                </Link>
-                                <Link href="/profile" className="block py-2 text-slate-700">
-                                    Profile Akun
-                                </Link>
-                                <Link href="/logout" method="post" as="button" className="block w-full text-left py-2 text-red-600">
-                                    Log Out
-                                </Link>
-                            </>
-                        ) : (
-                            <div className="pt-2 border-t border-slate-100 flex flex-col space-y-2">
-                                <Link href="/login" className="block text-center py-2 border border-slate-200 rounded-lg text-slate-700">
-                                    Masuk
-                                </Link>
-                                <Link href="/register" className="block text-center py-2 bg-indigo-600 text-white rounded-lg font-medium">
-                                    Daftar
-                                </Link>
-                            </div>
+                        <a
+                            href="/#katalog"
+                            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600"
+                        >
+                            Koleksi Unggulan
+                        </a>
+                        <Link
+                            href="/faq"
+                            className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600"
+                        >
+                            Bantuan &amp; FAQ
+                        </Link>
+                        {auth.user && (
+                            <Link
+                                href={route('customer.library')}
+                                className="block px-3 py-2 rounded-lg text-sm font-semibold text-indigo-600 bg-indigo-50"
+                            >
+                                Perpustakaan Saya
+                            </Link>
+                        )}
+                        {auth.user?.role === 'admin' && (
+                            <Link
+                                href={route('admin.dashboard')}
+                                className="block px-3 py-2 rounded-lg text-sm font-bold text-violet-700 bg-violet-50"
+                            >
+                                Admin Executive Portal
+                            </Link>
                         )}
                     </div>
                 )}
             </header>
 
-            {/* Flash Messages */}
-            {flash?.success && (
-                <div className="bg-emerald-50 border-b border-emerald-200 py-3 px-4">
-                    <div className="max-w-7xl mx-auto flex items-center justify-between text-emerald-800 text-sm">
-                        <div className="flex items-center space-x-2">
-                            <svg className="w-5 h-5 text-emerald-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
+            {/* Flash Messages (Toasts) */}
+            {flash?.success && !toastDismissed && (
+                <div className="bg-emerald-600 text-white px-4 py-3 shadow-md relative z-30">
+                    <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 text-xs sm:text-sm font-medium">
+                        <div className="flex items-center gap-2">
+                            <span className="material-symbols-outlined text-[20px]">check_circle</span>
                             <span>{flash.success}</span>
                         </div>
-                    </div>
-                </div>
-            )}
-            {flash?.error && (
-                <div className="bg-rose-50 border-b border-rose-200 py-3 px-4">
-                    <div className="max-w-7xl mx-auto flex items-center justify-between text-rose-800 text-sm">
-                        <div className="flex items-center space-x-2">
-                            <svg className="w-5 h-5 text-rose-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                            </svg>
-                            <span>{flash.error}</span>
-                        </div>
+                        <button
+                            type="button"
+                            onClick={() => setToastDismissed(true)}
+                            className="p-1 rounded hover:bg-emerald-700 transition-colors"
+                        >
+                            <span className="material-symbols-outlined text-[18px]">close</span>
+                        </button>
                     </div>
                 </div>
             )}
 
-            {/* Main Content */}
+            {flash?.error && !toastDismissed && (
+                <div className="bg-rose-600 text-white px-4 py-3 shadow-md relative z-30">
+                    <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 text-xs sm:text-sm font-medium">
+                        <div className="flex items-center gap-2">
+                            <span className="material-symbols-outlined text-[20px]">error</span>
+                            <span>{flash.error}</span>
+                        </div>
+                        <button
+                            type="button"
+                            onClick={() => setToastDismissed(true)}
+                            className="p-1 rounded hover:bg-rose-700 transition-colors"
+                        >
+                            <span className="material-symbols-outlined text-[18px]">close</span>
+                        </button>
+                    </div>
+                </div>
+            )}
+
+            {/* Main Page Content */}
             <main className="flex-1">
                 {children}
             </main>
 
-            {/* Footer */}
-            <footer className="bg-white border-t border-slate-200 mt-16 py-8 text-center text-xs text-slate-500">
-                <div className="max-w-7xl mx-auto px-4">
-                    <p>&copy; {new Date().getFullYear()} Bookil - Platform E-Book & Digital Goods Berkualitas.</p>
-                    <p className="mt-1 text-slate-400">Pengiriman instan, aman, dan berlisensi resmi.</p>
+            {/* Modern Editorial Footer */}
+            <footer className="bg-white border-t border-slate-200 mt-20 pt-16 pb-12">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+                        {/* Brand Column */}
+                        <div className="lg:col-span-2 space-y-4">
+                            <ApplicationLogo className="h-8 w-auto" />
+                            <p className="text-sm text-slate-600 leading-relaxed max-w-sm">
+                                Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. 
+                                Format PDF &amp; EPUB orisinal, 100% bebas DRM mengikat, dan unduhan instan berkeamanan tinggi.
+                            </p>
+                            <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 pt-2">
+                                <span className="flex items-center gap-1 text-emerald-600">
+                                    <span className="material-symbols-outlined text-[16px]">verified</span>
+                                    Pembayaran Resmi Midtrans
+                                </span>
+                                <span>•</span>
+                                <span>Zero-Trust Storage</span>
+                            </div>
+                        </div>
+
+                        {/* Navigation Links Column */}
+                        <div>
+                            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Katalog E-Book</h3>
+                            <ul className="mt-4 space-y-2.5 text-xs text-slate-600">
+                                <li>
+                                    <Link href={route('products.index')} className="hover:text-indigo-600 transition-colors">
+                                        Semua Koleksi
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={route('products.index', { category: 'programming-tech' })} className="hover:text-indigo-600 transition-colors">
+                                        Pemrograman &amp; IT
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={route('products.index', { category: 'business-startup' })} className="hover:text-indigo-600 transition-colors">
+                                        Bisnis &amp; Startup
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={route('products.index', { category: 'self-development' })} className="hover:text-indigo-600 transition-colors">
+                                        Pengembangan Diri
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Customer Portal Links */}
+                        <div>
+                            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Layanan Pelanggan</h3>
+                            <ul className="mt-4 space-y-2.5 text-xs text-slate-600">
+                                <li>
+                                    <Link href={route('customer.library')} className="hover:text-indigo-600 transition-colors">
+                                        Perpustakaan Saya
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/faq" className="hover:text-indigo-600 transition-colors">
+                                        Pusat Bantuan &amp; FAQ
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href={route('profile.edit')} className="hover:text-indigo-600 transition-colors">
+                                        Pengaturan Akun
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Legal & Policy Links */}
+                        <div>
+                            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider">Kepatuhan &amp; Legal</h3>
+                            <ul className="mt-4 space-y-2.5 text-xs text-slate-600">
+                                <li>
+                                    <Link href="/terms" className="hover:text-indigo-600 transition-colors">
+                                        Syarat &amp; Ketentuan
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/privacy" className="hover:text-indigo-600 transition-colors">
+                                        Kebijakan Privasi
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/refund-policy" className="hover:text-indigo-600 transition-colors">
+                                        Kebijakan Pengembalian Dana
+                                    </Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div className="mt-12 pt-8 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+                        <p>© {new Date().getFullYear()} Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.</p>
+                        <p className="flex items-center gap-1">
+                            <span>Dibangun dengan</span>
+                            <span className="text-indigo-600 font-bold">Laravel 13 &amp; React 19</span>
+                        </p>
+                    </div>
                 </div>
             </footer>
         </div>
     );
 }
-

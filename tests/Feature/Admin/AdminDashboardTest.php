@@ -45,7 +45,7 @@ it('allows admin users to view executive dashboard with analytics and ledger', f
 
     $response->assertOk();
     $response->assertInertia(
-        fn(Assert $page) => $page
+        fn (Assert $page) => $page
             ->component('Admin/Dashboard')
             ->has('metrics')
             ->where('metrics.paid_orders_count', 1)

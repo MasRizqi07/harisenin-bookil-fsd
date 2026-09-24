@@ -1,211 +1,210 @@
 import React, { useState } from 'react';
-import { Head, Link, useForm, usePage } from '@inertiajs/react';
+import { Head, Link, router, usePage } from '@inertiajs/react';
 import StoreLayout from '@/Layouts/StoreLayout';
-import { formatRupiah } from '@/Components/ProductCard';
+import { formatRupiah, formatFileSize } from '@/Components/ProductCard';
 import SamplePreviewModal from '@/Components/SamplePreviewModal';
+import InstantCheckoutModal from '@/Components/InstantCheckoutModal';
 import { PageProps, Product } from '@/types';
 
 interface ShowProps {
     product: Product;
 }
 
-function formatBytes(bytes: number, decimals = 1): string {
-    if (!bytes || bytes === 0) return '0 Bytes';
-    const k = 1024;
-    const dm = decimals < 0 ? 0 : decimals;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
-    const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-}
-
 export default function Show({ product }: ShowProps) {
     const { auth } = usePage<PageProps>().props;
     const [previewOpen, setPreviewOpen] = useState(false);
+    const [checkoutOpen, setCheckoutOpen] = useState(false);
 
-    const { post, processing } = useForm({
-        product_id: product.id,
-        notes: '',
-    });
-
-    const handleBuyNow = (e?: React.FormEvent) => {
-        if (e) e.preventDefault();
-        post('/checkout');
+    const handleBuyNow = () => {
+        if (!auth.user) {
+            router.visit(route('login'));
+            return;
+        }
+        setCheckoutOpen(true);
     };
 
     return (
         <StoreLayout>
-            <Head title={`${product.title} - Bookil`} />
+            <Head title={`${product.title} — E-Book Resmi Bookil`} />
 
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-                {/* Breadcrumbs */}
-                <nav className="flex items-center space-x-2 text-xs text-slate-500 mb-8">
-                    <Link href="/" className="hover:text-indigo-600 transition-colors">Katalog</Link>
+            {/* Reading Simulation Preview Modal */}
+            <SamplePreviewModal
+                product={product}
+                isOpen={previewOpen}
+                onClose={() => setPreviewOpen(false)}
+                onBuyNow={() => {
+                    setPreviewOpen(false);
+                    handleBuyNow();
+                }}
+            />
+
+            {/* Instant Checkout Buy-Now Modal */}
+            <InstantCheckoutModal
+                isOpen={checkoutOpen}
+                onClose={() => setCheckoutOpen(false)}
+                product={product}
+                user={auth.user}
+            />
+
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+                {/* Breadcrumb Navigation */}
+                <nav className="flex items-center gap-2 text-xs text-slate-500 mb-8 flex-wrap">
+                    <Link href="/" className="hover:text-indigo-600 transition-colors flex items-center gap-1">
+                        <span className="material-symbols-outlined text-[15px]">home</span>
+                        <span>Beranda</span>
+                    </Link>
                     <span>/</span>
+                    <Link href={route('products.index')} className="hover:text-indigo-600 transition-colors">
+                        Katalog
+                    </Link>
                     {product.category && (
                         <>
-                            <Link href={`/?category=${product.category.slug}`} className="hover:text-indigo-600 transition-colors">
+                            <span>/</span>
+                            <Link
+                                href={route('products.index', { category: product.category.slug })}
+                                className="hover:text-indigo-600 transition-colors"
+                            >
                                 {product.category.name}
                             </Link>
-                            <span>/</span>
                         </>
                     )}
-                    <span className="text-slate-800 font-medium truncate max-w-xs">{product.title}</span>
+                    <span>/</span>
+                    <span className="text-slate-800 font-semibold truncate max-w-xs sm:max-w-md">
+                        {product.title}
+                    </span>
                 </nav>
 
-                <div className="bg-white rounded-3xl border border-slate-200 shadow-sm overflow-hidden p-6 sm:p-10">
-                    <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
-                        {/* Book Cover Column */}
-                        <div className="md:col-span-5 flex flex-col items-center">
-                            <div className="w-full max-w-sm aspect-[3/4] rounded-2xl bg-gradient-to-tr from-indigo-100 via-slate-100 to-violet-100 flex items-center justify-center p-6 shadow-xl relative overflow-hidden border border-slate-100">
+                {/* Main Product Showcase Box */}
+                <div className="bg-white rounded-3xl border border-slate-200/80 shadow-sm overflow-hidden p-6 sm:p-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                        {/* Left Column: Book Cover Presentation (5 cols) */}
+                        <div className="lg:col-span-5 flex flex-col items-center">
+                            <div className="w-full max-w-sm aspect-[3/4] rounded-2xl bg-gradient-to-tr from-slate-100 via-indigo-50/50 to-slate-100 p-6 shadow-xl relative overflow-hidden border border-slate-100 flex items-center justify-center group">
                                 {product.cover_image_path ? (
                                     <img
                                         src={`/storage/${product.cover_image_path}`}
                                         alt={product.title}
-                                        className="h-full object-contain rounded-lg shadow-md"
+                                        className="h-full w-full object-cover rounded-xl shadow-md transform group-hover:scale-102 transition-transform duration-300"
                                     />
                                 ) : (
-                                    <div className="w-48 h-64 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-700 shadow-2xl flex flex-col justify-between p-5 text-white">
-                                        <div className="flex justify-between items-center">
-                                            <span className="text-xs font-bold uppercase tracking-wider text-indigo-200">Bookil E-Book</span>
+                                    <div className="w-full h-full rounded-xl bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-900 flex flex-col items-center justify-between p-6 text-white text-center shadow-lg">
+                                        <div className="flex justify-between items-center w-full">
+                                            <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-300">
+                                                Bookil Edition
+                                            </span>
                                             <span className="text-[10px] font-bold uppercase bg-white/20 px-2 py-0.5 rounded">
                                                 {product.file_type}
                                             </span>
                                         </div>
-                                        <div className="my-auto text-center">
-                                            <svg className="w-12 h-12 opacity-80 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                            </svg>
-                                            <p className="text-sm font-bold line-clamp-2">{product.title}</p>
+                                        <div className="my-auto">
+                                            <span className="material-symbols-outlined text-5xl text-indigo-400 mb-3 block">
+                                                auto_stories
+                                            </span>
+                                            <h3 className="text-base font-bold uppercase line-clamp-3">
+                                                {product.title}
+                                            </h3>
                                         </div>
-                                        <p className="text-xs text-indigo-100 font-medium truncate">{product.author}</p>
+                                        <p className="text-xs text-indigo-200 font-medium truncate w-full">
+                                            {product.author}
+                                        </p>
                                     </div>
                                 )}
-
-                                <span className="absolute top-4 left-4 bg-indigo-600/90 text-white text-xs font-semibold px-2.5 py-1 rounded-md shadow-sm">
-                                    {product.category?.name || 'Digital Book'}
-                                </span>
                             </div>
 
-                            {/* Trust badges */}
-                            <div className="mt-6 grid grid-cols-2 gap-3 w-full max-w-sm text-xs text-slate-500">
-                                <div className="flex items-center space-x-2 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                                    <svg className="w-5 h-5 text-indigo-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                                    </svg>
-                                    <span>Download Instan</span>
-                                </div>
-                                <div className="flex items-center space-x-2 bg-slate-50 p-2.5 rounded-xl border border-slate-100">
-                                    <svg className="w-5 h-5 text-emerald-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                    </svg>
-                                    <span>Pembayaran Aman</span>
-                                </div>
-                            </div>
+                            {/* Sample Preview Button under cover */}
+                            <button
+                                type="button"
+                                onClick={() => setPreviewOpen(true)}
+                                className="mt-5 w-full max-w-sm h-11 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs transition-colors flex items-center justify-center gap-2 border border-indigo-200/80 shadow-sm"
+                            >
+                                <span className="material-symbols-outlined text-[18px]">menu_book</span>
+                                <span>Baca Cuplikan Bab Gratis</span>
+                            </button>
                         </div>
 
-                        {/* Product Info Column */}
-                        <div className="md:col-span-7 flex flex-col justify-between">
-                            <div>
-                                <span className="text-xs uppercase font-bold tracking-wider text-indigo-600">
-                                    {product.category?.name || 'Digital Goods'}
-                                </span>
-                                <h1 className="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-1 leading-tight">
-                                    {product.title}
-                                </h1>
-                                <p className="text-sm text-slate-600 mt-2">
-                                    Karya <span className="font-semibold text-slate-800">{product.author}</span>
-                                </p>
+                        {/* Right Column: Metadata & Purchase Action (7 cols) */}
+                        <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+                            <div className="space-y-4">
+                                {/* Top Category and Format Badges */}
+                                <div className="flex items-center gap-2 flex-wrap">
+                                    {product.category && (
+                                        <span className="px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 font-bold text-xs border border-indigo-200">
+                                            {product.category.name}
+                                        </span>
+                                    )}
+                                    <span className="px-2.5 py-1 rounded-md bg-slate-100 text-slate-700 font-bold text-xs uppercase flex items-center gap-1">
+                                        <span className="material-symbols-outlined text-[14px]">description</span>
+                                        <span>{product.file_type}</span>
+                                        {product.file_size > 0 && <span>• {formatFileSize(product.file_size)}</span>}
+                                    </span>
+                                    <span className="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 font-bold text-xs flex items-center gap-1 border border-emerald-200">
+                                        <span className="material-symbols-outlined text-[14px]">verified</span>
+                                        <span>100% Bebas DRM</span>
+                                    </span>
+                                </div>
 
-                                {/* Specification Pills */}
-                                <div className="flex flex-wrap gap-2 mt-5">
-                                    <span className="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700">
-                                        Format: <strong className="ml-1 uppercase text-indigo-600">{product.file_type}</strong>
-                                    </span>
-                                    <span className="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700">
-                                        Ukuran: <strong className="ml-1">{formatBytes(product.file_size)}</strong>
-                                    </span>
-                                    <span className="inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700">
-                                        Lisensi: <strong className="ml-1 text-emerald-600">Personal License</strong>
-                                    </span>
+                                {/* Title & Author */}
+                                <div>
+                                    <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                                        {product.title}
+                                    </h1>
+                                    <p className="text-sm sm:text-base text-slate-600 mt-2 font-medium">
+                                        Ditulis oleh <strong className="text-slate-900 font-bold">{product.author}</strong>
+                                    </p>
                                 </div>
 
                                 {/* Price Box */}
-                                <div className="mt-6 p-4 rounded-2xl bg-indigo-50/70 border border-indigo-100 flex items-center justify-between">
+                                <div className="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                     <div>
-                                        <span className="text-xs font-medium text-slate-500 uppercase tracking-wider block">Harga Resmi</span>
-                                        <span className="text-3xl font-extrabold text-indigo-700">
+                                        <span className="text-xs uppercase font-bold text-slate-400 block tracking-wider">
+                                            Harga Lisensi Digital
+                                        </span>
+                                        <span className="text-3xl font-extrabold text-indigo-600">
                                             {formatRupiah(product.price)}
                                         </span>
+                                        <span className="block text-[11px] text-slate-500 mt-0.5">
+                                            Akses seumur hidup • Bebas biaya gateway Midtrans
+                                        </span>
                                     </div>
-                                    <span className="text-xs font-semibold bg-indigo-600 text-white px-3 py-1 rounded-full">
-                                        Sekali Bayar
-                                    </span>
+
+                                    <button
+                                        type="button"
+                                        onClick={handleBuyNow}
+                                        className="h-12 px-8 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold text-sm shadow-md hover:shadow-xl transition-all flex items-center justify-center gap-2 shrink-0"
+                                    >
+                                        <span className="material-symbols-outlined text-[20px]">shopping_cart_checkout</span>
+                                        <span>Beli Sekarang</span>
+                                    </button>
                                 </div>
 
-                                {/* Description */}
-                                <div className="mt-8">
-                                    <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900">
-                                        Sinopsis & Deskripsi
+                                {/* Synopsis Description */}
+                                <div className="space-y-2 pt-2">
+                                    <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
+                                        Sinopsis &amp; Pokok Bahasan
                                     </h3>
-                                    <div className="mt-3 text-sm text-slate-600 leading-relaxed space-y-3">
-                                        {product.description ? (
-                                            <p className="whitespace-pre-line">{product.description}</p>
-                                        ) : (
-                                            <p className="italic text-slate-400">Tidak ada deskripsi tersedia untuk produk ini.</p>
-                                        )}
+                                    <div className="text-sm text-slate-600 leading-relaxed space-y-3 whitespace-pre-line font-sans">
+                                        {product.description || 'Tidak ada deskripsi detail untuk e-book ini.'}
                                     </div>
                                 </div>
-                            </div>
 
-                            {/* Buy CTA & Preview CTA */}
-                            <div className="mt-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-3">
-                                <button
-                                    type="button"
-                                    onClick={() => setPreviewOpen(true)}
-                                    className="w-full sm:w-1/3 border border-indigo-200 bg-indigo-50/60 hover:bg-indigo-100/80 text-indigo-700 font-bold py-3.5 px-4 rounded-2xl transition-all flex items-center justify-center space-x-2"
-                                >
-                                    <svg className="w-5 h-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                    </svg>
-                                    <span>Baca Cuplikan</span>
-                                </button>
-
-                                <div className="w-full sm:w-2/3">
-                                    {auth.user ? (
-                                        <form onSubmit={handleBuyNow}>
-                                            <button
-                                                type="submit"
-                                                disabled={processing}
-                                                className="w-full bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 text-white font-bold py-3.5 px-6 rounded-2xl shadow-lg shadow-indigo-200 transition-all flex items-center justify-center space-x-2 disabled:opacity-50"
-                                            >
-                                                {processing ? (
-                                                    <>
-                                                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
-                                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                                                        </svg>
-                                                        <span>Memproses Pesanan...</span>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                                                        </svg>
-                                                        <span>Beli Sekarang ({formatRupiah(product.price)})</span>
-                                                    </>
-                                                )}
-                                            </button>
-                                        </form>
-                                    ) : (
-                                        <div className="bg-slate-50 p-3 sm:p-3.5 rounded-2xl border border-slate-200 text-center">
-                                            <Link
-                                                href={`/login?redirect=/products/${product.slug}`}
-                                                className="inline-flex items-center justify-center w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 px-4 rounded-xl text-xs sm:text-sm transition-colors"
-                                            >
-                                                Masuk untuk Membeli
-                                            </Link>
-                                        </div>
-                                    )}
+                                {/* Key Features Checklist */}
+                                <div className="pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-600">
+                                    <div className="flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>
+                                        <span>5x Kuota Unduh Fleksibel (30 Hari)</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>
+                                        <span>Kompatibel untuk iPad, Kindle &amp; Laptop</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>
+                                        <span>Fulfillment Instan via Midtrans Snap</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <span className="material-symbols-outlined text-emerald-600 text-[18px]">check_circle</span>
+                                        <span>Tersimpan di Rak Digital Akun Anda</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -213,13 +212,23 @@ export default function Show({ product }: ShowProps) {
                 </div>
             </div>
 
-            <SamplePreviewModal
-                product={product}
-                isOpen={previewOpen}
-                onClose={() => setPreviewOpen(false)}
-                onBuyNow={() => handleBuyNow()}
-            />
+            {/* Mobile Sticky Action Bar */}
+            <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-slate-200 p-4 shadow-lg flex items-center justify-between gap-4">
+                <div>
+                    <span className="text-[10px] uppercase font-bold text-slate-400 block">Total</span>
+                    <span className="text-lg font-extrabold text-indigo-600">
+                        {formatRupiah(product.price)}
+                    </span>
+                </div>
+                <button
+                    type="button"
+                    onClick={handleBuyNow}
+                    className="h-11 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md flex items-center justify-center gap-2"
+                >
+                    <span>Beli Sekarang</span>
+                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                </button>
+            </div>
         </StoreLayout>
     );
 }
-

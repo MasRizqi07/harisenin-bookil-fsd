@@ -4,6 +4,7 @@ import { Product } from '@/types';
 
 interface ProductCardProps {
     product: Product;
+    onQuickBuy?: (product: Product) => void;
 }
 
 export function formatRupiah(amount: string | number): string {
@@ -16,76 +17,126 @@ export function formatRupiah(amount: string | number): string {
     }).format(num);
 }
 
-export default function ProductCard({ product }: ProductCardProps) {
+export function formatFileSize(bytes: number): string {
+    if (bytes >= 1048576) {
+        return (bytes / 1048576).toFixed(1) + ' MB';
+    }
+    return (bytes / 1024).toFixed(0) + ' KB';
+}
+
+export default function ProductCard({ product, onQuickBuy }: ProductCardProps) {
     return (
-        <div className="group bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md hover:border-indigo-200 transition-all duration-200 flex flex-col overflow-hidden">
-            {/* Cover Container */}
-            <div className="aspect-[4/3] bg-gradient-to-br from-indigo-50 via-slate-100 to-violet-50 relative overflow-hidden flex items-center justify-center p-4">
+        <div className="group bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col overflow-hidden relative">
+            {/* Top 3:4 Aspect Ratio Cover Area */}
+            <div className="relative aspect-[3/4] w-full overflow-hidden bg-slate-100 flex items-center justify-center">
                 {product.cover_image_path ? (
                     <img
                         src={`/storage/${product.cover_image_path}`}
                         alt={product.title}
-                        className="h-full object-contain drop-shadow-md group-hover:scale-105 transition-transform duration-300"
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
                 ) : (
-                    <div className="w-24 h-32 rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-600 shadow-lg flex flex-col justify-between p-3 text-white">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-200">Bookil</span>
-                        <svg className="w-8 h-8 opacity-90 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                        </svg>
-                        <span className="text-[9px] font-semibold truncate text-indigo-100">{product.author}</span>
+                    <div className="w-full h-full bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-900 flex flex-col items-center justify-between p-6 text-white text-center">
+                        <div className="flex items-center gap-1 text-[11px] font-bold text-indigo-300 uppercase tracking-widest">
+                            <span className="material-symbols-outlined text-[14px]">auto_stories</span>
+                            <span>Bookil Original</span>
+                        </div>
+                        <div className="space-y-2">
+                            <span className="material-symbols-outlined text-4xl text-indigo-400/80">
+                                menu_book
+                            </span>
+                            <h4 className="text-sm font-bold uppercase leading-tight line-clamp-3">
+                                {product.title}
+                            </h4>
+                        </div>
+                        <p className="text-xs text-indigo-200 font-medium truncate w-full">
+                            {product.author}
+                        </p>
                     </div>
                 )}
 
-                {/* File Type Pill */}
-                <span className="absolute top-3 right-3 bg-white/90 backdrop-blur text-slate-700 text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded shadow-sm">
-                    {product.file_type}
-                </span>
-
+                {/* Category Glass Floating Badge */}
                 {product.category && (
-                    <span className="absolute bottom-3 left-3 bg-indigo-600/90 backdrop-blur text-white text-[11px] font-medium px-2 py-0.5 rounded shadow-sm">
+                    <span className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-900/60 backdrop-blur-md text-white text-[11px] font-semibold border border-white/10 shadow-sm">
                         {product.category.name}
                     </span>
                 )}
+
+                {/* File Specs Pill */}
+                <span className="absolute bottom-3 right-3 px-2 py-0.5 rounded-md bg-white/90 backdrop-blur text-slate-800 text-[10px] font-bold uppercase tracking-wider shadow-sm flex items-center gap-1">
+                    <span className="material-symbols-outlined text-[12px] text-indigo-600">description</span>
+                    <span>{product.file_type}</span>
+                    {product.file_size > 0 && (
+                        <span>• {formatFileSize(product.file_size)}</span>
+                    )}
+                </span>
             </div>
 
-            {/* Content Details */}
-            <div className="p-5 flex-1 flex flex-col justify-between">
-                <div>
-                    <h3 className="font-semibold text-slate-800 text-base line-clamp-1 group-hover:text-indigo-600 transition-colors">
-                        <Link href={`/products/${product.slug}`}>
+            {/* Bottom Content Area */}
+            <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-1.5">
+                    {/* Rating and Format info */}
+                    <div className="flex items-center justify-between text-xs text-slate-500">
+                        <span className="flex items-center gap-1 text-amber-500 font-bold">
+                            <span className="material-symbols-outlined text-[15px] fill-current">star</span>
+                            <span>4.9</span>
+                        </span>
+                        <span className="text-[11px] text-slate-400">100% Bebas DRM</span>
+                    </div>
+
+                    {/* Book Title */}
+                    <h3 className="font-bold text-slate-900 text-base leading-snug line-clamp-2 group-hover:text-indigo-600 transition-colors">
+                        <Link href={route('products.show', product.slug)}>
                             {product.title}
                         </Link>
                     </h3>
-                    <p className="text-xs text-slate-500 mt-1">Oleh <span className="font-medium text-slate-700">{product.author}</span></p>
 
+                    {/* Author Attribution */}
+                    <p className="text-xs text-slate-500">
+                        Karya <span className="font-semibold text-slate-700">{product.author}</span>
+                    </p>
+
+                    {/* Brief Synopsis Snippet */}
                     {product.description && (
-                        <p className="text-xs text-slate-500 line-clamp-2 mt-2 leading-relaxed">
+                        <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed pt-1">
                             {product.description}
                         </p>
                     )}
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                {/* Price and Action Strip */}
+                <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
                     <div>
-                        <span className="text-[10px] uppercase tracking-wider text-slate-400 font-semibold block">Harga</span>
-                        <span className="text-base font-bold text-indigo-600">
+                        <span className="text-[10px] uppercase font-bold text-slate-400 block tracking-wider">
+                            Harga Lisensi
+                        </span>
+                        <span className="text-base sm:text-lg font-extrabold text-slate-900">
                             {formatRupiah(product.price)}
                         </span>
                     </div>
 
-                    <Link
-                        href={`/products/${product.slug}`}
-                        className="inline-flex items-center text-xs font-semibold text-indigo-600 bg-indigo-50 hover:bg-indigo-600 hover:text-white px-3 py-1.5 rounded-lg transition-colors"
-                    >
-                        Detail
-                        <svg className="w-3.5 h-3.5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                    </Link>
+                    <div className="flex items-center gap-2">
+                        {onQuickBuy ? (
+                            <button
+                                type="button"
+                                onClick={() => onQuickBuy(product)}
+                                className="h-9 px-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm hover:shadow transition-all flex items-center gap-1"
+                            >
+                                <span>Beli</span>
+                                <span className="material-symbols-outlined text-[15px]">flash_on</span>
+                            </button>
+                        ) : (
+                            <Link
+                                href={route('products.show', product.slug)}
+                                className="h-9 px-3.5 rounded-xl bg-slate-100 hover:bg-indigo-50 text-slate-700 hover:text-indigo-600 font-bold text-xs transition-colors flex items-center gap-1"
+                            >
+                                <span>Detail</span>
+                                <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                            </Link>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
     );
 }
-
