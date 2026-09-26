@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -53,16 +54,13 @@ class AdminOrderController extends Controller
      */
     public function show(Order $order): Response
     {
+        Gate::authorize('viewAsAdmin', $order);
         $order->loadMissing([
             'user',
             'items.product.category',
             'items.downloadToken',
             'payments',
         ]);
-
-        $order->items->each(function ($item): void {
-            $item->downloadToken?->makeVisible('token');
-        });
 
         $order->payments->each(function ($payment): void {
             $payment->makeVisible('raw_response');

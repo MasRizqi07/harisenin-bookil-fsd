@@ -23,6 +23,7 @@ class Product extends Model
         'slug',
         'author',
         'description',
+        'sample_excerpt',
         'price',
         'cover_image_path',
         'file_path',

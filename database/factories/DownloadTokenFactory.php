@@ -17,7 +17,6 @@ class DownloadTokenFactory extends Factory
     {
         return [
             'order_item_id' => OrderItem::factory()->for(Order::factory()->paid()),
-            'token' => hash('sha256', random_bytes(32)),
             'expires_at' => now()->addMinutes(15),
             'download_count' => 0,
             'max_downloads' => 5,

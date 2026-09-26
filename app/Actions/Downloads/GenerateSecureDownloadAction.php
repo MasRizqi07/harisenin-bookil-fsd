@@ -10,89 +10,85 @@ use App\Exceptions\DownloadTokenExpiredException;
 use App\Exceptions\InvalidDownloadTokenException;
 use App\Exceptions\OrderNotPaidException;
 use App\Exceptions\UnauthorizedDownloadException;
+use App\Models\DownloadAttempt;
 use App\Models\DownloadToken;
 use App\Models\User;
-use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
+use RuntimeException;
+use Throwable;
 
 class GenerateSecureDownloadAction
 {
-    /**
-     * Validate ownership, paid status, token validity, and quota,
-     * then atomically increment download count and return a 15-minute presigned URL.
-     */
-    public function execute(User $user, string $token): string
+    public function execute(User $user, int $orderItemId, ?string $ipAddress = null, ?string $signatureHash = null): string
     {
-        // Find token either by direct hash match or sha256 of plaintext token
-        $lookupToken = DownloadToken::query()
-            ->where('token', $token)
-            ->orWhere('token', hash('sha256', $token))
-            ->first();
+        try {
+            return DB::transaction(function () use ($user, $orderItemId, $ipAddress, $signatureHash): string {
+                $token = DownloadToken::query()->where('order_item_id', $orderItemId)
+                    ->lockForUpdate()->first();
 
-        if (! $lookupToken) {
-            throw new InvalidDownloadTokenException('Download token not found or invalid.');
-        }
-
-        return DB::transaction(function () use ($user, $lookupToken): string {
-            /** @var DownloadToken $downloadToken */
-            $downloadToken = DownloadToken::query()
-                ->where('id', $lookupToken->id)
-                ->lockForUpdate()
-                ->firstOrFail();
-
-            $orderItem = $downloadToken->orderItem()->with(['order', 'product'])->firstOrFail();
-            $order = $orderItem->order;
-            $product = $orderItem->product;
-
-            // 1. Validate ownership
-            if ($order->user_id !== $user->id) {
-                throw new UnauthorizedDownloadException('You do not own this purchased product.');
-            }
-
-            // 2. Validate order status
-            if ($order->status !== OrderStatus::PAID) {
-                throw new OrderNotPaidException('Order is not paid or settled.');
-            }
-
-            // 3. Validate token expiration
-            if ($downloadToken->expires_at !== null && $downloadToken->expires_at->isPast()) {
-                throw new DownloadTokenExpiredException('Download token has expired.');
-            }
-
-            // 4. Validate download quota
-            if ($downloadToken->download_count >= $downloadToken->max_downloads) {
-                throw new DownloadQuotaExceededException('Maximum download quota exceeded for this item.');
-            }
-
-            // Atomically increment quota
-            $downloadToken->increment('download_count');
-
-            // Generate time-limited presigned URL (15 minutes expiration)
-            $diskName = (string) config('filesystems.private_disk', 's3');
-
-            // Fallback to local disk if S3 bucket is unconfigured (common in local/testing environments)
-            if ($diskName === 's3' && empty(config('filesystems.disks.s3.bucket'))) {
-                $diskName = 'local';
-            }
-
-            try {
-                return Storage::disk($diskName)->temporaryUrl(
-                    $product->file_path,
-                    CarbonImmutable::now()->addMinutes(15)
-                );
-            } catch (\Throwable $e) {
-                if ($diskName !== 'local' && app()->environment(['local', 'testing'])) {
-                    report($e);
-
-                    return Storage::disk('local')->temporaryUrl(
-                        $product->file_path,
-                        CarbonImmutable::now()->addMinutes(15)
-                    );
+                if ($token === null) {
+                    throw new InvalidDownloadTokenException('Download entitlement was not found.');
                 }
 
-                throw $e;
-            }
-        });
+                $item = $token->orderItem()->with(['order', 'product'])->firstOrFail();
+
+                if (Gate::forUser($user)->denies('download', $item)) {
+                    throw new UnauthorizedDownloadException('You do not own this purchased product.');
+                }
+
+                if ($item->order->status !== OrderStatus::PAID) {
+                    throw new OrderNotPaidException('Order is not paid or settled.');
+                }
+
+                if ($token->expires_at->isPast()) {
+                    throw new DownloadTokenExpiredException('Download entitlement has expired.');
+                }
+
+                if ($token->download_count >= $token->max_downloads) {
+                    throw new DownloadQuotaExceededException('Maximum download quota exceeded for this item.');
+                }
+
+                $disk = Storage::disk((string) config('filesystems.private_disk'));
+                if (! $disk->exists($item->product->file_path)) {
+                    throw new RuntimeException('The private digital asset is unavailable.');
+                }
+
+                $url = $disk->temporaryUrl($item->product->file_path, now()->addMinutes(15));
+
+                $token->increment('download_count');
+                DownloadAttempt::query()->create([
+                    'user_id' => $user->id,
+                    'order_item_id' => $item->id,
+                    'download_token_id' => $token->id,
+                    'access_signature_hash' => $signatureHash,
+                    'ip_address' => $ipAddress,
+                    'outcome' => 'granted',
+                    'attempted_at' => now(),
+                ]);
+
+                return $url;
+            }, attempts: 3);
+        } catch (Throwable $exception) {
+            DownloadAttempt::query()->create([
+                'user_id' => $user->id,
+                'order_item_id' => null,
+                'download_token_id' => null,
+                'access_signature_hash' => $signatureHash,
+                'ip_address' => $ipAddress,
+                'outcome' => match (true) {
+                    $exception instanceof UnauthorizedDownloadException => 'denied_owner',
+                    $exception instanceof OrderNotPaidException => 'denied_unpaid',
+                    $exception instanceof DownloadTokenExpiredException => 'denied_expired',
+                    $exception instanceof DownloadQuotaExceededException => 'denied_quota',
+                    $exception instanceof InvalidDownloadTokenException => 'denied_missing',
+                    default => 'storage_error',
+                },
+                'attempted_at' => now(),
+            ]);
+
+            throw $exception;
+        }
     }
 }

@@ -8,6 +8,7 @@ use App\Enums\OrderStatus;
 use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\Product;
+use Illuminate\Support\Facades\Http;
 
 beforeEach(function (): void {
     config()->set('services.midtrans.server_key', 'test-webhook-secret-key-456');
@@ -37,6 +38,7 @@ it('processes a valid midtrans webhook via POST without CSRF verification', func
         'payment_type' => 'bca_va',
         'settlement_time' => now()->toDateTimeString(),
     ];
+    Http::fake(['https://api.sandbox.midtrans.com/v2/'.$order->order_number.'/status' => Http::response($payload)]);
 
     $response = $this->postJson('/webhooks/midtrans', $payload);
 
@@ -89,6 +91,7 @@ it('handles duplicate webhook notifications idempotently with HTTP 200', functio
         'transaction_id' => 'tx-repeat-123',
         'payment_type' => 'gopay',
     ];
+    Http::fake(['https://api.sandbox.midtrans.com/v2/'.$order->order_number.'/status' => Http::response($payload)]);
 
     // First delivery
     $this->postJson('/webhooks/midtrans', $payload)->assertOk();

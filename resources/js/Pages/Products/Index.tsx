@@ -131,7 +131,7 @@ export default function Index({ products, categories, filters }: IndexProps) {
                             Katalog E-Book Terkurasi
                         </h2>
                         <p className="text-sm text-slate-500 mt-1">
-                            Daftar buku digital berlisensi resmi dengan pembaruan materi edisi terkini.
+                            Jelajahi produk digital yang tersedia dan lihat detail format serta harganya.
                         </p>
                     </div>
 

@@ -17,9 +17,10 @@ export default function Form({ product, categories }: FormProps) {
         slug: product?.slug || '',
         author: product?.author || '',
         description: product?.description || '',
+        sample_excerpt: product?.sample_excerpt || '',
         price: product?.price ? String(product.price) : '',
         file_type: product?.file_type || 'pdf',
-        is_published: product ? product.is_published : true,
+        is_published: product ? product.is_published : false,
         cover_image: null as File | null,
         digital_file: null as File | null,
     });
@@ -175,7 +176,7 @@ export default function Form({ product, categories }: FormProps) {
                                             name="file_type"
                                             value={fmt}
                                             checked={data.file_type === fmt}
-                                            onChange={(e) => setData('file_type', e.target.value as any)}
+                                            onChange={(e) => setData('file_type', e.target.value as 'pdf' | 'epub' | 'zip')}
                                             className="sr-only"
                                         />
                                         <span>{fmt}</span>
@@ -241,6 +242,7 @@ export default function Form({ product, categories }: FormProps) {
                                 ref={digitalFileInputRef}
                                 type="file"
                                 accept=".pdf,.epub,.zip"
+                                required={!isEdit}
                                 onChange={(e) => {
                                     if (e.target.files && e.target.files[0]) {
                                         setData('digital_file', e.target.files[0]);
@@ -270,6 +272,21 @@ export default function Form({ product, categories }: FormProps) {
                             className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:ring-1 focus:ring-violet-500 focus:border-violet-500 leading-relaxed"
                         />
                         {errors.description && <p className="mt-1 text-[11px] text-rose-400">{errors.description}</p>}
+                    </div>
+
+                    <div>
+                        <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
+                            Cuplikan dari Karya (Opsional)
+                        </label>
+                        <textarea
+                            rows={6}
+                            maxLength={10000}
+                            value={data.sample_excerpt}
+                            onChange={(e) => setData('sample_excerpt', e.target.value)}
+                            placeholder="Tempel cuplikan yang memang berasal dari karya dan boleh dipublikasikan."
+                            className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white"
+                        />
+                        {errors.sample_excerpt && <p className="mt-1 text-[11px] text-rose-400">{errors.sample_excerpt}</p>}
                     </div>
 
                     {/* Form CTA */}

@@ -169,12 +169,6 @@ export default function Show({ order }: ShowProps) {
                                         {token ? (
                                             <div className="space-y-1">
                                                 <div className="flex justify-between">
-                                                    <span className="text-slate-400">Token Hash:</span>
-                                                    <span className="font-mono text-slate-300 truncate max-w-[150px]">
-                                                        {token.token.substring(0, 16)}...
-                                                    </span>
-                                                </div>
-                                                <div className="flex justify-between">
                                                     <span className="text-slate-400">Penggunaan Kuota:</span>
                                                     <span className="font-bold text-violet-400">
                                                         {token.download_count} / {token.max_downloads} kali

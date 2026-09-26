@@ -7,7 +7,8 @@ namespace App\Http\Controllers;
 use App\Enums\OrderStatus;
 use App\Models\Order;
 use App\Services\MidtransSnapService;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\URL;
 use Inertia\Inertia;
 use Inertia\Response;
 use Throwable;
@@ -18,13 +19,10 @@ class CustomerOrderController extends Controller
      * Display order invoice, payment dialog status, and digital download assets.
      */
     public function show(
-        Request $request,
         Order $order,
         MidtransSnapService $snapService,
     ): Response {
-        if ($order->user_id !== $request->user()?->id) {
-            abort(403, 'Anda tidak memiliki hak akses untuk melihat pesanan ini.');
-        }
+        Gate::authorize('view', $order);
 
         $order->loadMissing([
             'user',
@@ -33,7 +31,18 @@ class CustomerOrderController extends Controller
             'payments',
         ]);
 
-        $snapToken = session('snap_token');
+        if ($order->status === OrderStatus::PAID) {
+            $order->items->each(function ($item): void {
+                if ($item->downloadToken?->expires_at->isFuture()
+                    && $item->downloadToken->download_count < $item->downloadToken->max_downloads) {
+                    $item->setAttribute('download_url', URL::temporarySignedRoute(
+                        'downloads.process', now()->addMinutes(15), ['orderItem' => $item->id]
+                    ));
+                }
+            });
+        }
+
+        $snapToken = $order->snap_token;
         if (! $snapToken && $order->status === OrderStatus::PENDING) {
             try {
                 $snapData = $snapService->createTransaction($order);
@@ -49,6 +58,8 @@ class CustomerOrderController extends Controller
             'snapToken' => $snapToken,
             'midtransClientKey' => (string) config('services.midtrans.client_key'),
             'midtransIsProduction' => (bool) config('services.midtrans.is_production', false),
+            'paymentSimulatorEnabled' => app()->environment(['local', 'testing'])
+                && (bool) config('bookil.payment_simulator_enabled', false),
         ]);
     }
 }

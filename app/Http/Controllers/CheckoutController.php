@@ -10,6 +10,7 @@ use App\Models\User;
 use App\Services\MidtransSnapService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Throwable;
 
 class CheckoutController extends Controller
 {
@@ -30,7 +31,14 @@ class CheckoutController extends Controller
             $request->validated('notes')
         );
 
-        $snap = $snapService->createTransaction($order);
+        try {
+            $snap = $snapService->createTransaction($order);
+        } catch (Throwable $exception) {
+            report($exception);
+
+            return redirect()->route('orders.show', $order->order_number)
+                ->with('error', 'Pesanan tersimpan, tetapi layanan pembayaran belum tersedia. Silakan coba lagi nanti.');
+        }
 
         if ($request->wantsJson() && ! $request->header('X-Inertia')) {
             return response()->json([

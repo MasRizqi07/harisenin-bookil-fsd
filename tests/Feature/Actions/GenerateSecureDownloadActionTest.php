@@ -16,142 +16,84 @@ use App\Models\OrderItem;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 beforeEach(function (): void {
     Storage::fake('s3');
     config()->set('filesystems.private_disk', 's3');
 });
 
-it('generates a 15-minute temporary presigned URL and increments download count', function (): void {
+it('issues a private URL and records one granted attempt for a paid owner', function (): void {
     $user = User::factory()->create();
     $order = Order::factory()->for($user)->paid()->create();
-    $product = Product::factory()->create([
-        'file_path' => 'private/ebooks/mastering-laravel.pdf',
+    $product = Product::factory()->create(['file_path' => 'private/ebooks/book.pdf']);
+    $item = OrderItem::factory()->for($order)->for($product)->create();
+    $quota = DownloadToken::factory()->create(['order_item_id' => $item->id]);
+    Storage::disk('s3')->put($product->file_path, 'book');
+
+    $url = app(GenerateSecureDownloadAction::class)->execute($user, $item->id, '127.0.0.1');
+
+    expect($url)->toContain('book.pdf')->and($quota->refresh()->download_count)->toBe(1);
+    $this->assertDatabaseHas('download_attempts', [
+        'user_id' => $user->id, 'order_item_id' => $item->id,
+        'ip_address' => '127.0.0.1', 'outcome' => 'granted',
     ]);
-    $orderItem = OrderItem::factory()->for($order)->for($product)->create();
-
-    $rawToken = Str::random(64);
-    $tokenHash = hash('sha256', $rawToken);
-
-    $downloadToken = DownloadToken::factory()->create([
-        'order_item_id' => $orderItem->id,
-        'token' => $tokenHash,
-        'download_count' => 0,
-        'max_downloads' => 5,
-        'expires_at' => now()->addDays(7),
-    ]);
-
-    $action = app(GenerateSecureDownloadAction::class);
-    $url = $action->execute($user, $rawToken);
-
-    expect($url)->toBeString()
-        ->and($url)->toContain('mastering-laravel.pdf')
-        ->and($downloadToken->refresh()->download_count)->toBe(1);
 });
 
-it('resolves download when passed the stored token hash directly', function (): void {
-    $user = User::factory()->create();
-    $order = Order::factory()->for($user)->paid()->create();
-    $product = Product::factory()->create(['file_path' => 'private/ebooks/book.epub']);
-    $orderItem = OrderItem::factory()->for($order)->for($product)->create();
-
-    $tokenHash = hash('sha256', Str::random(32));
-    $downloadToken = DownloadToken::factory()->create([
-        'order_item_id' => $orderItem->id,
-        'token' => $tokenHash,
-        'download_count' => 0,
-        'max_downloads' => 5,
-    ]);
-
-    $action = app(GenerateSecureDownloadAction::class);
-    $url = $action->execute($user, $tokenHash);
-
-    expect($url)->toBeString()
-        ->and($downloadToken->refresh()->download_count)->toBe(1);
-});
-
-it('rejects download attempts by unauthorized users', function (): void {
+it('rejects a different customer even when they know the purchased item id', function (): void {
     $owner = User::factory()->create();
     $intruder = User::factory()->create();
+    $item = OrderItem::factory()->for(Order::factory()->for($owner)->paid())->create();
+    DownloadToken::factory()->create(['order_item_id' => $item->id]);
 
-    $order = Order::factory()->for($owner)->paid()->create();
-    $product = Product::factory()->create();
-    $orderItem = OrderItem::factory()->for($order)->for($product)->create();
-
-    $rawToken = Str::random(32);
-    DownloadToken::factory()->create([
-        'order_item_id' => $orderItem->id,
-        'token' => hash('sha256', $rawToken),
-    ]);
-
-    $action = app(GenerateSecureDownloadAction::class);
-
-    expect(fn () => $action->execute($intruder, $rawToken))
+    expect(fn () => app(GenerateSecureDownloadAction::class)->execute($intruder, $item->id))
         ->toThrow(UnauthorizedDownloadException::class);
 });
 
-it('rejects downloads for unpaid orders', function (): void {
+it('rejects an unpaid item even with an active quota record', function (): void {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->pending()->create();
-    $product = Product::factory()->create();
-    $orderItem = OrderItem::factory()->for($order)->for($product)->create();
+    $item = OrderItem::factory()->for(Order::factory()->for($user)->pending())->create();
+    DownloadToken::factory()->create(['order_item_id' => $item->id]);
 
-    $rawToken = Str::random(32);
-    DownloadToken::factory()->create([
-        'order_item_id' => $orderItem->id,
-        'token' => hash('sha256', $rawToken),
-    ]);
-
-    $action = app(GenerateSecureDownloadAction::class);
-
-    expect(fn () => $action->execute($user, $rawToken))
+    expect(fn () => app(GenerateSecureDownloadAction::class)->execute($user, $item->id))
         ->toThrow(OrderNotPaidException::class);
 });
 
-it('rejects downloads when token has expired', function (): void {
+it('rejects an expired entitlement', function (): void {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->paid()->create();
-    $product = Product::factory()->create();
-    $orderItem = OrderItem::factory()->for($order)->for($product)->create();
+    $item = OrderItem::factory()->for(Order::factory()->for($user)->paid())->create();
+    DownloadToken::factory()->create(['order_item_id' => $item->id, 'expires_at' => now()->subMinute()]);
 
-    $rawToken = Str::random(32);
-    DownloadToken::factory()->create([
-        'order_item_id' => $orderItem->id,
-        'token' => hash('sha256', $rawToken),
-        'expires_at' => now()->subMinute(),
-    ]);
-
-    $action = app(GenerateSecureDownloadAction::class);
-
-    expect(fn () => $action->execute($user, $rawToken))
+    expect(fn () => app(GenerateSecureDownloadAction::class)->execute($user, $item->id))
         ->toThrow(DownloadTokenExpiredException::class);
 });
 
-it('rejects downloads when maximum download quota is exhausted', function (): void {
+it('rejects an exhausted quota without incrementing it', function (): void {
     $user = User::factory()->create();
-    $order = Order::factory()->for($user)->paid()->create();
-    $product = Product::factory()->create();
-    $orderItem = OrderItem::factory()->for($order)->for($product)->create();
-
-    $rawToken = Str::random(32);
-    DownloadToken::factory()->create([
-        'order_item_id' => $orderItem->id,
-        'token' => hash('sha256', $rawToken),
-        'download_count' => 5,
-        'max_downloads' => 5,
+    $item = OrderItem::factory()->for(Order::factory()->for($user)->paid())->create();
+    $quota = DownloadToken::factory()->create([
+        'order_item_id' => $item->id, 'download_count' => 5, 'max_downloads' => 5,
     ]);
 
-    $action = app(GenerateSecureDownloadAction::class);
-
-    expect(fn () => $action->execute($user, $rawToken))
+    expect(fn () => app(GenerateSecureDownloadAction::class)->execute($user, $item->id))
         ->toThrow(DownloadQuotaExceededException::class);
+    expect($quota->refresh()->download_count)->toBe(5);
 });
 
-it('rejects download attempts with invalid or non-existent token', function (): void {
-    $user = User::factory()->create();
-    $action = app(GenerateSecureDownloadAction::class);
-
-    expect(fn () => $action->execute($user, 'completely_unknown_token'))
+it('rejects an item without an entitlement record', function (): void {
+    expect(fn () => app(GenerateSecureDownloadAction::class)->execute(User::factory()->create(), 999999))
         ->toThrow(InvalidDownloadTokenException::class);
+});
+
+it('does not consume quota when the private asset is missing', function (): void {
+    $user = User::factory()->create();
+    $order = Order::factory()->for($user)->paid()->create();
+    $product = Product::factory()->create(['file_path' => 'private/ebooks/missing.pdf']);
+    $item = OrderItem::factory()->for($order)->for($product)->create();
+    $quota = DownloadToken::factory()->create(['order_item_id' => $item->id]);
+
+    expect(fn () => app(GenerateSecureDownloadAction::class)->execute($user, $item->id))
+        ->toThrow(\RuntimeException::class);
+
+    expect($quota->refresh()->download_count)->toBe(0);
+    $this->assertDatabaseHas('download_attempts', ['user_id' => $user->id, 'outcome' => 'storage_error']);
 });

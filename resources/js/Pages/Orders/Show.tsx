@@ -11,6 +11,7 @@ interface OrderShowProps {
     snapToken: string | null;
     midtransClientKey: string;
     midtransIsProduction: boolean;
+    paymentSimulatorEnabled: boolean;
 }
 
 export default function Show({
@@ -18,6 +19,7 @@ export default function Show({
     snapToken,
     midtransClientKey,
     midtransIsProduction,
+    paymentSimulatorEnabled,
 }: OrderShowProps) {
     const [copied, setCopied] = useState(false);
     const [downloadingToken, setDownloadingToken] = useState<string | null>(null);
@@ -65,12 +67,7 @@ export default function Show({
                 },
             });
         } else {
-            const confirmSimulate = confirm(
-                'Modul Midtrans Snap belum aktif atau berjalan dalam mode Sandbox lokal. Ingin mensimulasikan pembayaran lunas (settlement) sekarang untuk menguji unduhan lisensi buku?'
-            );
-            if (confirmSimulate) {
-                router.post(route('dev.orders.simulate-paid', order.order_number));
-            }
+            alert('Modul Midtrans Snap belum siap. Silakan muat ulang halaman atau hubungi dukungan.');
         }
     };
 
@@ -169,7 +166,7 @@ export default function Show({
                                     <div>
                                         <h3 className="text-sm font-bold text-emerald-900">Pembayaran Terkonfirmasi Lunas</h3>
                                         <p className="text-xs text-emerald-700">
-                                            Aset digital telah disinkronkan ke perpustakaan Anda dan siap diunduh kapan saja.
+                                            E-book tersedia di perpustakaan Anda selama kuota dan masa akses masih berlaku.
                                         </p>
                                     </div>
                                 </div>
@@ -185,7 +182,7 @@ export default function Show({
                         )}
 
                         {/* Pending Payment Action Banner */}
-                        {isPending && snapToken && (
+                        {isPending && (snapToken || paymentSimulatorEnabled) && (
                             <div className="p-5 rounded-2xl bg-indigo-50/80 border border-indigo-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                 <div className="flex items-center gap-3">
                                     <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-md animate-pulse">
@@ -200,16 +197,16 @@ export default function Show({
                                 </div>
 
                                 <div className="flex items-center gap-2 flex-wrap">
-                                    <button
+                                    {snapToken && <button
                                         type="button"
                                         onClick={handlePayNow}
                                         className="h-11 px-6 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 shrink-0"
                                     >
                                         <span>Bayar Sekarang (Snap)</span>
                                         <span className="material-symbols-outlined text-[18px]">flash_on</span>
-                                    </button>
+                                    </button>}
 
-                                    {!midtransIsProduction && (
+                                    {paymentSimulatorEnabled && (
                                         <button
                                             type="button"
                                             onClick={() => router.post(route('dev.orders.simulate-paid', order.order_number))}
@@ -267,13 +264,13 @@ export default function Show({
                                             {formatRupiah(item.price)}
                                         </span>
 
-                                        {isPaid && item.download_token && (
+                                        {isPaid && item.download_token && item.download_url && (
                                             <a
-                                                href={route('downloads.process', item.download_token.token)}
-                                                onClick={() => setDownloadingToken(item.download_token?.token || '')}
+                                                href={item.download_url}
+                                                onClick={() => setDownloadingToken(String(item.id))}
                                                 className="inline-flex items-center gap-1 mt-2 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-bold border border-emerald-200 transition-colors"
                                             >
-                                                {downloadingToken === item.download_token.token ? (
+                                                {downloadingToken === String(item.id) ? (
                                                     <>
                                                         <span className="animate-spin h-3.5 w-3.5 rounded-full border-2 border-emerald-600 border-t-transparent" />
                                                         <span>Menyiapkan...</span>

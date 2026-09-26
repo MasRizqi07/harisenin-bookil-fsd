@@ -17,14 +17,10 @@ class DownloadToken extends Model
     /** @var list<string> */
     protected $fillable = [
         'order_item_id',
-        'token',
         'expires_at',
         'download_count',
         'max_downloads',
     ];
-
-    /** @var list<string> */
-    protected $hidden = ['token'];
 
     /** @return array<string, string> */
     protected function casts(): array

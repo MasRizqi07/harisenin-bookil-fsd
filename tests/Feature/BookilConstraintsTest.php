@@ -22,7 +22,6 @@ it('enforces unique business identifiers', function (string $model, string $colu
     'product slug' => [Product::class, 'slug'],
     'order number' => [Order::class, 'order_number'],
     'gateway transaction' => [Payment::class, 'external_transaction_id'],
-    'token digest' => [DownloadToken::class, 'token'],
 ]);
 
 it('allows only one copy of a digital product per order', function (): void {
@@ -120,7 +119,6 @@ it('applies safe database defaults without factory defaults', function (): void 
     $item = OrderItem::factory()->create(['order_id' => $orderId, 'product_id' => $productId]);
     $tokenId = DB::table('download_tokens')->insertGetId([
         'order_item_id' => $item->id,
-        'token' => hash('sha256', random_bytes(32)),
         'expires_at' => now()->addMinutes(15),
     ]);
 

@@ -21,6 +21,7 @@ export interface Product {
     slug: string;
     author: string;
     description?: string;
+    sample_excerpt?: string | null;
     price: string;
     cover_image_path?: string;
     file_type: 'pdf' | 'epub' | 'zip';
@@ -33,7 +34,6 @@ export interface Product {
 export interface DownloadToken {
     id: number;
     order_item_id: number;
-    token: string;
     expires_at: string;
     download_count: number;
     max_downloads: number;
@@ -44,6 +44,7 @@ export interface OrderItem {
     order_id: number;
     product_id: number;
     price: string;
+    download_url?: string;
     product?: Product;
     download_token?: DownloadToken;
     order?: Order;

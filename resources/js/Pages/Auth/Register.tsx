@@ -22,7 +22,7 @@ export default function Register() {
     return (
         <AuthLayout
             title="Daftar Akun Baru"
-            subtitle="Bergabunglah dengan 10.000+ pembaca dan nikmati akses koleksi digital resmi."
+            subtitle="Buat akun untuk menyimpan pembelian dan mengakses koleksi digital Anda."
         >
             <Head title="Daftar Akun — Bookil" />
 

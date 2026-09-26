@@ -8,140 +8,244 @@ use App\Enums\OrderStatus;
 use App\Enums\PaymentStatus;
 use App\Events\OrderPaidEvent;
 use App\Exceptions\InvalidSignatureException;
+use App\Exceptions\InvalidWebhookPayloadException;
+use App\Exceptions\PaymentAmountMismatchException;
 use App\Models\Order;
 use App\Models\Payment;
+use App\Models\WebhookNotification;
 use Carbon\CarbonImmutable;
 use Illuminate\Support\Facades\DB;
-use InvalidArgumentException;
+use Illuminate\Support\Facades\Http;
+use RuntimeException;
 
 class ProcessPaymentWebhookAction
 {
     /**
-     * Process incoming Midtrans webhook notification with signature verification,
-     * idempotent state transitions, and audit logging.
-     *
      * @param  array<string, mixed>  $payload
      */
     public function execute(array $payload): ?Payment
     {
-        $this->validateSignature($payload);
+        $orderNumber = $this->requiredString($payload, 'order_id');
+        $transactionId = $this->requiredString($payload, 'transaction_id');
+        $statusCode = $this->requiredString($payload, 'status_code');
+        $grossAmount = $this->requiredString($payload, 'gross_amount');
+        $status = PaymentStatus::tryFrom($this->requiredString($payload, 'transaction_status'));
 
-        $orderId = (string) ($payload['order_id'] ?? '');
-        $transactionId = (string) ($payload['transaction_id'] ?? '');
-
-        if ($orderId === '' || $transactionId === '') {
-            throw new InvalidArgumentException('Missing required transaction identifier fields in webhook payload.');
+        if ($status === null || ! preg_match('/^\d{1,12}(?:\.\d{1,2})?$/D', $grossAmount)) {
+            throw new InvalidWebhookPayloadException;
         }
 
-        return DB::transaction(function () use ($payload, $orderId, $transactionId): ?Payment {
-            $order = Order::query()
-                ->where('order_number', $orderId)
-                ->lockForUpdate()
-                ->first();
+        if (strlen($transactionId) > 64
+            || ! preg_match('/^\d{3}$/D', $statusCode)
+            || ! is_string($payload['fraud_status'] ?? '')) {
+            throw new InvalidWebhookPayloadException;
+        }
 
-            if (! $order) {
-                throw new InvalidArgumentException("Order [{$orderId}] referenced by webhook was not found.");
+        $this->validateSignature($payload, $orderNumber, $statusCode, $grossAmount);
+        $eventKey = hash('sha256', implode('|', [
+            $orderNumber, $transactionId, $status->value, $grossAmount,
+            $payload['fraud_status'] ?? '', $statusCode,
+        ]));
+
+        if (WebhookNotification::query()->where('event_key', $eventKey)->exists()) {
+            return Payment::query()->where('external_transaction_id', $transactionId)->first();
+        }
+
+        $verified = $this->verifyGatewayStatus($payload, $orderNumber, $transactionId, $status, $grossAmount);
+        $paymentType = is_string($verified['payment_type'] ?? null)
+            ? $verified['payment_type'] : 'unknown';
+        if (strlen($paymentType) > 255 || ! is_string($verified['fraud_status'] ?? '')) {
+            throw new InvalidWebhookPayloadException;
+        }
+
+        return DB::transaction(function () use ($payload, $verified, $paymentType, $eventKey, $orderNumber, $transactionId, $status, $grossAmount): ?Payment {
+            $order = Order::query()->where('order_number', $orderNumber)->lockForUpdate()->first();
+
+            if ($order === null) {
+                throw new InvalidWebhookPayloadException('The payment order was not found.');
             }
 
-            $existingPayment = Payment::query()
-                ->where('external_transaction_id', $transactionId)
-                ->first();
-
-            // Idempotency: if order is already paid or transaction was already finalized in identical state
-            $incomingStatus = (string) ($payload['transaction_status'] ?? '');
-            if ($order->status === OrderStatus::PAID) {
-                return $existingPayment ?? $this->recordPayment($order, $payload, PaymentStatus::tryFrom($incomingStatus) ?? PaymentStatus::SETTLEMENT, $order->updated_at?->toImmutable());
+            if (bccomp($grossAmount, $order->total_amount, 2) !== 0) {
+                throw new PaymentAmountMismatchException;
             }
 
-            if ($existingPayment && $existingPayment->transaction_status->value === $incomingStatus) {
+            $existingPayment = Payment::query()->where('external_transaction_id', $transactionId)->first();
+
+            if ($existingPayment !== null && $existingPayment->order_id !== $order->id) {
+                throw new InvalidWebhookPayloadException('The transaction belongs to a different order.');
+            }
+
+            $notification = WebhookNotification::query()->firstOrCreate(
+                ['event_key' => $eventKey],
+                [
+                    'order_id' => $order->id,
+                    'external_transaction_id' => $transactionId,
+                    'transaction_status' => $status->value,
+                    'payload' => $payload,
+                    'result' => 'received',
+                ],
+            );
+
+            if ($notification->result !== 'received') {
                 return $existingPayment;
             }
 
-            $targetOrderStatus = $this->determineOrderStatus($payload, $order->status);
-            $paymentStatus = PaymentStatus::tryFrom($incomingStatus) ?? PaymentStatus::PENDING;
+            $target = $this->targetStatus($status, (string) ($verified['fraud_status'] ?? ''));
 
-            $isSettled = ($targetOrderStatus === OrderStatus::PAID);
-            $paidAt = null;
-            if ($isSettled) {
-                $paidAt = isset($payload['settlement_time'])
-                    ? CarbonImmutable::parse((string) $payload['settlement_time'])
-                    : CarbonImmutable::now();
+            // A paid transaction can be reversed or refunded by the gateway.
+            $reversal = $order->status === OrderStatus::PAID
+                && $existingPayment !== null
+                && in_array($existingPayment->transaction_status, [PaymentStatus::SETTLEMENT, PaymentStatus::CAPTURE], true)
+                && in_array($status, [PaymentStatus::DENY, PaymentStatus::CANCEL, PaymentStatus::REFUND, PaymentStatus::CHARGEBACK], true);
+
+            if ($order->status->isFinal() && ! $reversal) {
+                $notification->update(['result' => 'ignored_final']);
+
+                return $existingPayment;
             }
 
-            $order->status = $targetOrderStatus;
-            if (isset($payload['payment_type'])) {
-                $order->payment_method = (string) $payload['payment_type'];
+            if ($existingPayment !== null && $existingPayment->transaction_status === $status) {
+                $notification->update(['result' => 'ignored_duplicate']);
+
+                return $existingPayment;
             }
-            $order->save();
 
-            $payment = $this->recordPayment($order, $payload, $paymentStatus, $paidAt);
+            $paidAt = $target === OrderStatus::PAID ? CarbonImmutable::now() : $existingPayment?->paid_at;
 
-            if ($isSettled) {
+            if ($existingPayment === null) {
+                $payment = Payment::query()->create([
+                    'order_id' => $order->id,
+                    'external_transaction_id' => $transactionId,
+                    'payment_type' => $paymentType,
+                    'gross_amount' => $grossAmount,
+                    'transaction_status' => $status,
+                    'raw_response' => $payload,
+                    'paid_at' => $paidAt,
+                ]);
+            } else {
+                $existingPayment->update([
+                    'payment_type' => $paymentType,
+                    'transaction_status' => $status,
+                    'raw_response' => $payload,
+                    'paid_at' => $paidAt,
+                ]);
+                $payment = $existingPayment;
+            }
+
+            $wasPaid = $order->status === OrderStatus::PAID;
+            $order->update([
+                'status' => $target,
+                'payment_method' => $payment->payment_type,
+                'snap_token' => $target === OrderStatus::PENDING ? $order->snap_token : null,
+                'snap_redirect_url' => $target === OrderStatus::PENDING ? $order->snap_redirect_url : null,
+            ]);
+
+            if ($reversal) {
+                $order->items()->whereHas('downloadToken')->with('downloadToken')->get()
+                    ->each(fn ($item) => $item->downloadToken->update(['expires_at' => now()]));
+            }
+
+            $notification->update(['result' => 'processed']);
+
+            if (! $wasPaid && $target === OrderStatus::PAID) {
                 OrderPaidEvent::dispatch($order);
             }
 
             return $payment;
-        });
+        }, attempts: 3);
     }
 
     /**
-     * Validate Midtrans signature: SHA512(order_id + status_code + gross_amount + server_key).
-     *
      * @param  array<string, mixed>  $payload
      */
-    protected function validateSignature(array $payload): void
+    private function requiredString(array $payload, string $key): string
+    {
+        $value = $payload[$key] ?? null;
+
+        if (! is_string($value) || $value === '' || strlen($value) > 255) {
+            throw new InvalidWebhookPayloadException("Missing or invalid {$key}.");
+        }
+
+        return $value;
+    }
+
+    /**
+     * @param  array<string, mixed>  $payload
+     */
+    private function validateSignature(array $payload, string $orderNumber, string $statusCode, string $grossAmount): void
     {
         $serverKey = (string) config('services.midtrans.server_key');
-        $incomingSignature = (string) ($payload['signature_key'] ?? '');
+        $signature = $payload['signature_key'] ?? null;
 
-        $orderId = (string) ($payload['order_id'] ?? '');
-        $statusCode = (string) ($payload['status_code'] ?? '');
-        $grossAmount = (string) ($payload['gross_amount'] ?? '');
+        if ($serverKey === '' || ! is_string($signature) || ! preg_match('/^[a-fA-F0-9]{128}$/D', $signature)) {
+            throw new InvalidSignatureException;
+        }
 
-        $expectedSignature = hash('sha512', $orderId.$statusCode.$grossAmount.$serverKey);
+        $expected = hash('sha512', $orderNumber.$statusCode.$grossAmount.$serverKey);
 
-        if (! hash_equals($expectedSignature, $incomingSignature)) {
-            throw new InvalidSignatureException('Midtrans webhook signature validation failed.');
+        if (! hash_equals($expected, strtolower($signature))) {
+            throw new InvalidSignatureException;
         }
     }
 
     /**
-     * Map Midtrans transaction status and fraud status to internal OrderStatus.
+     * Midtrans recommends confirming notification state with its authenticated status API.
+     * The signed fields do not cover transaction_status or transaction_id.
      *
      * @param  array<string, mixed>  $payload
      */
-    protected function determineOrderStatus(array $payload, OrderStatus $currentStatus): OrderStatus
-    {
-        $transactionStatus = (string) ($payload['transaction_status'] ?? '');
-        $fraudStatus = (string) ($payload['fraud_status'] ?? '');
+    private function verifyGatewayStatus(
+        array $payload,
+        string $orderNumber,
+        string $transactionId,
+        PaymentStatus $status,
+        string $grossAmount,
+    ): array {
+        if (app()->environment(['local', 'testing'])
+            && config('bookil.payment_simulator_enabled', false)
+            && str_starts_with($transactionId, 'sim-')) {
+            return $payload;
+        }
 
-        return match ($transactionStatus) {
-            'capture' => ($fraudStatus === 'challenge') ? OrderStatus::PENDING : OrderStatus::PAID,
-            'settlement' => OrderStatus::PAID,
-            'pending' => OrderStatus::PENDING,
-            'deny', 'cancel', 'failure' => OrderStatus::FAILED,
-            'expire' => OrderStatus::EXPIRED,
-            default => $currentStatus,
-        };
+        $base = config('services.midtrans.is_production')
+            ? 'https://api.midtrans.com' : 'https://api.sandbox.midtrans.com';
+        $url = $base.'/v2/'.rawurlencode($orderNumber).'/status';
+        $response = Http::withBasicAuth((string) config('services.midtrans.server_key'), '')
+            ->acceptJson()
+            ->timeout(10)
+            ->get($url);
+
+        if (! $response->successful()) {
+            throw new RuntimeException('Midtrans status verification is unavailable.');
+        }
+
+        $verified = $response->json();
+
+        if (! is_array($verified)
+            || ($verified['order_id'] ?? null) !== $orderNumber
+            || ($verified['transaction_id'] ?? null) !== $transactionId
+            || ($verified['transaction_status'] ?? null) !== $status->value
+            || ! is_string($verified['gross_amount'] ?? null)
+            || ! preg_match('/^\d{1,12}(?:\.\d{1,2})?$/D', $verified['gross_amount'])
+            || bccomp($verified['gross_amount'], $grossAmount, 2) !== 0
+            || (($verified['fraud_status'] ?? '') !== ($payload['fraud_status'] ?? ''))
+        ) {
+            throw new InvalidWebhookPayloadException('Notification differs from the current Midtrans transaction.');
+        }
+
+        return $verified;
     }
 
-    /**
-     * Record or update payment ledger row.
-     *
-     * @param  array<string, mixed>  $payload
-     */
-    protected function recordPayment(Order $order, array $payload, PaymentStatus $status, ?CarbonImmutable $paidAt): Payment
+    private function targetStatus(PaymentStatus $status, string $fraudStatus): OrderStatus
     {
-        return Payment::updateOrCreate(
-            ['external_transaction_id' => (string) $payload['transaction_id']],
-            [
-                'order_id' => $order->id,
-                'payment_type' => (string) ($payload['payment_type'] ?? 'unknown'),
-                'gross_amount' => (string) ($payload['gross_amount'] ?? $order->total_amount),
-                'transaction_status' => $status,
-                'raw_response' => $payload,
-                'paid_at' => $paidAt,
-            ]
-        );
+        return match ($status) {
+            PaymentStatus::CAPTURE => $fraudStatus === 'accept'
+                ? OrderStatus::PAID : OrderStatus::PENDING,
+            PaymentStatus::SETTLEMENT => OrderStatus::PAID,
+            PaymentStatus::EXPIRE => OrderStatus::EXPIRED,
+            PaymentStatus::DENY, PaymentStatus::CANCEL, PaymentStatus::FAILURE,
+            PaymentStatus::REFUND, PaymentStatus::CHARGEBACK => OrderStatus::FAILED,
+            default => OrderStatus::PENDING,
+        };
     }
 }

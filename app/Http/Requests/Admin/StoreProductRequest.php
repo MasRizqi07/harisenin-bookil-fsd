@@ -8,6 +8,7 @@ use App\Enums\FileType;
 use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Validator;
 
 class StoreProductRequest extends FormRequest
 {
@@ -27,11 +28,22 @@ class StoreProductRequest extends FormRequest
             'slug' => ['nullable', 'string', 'max:255', 'unique:products,slug'],
             'author' => ['required', 'string', 'max:255'],
             'description' => ['nullable', 'string'],
-            'price' => ['required', 'numeric', 'min:0'],
+            'sample_excerpt' => ['nullable', 'string', 'max:10000'],
+            'price' => ['required', 'numeric', 'min:0', 'multiple_of:1'],
             'file_type' => ['required', Rule::enum(FileType::class)],
             'is_published' => ['boolean'],
             'cover_image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,webp', 'max:3072'],
-            'digital_file' => ['nullable', 'file', 'max:51200'],
+            'digital_file' => ['required', 'file', 'mimes:pdf,epub,zip', 'max:51200'],
         ];
+    }
+
+    public function withValidator(Validator $validator): void
+    {
+        $validator->after(function ($validator): void {
+            $file = $this->file('digital_file');
+            if ($file && strtolower($file->getClientOriginalExtension()) !== $this->input('file_type')) {
+                $validator->errors()->add('digital_file', 'Format berkas harus sesuai dengan format yang dipilih.');
+            }
+        });
     }
 }

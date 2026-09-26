@@ -92,7 +92,7 @@ beberapa model tunggal/baru; strict mode bukan pengganti explicit eager loading.
 - Foreign key dan index eksplisit disiapkan untuk MySQL/PostgreSQL. Composite index
   mendukung filter publication/category/price serta riwayat order customer/status.
   B-tree bukan index untuk pencarian substring; search strategy belum dipilih.
-- `file_path`, token digest, dan raw_response disembunyikan dari serialisasi.
+- `file_path` dan `raw_response` disembunyikan dari serialisasi. Akses unduhan memakai signed route sementara; tabel kuota tidak menyimpan bearer token.
   Ini bukan pengganti policy atau validasi upload pada fase selanjutnya.
 - Kolom token menyimpan digest SHA-256 64 karakter; factory menghasilkan digest
   dari random bytes. Action kelak wajib menghasilkan bearer token acak, menyimpan

@@ -199,13 +199,13 @@ export default function Dashboard({ library, orders, stats }: DashboardProps) {
                                                 </Link>
                                             )}
 
-                                            {item.download_token && (
+                                            {item.download_url && (
                                                 <a
-                                                    href={route('downloads.process', item.download_token.token)}
-                                                    onClick={() => setDownloadingToken(item.download_token?.token || '')}
+                                                    href={item.download_url}
+                                                    onClick={() => setDownloadingToken(String(item.id))}
                                                     className="h-9 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition-all flex items-center gap-1.5"
                                                 >
-                                                    {downloadingToken === item.download_token.token ? (
+                                                    {downloadingToken === String(item.id) ? (
                                                         <>
                                                             <span className="animate-spin h-3.5 w-3.5 rounded-full border-2 border-white border-t-transparent" />
                                                             <span>Mengunduh...</span>

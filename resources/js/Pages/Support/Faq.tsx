@@ -19,7 +19,7 @@ const FAQ_DATA: FaqItem[] = [
         answer: (
             <div className="space-y-4 text-slate-600 text-sm leading-relaxed">
                 <p>
-                    Setiap transaksi di Bookil didukung langsung oleh payment gateway resmi Midtrans dengan verifikasi otomatis kurang dari 3 detik tanpa biaya transaksi tambahan.
+                    Pembayaran diproses melalui Midtrans. Metode dan batas waktu pembayaran ditampilkan pada halaman pembayaran.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
                     <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-100">
@@ -46,7 +46,7 @@ const FAQ_DATA: FaqItem[] = [
                     <span className="px-2.5 py-1 rounded bg-slate-100 text-xs font-semibold text-slate-600">QRIS Standar BI</span>
                     <span className="ml-auto text-emerald-600 font-bold text-xs flex items-center gap-1">
                         <span className="material-symbols-outlined text-[16px]">bolt</span>
-                        Settlement Real-time &lt; 3 Detik
+                        Status mengikuti konfirmasi gateway
                     </span>
                 </div>
             </div>
@@ -60,10 +60,10 @@ const FAQ_DATA: FaqItem[] = [
         answer: (
             <div className="space-y-2 text-slate-600 text-sm leading-relaxed">
                 <p>
-                    Semua pesanan e-book memiliki jendela pelunasan selama <strong className="text-slate-900">24 jam penuh</strong> sejak faktur diterbitkan. Nomor Virtual Account atau kode QRIS tetap valid selama jangka waktu tersebut.
+                    Ikuti batas waktu yang ditampilkan oleh Midtrans untuk metode pembayaran yang Anda pilih.
                 </p>
                 <p className="text-xs text-slate-500">
-                    Jika melewati 24 jam tanpa pembayaran, pesanan otomatis kedaluwarsa (expired) guna menjaga integritas inventaris lisensi. Anda dapat melakukan pemesanan ulang kapan saja tanpa penalti apa pun.
+                    Ketika Midtrans menyatakan transaksi kedaluwarsa, status pesanan akan diperbarui setelah notifikasi terverifikasi diterima.
                 </p>
             </div>
         ),
@@ -76,10 +76,10 @@ const FAQ_DATA: FaqItem[] = [
         answer: (
             <div className="space-y-2 text-slate-600 text-sm leading-relaxed">
                 <p>
-                    <strong className="text-emerald-700">Tidak perlu sama sekali.</strong> Bookil beroperasi 100% otomatis. Saat Anda menyelesaikan pembayaran di bank atau dompet digital, Midtrans mengirimkan notifikasi server-to-server terenkripsi (Webhook SHA-512) ke backend Bookil.
+                    <strong className="text-emerald-700">Tidak perlu.</strong> Midtrans mengirimkan notifikasi pembayaran ke Bookil dan sistem memeriksa ulang status transaksi melalui API Midtrans.
                 </p>
                 <p className="text-xs text-slate-500">
-                    Koleksi e-book Anda akan segera tersedia di menu <strong className="text-indigo-600">Perpustakaan Saya</strong> seketika tanpa memerlukan verifikasi admin manusia atau unggah struk manual.
+                    Setelah status lunas terkonfirmasi, produk tampil di <strong className="text-indigo-600">Perpustakaan Saya</strong>.
                 </p>
             </div>
         ),
@@ -95,7 +95,7 @@ const FAQ_DATA: FaqItem[] = [
                     Batas 5x unduhan diterapkan sebagai langkah proteksi fair-use untuk mencegah sindikasi massal bot tanpa izin. Kami memahami Anda mungkin berganti perangkat, kehilangan berkas lokal, atau membutuhkan berkas cadangan.
                 </p>
                 <p>
-                    Jika kuota Anda habis, Anda dapat menghubungi tim dukungan pelanggan kami melalui email <code className="bg-slate-100 text-indigo-700 px-1.5 py-0.5 rounded font-mono text-xs">support@bookil.com</code> dengan mencantumkan nomor faktur. Tim kami akan mereset kuota unduhan Anda secara gratis tanpa biaya tambahan.
+                    Jika kuota habis, simpan nomor pesanan dan hubungi pengelola toko untuk meninjau akses Anda.
                 </p>
             </div>
         ),

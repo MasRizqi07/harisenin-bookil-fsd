@@ -41,7 +41,7 @@ export default function Show({ product }: ShowProps) {
         <StoreLayout>
             <Head title={`${product.title} — E-Book Resmi Bookil`} />
 
-            {/* Reading Simulation Preview Modal */}
+            {/* Publisher-provided excerpt */}
             <SamplePreviewModal
                 product={product}
                 isOpen={previewOpen}
@@ -127,14 +127,15 @@ export default function Show({ product }: ShowProps) {
                             </div>
 
                             {/* Sample Preview Button under cover */}
-                            <button
+                            {product.sample_excerpt && <button
                                 type="button"
                                 onClick={() => setPreviewOpen(true)}
                                 className="mt-5 w-full max-w-sm h-11 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs transition-colors flex items-center justify-center gap-2 border border-indigo-200/80 shadow-sm"
                             >
                                 <span className="material-symbols-outlined text-[18px]">menu_book</span>
-                                <span>Baca Cuplikan Bab Gratis</span>
+                                <span>Baca Cuplikan</span>
                             </button>
+                            }
 
                             {/* Quick Specifications Grid (2x2) */}
                             <div className="mt-6 w-full max-w-sm grid grid-cols-2 gap-3">
@@ -209,7 +210,7 @@ export default function Show({ product }: ShowProps) {
                                     </span>
                                     <span className="px-2.5 py-1 rounded-md bg-emerald-50 text-emerald-700 font-bold text-xs flex items-center gap-1 border border-emerald-200">
                                         <span className="material-symbols-outlined text-[14px]">verified</span>
-                                        <span>100% Bebas DRM</span>
+                                        <span>Berkas Digital</span>
                                     </span>
                                 </div>
 

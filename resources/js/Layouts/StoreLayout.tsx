@@ -297,7 +297,7 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                             <ApplicationLogo className="h-8 w-auto" />
                             <p className="text-sm text-slate-600 leading-relaxed max-w-sm">
                                 Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. 
-                                Format PDF &amp; EPUB orisinal, 100% bebas DRM mengikat, dan unduhan instan berkeamanan tinggi.
+                                Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
                             </p>
                             <div className="flex items-center gap-2 text-xs font-semibold text-slate-500 pt-2">
                                 <span className="flex items-center gap-1 text-emerald-600">
@@ -305,7 +305,7 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                                     Pembayaran Resmi Midtrans
                                 </span>
                                 <span>•</span>
-                                <span>Zero-Trust Storage</span>
+                                <span>Penyimpanan Privat</span>
                             </div>
                         </div>
 

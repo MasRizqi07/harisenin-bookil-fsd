@@ -24,7 +24,12 @@ class Order extends Model
         'status',
         'payment_method',
         'notes',
+        'snap_token',
+        'snap_redirect_url',
     ];
+
+    /** @var list<string> */
+    protected $hidden = ['snap_token', 'snap_redirect_url'];
 
     /** @return array<string, string> */
     protected function casts(): array

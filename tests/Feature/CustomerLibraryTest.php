@@ -35,7 +35,6 @@ it('displays customer personal digital library with active tokens and order hist
     ]);
     DownloadToken::factory()->create([
         'order_item_id' => $itemA->id,
-        'token' => 'token-customer-a',
         'download_count' => 1,
         'max_downloads' => 5,
         'expires_at' => now()->addDays(7),
@@ -58,7 +57,6 @@ it('displays customer personal digital library with active tokens and order hist
     ]);
     DownloadToken::factory()->create([
         'order_item_id' => $otherItem->id,
-        'token' => 'token-other-customer',
     ]);
 
     $response = $this->actingAs($customer)->get('/dashboard');
@@ -69,7 +67,8 @@ it('displays customer personal digital library with active tokens and order hist
             ->component('Dashboard')
             ->has('library', 1)
             ->where('library.0.product_id', $productA->id)
-            ->where('library.0.download_token.token', 'token-customer-a')
+            ->missing('library.0.download_token.token')
+            ->has('library.0.download_url')
             ->has('orders.data', 2)
             ->where('stats.total_books', 1)
             ->where('stats.total_orders', 2)

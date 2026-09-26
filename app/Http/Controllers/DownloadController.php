@@ -16,13 +16,15 @@ class DownloadController extends Controller
      */
     public function download(
         Request $request,
-        string $token,
+        int $orderItem,
         GenerateSecureDownloadAction $generateDownload,
     ): RedirectResponse {
         /** @var User $user */
         $user = $request->user();
 
-        $presignedUrl = $generateDownload->execute($user, $token);
+        $presignedUrl = $generateDownload->execute(
+            $user, $orderItem, $request->ip(), hash('sha256', (string) $request->query('signature'))
+        );
 
         return redirect()->away($presignedUrl);
     }

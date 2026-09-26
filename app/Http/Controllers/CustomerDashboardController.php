@@ -9,6 +9,7 @@ use App\Models\Order;
 use App\Models\OrderItem;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\URL;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -37,7 +38,12 @@ class CustomerDashboardController extends Controller
             ->get();
 
         $libraryItems->each(function (OrderItem $item): void {
-            $item->downloadToken?->makeVisible('token');
+            if ($item->downloadToken?->expires_at->isFuture()
+                && $item->downloadToken->download_count < $item->downloadToken->max_downloads) {
+                $item->setAttribute('download_url', URL::temporarySignedRoute(
+                    'downloads.process', now()->addMinutes(15), ['orderItem' => $item->id]
+                ));
+            }
         });
 
         // 2. Complete Order History: all statuses

@@ -6,7 +6,6 @@ namespace App\Listeners;
 
 use App\Events\OrderPaidEvent;
 use App\Models\DownloadToken;
-use Illuminate\Support\Str;
 
 class GenerateDownloadTokensForPaidOrder
 {
@@ -23,13 +22,9 @@ class GenerateDownloadTokensForPaidOrder
                 continue;
             }
 
-            $rawToken = Str::random(64);
-            $tokenHash = hash('sha256', $rawToken);
-
             DownloadToken::firstOrCreate(
                 ['order_item_id' => $item->id],
                 [
-                    'token' => $tokenHash,
                     'expires_at' => now()->addDays(30),
                     'download_count' => 0,
                     'max_downloads' => 5,

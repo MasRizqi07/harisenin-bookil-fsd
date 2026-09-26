@@ -143,7 +143,7 @@ export default function BentoHero({
                                     href={route('products.show', featuredProduct.slug)}
                                     className="w-full h-11 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-bold text-xs shadow-md transition-all flex items-center justify-center gap-1.5"
                                 >
-                                    <span>Beli Sekarang &amp; Baca Cuplikan</span>
+                                    <span>Lihat E-Book</span>
                                     <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
                                 </Link>
                             ) : (
@@ -163,8 +163,8 @@ export default function BentoHero({
                             <span className="material-symbols-outlined text-[28px]">group</span>
                         </div>
                         <div>
-                            <span className="text-2xl font-extrabold text-slate-900 block leading-tight">10.000+</span>
-                            <span className="text-xs text-slate-500 font-medium">Pembaca aktif di seluruh Indonesia</span>
+                            <span className="text-2xl font-extrabold text-slate-900 block leading-tight">Bookil</span>
+                            <span className="text-xs text-slate-500 font-medium">Perpustakaan digital pribadi</span>
                         </div>
                     </div>
 
@@ -174,8 +174,8 @@ export default function BentoHero({
                             <span className="material-symbols-outlined text-[28px]">verified_user</span>
                         </div>
                         <div>
-                            <span className="text-2xl font-extrabold text-slate-900 block leading-tight">100% Bebas DRM</span>
-                            <span className="text-xs text-slate-500 font-medium">Baca di Kindle, iPad, atau browser Anda</span>
+                            <span className="text-2xl font-extrabold text-slate-900 block leading-tight">Format Digital</span>
+                            <span className="text-xs text-slate-500 font-medium">Lihat format yang tersedia di tiap produk</span>
                         </div>
                     </div>
 

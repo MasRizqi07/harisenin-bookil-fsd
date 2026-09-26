@@ -78,8 +78,8 @@ export default function ErrorPage({ status = 404, message }: ErrorPageProps) {
             description:
                 message ||
                 'Anda telah menggunakan seluruh jatah 5x unduhan untuk lisensi e-book ini sesuai kebijakan fair-use keamanan digital.',
-            hint: 'Jangan khawatir! Hubungi tim bantuan kami untuk melakukan permohonan reset kuota unduhan gratis tanpa biaya.',
-            actionLabel: 'Hubungi Tim Bantuan (Reset Gratis)',
+            hint: 'Simpan nomor pesanan dan hubungi pengelola toko untuk meninjau akses Anda.',
+            actionLabel: 'Lihat Bantuan',
             actionHref: '/faq',
             secondaryLabel: 'Kembali ke Dashboard',
             secondaryHref: route('dashboard'),

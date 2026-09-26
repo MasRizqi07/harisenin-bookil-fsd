@@ -15,7 +15,7 @@ return [
 
     'default' => env('FILESYSTEM_DISK', 'local'),
 
-    'private_disk' => env('PRIVATE_DISK', 's3'),
+    'private_disk' => env('PRIVATE_DISK', 'local'),
 
     /*
     |--------------------------------------------------------------------------

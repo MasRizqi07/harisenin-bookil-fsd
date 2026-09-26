@@ -7,6 +7,7 @@ namespace Tests\Feature;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
+use App\Services\MidtransSnapService;
 use Illuminate\Support\Facades\Http;
 use Inertia\Testing\AssertableInertia as Assert;
 
@@ -98,4 +99,35 @@ it('forbids customers from viewing orders belonging to another user', function (
     $response = $this->actingAs($stranger)->get("/orders/{$order->order_number}");
 
     $response->assertForbidden();
+});
+
+it('reuses the stored Snap session when a pending order is viewed repeatedly', function (): void {
+    $user = User::factory()->create();
+    $order = Order::factory()->for($user)->pending()->create();
+    $product = Product::factory()->create();
+    $order->items()->create(['product_id' => $product->id, 'price' => $order->total_amount]);
+
+    Http::fake(['https://app.sandbox.midtrans.com/snap/v1/transactions' => Http::response([
+        'token' => 'stable-snap-token',
+        'redirect_url' => 'https://app.sandbox.midtrans.com/snap/v2/vtweb/stable-snap-token',
+    ])]);
+
+    $service = app(MidtransSnapService::class);
+    expect($service->createTransaction($order)['snap_token'])->toBe('stable-snap-token')
+        ->and($service->createTransaction($order)['snap_token'])->toBe('stable-snap-token')
+        ->and($order->refresh()->snap_token)->toBe('stable-snap-token');
+    Http::assertSentCount(1);
+});
+
+it('does not invent a Snap token when the gateway is unavailable', function (): void {
+    $user = User::factory()->create();
+    $product = Product::factory()->create(['is_published' => true]);
+    Http::fake(['https://app.sandbox.midtrans.com/snap/v1/transactions' => Http::response([], 503)]);
+
+    $response = $this->actingAs($user)->post('/checkout', ['product_id' => $product->id]);
+    $order = Order::query()->where('user_id', $user->id)->firstOrFail();
+
+    $response->assertRedirect(route('orders.show', $order->order_number));
+    $response->assertSessionHas('error');
+    expect($order->snap_token)->toBeNull();
 });

@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
 use Inertia\Response;
+use RuntimeException;
+use Throwable;
 
 class AdminProductController extends Controller
 {
@@ -77,24 +79,38 @@ class AdminProductController extends Controller
             $data['slug'] = Str::slug($data['title']).'-'.Str::random(5);
         }
 
-        // Handle Cover Image Upload (Public Disk)
-        if ($request->hasFile('cover_image')) {
-            $data['cover_image_path'] = $request->file('cover_image')->store('covers', 'public');
-        }
+        $privateDisk = (string) config('filesystems.private_disk');
+        $newCover = null;
+        $newFile = null;
 
-        // Handle Private Digital Asset Upload (Private Disk S3/Local)
-        if ($request->hasFile('digital_file')) {
-            $privateDisk = (string) config('filesystems.private_disk', 's3');
-            $data['file_path'] = $request->file('digital_file')->store('private/ebooks', $privateDisk);
+        try {
+            if ($request->hasFile('cover_image')) {
+                $newCover = $request->file('cover_image')->store('covers', 'public');
+                if (! $newCover) {
+                    throw new RuntimeException('Cover upload failed.');
+                }
+                $data['cover_image_path'] = $newCover;
+            }
+
+            $newFile = $request->file('digital_file')->store('private/ebooks', $privateDisk);
+            if (! $newFile) {
+                throw new RuntimeException('Private asset upload failed.');
+            }
+            $data['file_path'] = $newFile;
             $data['file_size'] = $request->file('digital_file')->getSize();
-        } else {
-            $data['file_path'] = 'private/ebooks/sample.pdf';
-            $data['file_size'] = 1048576; // 1MB default
+            unset($data['cover_image'], $data['digital_file']);
+
+            Product::query()->create($data);
+        } catch (Throwable $exception) {
+            if ($newCover) {
+                Storage::disk('public')->delete($newCover);
+            }
+            if ($newFile) {
+                Storage::disk($privateDisk)->delete($newFile);
+            }
+
+            throw $exception;
         }
-
-        unset($data['cover_image'], $data['digital_file']);
-
-        Product::create($data);
 
         return redirect()->route('admin.products.index')
             ->with('success', 'E-Book berhasil ditambahkan ke katalog.');
@@ -125,25 +141,49 @@ class AdminProductController extends Controller
             $data['slug'] = Str::slug($data['title']);
         }
 
-        if ($request->hasFile('cover_image')) {
-            if ($product->cover_image_path) {
-                Storage::disk('public')->delete($product->cover_image_path);
+        $privateDisk = (string) config('filesystems.private_disk');
+        $oldCover = $product->cover_image_path;
+        $oldFile = $product->file_path;
+        $newCover = null;
+        $newFile = null;
+
+        try {
+            if ($request->hasFile('cover_image')) {
+                $newCover = $request->file('cover_image')->store('covers', 'public');
+                if (! $newCover) {
+                    throw new RuntimeException('Cover upload failed.');
+                }
+                $data['cover_image_path'] = $newCover;
             }
-            $data['cover_image_path'] = $request->file('cover_image')->store('covers', 'public');
+
+            if ($request->hasFile('digital_file')) {
+                $newFile = $request->file('digital_file')->store('private/ebooks', $privateDisk);
+                if (! $newFile) {
+                    throw new RuntimeException('Private asset upload failed.');
+                }
+                $data['file_path'] = $newFile;
+                $data['file_size'] = $request->file('digital_file')->getSize();
+            }
+
+            unset($data['cover_image'], $data['digital_file']);
+            $product->update($data);
+        } catch (Throwable $exception) {
+            if ($newCover) {
+                Storage::disk('public')->delete($newCover);
+            }
+            if ($newFile) {
+                Storage::disk($privateDisk)->delete($newFile);
+            }
+
+            throw $exception;
         }
 
-        if ($request->hasFile('digital_file')) {
-            $privateDisk = (string) config('filesystems.private_disk', 's3');
-            if ($product->file_path && $product->file_path !== 'private/ebooks/sample.pdf') {
-                Storage::disk($privateDisk)->delete($product->file_path);
-            }
-            $data['file_path'] = $request->file('digital_file')->store('private/ebooks', $privateDisk);
-            $data['file_size'] = $request->file('digital_file')->getSize();
+        if ($newCover && $oldCover) {
+            Storage::disk('public')->delete($oldCover);
         }
-
-        unset($data['cover_image'], $data['digital_file']);
-
-        $product->update($data);
+        if ($newFile && $oldFile) {
+            Storage::disk($privateDisk)->delete($oldFile);
+        }
 
         return redirect()->route('admin.products.index')
             ->with('success', 'Data e-book berhasil diperbarui.');
@@ -154,6 +194,11 @@ class AdminProductController extends Controller
      */
     public function togglePublish(Product $product): RedirectResponse
     {
+        if (! $product->is_published
+            && ! Storage::disk((string) config('filesystems.private_disk'))->exists($product->file_path)) {
+            return back()->with('error', 'Produk tidak dapat dipublikasikan karena berkas privat belum tersedia.');
+        }
+
         $product->update([
             'is_published' => ! $product->is_published,
         ]);

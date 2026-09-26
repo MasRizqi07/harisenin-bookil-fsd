@@ -85,9 +85,8 @@ it('casts booleans, JSON, counters and immutable timestamps', function (): void 
         ->and($token->max_downloads)->toBe(5);
 });
 
-it('does not serialize private asset paths, token digests or gateway payloads', function (): void {
+it('does not serialize private asset paths or gateway payloads', function (): void {
     expect(Product::factory()->create()->toArray())->not->toHaveKey('file_path')
-        ->and(DownloadToken::factory()->create()->toArray())->not->toHaveKey('token')
         ->and(Payment::factory()->create()->toArray())->not->toHaveKey('raw_response');
 });
 

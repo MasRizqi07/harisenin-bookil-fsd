@@ -111,7 +111,7 @@ export default function ProductCard({ product, onQuickBuy }: ProductCardProps) {
                             <span className="material-symbols-outlined text-[15px] fill-current">star</span>
                             <span>4.9</span>
                         </span>
-                        <span className="text-[11px] text-slate-400">100% Bebas DRM</span>
+                        <span className="text-[11px] text-slate-400">Berkas Digital</span>
                     </div>
 
                     {/* Book Title */}

@@ -14,7 +14,6 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\PaymentWebhookController;
 use App\Http\Controllers\ProductCatalogController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TaskController;
 use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -47,8 +46,8 @@ Route::middleware('auth')->group(function (): void {
         ->name('orders.show');
 
     // Digital Download Engine with Rate Limiter
-    Route::get('/downloads/{token}', [DownloadController::class, 'download'])
-        ->middleware('throttle:30,1')
+    Route::get('/downloads/{orderItem}', [DownloadController::class, 'download'])
+        ->middleware(['signed', 'throttle:30,1'])
         ->name('downloads.process');
 
     // User Profile
@@ -87,11 +86,12 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 Route::post('/webhooks/midtrans', [PaymentWebhookController::class, 'handle'])->name('webhooks.midtrans');
 
 // Local Development Payment Simulator for Sandbox & Manual Testing
-if (app()->environment(['local', 'testing'])) {
+if (app()->environment(['local', 'testing']) && config('bookil.payment_simulator_enabled', false)) {
     Route::post('/dev/orders/{order:order_number}/simulate-paid', function (Order $order, ProcessPaymentWebhookAction $action) {
+        abort_unless(auth()->check() && auth()->id() === $order->user_id, 403);
         $serverKey = (string) config('services.midtrans.server_key');
         $statusCode = '200';
-        $grossAmount = (string) (int) round((float) $order->total_amount);
+        $grossAmount = (string) $order->total_amount;
         $sig = hash('sha512', $order->order_number.$statusCode.$grossAmount.$serverKey);
 
         $action->execute([
@@ -107,15 +107,7 @@ if (app()->environment(['local', 'testing'])) {
 
         return redirect()->route('orders.show', $order->order_number)
             ->with('success', 'Simulasi pembayaran Midtrans berhasil diselesaikan! E-book kini dapat langsung diunduh.');
-    })->name('dev.orders.simulate-paid');
+    })->middleware('auth')->name('dev.orders.simulate-paid');
 }
-
-// 5. Legacy Task Routes (Preserved for compatibility)
-Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
-Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');
-Route::get('/tasks/{task}/edit', [TaskController::class, 'edit'])->name('tasks.edit');
-Route::put('/tasks/{task}', [TaskController::class, 'update'])->name('tasks.update');
-Route::patch('/tasks/{task}/toggle', [TaskController::class, 'toggle'])->name('tasks.toggle');
-Route::delete('/tasks/{task}', [TaskController::class, 'destroy'])->name('tasks.destroy');
 
 require __DIR__.'/auth.php';
