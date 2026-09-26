@@ -13,6 +13,8 @@ use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Testing\AssertableInertia as Assert;
 
+beforeEach(fn () => config()->set('filesystems.private_disk', 's3'));
+
 it('displays products list on admin product index', function (): void {
     $admin = User::factory()->admin()->create();
     $product = Product::factory()->create(['title' => 'Building Cloud APIs']);
