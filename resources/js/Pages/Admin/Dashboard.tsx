@@ -8,6 +8,11 @@ interface TopProduct extends Product {
     sales_count: number;
 }
 
+interface RevenuePoint {
+    period: string;
+    amount: string;
+}
+
 interface DashboardProps {
     metrics: {
         gross_revenue: string;
@@ -18,9 +23,37 @@ interface DashboardProps {
     };
     recentTransactions: Order[];
     topProducts: TopProduct[];
+    dailyRevenue: RevenuePoint[];
+    monthlyRevenue: RevenuePoint[];
+    orderStatusBreakdown: Record<string, number>;
 }
 
-export default function Dashboard({ metrics, recentTransactions, topProducts }: DashboardProps) {
+function RevenueBars({ title, points }: { title: string; points: RevenuePoint[] }) {
+    const max = Math.max(1, ...points.map((point) => Number(point.amount)));
+
+    return (
+        <div className="rounded-2xl border border-slate-800 bg-slate-950 p-5">
+            <h3 className="mb-1 text-sm font-bold text-white">{title}</h3>
+            <p className="mb-5 text-xs text-slate-400">Pesanan lunas menurut tanggal pesanan</p>
+            <div className="flex h-36 items-end gap-1" role="img" aria-label={title}>
+                {points.map((point) => (
+                    <div
+                        key={point.period}
+                        className="min-w-0 flex-1 rounded-t bg-violet-500/80 hover:bg-violet-400"
+                        style={{ height: `${(Number(point.amount) / max) * 100}%` }}
+                        title={`${point.period}: ${formatRupiah(point.amount)}`}
+                    />
+                ))}
+            </div>
+            <div className="mt-2 flex justify-between text-[10px] text-slate-500">
+                <span>{points[0]?.period}</span>
+                <span>{points[points.length - 1]?.period}</span>
+            </div>
+        </div>
+    );
+}
+
+export default function Dashboard({ metrics, recentTransactions, topProducts, dailyRevenue, monthlyRevenue, orderStatusBreakdown }: DashboardProps) {
     const conversionRate =
         metrics.total_orders > 0
             ? ((metrics.paid_orders_count / metrics.total_orders) * 100).toFixed(1)
@@ -140,6 +173,22 @@ export default function Dashboard({ metrics, recentTransactions, topProducts }: 
                             Akun pembeli terdaftar
                         </span>
                     </div>
+                </div>
+            </div>
+
+            <div className="mb-8 grid grid-cols-1 gap-4 lg:grid-cols-2">
+                <RevenueBars title="Pendapatan 30 Hari" points={dailyRevenue} />
+                <RevenueBars title="Pendapatan 12 Bulan" points={monthlyRevenue} />
+            </div>
+            <div className="mb-8 rounded-2xl border border-slate-800 bg-slate-950 p-5">
+                <h3 className="mb-4 text-sm font-bold text-white">Status Pesanan</h3>
+                <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                    {Object.entries(orderStatusBreakdown).map(([status, count]) => (
+                        <div key={status} className="rounded-xl bg-slate-900 p-3">
+                            <span className="block text-xs capitalize text-slate-400">{status}</span>
+                            <span className="text-xl font-bold text-white">{count}</span>
+                        </div>
+                    ))}
                 </div>
             </div>
 

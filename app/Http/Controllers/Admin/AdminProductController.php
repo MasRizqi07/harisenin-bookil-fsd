@@ -12,6 +12,7 @@ use App\Models\Product;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Inertia\Inertia;
@@ -26,6 +27,8 @@ class AdminProductController extends Controller
      */
     public function index(Request $request): Response
     {
+        Gate::authorize('viewAny', Product::class);
+
         $products = Product::query()
             ->with('category')
             ->withCount('orderItems')
@@ -60,6 +63,8 @@ class AdminProductController extends Controller
      */
     public function create(): Response
     {
+        Gate::authorize('create', Product::class);
+
         $categories = Category::query()->where('is_active', true)->orderBy('name')->get(['id', 'name']);
 
         return Inertia::render('Admin/Products/Form', [
@@ -73,6 +78,8 @@ class AdminProductController extends Controller
      */
     public function store(StoreProductRequest $request): RedirectResponse
     {
+        Gate::authorize('create', Product::class);
+
         $data = $request->validated();
 
         if (empty($data['slug'])) {
@@ -121,6 +128,8 @@ class AdminProductController extends Controller
      */
     public function edit(Product $product): Response
     {
+        Gate::authorize('view', $product);
+
         $product->loadMissing('category');
         $categories = Category::query()->orderBy('name')->get(['id', 'name']);
 
@@ -135,6 +144,8 @@ class AdminProductController extends Controller
      */
     public function update(UpdateProductRequest $request, Product $product): RedirectResponse
     {
+        Gate::authorize('update', $product);
+
         $data = $request->validated();
 
         if (empty($data['slug'])) {
@@ -194,6 +205,8 @@ class AdminProductController extends Controller
      */
     public function togglePublish(Product $product): RedirectResponse
     {
+        Gate::authorize('update', $product);
+
         if (! $product->is_published
             && ! Storage::disk((string) config('filesystems.private_disk'))->exists($product->file_path)) {
             return back()->with('error', 'Produk tidak dapat dipublikasikan karena berkas privat belum tersedia.');
@@ -213,6 +226,8 @@ class AdminProductController extends Controller
      */
     public function destroy(Product $product): RedirectResponse
     {
+        Gate::authorize('delete', $product);
+
         // Prevent deleting product if already purchased in an order
         if ($product->orderItems()->exists()) {
             return back()->with('error', 'Produk tidak dapat dihapus karena sudah memiliki riwayat transaksi pelanggan.');

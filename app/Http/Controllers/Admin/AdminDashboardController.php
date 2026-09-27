@@ -10,7 +10,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 use Inertia\Response;
 use Symfony\Component\HttpFoundation\StreamedResponse;
@@ -22,6 +23,8 @@ class AdminDashboardController extends Controller
      */
     public function index(): Response
     {
+        Gate::authorize('viewAnyAsAdmin', Order::class);
+
         $grossRevenue = Order::query()
             ->where('status', OrderStatus::PAID)
             ->sum('total_amount');
@@ -38,10 +41,47 @@ class AdminDashboardController extends Controller
             ->get();
 
         $topProducts = Product::query()
-            ->withCount(['orderItems as sales_count'])
+            ->withCount(['orderItems as sales_count' => fn (Builder $query) => $query
+                ->whereHas('order', fn (Builder $orders) => $orders->where('status', OrderStatus::PAID))])
             ->orderByDesc('sales_count')
             ->limit(5)
             ->get(['id', 'title', 'price', 'cover_image_path', 'author']);
+
+        $statusCounts = Order::query()->select('status')
+            ->selectRaw('COUNT(*) AS total')
+            ->groupBy('status')
+            ->pluck('total', 'status');
+
+        // Charts attribute paid revenue to the order creation date.
+        $today = now()->toImmutable();
+        $dailyTotals = Order::query()
+            ->where('status', OrderStatus::PAID)
+            ->where('created_at', '>=', $today->startOfMonth()->subMonths(11))
+            ->selectRaw('DATE(created_at) AS day, SUM(total_amount) AS revenue')
+            ->groupByRaw('DATE(created_at)')
+            ->orderBy('day')
+            ->pluck('revenue', 'day');
+
+        $monthlyTotals = [];
+        foreach ($dailyTotals as $day => $revenue) {
+            $month = substr((string) $day, 0, 7);
+            $monthlyTotals[$month] = bcadd($monthlyTotals[$month] ?? '0.00', (string) $revenue, 2);
+        }
+
+        $dailyRevenue = [];
+        for ($daysAgo = 29; $daysAgo >= 0; $daysAgo--) {
+            $day = $today->subDays($daysAgo)->toDateString();
+            $dailyRevenue[] = [
+                'period' => $day,
+                'amount' => bcadd('0.00', (string) ($dailyTotals[$day] ?? '0.00'), 2),
+            ];
+        }
+
+        $monthlyRevenue = [];
+        for ($monthsAgo = 11; $monthsAgo >= 0; $monthsAgo--) {
+            $month = $today->startOfMonth()->subMonths($monthsAgo)->format('Y-m');
+            $monthlyRevenue[] = ['period' => $month, 'amount' => $monthlyTotals[$month] ?? '0.00'];
+        }
 
         return Inertia::render('Admin/Dashboard', [
             'metrics' => [
@@ -53,14 +93,21 @@ class AdminDashboardController extends Controller
             ],
             'recentTransactions' => $recentTransactions,
             'topProducts' => $topProducts,
+            'dailyRevenue' => $dailyRevenue,
+            'monthlyRevenue' => $monthlyRevenue,
+            'orderStatusBreakdown' => collect(OrderStatus::cases())->mapWithKeys(
+                fn (OrderStatus $status) => [$status->value => (int) ($statusCounts[$status->value] ?? 0)]
+            ),
         ]);
     }
 
     /**
      * Stream a real-time CSV report of all sales and orders.
      */
-    public function exportCsv(Request $request): StreamedResponse
+    public function exportCsv(): StreamedResponse
     {
+        Gate::authorize('viewAnyAsAdmin', Order::class);
+
         $fileName = 'bookil-sales-report-'.now()->format('Y-m-d-His').'.csv';
 
         $headers = [
@@ -87,27 +134,32 @@ class AdminDashboardController extends Controller
                 'Status Pesanan',
                 'Metode Pembayaran',
                 'Jumlah Item',
-            ]);
+            ], escape: '');
 
             Order::query()
-                ->with(['user', 'items'])
-                ->latest()
-                ->chunk(200, function ($orders) use ($handle): void {
+                ->with('user')
+                ->withCount('items')
+                ->chunkById(200, function ($orders) use ($handle): void {
                     foreach ($orders as $order) {
                         fputcsv($handle, [
                             $order->created_at->format('Y-m-d H:i:s'),
                             $order->order_number,
-                            $order->user?->name ?? 'User Terhapus',
-                            $order->user?->email ?? '-',
+                            $this->spreadsheetSafe($order->user?->name ?? 'User Terhapus'),
+                            $this->spreadsheetSafe($order->user?->email ?? '-'),
                             (string) $order->total_amount,
                             $order->status->value,
-                            $order->payment_method ?? '-',
-                            $order->items->count(),
-                        ]);
+                            $this->spreadsheetSafe($order->payment_method ?? '-'),
+                            $order->items_count,
+                        ], escape: '');
                     }
                 });
 
             fclose($handle);
         }, 200, $headers);
+    }
+
+    private function spreadsheetSafe(string $value): string
+    {
+        return preg_match('/^[\s\x00-\x1f]*[=+\-@]/u', $value) === 1 ? "'".$value : $value;
     }
 }

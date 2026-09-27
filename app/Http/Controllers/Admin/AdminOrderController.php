@@ -20,6 +20,8 @@ class AdminOrderController extends Controller
      */
     public function index(Request $request): Response
     {
+        Gate::authorize('viewAnyAsAdmin', Order::class);
+
         $orders = Order::query()
             ->with(['user', 'items.product', 'payments'])
             ->when($request->filled('status'), function (Builder $query) use ($request): void {

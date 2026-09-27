@@ -9,6 +9,11 @@ use App\Models\User;
 
 class OrderPolicy
 {
+    public function viewAnyAsAdmin(User $user): bool
+    {
+        return $user->isAdmin();
+    }
+
     public function view(User $user, Order $order): bool
     {
         return $order->user_id === $user->id;
