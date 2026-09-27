@@ -1,5 +1,7 @@
 # Bookil
 
+[![Tests](https://github.com/MasRizqi07/harisenin-bookil-fsd/actions/workflows/tests.yml/badge.svg?branch=session-1)](https://github.com/MasRizqi07/harisenin-bookil-fsd/actions/workflows/tests.yml?query=branch%3Asession-1)
+
 Bookil adalah aplikasi penjualan produk digital berbasis PHP 8.5, Laravel 13, Inertia v2, React 19, TypeScript, dan Tailwind CSS. Pelanggan dapat menjelajah katalog, membuat pesanan, membayar melalui Midtrans Snap, dan mengunduh berkas dari storage privat sesuai kuota. Admin dapat mengelola katalog, kategori, pesanan, dan laporan penjualan.
 
 ## Menjalankan secara lokal
@@ -15,6 +17,8 @@ Admin pertama harus dibuat melalui proses operasional yang aman dengan password 
 Untuk Redis, gunakan `REDIS_CLIENT=predis`, `CACHE_STORE=redis`, `SESSION_DRIVER=redis`, dan `QUEUE_CONNECTION=redis` setelah Redis tersedia. Predis ada di dependensi Composer. Untuk produksi, gunakan database MySQL/PostgreSQL yang terkelola, HTTPS, bucket S3/R2 privat, kredensial Midtrans produksi, dan worker queue yang diawasi.
 
 ## Verifikasi
+
+[Run CI PostgreSQL 16 pada commit `178e86e`](https://github.com/MasRizqi07/harisenin-bookil-fsd/actions/runs/36254909219) mencatat `152 passed (516 assertions)`. Badge di atas mengikuti hasil workflow, bukan angka yang ditulis manual.
 
 ```text
 php vendor/bin/pest

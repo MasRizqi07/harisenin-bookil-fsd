@@ -6,8 +6,9 @@ Status ini berlaku untuk perubahan pada branch `session-1`. Pemeriksaan lokal ti
 
 - PHP 8.5, PostgreSQL 18 pada database uji terpisah: `php artisan test --compact --colors=never` menghasilkan **152 passed (516 assertions)** pada 26 September 2026. Termasuk uji dua koneksi untuk `SELECT ... FOR UPDATE` dengan batas tunggu 500 ms.
 - SQLite `:memory:`: perintah yang sama menghasilkan **151 passed (511 assertions), 1 skipped**. Uji kunci baris sengaja dilewati pada SQLite.
+- [GitHub Actions pada SHA `178e86e`](https://github.com/MasRizqi07/harisenin-bookil-fsd/actions/runs/36254909219) menggunakan PostgreSQL 16 dan berhasil dengan **152 passed (516 assertions)**, Pint lulus, serta build frontend berhasil.
 - Permintaan unduh dengan URL bertanda tangan yang valid menghasilkan HTTP 302; setelah signature diubah secara manual menghasilkan HTTP 403.
-- Build React/TypeScript `npm run build` berhasil secara lokal. Hasil CI untuk commit final dicatat terpisah setelah workflow GitHub Actions berjalan.
+- Build React/TypeScript `npm run build` berhasil secara lokal dan pada CI tersebut. Setiap commit berikutnya memerlukan run CI baru.
 
 ## Belum terverifikasi
 
