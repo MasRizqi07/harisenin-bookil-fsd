@@ -31,12 +31,20 @@ class AppServiceProvider extends ServiceProvider
         Model::shouldBeStrict();
         Vite::prefetch(concurrency: 3);
 
-        RateLimiter::for('downloads', fn (Request $request): Limit => Limit::perMinute(30)
-            ->by(($request->user()?->getAuthIdentifier() ?? $request->ip()).':'.$request->route('orderItem'))
-            ->response(function (Request $request, array $headers): Response {
+        RateLimiter::for('downloads', function (Request $request): array {
+            $identity = (string) ($request->user()?->getAuthIdentifier() ?? $request->ip());
+            $itemId = filter_var($request->route('orderItem'), FILTER_VALIDATE_INT, ['options' => ['min_range' => 1]]);
+            $response = function (Request $request, array $headers): Response {
                 AuditRejectedDownload::record($request, 'denied_throttled');
 
                 return response('Too Many Requests', 429, $headers);
-            }));
+            };
+            $limits = [Limit::perMinute(30)->by('user:'.$identity)->response($response)];
+            if ($itemId !== false) {
+                $limits[] = Limit::perMinute(30)->by('item:'.$identity.':'.$itemId)->response($response);
+            }
+
+            return $limits;
+        });
     }
 }

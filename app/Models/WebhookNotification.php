@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\MassPrunable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class WebhookNotification extends Model
 {
+    use MassPrunable;
+
     /** @var list<string> */
     protected $fillable = [
         'order_id', 'external_transaction_id', 'event_key',
@@ -28,5 +32,11 @@ class WebhookNotification extends Model
     public function order(): BelongsTo
     {
         return $this->belongsTo(Order::class);
+    }
+
+    /** @return Builder<static> */
+    public function prunable(): Builder
+    {
+        return static::query()->where('created_at', '<', now()->subDays(180));
     }
 }
