@@ -2,42 +2,39 @@
 
 [![Tests](https://github.com/MasRizqi07/harisenin-bookil-fsd/actions/workflows/tests.yml/badge.svg?branch=session-1)](https://github.com/MasRizqi07/harisenin-bookil-fsd/actions/workflows/tests.yml?query=branch%3Asession-1)
 
-Bookil adalah aplikasi penjualan produk digital berbasis PHP 8.5, Laravel 13, Inertia v2, React 19, TypeScript, dan Tailwind CSS. Pelanggan dapat menjelajah katalog, membuat pesanan, membayar melalui Midtrans Snap, dan mengunduh berkas dari storage privat sesuai kuota. Admin dapat mengelola katalog, kategori, pesanan, dan laporan penjualan.
+Bookil sells digital books using PHP 8.5, Laravel 13, Inertia v2, React 19, TypeScript and Tailwind CSS. Customers browse products, verify their email before checkout, pay through Midtrans Snap and access purchased files through authenticated, signed download routes. Initial access lasts 30 days from verified payment, with at most 5 file URL grants per purchased item. Administrators manage products, orders, categories, sales reports and audited entitlement extensions.
 
-## Menjalankan secara lokal
+Local tests and a successful CI workflow establish code evidence only. Real Midtrans, SMTP, R2, Redis, proxy behavior, backups and capacity require the owner's staging verification. No go-live approval is implied.
 
-1. Siapkan PHP 8.5 beserta ekstensi yang diminta Composer, Node.js, dan database. Salin `.env.example` ke `.env`; isi `APP_KEY` dengan `php artisan key:generate`. Untuk SQLite, buat `database/database.sqlite` bila belum ada.
-2. Jalankan `composer install` dan `npm ci`.
-3. Atur `PRIVATE_DISK=local` untuk pengembangan lokal atau `s3` untuk S3/R2. Jangan gunakan disk `public` untuk berkas buku. Isi kredensial Midtrans untuk menguji pembayaran nyata di sandbox.
-4. Jalankan `php artisan migrate --seed` dan `npm run build`. Seeder standar hanya membuat kategori; tidak membuat akun atau produk fiktif.
-5. Jalankan `php artisan serve` dan, bila perlu hot reload, `npm run dev`.
+## Local development
 
-Admin pertama harus dibuat melalui proses operasional yang aman dengan password unik. Jangan membuat akun admin menggunakan password contoh. Produk baru memerlukan berkas digital privat sebelum dapat disimpan. Isi cuplikan produk hanya jika Anda memiliki hak untuk menerbitkannya.
+1. Install PHP 8.5 and required extensions, Node.js and a local database. Use PostgreSQL for row-lock evidence; SQLite supports quick checks but cannot prove PostgreSQL concurrency behavior.
+2. Run `composer install` and `npm ci`. Copy `.env.example` to a local `.env`, generate a local application key with `php artisan key:generate`, and configure only development/sandbox services.
+3. Run `php artisan migrate` and `npm run build`. Use `php artisan serve` and optionally `npm run dev` for hot reload.
+4. Create any local admin through an owner-controlled process with a unique password. Publishing a product requires an actual PDF/EPUB/ZIP on its private disk. Public covers and private purchased assets must stay separate.
+5. Local mail can use `MAIL_MAILER=log`; development/tests do not demonstrate delivery. Use the existing verification page to resend mail. Only checkout requires verified email; existing users retain library access.
 
-Untuk Redis, gunakan `REDIS_CLIENT=predis`, `CACHE_STORE=redis`, `SESSION_DRIVER=redis`, dan `QUEUE_CONNECTION=redis` setelah Redis tersedia. Predis ada di dependensi Composer. Untuk produksi, gunakan database MySQL/PostgreSQL yang terkelola, HTTPS, bucket S3/R2 privat, kredensial Midtrans produksi, dan worker queue yang diawasi.
+The selected hosting topology is one Ubuntu LTS VPS with PHP 8.5-FPM, Nginx/Caddy, PostgreSQL, local Redis via the installed Predis package, Supervisor, cron, Cloudflare and private R2. Resend uses Laravel's SMTP driver without an additional package. [Deployment configuration](docs/DEPLOYMENT.md) and `.env.production.example` describe placeholders and required owner provisioning; they are not completed server configuration.
 
-## Verifikasi
+## Verification
 
-[Run CI PostgreSQL 16 pada commit `178e86e`](https://github.com/MasRizqi07/harisenin-bookil-fsd/actions/runs/36254909219) mencatat `152 passed (516 assertions)`. Badge di atas mengikuti hasil workflow, bukan angka yang ditulis manual.
+The badge follows the workflow result rather than a hardcoded test count. CI runs PHP tests against PostgreSQL 16. Measured local counts and commit-specific CI evidence are recorded in [READINESS.md](docs/READINESS.md).
 
-```text
-php vendor/bin/pest
+```bash
+php artisan test
 php vendor/bin/pint --test
-npm run typecheck
 npm run build
-composer audit
-npm audit
 ```
 
-Tes lokal dan build tidak membuktikan integrasi gateway/cloud atau kesiapan rilis. Lakukan uji webhook Midtrans sandbox, presigned URL S3/R2, migrasi database target, Redis, backup/restore, dan beban konkurensi di staging sebelum produksi. Status bukti dan risiko yang tersisa dijelaskan dalam [catatan kesiapan](docs/READINESS.md).
+For real PostgreSQL testing, select a dedicated disposable test database through `DB_CONNECTION=pgsql` and test-only connection variables before running the suite. Never target an operational database. `phpunit.xml` defaults to SQLite for quick local runs; CI and the evidence gate override that configuration with PostgreSQL. The separate row-lock test requires PostgreSQL.
 
-## Alur inti
+## Operational tools and limits
 
-- `CreateOrderAction` mengunci baris produk dan menghitung ulang harga di server dalam transaksi.
-- `MidtransSnapService` menyimpan token Snap per pesanan pending dan mengunci pembuatan token agar reload faktur tidak membuat sesi pembayaran baru.
-- `ProcessPaymentWebhookAction` memverifikasi tanda tangan, memeriksa status melalui API Midtrans, mencocokkan nominal, menyimpan riwayat notifikasi, dan mengeluarkan hak unduh setelah settlement. Refund/reversal mencabut hak tersebut.
-- `GenerateSecureDownloadAction` memeriksa pemilik, status lunas, masa akses, kuota, dan keberadaan aset sebelum membuat URL storage privat 15 menit. Route pelanggan memakai URL bertanda tangan dan setiap percobaan tindakan dicatat.
+- `bookil:preflight` checks live-profile configuration without network requests and prints labels only. It does not prove that credentials, gateway, mail or storage work. It fails on normal sandbox mode by design.
+- `bookil:reconcile {order_number}` fetches gateway status and uses the existing verified payment action. It does not provide a second money-mutation path.
+- Download middleware denial logging is deduplicated per actor/item/outcome per 60 seconds. Daily pruning retains download attempts for 90 days and webhook notifications for 180 days; financial records and entitlement-extension audits are not pruned.
+- Receipts are queued after commit, link to the authenticated order page and contain no signed download link. A supervised Redis worker is required. Replay/refund does not schedule an additional paid receipt; transport-level exactly-once SMTP delivery is not claimed.
+- An admin may extend an existing paid entitlement with a reason; usage is preserved and actor/item/deltas/time are audited. Refunds or chargebacks revoke application download access. Already issued provider URLs can remain valid until their original 15-minute expiry.
+- The payment simulator remains disabled by default, available only locally/in tests when explicitly enabled, and restricted to the order owner.
 
-Simulator pembayaran hanya tersedia di `local`/`testing` bila `BOOKIL_PAYMENT_SIMULATOR_ENABLED=true`, dan hanya untuk pemilik pesanan. Nilai default `false`.
-
-Kompleksitas pembuatan order adalah O(n log n) untuk pengurutan ID produk plus O(n) untuk item; pencarian produk, pembayaran, dan unduhan dibatasi indeks database. Kunci baris dan kunci cache menambah latensi saat kontensi, tetapi mencegah penagihan ganda dan oversubscription kuota.
+See [RUNBOOK.md](docs/RUNBOOK.md) for recovery, [STAGING_VERIFICATION.md](docs/STAGING_VERIFICATION.md) for the owner's NOT RUN results template, and [CONTENT_TO_CONFIRM.md](docs/CONTENT_TO_CONFIRM.md) for business/legal/contact review. Public history still contains the removed `taskku` database's two password hashes; the owner must rotate affected passwords and decide separately whether to purge history.
