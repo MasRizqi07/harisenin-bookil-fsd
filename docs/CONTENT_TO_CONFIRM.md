@@ -79,6 +79,9 @@ Paths below are relative to `resources/js/`. Line numbers identify the reviewed 
 | Layouts/AuthLayout.tsx:44 | Digital files and 30-day download access | owner must confirm; access copy corrected |
 | Layouts/AuthLayout.tsx:50 | 30 days, 5 downloads and 15-minute file URLs | owner must confirm via staging |
 | Layouts/AuthLayout.tsx:67 | Named customer testimonial about technical literature and download reliability | owner must confirm authenticity and permission |
+| Layouts/AuthLayout.tsx:64 | Verified-reader label and five-star rating | owner must confirm authenticity |
+| Layouts/AuthLayout.tsx:76 | Named reader and professional role | owner must confirm identity and consent |
+| Layouts/AuthLayout.tsx:85 | Fixed SSL encryption strength | owner must confirm negotiated TLS behavior at the proxy and origin |
 | Layouts/AuthLayout.tsx:89 | Verified Midtrans gateway badge | owner must confirm merchant approval |
 | Components/InstantCheckoutModal.tsx:162 | Gateway charge shown as free | owner must confirm merchant pricing |
 | Components/InstantCheckoutModal.tsx:168 | Digital tax rate and included-tax statement | owner must confirm tax treatment; no separate tax calculation exists in checkout |
