@@ -1,4 +1,5 @@
 import React from 'react';
+import EntitlementNotice from '@/Components/EntitlementNotice';
 import { Head, Link } from '@inertiajs/react';
 import StoreLayout from '@/Layouts/StoreLayout';
 
@@ -91,6 +92,7 @@ export default function RefundPolicy() {
 
                     <article className="lg:col-span-8 xl:col-span-9 bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/80 shadow-sm space-y-8 text-slate-700 text-sm leading-relaxed">
                         <section id="r-1" className="space-y-3 scroll-mt-28">
+                            <p><EntitlementNotice /> Refund atau chargeback mencabut akses unduh pesanan terkait.</p>
                             <h2 className="text-xl font-bold text-slate-900 border-b border-slate-100 pb-2">
                                 1. Sifat Produk Digital &amp; Akses Instan
                             </h2>
@@ -127,7 +129,7 @@ export default function RefundPolicy() {
                                 Untuk mengajukan klaim pengembalian dana, kirimkan email ke <code className="bg-slate-100 text-indigo-700 px-1.5 py-0.5 rounded font-mono text-xs">support@bookil.com</code> dalam kurun waktu <strong>7 (tujuh) hari kalender</strong> sejak tanggal transaksi dengan menyertakan:
                             </p>
                             <ol className="list-decimal pl-5 space-y-1 text-xs">
-                                <li>Nomor Pesanan / Faktur (contoh: <code className="font-mono">ORD-20260228-XXXX</code>).</li>
+                                <li>Nomor Pesanan / Faktur (format: <code className="font-mono">BK-[ULID]</code>).</li>
                                 <li>Alamat email akun Bookil yang digunakan saat checkout.</li>
                                 <li>Bukti screenshot kendala atau bukti mutasi perbankan untuk kasus pembayaran ganda.</li>
                             </ol>

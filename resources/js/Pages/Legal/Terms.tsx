@@ -156,7 +156,7 @@ export default function Terms() {
                                 Seluruh transaksi moneter di platform Bookil diproses secara aman melalui gerbang pembayaran berlisensi Bank Indonesia (PT Midtrans). Bookil tidak pernah menyimpan nomor kartu kredit, CVV, atau kredensial perbankan pengguna di server kami.
                             </p>
                             <p>
-                                Setiap pesanan yang dibuat memiliki jangka waktu pelunasan maksimal <strong>24 jam</strong>. Apabila pembayaran tidak terselesaikan dalam batas waktu tersebut, pesanan otomatis dinyatakan kedaluwarsa oleh sistem.
+                                Batas waktu pembayaran mengikuti metode dan status transaksi Midtrans. Pesanan dinyatakan kedaluwarsa ketika sistem menerima status kedaluwarsa dari gateway.
                             </p>
                         </section>
 
@@ -165,7 +165,7 @@ export default function Terms() {
                                 3. Lisensi Personal Zero-DRM
                             </h2>
                             <p>
-                                Pembelian e-book di Bookil memberikan Anda <strong>Lisensi Penggunaan Personal Non-Eksklusif Seumur Hidup (Perpetual Non-Exclusive Personal License)</strong>.
+                                Pembelian e-book di Bookil memberikan akses unduh <strong>30 hari sejak pembayaran, maksimal 5 unduhan per buku</strong>.
                             </p>
                             <p>
                                 Anda diperbolehkan membaca dan menyimpan berkas di perangkat pribadi Anda secara bebas (Zero-DRM). Namun, Anda <strong>dilarang keras</strong> mendistribusikan ulang, menjual kembali, menyewakan, atau mengunggah berkas e-book ke repositori publik, platform pembajakan, atau situs file-sharing publik.

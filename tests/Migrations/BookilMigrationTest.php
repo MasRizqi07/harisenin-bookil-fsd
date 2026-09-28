@@ -21,13 +21,13 @@ it('upgrades existing users and reverses only the Bookil migrations', function (
     $this->artisan('migrate')->assertSuccessful();
     expect(DB::table('users')->where('id', $userId)->value('role'))->toBe('customer');
 
-    $this->artisan('migrate:rollback', ['--step' => 12])->assertSuccessful();
+    $this->artisan('migrate:rollback', ['--step' => count(glob(database_path('migrations/2026_*.php')))])->assertSuccessful();
 
     expect(Schema::hasColumn('users', 'role'))->toBeFalse()
         ->and(DB::table('users')->where('id', $userId)->value('email'))->toBe('existing@example.test')
         ->and(Schema::hasTable('tasks'))->toBeFalse();
 
-    foreach (['categories', 'products', 'orders', 'order_items', 'payments', 'download_tokens', 'webhook_notifications', 'download_attempts'] as $table) {
+    foreach (['categories', 'products', 'orders', 'order_items', 'payments', 'download_tokens', 'webhook_notifications', 'download_attempts', 'entitlement_extensions'] as $table) {
         expect(Schema::hasTable($table))->toBeFalse();
     }
 

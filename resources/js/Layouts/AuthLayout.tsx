@@ -41,13 +41,13 @@ export default function AuthLayout({
                     <div className="space-y-3">
                         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-xs font-bold text-indigo-300 border border-white/10">
                             <span className="material-symbols-outlined text-[14px] text-emerald-400">verified_user</span>
-                            <span>Arsitektur Zero-DRM &amp; Lisensi Seumur Hidup</span>
+                            <span>Berkas Digital &amp; Akses Unduh 30 Hari</span>
                         </div>
                         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-white leading-tight">
                             Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.
                         </h1>
                         <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            Akses instan berkas privat zero-DRM, pembaruan edisi buku seumur hidup, dan presigned download URL berkecepatan tinggi tanpa friksi.
+                            Akses unduh 30 hari sejak pembayaran, maksimal 5 unduhan per buku, melalui tautan berkas privat berdurasi 15 menit.
                         </p>
                     </div>
 

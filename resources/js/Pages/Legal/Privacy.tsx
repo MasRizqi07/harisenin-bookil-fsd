@@ -95,7 +95,7 @@ export default function Privacy() {
                                 1. Data yang Kami Kumpulkan
                             </h2>
                             <p>
-                                Kami hanya mengumpulkan informasi yang esensial untuk memproses pesanan dan menerbitkan lisensi e-book: nama lengkap, alamat email, dan riwayat pesanan faktur digital.
+                                Sistem menyimpan nama, alamat email, riwayat pesanan dan notifikasi pembayaran, serta alamat IP dan hasil percobaan unduhan untuk audit akses.
                             </p>
                             <p>
                                 Data Anda tidak akan pernah dijual, disewakan, atau dibagikan kepada pengiklan pihak ketiga (Zero Advertising Tracking).

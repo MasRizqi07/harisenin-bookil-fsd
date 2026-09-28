@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Head, Link } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { formatRupiah } from '@/Components/ProductCard';
 import { Order, Payment } from '@/types';
@@ -10,6 +10,29 @@ interface OrderDetail extends Order {
 
 interface ShowProps {
     order: OrderDetail;
+}
+
+function ExtendEntitlementForm({ itemId }: { itemId: number }) {
+    const { data, setData, post, processing, errors } = useForm({ additional_downloads: 0, additional_days: 0, reason: '' });
+
+    return (
+        <form className="mt-3 space-y-2" onSubmit={(event) => {
+            event.preventDefault();
+            post(route('admin.entitlements.extend', itemId), { preserveScroll: true });
+        }}>
+            <label className="block">Tambahan unduhan
+                <input type="number" min="0" max="100" value={data.additional_downloads} onChange={(event) => setData('additional_downloads', Number(event.target.value))} className="block w-full rounded bg-slate-950" />
+            </label>
+            <label className="block">Tambahan hari
+                <input type="number" min="0" max="365" value={data.additional_days} onChange={(event) => setData('additional_days', Number(event.target.value))} className="block w-full rounded bg-slate-950" />
+            </label>
+            <label className="block">Alasan perpanjangan
+                <textarea required minLength={5} maxLength={1000} value={data.reason} onChange={(event) => setData('reason', event.target.value)} className="block w-full rounded bg-slate-950" />
+            </label>
+            {Object.values(errors).map((error) => <p key={error} role="alert" className="text-rose-400">{error}</p>)}
+            <button disabled={processing} className="rounded bg-violet-600 px-3 py-2 font-semibold text-white disabled:opacity-50">Perpanjang hak unduh</button>
+        </form>
+    );
 }
 
 export default function Show({ order }: ShowProps) {
@@ -188,6 +211,7 @@ export default function Show({ order }: ShowProps) {
                                         ) : (
                                             <p className="text-slate-500 italic">Token unduhan belum digenerate (menunggu lunas)</p>
                                         )}
+                                        {token && order.status === 'paid' && <ExtendEntitlementForm itemId={item.id} />}
                                     </div>
                                 </div>
                             );

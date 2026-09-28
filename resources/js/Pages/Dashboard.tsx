@@ -43,7 +43,7 @@ export default function Dashboard({ library, orders, stats }: DashboardProps) {
                             Halo, {auth.user.name}!
                         </h1>
                         <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
-                            Akses seumur hidup koleksi buku digital teknis Anda, pantau kuota unduhan berlisensi, 
+                            Akses unduh 30 hari sejak pembayaran, maksimal 5 unduhan per buku. Pantau kuota unduhan,
                             dan kelola faktur pesanan Anda dalam satu konsol aman.
                         </p>
                     </div>

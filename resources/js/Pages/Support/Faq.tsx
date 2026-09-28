@@ -92,7 +92,7 @@ const FAQ_DATA: FaqItem[] = [
         answer: (
             <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
                 <p>
-                    Batas 5x unduhan diterapkan sebagai langkah proteksi fair-use untuk mencegah sindikasi massal bot tanpa izin. Kami memahami Anda mungkin berganti perangkat, kehilangan berkas lokal, atau membutuhkan berkas cadangan.
+                    Akses unduh berlaku 30 hari sejak pembayaran, maksimal 5 unduhan per buku. Simpan berkas yang telah diunduh untuk penggunaan pribadi sesuai ketentuan lisensi.
                 </p>
                 <p>
                     Jika kuota habis, simpan nomor pesanan dan hubungi pengelola toko untuk meninjau akses Anda.
@@ -111,7 +111,7 @@ const FAQ_DATA: FaqItem[] = [
                     Untuk melindungi berkas digital dari penyadapan dan pengunduhan tidak sah, Bookil menghasilkan <strong className="text-slate-900">Signed Storage URL</strong> sementara dengan batas waktu 15 menit setiap kali Anda menekan tombol unduh.
                 </p>
                 <p className="text-xs text-slate-500">
-                    Jika tautan kedaluwarsa sebelum berkas selesai diunduh, cukup klik kembali tombol unduh di halaman Perpustakaan Saya untuk menghasilkan tautan baru yang segar.
+                    Jika tautan kedaluwarsa, Anda dapat meminta tautan baru di Perpustakaan Saya selama masa akses dan kuota masih tersedia. Setiap tautan berkas yang diterbitkan menggunakan satu kuota unduhan.
                 </p>
             </div>
         ),
@@ -137,7 +137,7 @@ const FAQ_DATA: FaqItem[] = [
     {
         id: 'license-1',
         category: 'lisensi',
-        keywords: 'drm zero-drm hak milik personal watermark lisensi abadi',
+        keywords: 'drm zero-drm hak milik personal watermark lisensi 30 hari 5 unduhan',
         question: 'Apa maksud lisensi Zero-DRM di Bookil?',
         answer: (
             <div className="space-y-3 text-slate-600 text-sm leading-relaxed">
@@ -145,7 +145,7 @@ const FAQ_DATA: FaqItem[] = [
                     <strong className="text-indigo-600">Zero-DRM</strong> berarti buku yang Anda beli tidak dikunci oleh software proprietary yang membatasi hak Anda membaca di aplikasi mana pun. Anda memiliki kebebasan penuh menyimpan berkas di cloud storage pribadi, e-reader offline, atau perangkat pilihan Anda.
                 </p>
                 <p className="text-xs text-slate-500">
-                    Lisensi ini bersifat personal dan abadi (perpetual personal license). Anda tidak diperkenankan menjual kembali atau mendistribusikan berkas secara publik kepada pihak ketiga.
+                    Akses unduh berlaku 30 hari sejak pembayaran, maksimal 5 unduhan per buku. Anda tidak diperkenankan menjual kembali atau mendistribusikan berkas secara publik kepada pihak ketiga.
                 </p>
             </div>
         ),

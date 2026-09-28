@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Actions\Payments\ProcessPaymentWebhookAction;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminEntitlementController;
 use App\Http\Controllers\Admin\AdminOrderController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\CheckoutController;
@@ -38,7 +39,7 @@ Route::middleware('auth')->group(function (): void {
 
     // Checkout with Rate Limiter
     Route::post('/checkout', [CheckoutController::class, 'store'])
-        ->middleware('throttle:10,1')
+        ->middleware(['verified', 'throttle:10,1'])
         ->name('checkout.store');
 
     // Customer Invoices & Orders
@@ -80,6 +81,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     // Orders Ledger & Audit
     Route::get('/orders', [AdminOrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{order}', [AdminOrderController::class, 'show'])->name('orders.show');
+    Route::post('/order-items/{orderItem}/entitlement', AdminEntitlementController::class)->name('entitlements.extend');
 });
 
 // 4. Midtrans Webhook (Excluded from CSRF in bootstrap/app.php)

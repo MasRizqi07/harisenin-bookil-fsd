@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import EntitlementNotice from '@/Components/EntitlementNotice';
 import { Head, Link, router, usePage } from '@inertiajs/react';
 import StoreLayout from '@/Layouts/StoreLayout';
 import { formatRupiah, formatFileSize, getCoverImageUrl } from '@/Components/ProductCard';
@@ -234,7 +235,7 @@ export default function Show({ product }: ShowProps) {
                                             {formatRupiah(product.price)}
                                         </span>
                                         <span className="block text-[11px] text-slate-500 mt-0.5">
-                                            Akses seumur hidup • Bebas biaya gateway Midtrans
+                                            <EntitlementNotice />
                                         </span>
                                     </div>
 

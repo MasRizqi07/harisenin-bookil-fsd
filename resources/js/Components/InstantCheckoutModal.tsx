@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import EntitlementNotice from '@/Components/EntitlementNotice';
 import { useForm } from '@inertiajs/react';
 import { Product, User } from '@/types';
 import { formatRupiah, getCoverImageUrl } from '@/Components/ProductCard';
@@ -68,7 +69,7 @@ export default function InstantCheckoutModal({
                         </div>
                         <div>
                             <h3 className="text-base font-bold text-slate-900">Konfirmasi Pembelian Instan</h3>
-                            <p className="text-xs text-slate-500">1-Klik Akses Lisensi Digital Seumur Hidup</p>
+                            <p className="text-xs text-slate-500"><EntitlementNotice /></p>
                         </div>
                     </div>
                     <button
