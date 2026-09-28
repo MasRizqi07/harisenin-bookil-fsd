@@ -47,7 +47,7 @@ Route::middleware('auth')->group(function (): void {
 
     // Digital Download Engine with Rate Limiter
     Route::get('/downloads/{orderItem}', [DownloadController::class, 'download'])
-        ->middleware(['signed', 'throttle:30,1'])
+        ->middleware(['download.audit', 'throttle:downloads', 'signed'])
         ->name('downloads.process');
 
     // User Profile

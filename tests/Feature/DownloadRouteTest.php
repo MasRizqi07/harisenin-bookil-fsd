@@ -115,9 +115,10 @@ it('rejects unsigned download URLs', function (): void {
     $response = $this->actingAs($user)->get('/downloads/999999');
 
     $response->assertForbidden();
+    $this->assertDatabaseHas('download_attempts', ['user_id' => $user->id, 'outcome' => 'denied_signature']);
 });
 
-it('rejects a hand-edited signature without charging quota', function (): void {
+it('logs a hand-edited signature denial without charging quota', function (): void {
     $user = User::factory()->create();
     $order = Order::factory()->for($user)->paid()->create();
     $item = OrderItem::factory()->for($order)->create();
@@ -127,6 +128,9 @@ it('rejects a hand-edited signature without charging quota', function (): void {
     $this->actingAs($user)->get(str_replace('signature=', 'signature=x', $url))->assertForbidden();
 
     expect($quota->refresh()->download_count)->toBe(0);
+    $this->assertDatabaseHas('download_attempts', [
+        'user_id' => $user->id, 'order_item_id' => $item->id, 'outcome' => 'denied_signature',
+    ]);
 });
 
 it('rejects an expired route signature before charging the download quota', function (): void {
@@ -140,4 +144,27 @@ it('rejects an expired route signature before charging the download quota', func
     $this->actingAs($user)->get($url)->assertForbidden();
 
     expect($token->refresh()->download_count)->toBe(0);
+    $this->assertDatabaseHas('download_attempts', ['user_id' => $user->id, 'outcome' => 'denied_signature']);
+});
+
+it('logs the 31st signed download as throttled without charging quota', function (): void {
+    $user = User::factory()->create();
+    $order = Order::factory()->for($user)->paid()->create();
+    $product = Product::factory()->create(['file_path' => 'private/ebooks/rate-test.pdf']);
+    $item = OrderItem::factory()->for($order)->for($product)->create();
+    $quota = DownloadToken::factory()->create(['order_item_id' => $item->id, 'max_downloads' => 100]);
+    Storage::disk('s3')->put($product->file_path, 'book');
+    $url = URL::temporarySignedRoute('downloads.process', now()->addMinutes(15), ['orderItem' => $item->id]);
+
+    for ($attempt = 0; $attempt < 30; $attempt++) {
+        $this->actingAs($user)->get($url)->assertRedirect();
+    }
+
+    $this->actingAs($user)->get($url)->assertTooManyRequests()->assertHeader('Retry-After');
+    expect($quota->refresh()->download_count)->toBe(30)
+        ->and(DownloadAttempt::query()->where('user_id', $user->id)->where('outcome', 'granted')->count())->toBe(30)
+        ->and(DownloadAttempt::query()->where('user_id', $user->id)->where('outcome', 'denied_throttled')->count())->toBe(1);
+    $this->assertDatabaseHas('download_attempts', [
+        'user_id' => $user->id, 'order_item_id' => $item->id, 'outcome' => 'denied_throttled',
+    ]);
 });
