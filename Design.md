@@ -1,9 +1,9 @@
 # 🎨 System Design & UX/UI Specification — Bookil
 
 **Document Title:** Bookil User Experience, Interface Design & Interaction Architecture  
-**Version:** 1.0.0 (Production-Grade Design Reference)  
+**Version:** 1.1.0 (Production-Grade Design Reference)  
 **Status:** Approved / Active Baseline  
-**Audience:** UI/UX Designers, Product Managers, Frontend Engineers, QA Engineers, Project Auditors  
+**Audience:** UI/UX Designers, Product Managers, Frontend Engineers, QA Engineers, Technical Reviewers  
 **Date:** September 2026  
 
 ---
@@ -13,16 +13,17 @@
 1. [Visi Desain & Filosofi Antarmuka](#1-visi-desain--filosofi-antarmuka)
 2. [Arsitektur Informasi (Information Architecture & Site Map)](#2-arsitektur-informasi-information-architecture--site-map)
 3. [Alur Pengguna & Spesifikasi Halaman (Page-by-Page UX Specs)](#3-alur-pengguna--spesifikasi-halaman-page-by-page-ux-specs)
-   * [3.1 Storefront & Landing Hero (`Welcome.tsx` / `Products/Index.tsx`)](#31-storefront--landing-hero-welcometsx--productsindextsx)
-   * [3.2 Detail Produk & Sample Preview Modal (`Products/Show.tsx`)](#32-detail-produk--sample-preview-modal-productsshowtsx)
-   * [3.3 Instant Checkout Modal & Midtrans Snap Lifecycle](#33-instant-checkout-modal--midtrans-snap-lifecycle)
-   * [3.4 Halaman Faktur Pesanan (`Orders/Show.tsx`)](#34-halaman-faktur-pesanan-ordersshowtsx)
-   * [3.5 Perpustakaan Digital Pelanggan (`Dashboard.tsx`)](#35-perpustakaan-digital-pelanggan-dashboardtsx)
-   * [3.6 Admin Executive Analytics Dashboard (`Admin/Dashboard.tsx`)](#36-admin-executive-analytics-dashboard-admindashboardtsx)
-   * [3.7 Admin Product & Category Management (`Admin/Products/Form.tsx`)](#37-admin-product--category-management-adminproductsformtsx)
-   * [3.8 Admin Order Ledger & Audit Detail (`Admin/Orders/Show.tsx`)](#38-admin-order-ledger--audit-detail-adminordersshowtsx)
-4. [Pola Interaksi & Manajemen State Inertia.js](#4-pola-interaksi--manajemen-state-inertiajs)
-5. [Strategi Desain Responsif & Tata Letak Seluler](#5-strategi-desain-responsif--tata-letak-seluler)
+   * [3.1 Storefront & Bento Hero (`Welcome.tsx` / `Products/Index.tsx`)](#31-storefront--bento-hero-welcometsx--productsindextsx)
+   * [3.2 Quick Search & Command Palette (`CommandPalette.tsx` / `Ctrl+K`)](#32-quick-search--command-palette-commandpalettetsx--ctrlk)
+   * [3.3 Detail Produk & Sample Preview Modal (`Products/Show.tsx`)](#33-detail-produk--sample-preview-modal-productsshowtsx)
+   * [3.4 Instant Checkout Modal & Midtrans Snap Lifecycle](#34-instant-checkout-modal--midtrans-snap-lifecycle)
+   * [3.5 Halaman Faktur Pesanan (`Orders/Show.tsx`)](#35-halaman-faktur-pesanan-ordersshowtsx)
+   * [3.6 Perpustakaan Digital Pelanggan (`Dashboard.tsx`)](#36-perpustakaan-digital-pelanggan-dashboardtsx)
+   * [3.7 Admin Executive Analytics Dashboard (`Admin/Dashboard.tsx`)](#37-admin-executive-analytics-dashboard-admindashboardtsx)
+   * [3.8 Admin Product & Category Management (`Admin/Products/Form.tsx`)](#38-admin-product--category-management-adminproductsformtsx)
+   * [3.9 Admin Order Ledger & Entitlement Extension (`Admin/Orders/Show.tsx`)](#39-admin-order-ledger--entitlement-extension-adminordersshowtsx)
+4. [Pola Interaksi & Manajemen State Inertia.js v2](#4-pola-interaksi--manajemen-state-inertiajs-v2)
+5. [Strategi Desain Responsif & Validasi Lintas Perangkat](#5-strategi-desain-responsif--validasi-lintas-perangkat)
 6. [Penanganan State Khusus: Empty States, Loading, & Error Boundaries](#6-penanganan-state-khusus-empty-states-loading--error-boundaries)
 
 ---
@@ -33,9 +34,9 @@ Antarmuka **Bookil** dirancang dengan filosofi **"Elegance in Knowledge, Frictio
 
 ### Prinsip Desain Utama:
 * **Content-First Presentation:** Buku dan sampul adalah pahlawan utama (*the hero*). Tipografi, jarak (*whitespace*), dan tata letak dirancang untuk menonjolkan nilai intelektual konten buku.
-* **Zero-Friction Conversion:** Memangkas tahapan keranjang belanja tradisional menjadi alur *Instant Buy Now* 1-klik untuk memaksimalkan kepuasan pembeli dan laju konversi penjualan.
-* **Transparency & Trust:** Status transaksi, kuota unduhan, dan ukuran berkas disajikan secara transparan tanpa biaya tersembunyi.
-* **Aksesibilitas Teruji:** Mengadopsi pedoman **WCAG 2.1 AA** dengan hierarki heading yang terstruktur, label form yang eksplisit, serta kontras warna yang nyaman di mata.
+* **Zero-Friction Conversion:** Memangkas tahapan keranjang belanja multi-langkah tradisional menjadi alur *Instant Buy Now* 1-klik yang langsung memicu pembayaran Midtrans Snap.
+* **Transparency & Trust:** Status transaksi, progres kuota unduhan, dan ukuran berkas disajikan secara transparan tanpa biaya tersembunyi.
+* **Aksesibilitas Teruji (WCAG 2.1 AA):** Hierarki heading terstruktur, keyboard shortcut global (`Ctrl + K`), label formulir eksplisit, dan kontras warna teks terhadap background minimal 4.5:1.
 
 ---
 
@@ -46,17 +47,18 @@ graph TD
     Root["🌐 Bookil Platform Root"]
 
     subgraph PublicPages ["Kawasan Publik (Storefront)"]
-        Home["🏠 Beranda / Hero Landing (/)"]
+        Home["🏠 Beranda / Bento Hero (/)"]
         Catalog["📚 Katalog E-Book (/products)"]
         ProductDetail["📖 Detail Produk (/products/:slug)"]
-        Login["🔑 Masuk (/login)"]
-        Register["📝 Daftar Akun (/register)"]
+        CmdPalette["🔍 Command Palette (Ctrl+K)"]
+        SupportPages["ℹ️ Bantuan & Kebijakan (/faq, /terms, /privacy, /refund-policy)"]
+        AuthPages["🔑 Masuk & Daftar (/login, /register, /forgot-password)"]
     end
 
     subgraph CustomerPortal ["Kawasan Pelanggan (Authenticated)"]
         CustDash["📚 Perpustakaan Digital (/dashboard & /library)"]
         Invoice["🧾 Faktur & Bayar (/orders/:order_number)"]
-        Download["⬇️ Engine Unduh (/downloads/:token)"]
+        Download["⬇️ Engine Unduh (/downloads/:orderItem?signature=...)"]
         Profile["👤 Profil Pengguna (/profile)"]
     end
 
@@ -65,6 +67,7 @@ graph TD
         AdminProducts["📦 Kelola E-Book (/admin/products)"]
         AdminCategories["🏷️ Kelola Kategori (/admin/categories)"]
         AdminOrders["📋 Audit Transaksi (/admin/orders)"]
+        EntitlementExt["⏳ Perpanjang Hak Unduh (/admin/order-items/:id/entitlement)"]
         CSVExport["📥 Ekspor CSV (/admin/reports/sales/csv)"]
     end
 
@@ -76,40 +79,54 @@ graph TD
     ProductDetail -->|"Checkout Modal"| Invoice
     Invoice -->|"Snap Modal"| CustDash
     CustDash --> Download
+    AdminOrders --> EntitlementExt
 ```
 
 ---
 
 ## 3. Alur Pengguna & Spesifikasi Halaman (Page-by-Page UX Specs)
 
-### 3.1 Storefront & Landing Hero (`Welcome.tsx` / `Products/Index.tsx`)
-* **Tujuan Halaman:** Memperkenalkan proposisi nilai Bookil, menampilkan buku unggulan (*featured e-books*), serta menyediakan katalog interaktif dengan filter instan.
+### 3.1 Storefront & Bento Hero (`Welcome.tsx` / `Products/Index.tsx`)
+* **Tujuan Halaman:** Memperkenalkan proposisi nilai Bookil, menampilkan koleksi unggulan dalam Bento Grid modern, serta menyediakan katalog interaktif dengan filter instan.
 * **Komponen Visual Kunci:**
-  * **Header & Navigation Bar (`StoreLayout.tsx`):** Logo Bookil dengan ikon buku bercahaya gradasi indigo, navigasi utama (Katalog, Koleksi Populer, Tentang Kami), kolom pencarian cepat, serta tombol otentikasi dinamis (Masuk/Daftar atau Avatar Dashboard).
-  * **Hero Banner:** Headline berani (*"Buka Pintu Pengetahuan Digital Tanpa Batas"*), sub-headline persuasif, statistik platform (*10K+ Pembaca Puas, 100% Berlisensi Resmi, Unduh Instan*), dan tombol CTA "Jelajahi Katalog".
+  * **Header & Navigation Bar (`StoreLayout.tsx`):** Logo Bookil dengan ikon buku bercahaya gradasi indigo, navigasi utama (Katalog, Bantuan, FAQ), tombol pencarian cepat dengan badge shortcut `Ctrl + K`, serta status otentikasi dinamis (Masuk/Daftar atau Avatar Dashboard Pelanggan).
+  * **Bento Grid Hero Showcase (`BentoHero.tsx`):**
+    * Kartu Utama: Headline berani (*"Buka Pintu Pengetahuan Digital Tanpa Batas"*), sub-headline persuasif, dan tombol aksi "Jelajahi Katalog".
+    * Kartu Metrik: Statistik platform (*10K+ Pembaca Puas, 100% Berlisensi Resmi, Unduh Instan*).
+    * Kartu Jaminan Keamanan: Privasi file Zero-Trust dan garansi transaksi lunas instan.
   * **Katalog Filterable Grid:**
-    * *Search Bar*: Pencarian teks instan dengan debounce halus.
+    * *Search Bar*: Pencarian teks instan dengan debounce halus (*case-insensitive* pada title, author, dan description).
     * *Category Pills*: Filter kategori horizontal interaktif (Pemrograman & IT, Bisnis, Desain, dll.).
     * *Sorting Dropdown*: Urutkan berdasarkan Terbaru, Harga Terendah, dan Harga Tertinggi.
-  * **Kartu Produk (`ProductCard.tsx`):** Rasio sampul buku 3:4 yang proporsional, badge kategori warna-warni lembut, nama penulis terpercaya, label tipe berkas (`PDF` / `EPUB`), label harga Rupiah yang tebal, serta tombol aksi cepat "Lihat Detail".
+  * **Kartu Produk (`ProductCard.tsx`):** Rasio sampul buku 3:4 yang proporsional dengan komponen `BookCoverImage`, badge kategori lembut, nama penulis terpercaya, label format berkas (`PDF` / `EPUB`), label harga Rupiah tebal, dan tombol aksi cepat "Lihat Detail".
 
 ---
 
-### 3.2 Detail Produk & Sample Preview Modal (`Products/Show.tsx`)
+### 3.2 Quick Search & Command Palette (`CommandPalette.tsx` / `Ctrl+K`)
+* **Tujuan:** Memungkinkan pengguna mencari dan melompat ke buku yang diinginkan dalam sekejap tanpa menyentuh mouse.
+* **Fitur & Interaksi:**
+  * Tekan tombol pintasan `Ctrl + K` (atau `Cmd + K` di macOS) di mana saja pada situs untuk memunculkan modal pencarian mengambang (*floating command palette*).
+  * Input pencarian langsung berfokus (*auto-focus*).
+  * Mengetik kata kunci menampilkan hasil pencarian real-time dengan sampul mini, judul, penulis, dan harga.
+  * Navigasi hasil menggunakan tombol panah atas/bawah dan tekan `Enter` untuk langsung membuka halaman detail buku.
+
+---
+
+### 3.3 Detail Produk & Sample Preview Modal (`Products/Show.tsx`)
 * **Tujuan Halaman:** Memberikan informasi lengkap mengenai isi buku dan meyakinkan calon pembeli melalui cuplikan sampel sebelum membeli.
 * **Elemen Desain:**
   * **Layout 2-Kolom Desktop:** Kolom kiri menyajikan mock-up sampul buku realistis dengan bayangan lembut (*ambient soft shadow*), sedangkan kolom kanan menyajikan metadata buku.
   * **Metadata Breakdown:**
     * Judul lengkap dan nama penulis terverifikasi.
-    * Tag kategori dan format file (misal: `PDF 14.7 MB`).
+    * Tag kategori dan format file (contoh: `PDF 14.7 MB` atau ukuran presisi dalam byte/KB).
     * Deskripsi sinopsis komprehensif dengan tipografi yang nyaman dibaca (*line-height 1.7*).
-    * Kotak Benefit Pembelian: Lisensi selamanya, bebas DRM mengikat, 5x jatah unduhan fleksibel, pembaruan edisi gratis.
+    * Kotak Benefit Pembelian: Lisensi resmi, bebas DRM mengikat, jatah 5x unduhan fleksibel, masa aktif 30 hari.
   * **Sample Preview Modal (`SamplePreviewModal.tsx`):** Dialog modal interaktif yang menampilkan daftar isi (*Table of Contents*) dan ringkasan bab pembuka e-book untuk memberikan gambaran kualitas materi.
   * **Sticky Action Bar (Mobile):** Tombol "Beli Sekarang Rp 189.000" menempel di bagian bawah layar smartphone untuk konversi instan.
 
 ---
 
-### 3.3 Instant Checkout Modal & Midtrans Snap Lifecycle
+### 3.4 Instant Checkout Modal & Midtrans Snap Lifecycle
 Alur pembelian Bookil mengintegrasikan **Midtrans Snap Modal** langsung di antarmuka web tanpa pengalihan halaman yang membingungkan:
 
 ```mermaid
@@ -134,10 +151,10 @@ stateDiagram-v2
 
 ---
 
-### 3.4 Halaman Faktur Pesanan (`Orders/Show.tsx`)
+### 3.5 Halaman Faktur Pesanan (`Orders/Show.tsx`)
 * **Tujuan Halaman:** Menyajikan rincian tagihan resmi (*official digital invoice*), riwayat pembayaran gateway, dan status pesanan saat ini.
 * **Elemen Desain:**
-  * **Status Badge Dinamis:**
+  * **Status Badge Dinamis (`StatusBadge.tsx`):**
     * `pending`: Kuning / Amber dengan indikator pulsa animasi (*"Menunggu Pembayaran"*).
     * `paid`: Hijau Zamrud (*"Pembayaran Berhasil"*).
     * `failed` / `expired`: Merah Koral (*"Kedaluwarsa"*).
@@ -145,23 +162,25 @@ stateDiagram-v2
   * **Tombol Aksi Cerdas:**
     * Jika `pending`: Tombol primer "Bayar Sekarang dengan Midtrans Snap".
     * Jika `paid`: Tombol primer hijau "Buka di Perpustakaan Saya" dan tombol sekunder "Unduh Sekarang".
+    * Tombol salin nomor pesanan (*copy to clipboard*) dengan feedback visual.
 
 ---
 
-### 3.5 Perpustakaan Digital Pelanggan (`Dashboard.tsx`)
+### 3.6 Perpustakaan Digital Pelanggan (`Dashboard.tsx`)
 * **Tujuan Halaman:** Portal utama pelanggan terdaftar untuk mengakses seluruh aset digital yang sah mereka miliki.
 * **Fitur & Struktur Antarmuka:**
   * **Statistik Cepat (Top Widgets):** Tiga kartu metrik ringkas: Total E-Book Dimiliki, Total Transaksi, dan Unduhan Aktif Tersedia.
   * **Tab Navigasi:** Beralih mulus antara tab *"Rak Buku Digital"* dan tab *"Riwayat Transaksi"*.
   * **Library Card Component:**
     * Sampul buku dan judul.
-    * **Indikator Kuota Unduhan Interaktif:** Menampilkan progres bar kuota (contoh: `Tersisa 4 dari 5 unduhan`) beserta peringatan visual ketika kuota tersisa 1 kali.
-    * **Masa Berlaku Token:** Menampilkan tanggal batas akhir unduh (misal: *Berlaku hingga 24 Oktober 2026*).
-    * **Tombol Unduh Instan:** Tombol dengan indikator loading yang mengarahkan langsung ke presigned URL berkas privat.
+    * **Indikator Kuota Unduhan Interaktif (`QuotaProgressBar.tsx`):** Menampilkan bar progres kuota (contoh: `Tersisa 4 dari 5 unduhan`) beserta perubahan warna menjadi kuning/merah ketika kuota kritis.
+    * **Masa Berlaku Token:** Menampilkan tanggal batas akhir unduh (misal: *Berlaku hingga 29 Oktober 2026*).
+    * **Tombol Unduh Instan:** Tombol native bertanda tangan yang mengarahkan langsung ke presigned URL berkas privat.
+    * **Badge Status Verifikasi Email:** Indikator visual apakah akun pelanggan sudah terverifikasi email atau belum, tanpa memblokir akses ke rak buku yang sudah dibeli.
 
 ---
 
-### 3.6 Admin Executive Analytics Dashboard (`Admin/Dashboard.tsx`)
+### 3.7 Admin Executive Analytics Dashboard (`Admin/Dashboard.tsx`)
 * **Tujuan Halaman:** Menyajikan ringkasan performa finansial dan operasional platform bagi pemilik bisnis dan auditor.
 * **Komponen Kunci:**
   * **Executive KPI Cards:**
@@ -170,13 +189,13 @@ stateDiagram-v2
     * Tingkat Penyelesaian Transaksi (*Paid Rate*).
     * Produk E-Book Aktif di Katalog.
     * Total Pelanggan Terdaftar.
-  * **Tombol Ekspor Laporan CSV:** Tombol hijau elegan di pojok kanan atas yang langsung memicu download file spreadsheet CSV penjualan.
+  * **Tombol Ekspor Laporan CSV:** Tombol hijau elegan di pojok kanan atas yang langsung memicu download file spreadsheet CSV penjualan dengan enkripsi UTF-8 BOM.
   * **Tabel 10 Transaksi Terakhir:** Menampilkan waktu transaksi, nomor faktur, nama pembeli, metode bayar, total nominal, dan status dengan tautan inspeksi detail.
   * **Widget E-Book Terlaris:** Menampilkan 5 buku dengan volume penjualan tertinggi.
 
 ---
 
-### 3.7 Admin Product & Category Management (`Admin/Products/Form.tsx`)
+### 3.8 Admin Product & Category Management (`Admin/Products/Form.tsx`)
 * **Tujuan Halaman:** Antarmuka pengunggahan dan pembaruan materi digital oleh content manager.
 * **Fitur Antarmuka:**
   * Dropdown pemilihan kategori dinamis.
@@ -188,17 +207,18 @@ stateDiagram-v2
 
 ---
 
-### 3.8 Admin Order Ledger & Audit Detail (`Admin/Orders/Show.tsx`)
-* **Tujuan Halaman:** Halaman audit forensik bagi pengawas sistem dan auditor keuangan.
+### 3.9 Admin Order Ledger & Entitlement Extension (`Admin/Orders/Show.tsx`)
+* **Tujuan Halaman:** Halaman audit forensik bagi pengawas sistem dan auditor keuangan, serta pengelolaan hak unduh darurat.
 * **Spesifikasi Informasi:**
   * Rincian lengkap identitas pembeli (Nama, Email, ID Pengguna).
   * Pemecahan item produk dan lisensi token unduhan yang diterbitkan.
   * **Payment Gateway Ledger:** Menampilkan rekaman tabel `payments` mencakup `external_transaction_id`, jenis pembayaran (`bca_va`, `gopay`, `credit_card`), nominal kotor, dan timestamp pembayaran resmi dari bank.
   * **Raw Webhook Payload Inspector:** Komponen *code block* bergaya terminal gelap yang menampilkan JSON murni yang dikirim oleh server Midtrans, memudahkan penelusuran jika terjadi sengketa transaksi.
+  * **Entitlement Extension Dialog:** Formulir bagi admin untuk menambahkan kuota unduh (+downloads) atau menambah masa aktif (+hari) disertai alasan wajib (*reason*) yang otomatis dicatat ke tabel `entitlement_extensions`.
 
 ---
 
-## 4. Pola Interaksi & Manajemen State Inertia.js
+## 4. Pola Interaksi & Manajemen State Inertia.js v2
 
 Sistem memanfaatkan protokol **Inertia.js v2** untuk menyajikan pengalaman SPA tanpa latensi build client-side API terpisah:
 
@@ -216,16 +236,17 @@ Sistem memanfaatkan protokol **Inertia.js v2** untuk menyajikan pengalaman SPA t
 
 ---
 
-## 5. Strategi Desain Responsif & Tata Letak Seluler
+## 5. Strategi Desain Responsif & Validasi Lintas Perangkat
 
-Bookil mengadopsi prinsip **Mobile-First Responsive Web Design**:
+Bookil diuji secara ekstensif pada 6 breakpoint viewport CSS untuk menjamin kesempurnaan tampilan (*Pixel-Perfect Usability*):
 
-| Breakpoint Tailwind | Resolusi Layar | Penyesuaian Tata Letak |
+| Breakpoint Tailwind | Resolusi Layar | Hasil Verifikasi Browser QA |
 | :--- | :--- | :--- |
-| **Mobile (`< 640px`)** | Smartphone (iPhone/Android) | Grid katalog 1 kolom, bilah navigasi menu hamburger, tombol checkout sticky di dasar layar, tabel bertransformasi menjadi kartu data tumpuk (*stacked cards*). |
-| **Tablet (`640px - 1024px`)** | iPad / Android Tablet | Grid katalog 2 kolom, sidebar admin dapat diciutkan (*collapsible drawer*), modal berukuran medium (600px). |
-| **Desktop (`1024px - 1280px`)** | Laptop & Monitor Standar | Grid katalog 3 kolom, sidebar admin menetap di sisi kiri, formulir produk dengan tata letak 2 kolom seimbang. |
-| **Wide Desktop (`> 1280px`)** | Layar Lebar 1080p / 4K | Grid katalog 4 kolom proporsional dengan batas kontainer maksimal `max-w-7xl` agar teks tetap nyaman dibaca. |
+| **Small Phone (`320px - 390px`)** | iPhone SE, Galaxy Mini | Grid 1 kolom, bilah navigasi header membungkus rapi tanpa scroll horizontal liar, tombol checkout sticky di dasar layar. |
+| **Mobile (`390px - 640px`)** | iPhone 14/15, Android Standar | Formulir login/register proporsional, modal Snap pas di tengah layar. |
+| **Tablet (`640px - 1024px`)** | iPad Mini, iPad Air | Grid katalog 2 kolom, drawer admin fleksibel, detail order membungkus rapi. |
+| **Laptop / Desktop (`1024px - 1280px`)** | Layar 13"-15" Standar | Grid katalog 3 kolom, sidebar admin menetap, formulir produk dengan layout 2 kolom seimbang. |
+| **Wide Desktop (`> 1280px - 1536px`)** | Monitor FHD / 2K / 4K | Grid katalog 4 kolom dengan pembatas `max-w-7xl` agar kenyamanan membaca tetap terjaga. |
 
 ---
 
