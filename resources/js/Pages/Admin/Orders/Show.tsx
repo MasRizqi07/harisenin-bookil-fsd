@@ -61,8 +61,8 @@ export default function Show({ order }: ShowProps) {
 
                     <div className="bg-slate-950 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
-                            <div className="flex items-center space-x-3">
-                                <h2 className="text-xl sm:text-2xl font-mono font-black text-white">
+                            <div className="flex flex-wrap items-center gap-3">
+                                <h2 className="min-w-0 break-all text-xl sm:text-2xl font-mono font-black text-white">
                                     {order.order_number}
                                 </h2>
                                 <span className={`inline-flex px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider ${statusBadge}`}>
@@ -236,10 +236,10 @@ export default function Show({ order }: ShowProps) {
                                     <div key={p.id} className="border border-slate-850 rounded-2xl bg-slate-900/60 overflow-hidden">
                                         <div
                                             onClick={() => setExpandedPaymentId(isExpanded ? null : p.id)}
-                                            className="p-4 flex items-center justify-between cursor-pointer hover:bg-slate-900 transition-colors"
+                                            className="p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 cursor-pointer hover:bg-slate-900 transition-colors"
                                         >
-                                            <div className="flex items-center space-x-3 text-xs">
-                                                <span className="font-mono font-bold text-white">
+                                            <div className="flex flex-wrap items-center gap-3 text-xs">
+                                                <span className="break-all font-mono font-bold text-white">
                                                     ID: {p.external_transaction_id || 'LOCAL-SIM'}
                                                 </span>
                                                 <span className="text-slate-400">&bull;</span>

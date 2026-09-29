@@ -1,0 +1,170 @@
+- complementary:
+  - link "Bookil Admin Enterprise Console":
+    - /url: /admin/dashboard
+    - generic: Bookil Admin
+    - generic: Enterprise Console
+  - button "close":
+    - generic: close
+  - text: Enterprise Portal
+  - link "space_dashboard Executive Dashboard":
+    - /url: /admin/dashboard
+    - generic: space_dashboard
+    - generic: Executive Dashboard
+  - link "auto_stories Katalog & Produk":
+    - /url: /admin/products
+    - generic: auto_stories
+    - generic: Katalog & Produk
+  - link "account_tree Taksonomi Kategori":
+    - /url: /admin/categories
+    - generic: account_tree
+    - generic: Taksonomi Kategori
+  - link "receipt_long Ledger Pesanan":
+    - /url: /admin/orders
+    - generic: receipt_long
+    - generic: Ledger Pesanan
+  - text: Pintasan Toko
+  - link "storefront Lihat Toko Publik":
+    - /url: /
+    - generic: storefront
+    - generic: Lihat Toko Publik
+  - generic: Health Metrics
+  - generic: Database Cluster
+  - generic: 99.98%
+  - generic: Midtrans Webhook
+  - generic: SHA-512 OK
+  - generic: Private S3 Vault
+  - generic: Synced
+  - generic: Q
+  - generic: QA Administrator
+  - generic: admin@example.test
+  - button "logout":
+    - generic: logout
+- banner:
+  - button "menu":
+    - generic: menu
+  - button "search ⌘K":
+    - generic: search
+    - generic: ⌘K
+- main:
+  - heading "Buku Besar Transaksi & Pesanan" [level=2]
+  - paragraph: Audit seluruh mutasi transaksi, status payment gateway Midtrans, dan pemenuhan aset digital.
+  - link "Ekspor CSV":
+    - /url: /admin/export/csv
+    - generic: Ekspor CSV
+  - button "Semua Status"
+  - button "pending"
+  - button "paid"
+  - button "failed"
+  - button "expired"
+  - textbox "Cari berdasarkan nomor pesanan (BK-...), nama pelanggan, atau email..."
+  - button "Cari"
+  - table:
+    - rowgroup:
+      - row "Nomor Pesanan Tanggal Transaksi Pelanggan Item Buku Total Metode Status Detail":
+        - columnheader "Nomor Pesanan"
+        - columnheader "Tanggal Transaksi"
+        - columnheader "Pelanggan"
+        - columnheader "Item Buku"
+        - columnheader "Total"
+        - columnheader "Metode"
+        - columnheader "Status"
+        - columnheader "Detail"
+    - rowgroup:
+      - row "BK-01M3P6Z0CQVA78NK3GA3834VF4 29 Sep 2026, 16.12 QA Customer A Updated customer-a@example.test QA Laravel Guide Rp 30.000 qris paid Audit":
+        - cell "BK-01M3P6Z0CQVA78NK3GA3834VF4"
+        - cell "29 Sep 2026, 16.12"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "QA Laravel Guide"
+        - cell "Rp 30.000"
+        - cell "qris"
+        - cell "paid":
+          - generic: paid
+        - cell "Audit":
+          - link "Audit":
+            - /url: /admin/orders/1
+      - row "BK-01M3P6Z0EAJ3934DD3VH35MM63 29 Sep 2026, 16.12 QA Customer A Updated customer-a@example.test QA Digital Book 02 Rp 35.000 qris paid Audit":
+        - cell "BK-01M3P6Z0EAJ3934DD3VH35MM63"
+        - cell "29 Sep 2026, 16.12"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "QA Digital Book 02"
+        - cell "Rp 35.000"
+        - cell "qris"
+        - cell "paid":
+          - generic: paid
+        - cell "Audit":
+          - link "Audit":
+            - /url: /admin/orders/2
+      - row "BK-01M3P6Z0EPQ43J9KQQQP5Y3E5H 29 Sep 2026, 16.12 QA Customer A Updated customer-a@example.test QA Digital Book 03 Rp 40.000 qris paid Audit":
+        - cell "BK-01M3P6Z0EPQ43J9KQQQP5Y3E5H"
+        - cell "29 Sep 2026, 16.12"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "QA Digital Book 03"
+        - cell "Rp 40.000"
+        - cell "qris"
+        - cell "paid":
+          - generic: paid
+        - cell "Audit":
+          - link "Audit":
+            - /url: /admin/orders/3
+      - row "BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV 29 Sep 2026, 16.12 QA Customer A Updated customer-a@example.test QA Digital Book 04 Rp 45.000 - pending Audit":
+        - cell "BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV"
+        - cell "29 Sep 2026, 16.12"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "QA Digital Book 04"
+        - cell "Rp 45.000"
+        - cell "-"
+        - cell "pending":
+          - generic: pending
+        - cell "Audit":
+          - link "Audit":
+            - /url: /admin/orders/4
+      - row "BK-01M3P6Z0F37939TPM4DKSAKYM2 29 Sep 2026, 16.12 QA Customer A Updated customer-a@example.test QA Digital Book 05 Rp 50.000 - failed Audit":
+        - cell "BK-01M3P6Z0F37939TPM4DKSAKYM2"
+        - cell "29 Sep 2026, 16.12"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "QA Digital Book 05"
+        - cell "Rp 50.000"
+        - cell "-"
+        - cell "failed":
+          - generic: failed
+        - cell "Audit":
+          - link "Audit":
+            - /url: /admin/orders/5
+      - row "BK-01M3P6Z0F6BRX68C5J33TWM614 29 Sep 2026, 16.12 QA Customer A Updated customer-a@example.test QA Digital Book 06 Rp 55.000 - expired Audit":
+        - cell "BK-01M3P6Z0F6BRX68C5J33TWM614"
+        - cell "29 Sep 2026, 16.12"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "QA Digital Book 06"
+        - cell "Rp 55.000"
+        - cell "-"
+        - cell "expired":
+          - generic: expired
+        - cell "Audit":
+          - link "Audit":
+            - /url: /admin/orders/6
+      - row "BK-01M3P6Z0F8EZR1RYWMP40SBQM2 29 Sep 2026, 16.12 QA Customer B customer-b@example.test QA Digital Book 07 Rp 60.000 qris paid Audit":
+        - cell "BK-01M3P6Z0F8EZR1RYWMP40SBQM2"
+        - cell "29 Sep 2026, 16.12"
+        - cell "QA Customer B customer-b@example.test":
+          - generic: QA Customer B
+          - generic: customer-b@example.test
+        - cell "QA Digital Book 07"
+        - cell "Rp 60.000"
+        - cell "qris"
+        - cell "paid":
+          - generic: paid
+        - cell "Audit":
+          - link "Audit":
+            - /url: /admin/orders/7

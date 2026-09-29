@@ -6,12 +6,14 @@ import { formatRupiah } from '@/Components/ProductCard';
 interface CommandPaletteProps {
     isOpen: boolean;
     onClose: () => void;
+    onOpen?: () => void;
     products?: Product[];
 }
 
 export default function CommandPalette({
     isOpen,
     onClose,
+    onOpen,
     products = [],
 }: CommandPaletteProps) {
     const [query, setQuery] = useState('');
@@ -21,12 +23,12 @@ export default function CommandPalette({
     // Global Cmd+K / Ctrl+K keyboard shortcut
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
-            if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'k' && (isOpen || onOpen)) {
                 e.preventDefault();
                 if (isOpen) {
                     onClose();
                 } else {
-                    // Let parent handle opening or we can dispatch an event
+                    onOpen?.();
                 }
             } else if (e.key === 'Escape' && isOpen) {
                 e.preventDefault();
@@ -36,7 +38,7 @@ export default function CommandPalette({
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [isOpen, onClose]);
+    }, [isOpen, onClose, onOpen]);
 
     // Auto focus input when opened
     useEffect(() => {
@@ -69,6 +71,14 @@ export default function CommandPalette({
           );
 
     const allItems = [
+        ...(query.trim() ? [{
+            type: 'link' as const,
+            id: 'catalog-search',
+            title: `Cari katalog: ${query.trim()}`,
+            subtitle: 'Cari judul dan penulis di seluruh katalog',
+            url: route('products.index', { search: query.trim() }),
+            icon: 'search',
+        }] : []),
         ...filteredProducts.map(p => ({
             type: 'product' as const,
             id: p.id,

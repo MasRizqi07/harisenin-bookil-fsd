@@ -1,0 +1,83 @@
+- banner:
+  - link:
+    - /url: /
+  - button "Cari":
+    - generic: search
+  - button "Q arrow_drop_down":
+    - generic: Q
+    - generic: arrow_drop_down
+  - button "menu":
+    - generic: menu
+- generic: error
+- generic: Pesanan tersimpan, tetapi layanan pembayaran belum tersedia. Silakan coba lagi nanti.
+- button "close":
+  - generic: close
+- main:
+  - navigation:
+    - link "Beranda":
+      - /url: /
+    - generic: /
+    - link "Riwayat Pesanan":
+      - /url: http://127.0.0.1:8002/dashboard
+    - generic: /
+    - generic: BK-01M3P9K6JRBH5HSAZEV8RWQK78
+  - heading "Faktur Pesanan Resmi" [level=1]
+  - button "print Cetak Salinan":
+    - generic: print
+    - generic: Cetak Salinan
+  - text: Nomor Transaksi
+  - generic: BK-01M3P9K6JRBH5HSAZEV8RWQK78
+  - button "content_copy":
+    - generic: content_copy
+  - paragraph: Dibuat pada 29 September 2026 pukul 16.58 WIB
+  - generic: Menunggu Pembayaran
+  - paragraph: Pembayaran belum tersedia. Pesanan Anda tetap tersimpan. Muat ulang halaman untuk mencoba kembali.
+  - button "Coba pembayaran lagi"
+  - heading "Rincian Pembelian" [level=3]
+  - generic: auto_stories
+  - generic: QA Laravel Guide
+  - generic: pdf
+  - heading "QA Laravel Guide" [level=4]
+  - paragraph: "Penulis: QA Author Alpha"
+  - generic: pdf
+  - generic: verified
+  - text: Lisensi Penuh
+  - generic: Rp 30.000
+  - generic: Subtotal Pembelian
+  - generic: Rp 30.000
+  - generic: Biaya Gateway (Midtrans Snap)
+  - generic: Rp 0 (Gratis)
+  - generic: PPN Digital Indonesia (11%)
+  - generic: Termasuk
+  - generic: "Total Pembayaran:"
+  - generic: Rp 30.000
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

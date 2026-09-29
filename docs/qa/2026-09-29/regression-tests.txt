@@ -1,0 +1,14 @@
+
+   PASS  Tests\Feature\BrowserRegressionTest
+  ✓ it serves a signed local PDF as an attachment with its security headers intact                               1.16s  
+  ✓ it rejects a tampered local asset signature without returning the PDF                                        0.09s  
+  ✓ it keeps pending invoice product metadata when Snap is unavailable                                           0.31s  
+  ✓ it rejects an empty product description before writing to the database with ('create')                       0.12s  
+  ✓ it rejects an empty product description before writing to the database with ('update')                       0.11s  
+  ✓ it finds published catalog entries regardless of search capitalization with ('title')                        0.11s  
+  ✓ it finds published catalog entries regardless of search capitalization with ('author')                       0.08s  
+  ✓ it finds published catalog entries regardless of search capitalization with ('description')                  0.08s  
+
+  Tests:    8 passed (81 assertions)
+  Duration: 2.40s
+

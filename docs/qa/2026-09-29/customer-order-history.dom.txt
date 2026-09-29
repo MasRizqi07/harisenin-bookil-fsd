@@ -1,0 +1,172 @@
+- banner:
+  - link:
+    - /url: /
+  - navigation:
+    - link "Jelajahi Katalog":
+      - /url: http://127.0.0.1:8002/
+    - link "Koleksi Unggulan":
+      - /url: /#katalog
+    - link "Bantuan & FAQ":
+      - /url: /faq
+    - link "local_library Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+      - generic: local_library
+      - generic: Perpustakaan Saya
+  - button "search Cari e-book, topik... ⌘K":
+    - generic: search
+    - generic: Cari e-book, topik...
+    - generic: ⌘K
+  - link "auto_stories Rak Buku":
+    - /url: http://127.0.0.1:8002/library
+    - generic: auto_stories
+    - generic: Rak Buku
+  - button "Q QA Customer A arrow_drop_down":
+    - generic: Q
+    - generic: QA Customer A
+    - generic: arrow_drop_down
+- main:
+  - generic: verified
+  - text: Akun Terverifikasi
+  - generic: Bookil Member
+  - heading "Halo, QA Customer A!" [level=1]
+  - paragraph: Akses unduh 30 hari sejak pembayaran, maksimal 5 unduhan per buku. Pantau kuota unduhan, dan kelola faktur pesanan Anda dalam satu konsol aman.
+  - link "add_shopping_cart Tambah Koleksi":
+    - /url: http://127.0.0.1:8002/
+    - generic: add_shopping_cart
+    - generic: Tambah Koleksi
+  - text: Total Buku Dimiliki
+  - generic: "3"
+  - generic: Judul E-Book
+  - generic: auto_stories
+  - text: Unduhan Aktif
+  - generic: "1"
+  - generic: Buku Siap Unduh
+  - generic: download_for_offline
+  - text: Riwayat Pesanan
+  - generic: "6"
+  - generic: Transaksi
+  - generic: receipt_long
+  - button "local_library Rak Buku Digital (3)":
+    - generic: local_library
+    - generic: Rak Buku Digital (3)
+  - button "history Riwayat Transaksi (6)" [active]:
+    - generic: history
+    - generic: Riwayat Transaksi (6)
+  - table:
+    - rowgroup:
+      - row "Nomor Pesanan Tanggal Total Metode Status Aksi":
+        - columnheader "Nomor Pesanan"
+        - columnheader "Tanggal"
+        - columnheader "Total"
+        - columnheader "Metode"
+        - columnheader "Status"
+        - columnheader "Aksi"
+    - rowgroup:
+      - row "BK-01M3P6Z0F6BRX68C5J33TWM614 29 Sep 2026 Rp 55.000 Midtrans Snap Kedaluwarsa Faktur arrow_forward":
+        - cell "BK-01M3P6Z0F6BRX68C5J33TWM614"
+        - cell "29 Sep 2026"
+        - cell "Rp 55.000"
+        - cell "Midtrans Snap"
+        - cell "Kedaluwarsa":
+          - generic: Kedaluwarsa
+        - cell "Faktur arrow_forward":
+          - link "Faktur arrow_forward":
+            - /url: http://127.0.0.1:8002/orders/BK-01M3P6Z0F6BRX68C5J33TWM614
+            - generic: Faktur
+            - generic: arrow_forward
+      - row "BK-01M3P6Z0F37939TPM4DKSAKYM2 29 Sep 2026 Rp 50.000 Midtrans Snap Gagal Faktur arrow_forward":
+        - cell "BK-01M3P6Z0F37939TPM4DKSAKYM2"
+        - cell "29 Sep 2026"
+        - cell "Rp 50.000"
+        - cell "Midtrans Snap"
+        - cell "Gagal":
+          - generic: Gagal
+        - cell "Faktur arrow_forward":
+          - link "Faktur arrow_forward":
+            - /url: http://127.0.0.1:8002/orders/BK-01M3P6Z0F37939TPM4DKSAKYM2
+            - generic: Faktur
+            - generic: arrow_forward
+      - row "BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV 29 Sep 2026 Rp 45.000 Midtrans Snap Menunggu Pembayaran Faktur arrow_forward":
+        - cell "BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV"
+        - cell "29 Sep 2026"
+        - cell "Rp 45.000"
+        - cell "Midtrans Snap"
+        - cell "Menunggu Pembayaran":
+          - generic: Menunggu Pembayaran
+        - cell "Faktur arrow_forward":
+          - link "Faktur arrow_forward":
+            - /url: http://127.0.0.1:8002/orders/BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV
+            - generic: Faktur
+            - generic: arrow_forward
+      - row "BK-01M3P6Z0EPQ43J9KQQQP5Y3E5H 29 Sep 2026 Rp 40.000 qris Lunas Faktur arrow_forward":
+        - cell "BK-01M3P6Z0EPQ43J9KQQQP5Y3E5H"
+        - cell "29 Sep 2026"
+        - cell "Rp 40.000"
+        - cell "qris"
+        - cell "Lunas":
+          - generic: Lunas
+        - cell "Faktur arrow_forward":
+          - link "Faktur arrow_forward":
+            - /url: http://127.0.0.1:8002/orders/BK-01M3P6Z0EPQ43J9KQQQP5Y3E5H
+            - generic: Faktur
+            - generic: arrow_forward
+      - row "BK-01M3P6Z0EAJ3934DD3VH35MM63 29 Sep 2026 Rp 35.000 qris Lunas Faktur arrow_forward":
+        - cell "BK-01M3P6Z0EAJ3934DD3VH35MM63"
+        - cell "29 Sep 2026"
+        - cell "Rp 35.000"
+        - cell "qris"
+        - cell "Lunas":
+          - generic: Lunas
+        - cell "Faktur arrow_forward":
+          - link "Faktur arrow_forward":
+            - /url: http://127.0.0.1:8002/orders/BK-01M3P6Z0EAJ3934DD3VH35MM63
+            - generic: Faktur
+            - generic: arrow_forward
+      - row "BK-01M3P6Z0CQVA78NK3GA3834VF4 29 Sep 2026 Rp 30.000 qris Lunas Faktur arrow_forward":
+        - cell "BK-01M3P6Z0CQVA78NK3GA3834VF4"
+        - cell "29 Sep 2026"
+        - cell "Rp 30.000"
+        - cell "qris"
+        - cell "Lunas":
+          - generic: Lunas
+        - cell "Faktur arrow_forward":
+          - link "Faktur arrow_forward":
+            - /url: http://127.0.0.1:8002/orders/BK-01M3P6Z0CQVA78NK3GA3834VF4
+            - generic: Faktur
+            - generic: arrow_forward
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+    - link "Pemrograman & IT":
+      - /url: http://127.0.0.1:8002/?category=programming-tech
+    - link "Bisnis & Startup":
+      - /url: http://127.0.0.1:8002/?category=business-startup
+    - link "Pengembangan Diri":
+      - /url: http://127.0.0.1:8002/?category=self-development
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

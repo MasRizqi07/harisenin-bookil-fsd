@@ -32,7 +32,7 @@ class UpdateProductRequest extends FormRequest
             'title' => ['required', 'string', 'max:255'],
             'slug' => ['nullable', 'string', 'max:255', Rule::unique('products', 'slug')->ignore($product->id)],
             'author' => ['required', 'string', 'max:255'],
-            'description' => ['nullable', 'string'],
+            'description' => ['sometimes', 'required', 'string'],
             'sample_excerpt' => ['nullable', 'string', 'max:10000'],
             'price' => ['required', 'numeric', 'min:0', 'multiple_of:1'],
             'file_type' => ['required', Rule::enum(FileType::class)],

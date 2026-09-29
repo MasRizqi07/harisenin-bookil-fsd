@@ -1,0 +1,118 @@
+- banner:
+  - link:
+    - /url: /
+  - navigation:
+    - link "Jelajahi Katalog":
+      - /url: http://127.0.0.1:8002/
+    - link "Koleksi Unggulan":
+      - /url: /#katalog
+    - link "Bantuan & FAQ":
+      - /url: /faq
+    - link "local_library Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+      - generic: local_library
+      - generic: Perpustakaan Saya
+    - link "admin_panel_settings Admin Portal":
+      - /url: http://127.0.0.1:8002/admin/dashboard
+      - generic: admin_panel_settings
+      - generic: Admin Portal
+  - button "search Cari e-book, topik... ⌘K":
+    - generic: search
+    - generic: Cari e-book, topik...
+    - generic: ⌘K
+  - button "Q QA Administrator arrow_drop_down":
+    - generic: Q
+    - generic: QA Administrator
+    - generic: arrow_drop_down
+- main:
+  - navigation:
+    - link "home Beranda":
+      - /url: /
+      - generic: home
+      - generic: Beranda
+    - generic: /
+    - link "Katalog":
+      - /url: http://127.0.0.1:8002/
+    - generic: /
+    - link "E-Books":
+      - /url: http://127.0.0.1:8002/?category=ebooks
+    - generic: /
+    - generic: QA HTTP Uploaded Book Updated
+  - generic: Bookil Edition
+  - generic: pdf
+  - generic: auto_stories
+  - heading "QA HTTP Uploaded Book Updated" [level=3]
+  - paragraph: QA HTTP Author
+  - generic: description
+  - text: Format File
+  - generic: PDF (Zero-DRM)
+  - generic: auto_stories
+  - text: Halaman
+  - generic: 350+ Halaman Lengkap
+  - generic: folder_zip
+  - text: Ukuran Berkas
+  - generic: 0 KB
+  - generic: translate
+  - text: Bahasa
+  - generic: Bahasa Indonesia
+  - generic: Q
+  - generic: check
+  - heading "QA HTTP Author" [level=3]
+  - generic: Penulis Terverifikasi
+  - paragraph: Praktisi & Penulis Buku Spesialis Rekayasa Perangkat Lunak, Arsitektur Sistem, dan Kepemimpinan Teknologi.
+  - generic: E-Books
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: verified
+  - generic: Berkas Digital
+  - heading "QA HTTP Uploaded Book Updated" [level=1]
+  - paragraph:
+    - text: Ditulis oleh
+    - strong: QA HTTP Author
+  - generic: Harga Lisensi Digital
+  - text: Rp 99.000
+  - generic: Akses unduh 30 hari sejak pembayaran, maksimal 5 unduhan per buku.
+  - button "shopping_cart_checkout Beli Sekarang":
+    - generic: shopping_cart_checkout
+    - generic: Beli Sekarang
+  - heading "Sinopsis & Pokok Bahasan" [level=3]
+  - generic: Isolated HTTP QA product description
+  - generic: check_circle
+  - generic: 5x Kuota Unduh Fleksibel (30 Hari)
+  - generic: check_circle
+  - generic: Kompatibel untuk iPad, Kindle & Laptop
+  - generic: check_circle
+  - generic: Fulfillment Instan via Midtrans Snap
+  - generic: check_circle
+  - generic: Tersimpan di Rak Digital Akun Anda
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

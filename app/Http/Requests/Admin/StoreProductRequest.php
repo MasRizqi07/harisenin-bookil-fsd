@@ -28,7 +28,7 @@ class StoreProductRequest extends FormRequest
             'title' => ['required', 'string', 'max:255'],
             'slug' => ['nullable', 'string', 'max:255', 'unique:products,slug'],
             'author' => ['required', 'string', 'max:255'],
-            'description' => ['nullable', 'string'],
+            'description' => ['required', 'string'],
             'sample_excerpt' => ['nullable', 'string', 'max:10000'],
             'price' => ['required', 'numeric', 'min:0', 'multiple_of:1'],
             'file_type' => ['required', Rule::enum(FileType::class)],

@@ -20,7 +20,6 @@ interface DashboardProps {
 export default function Dashboard({ library, orders, stats }: DashboardProps) {
     const { auth } = usePage<PageProps>().props;
     const [activeTab, setActiveTab] = useState<'library' | 'orders'>('library');
-    const [downloadingToken, setDownloadingToken] = useState<string | null>(null);
 
     return (
         <StoreLayout>
@@ -33,7 +32,7 @@ export default function Dashboard({ library, orders, stats }: DashboardProps) {
                         <div className="flex items-center gap-2">
                             <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-bold text-[11px] border border-emerald-200">
                                 <span className="material-symbols-outlined text-[13px]">verified</span>
-                                Akun Terverifikasi
+                                {auth.user.email_verified_at ? 'Akun Terverifikasi' : 'Email Belum Diverifikasi'}
                             </span>
                             <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 font-bold text-[11px] border border-indigo-200">
                                 Bookil Member
@@ -202,20 +201,10 @@ export default function Dashboard({ library, orders, stats }: DashboardProps) {
                                             {item.download_url && (
                                                 <a
                                                     href={item.download_url}
-                                                    onClick={() => setDownloadingToken(String(item.id))}
                                                     className="h-9 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-sm transition-all flex items-center gap-1.5"
                                                 >
-                                                    {downloadingToken === String(item.id) ? (
-                                                        <>
-                                                            <span className="animate-spin h-3.5 w-3.5 rounded-full border-2 border-white border-t-transparent" />
-                                                            <span>Mengunduh...</span>
-                                                        </>
-                                                    ) : (
-                                                        <>
-                                                            <span className="material-symbols-outlined text-[16px]">download</span>
-                                                            <span>Unduh File</span>
-                                                        </>
-                                                    )}
+                                                    <span className="material-symbols-outlined text-[16px]">download</span>
+                                                    <span>Unduh File</span>
                                                 </a>
                                             )}
                                         </div>

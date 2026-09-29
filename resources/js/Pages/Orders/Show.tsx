@@ -22,7 +22,6 @@ export default function Show({
     paymentSimulatorEnabled,
 }: OrderShowProps) {
     const [copied, setCopied] = useState(false);
-    const [downloadingToken, setDownloadingToken] = useState<string | null>(null);
 
     // Dynamically inject Midtrans Snap script
     useEffect(() => {
@@ -182,6 +181,14 @@ export default function Show({
                         )}
 
                         {/* Pending Payment Action Banner */}
+                        {isPending && !snapToken && !paymentSimulatorEnabled && (
+                            <div className="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-sm text-amber-900">
+                                <p>Pembayaran belum tersedia. Pesanan Anda tetap tersimpan. Muat ulang halaman untuk mencoba kembali.</p>
+                                <button type="button" onClick={() => router.reload()} className="mt-3 font-bold underline">
+                                    Coba pembayaran lagi
+                                </button>
+                            </div>
+                        )}
                         {isPending && (snapToken || paymentSimulatorEnabled) && (
                             <div className="p-5 rounded-2xl bg-indigo-50/80 border border-indigo-200/80 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                                 <div className="flex items-center gap-3">
@@ -267,20 +274,10 @@ export default function Show({
                                         {isPaid && item.download_token && item.download_url && (
                                             <a
                                                 href={item.download_url}
-                                                onClick={() => setDownloadingToken(String(item.id))}
                                                 className="inline-flex items-center gap-1 mt-2 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-700 text-xs font-bold border border-emerald-200 transition-colors"
                                             >
-                                                {downloadingToken === String(item.id) ? (
-                                                    <>
-                                                        <span className="animate-spin h-3.5 w-3.5 rounded-full border-2 border-emerald-600 border-t-transparent" />
-                                                        <span>Menyiapkan...</span>
-                                                    </>
-                                                ) : (
-                                                    <>
-                                                        <span className="material-symbols-outlined text-[15px]">download</span>
-                                                        <span>Unduh ({item.download_token.max_downloads - item.download_token.download_count}x sisa)</span>
-                                                    </>
-                                                )}
+                                                <span className="material-symbols-outlined text-[15px]">download</span>
+                                                <span>Unduh ({item.download_token.max_downloads - item.download_token.download_count}x sisa)</span>
                                             </a>
                                         )}
                                     </div>

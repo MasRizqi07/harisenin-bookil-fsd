@@ -1,0 +1,103 @@
+- complementary:
+  - link "Bookil Admin Enterprise Console":
+    - /url: /admin/dashboard
+    - generic: Bookil Admin
+    - generic: Enterprise Console
+  - text: Enterprise Portal
+  - link "space_dashboard Executive Dashboard":
+    - /url: /admin/dashboard
+    - generic: space_dashboard
+    - generic: Executive Dashboard
+  - link "auto_stories Katalog & Produk":
+    - /url: /admin/products
+    - generic: auto_stories
+    - generic: Katalog & Produk
+  - link "account_tree Taksonomi Kategori":
+    - /url: /admin/categories
+    - generic: account_tree
+    - generic: Taksonomi Kategori
+  - link "receipt_long Ledger Pesanan":
+    - /url: /admin/orders
+    - generic: receipt_long
+    - generic: Ledger Pesanan
+  - text: Pintasan Toko
+  - link "storefront Lihat Toko Publik":
+    - /url: /
+    - generic: storefront
+    - generic: Lihat Toko Publik
+  - generic: Health Metrics
+  - generic: Database Cluster
+  - generic: 99.98%
+  - generic: Midtrans Webhook
+  - generic: SHA-512 OK
+  - generic: Private S3 Vault
+  - generic: Synced
+  - generic: Q
+  - generic: QA Administrator
+  - generic: admin@example.test
+  - button "logout":
+    - generic: logout
+- banner:
+  - 'heading "Audit Pesanan: BK-01M3P6Z0EAJ3934DD3VH35MM63" [level=1]'
+  - button "search Cari cepat... ⌘K":
+    - generic: search
+    - generic: Cari cepat...
+    - generic: ⌘K
+  - generic: Production Live
+- generic: check_circle
+- generic: Hak unduh diperpanjang dan perubahan dicatat.
+- main:
+  - link "← Kembali ke Daftar Pesanan":
+    - /url: /admin/orders
+    - generic: ← Kembali ke Daftar Pesanan
+  - heading "BK-01M3P6Z0EAJ3934DD3VH35MM63" [level=2]
+  - generic: paid
+  - paragraph: Dibuat pada Selasa, 29 September 2026 pukul 16.12.05
+  - generic: Total Tagihan
+  - text: Rp 35.000
+  - heading "Informasi Pelanggan" [level=3]:
+    - generic: Informasi Pelanggan
+  - generic: Nama Pelanggan
+  - generic: QA Customer A Updated
+  - generic: Alamat Email
+  - generic: customer-a@example.test
+  - generic: ID Pengguna
+  - generic: "#1"
+  - generic: Catatan Pesanan
+  - generic: "Browser QA: paid_exhausted"
+  - heading "Status Gateway & Pembayaran" [level=3]:
+    - generic: Status Gateway & Pembayaran
+  - generic: Metode Pembayaran
+  - generic: qris
+  - generic: Status Rekonsiliasi
+  - generic: Settled & Verified
+  - generic: Terakhir Diperbarui
+  - generic: 29/9/2026, 16.12.05
+  - generic: Log Gateway
+  - generic: 1 event tercatat
+  - heading "Item Pesanan & Kuota Unduhan Digital" [level=3]
+  - paragraph: Detail hak akses aset digital dan pemantauan token privat untuk item ini.
+  - generic: pdf
+  - heading "QA Digital Book 02" [level=4]
+  - paragraph: "Penulis: QA Author Beta • Kategori: Templates"
+  - generic: Rp 35.000
+  - generic: "Penggunaan Kuota:"
+  - generic: 5 / 7 kali
+  - generic: "Kedaluwarsa:"
+  - generic: 5 Nov 2026
+  - text: Tambahan unduhan
+  - spinbutton "Tambahan unduhan": "2"
+  - text: Tambahan hari
+  - spinbutton "Tambahan hari": "7"
+  - text: Alasan perpanjangan
+  - textbox "Alasan perpanjangan": Isolated browser QA entitlement extension
+  - button "Perpanjang hak unduh"
+  - heading "Audit Notifikasi Webhook Gateway (Midtrans)" [level=3]
+  - paragraph: Payload mentah yang diterima dari endpoint pembayaran untuk keperluan kepatuhan finansial & rekonsiliasi.
+  - generic: "ID: qa-transaction-2"
+  - generic: •
+  - generic: bank_transfer
+  - generic: •
+  - generic: Rp 35.000
+  - generic: settlement
+  - generic: ▼ Lihat Payload

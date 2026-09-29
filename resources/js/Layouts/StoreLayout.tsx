@@ -20,20 +20,21 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
             {/* Global Command Palette */}
             <CommandPalette
                 isOpen={commandPaletteOpen}
+                onOpen={() => setCommandPaletteOpen(true)}
                 onClose={() => setCommandPaletteOpen(false)}
             />
 
             {/* Header Navigation */}
             <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80 shadow-[0_1px_8px_rgba(0,0,0,0.03)]">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between h-20 items-center gap-4">
+                    <div className="flex justify-between h-20 items-center gap-2 sm:gap-4">
                         {/* Left: Logo & Nav Links */}
                         <div className="flex items-center gap-8">
                             <Link href="/" className="flex items-center gap-2 group focus:outline-none">
-                                <ApplicationLogo className="h-9 w-auto transform group-hover:scale-105 transition-transform" />
+                                <ApplicationLogo className="h-7 sm:h-9 w-auto transform group-hover:scale-105 transition-transform" />
                             </Link>
 
-                            <nav className="hidden lg:flex items-center gap-6 text-sm font-semibold">
+                            <nav className="hidden xl:flex items-center gap-6 text-sm font-semibold">
                                 <Link
                                     href={route('products.index')}
                                     className="text-slate-600 hover:text-indigo-600 transition-colors"
@@ -74,12 +75,12 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                         </div>
 
                         {/* Middle/Right: Search Spotlight Trigger & Auth Area */}
-                        <div className="flex items-center gap-3 sm:gap-4">
+                        <div className="flex items-center gap-1.5 sm:gap-4">
                             {/* Command Palette Trigger Button */}
                             <button
                                 type="button"
                                 onClick={() => setCommandPaletteOpen(true)}
-                                className="hidden sm:flex items-center justify-between gap-3 w-56 md:w-64 h-11 px-3.5 rounded-xl bg-slate-100 hover:bg-slate-200/70 border border-slate-200 text-slate-500 text-xs font-medium transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                                className="hidden xl:flex items-center justify-between gap-3 w-40 h-11 px-3.5 rounded-xl bg-slate-100 hover:bg-slate-200/70 border border-slate-200 text-slate-500 text-xs font-medium transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                             >
                                 <span className="flex items-center gap-2 truncate">
                                     <span className="material-symbols-outlined text-slate-400 text-[18px]">search</span>
@@ -94,7 +95,7 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                             <button
                                 type="button"
                                 onClick={() => setCommandPaletteOpen(true)}
-                                className="sm:hidden p-2.5 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 focus:outline-none"
+                                className="xl:hidden p-2.5 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 focus:outline-none"
                                 aria-label="Cari"
                             >
                                 <span className="material-symbols-outlined text-[20px]">search</span>
@@ -103,14 +104,6 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                             {/* User Authentication Options */}
                             {auth.user ? (
                                 <div className="flex items-center gap-3">
-                                    <Link
-                                        href={route('customer.library')}
-                                        className="relative hidden md:inline-flex items-center gap-1.5 px-3.5 h-11 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-700 font-bold text-xs hover:bg-indigo-100 transition-colors"
-                                    >
-                                        <span className="material-symbols-outlined text-[18px]">auto_stories</span>
-                                        <span>Rak Buku</span>
-                                    </Link>
-
                                     <Dropdown>
                                         <Dropdown.Trigger>
                                             <button
@@ -120,7 +113,7 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                                                 <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-indigo-600 to-indigo-800 text-white font-bold flex items-center justify-center text-xs shadow-sm">
                                                     {auth.user.name.charAt(0).toUpperCase()}
                                                 </div>
-                                                <span className="hidden sm:inline max-w-[120px] truncate">
+                                                <span className="hidden 2xl:inline max-w-[120px] truncate">
                                                     {auth.user.name}
                                                 </span>
                                                 <span className="material-symbols-outlined text-slate-400 text-[18px]">
@@ -178,7 +171,7 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                                 <div className="flex items-center gap-2 sm:gap-3">
                                     <Link
                                         href={route('login')}
-                                        className="px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors"
+                                        className="hidden sm:inline-flex px-3.5 py-2 rounded-xl text-xs font-bold text-slate-700 hover:text-indigo-600 hover:bg-slate-100 transition-colors"
                                     >
                                         Masuk
                                     </Link>
@@ -195,7 +188,7 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                             <button
                                 type="button"
                                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                                className="lg:hidden p-2 rounded-xl text-slate-500 hover:bg-slate-100 focus:outline-none"
+                                className="xl:hidden p-2 rounded-xl text-slate-500 hover:bg-slate-100 focus:outline-none"
                             >
                                 <span className="material-symbols-outlined text-[24px]">
                                     {mobileMenuOpen ? 'close' : 'menu'}
@@ -207,7 +200,12 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
 
                 {/* Mobile Drawer Navigation */}
                 {mobileMenuOpen && (
-                    <div className="lg:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+                    <div className="xl:hidden border-t border-slate-200 bg-white px-4 pt-3 pb-6 space-y-2">
+                        {!auth.user && (
+                            <Link href={route('login')} className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600">
+                                Masuk
+                            </Link>
+                        )}
                         <Link
                             href={route('products.index')}
                             className="block px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-indigo-50 hover:text-indigo-600"
@@ -316,21 +314,6 @@ export default function StoreLayout({ children }: PropsWithChildren<StoreLayoutP
                                 <li>
                                     <Link href={route('products.index')} className="hover:text-indigo-600 transition-colors">
                                         Semua Koleksi
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href={route('products.index', { category: 'programming-tech' })} className="hover:text-indigo-600 transition-colors">
-                                        Pemrograman &amp; IT
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href={route('products.index', { category: 'business-startup' })} className="hover:text-indigo-600 transition-colors">
-                                        Bisnis &amp; Startup
-                                    </Link>
-                                </li>
-                                <li>
-                                    <Link href={route('products.index', { category: 'self-development' })} className="hover:text-indigo-600 transition-colors">
-                                        Pengembangan Diri
                                     </Link>
                                 </li>
                             </ul>

@@ -1,0 +1,47 @@
+- link:
+  - /url: /
+- link "arrow_back Katalog Publik":
+  - /url: /
+  - generic: arrow_back
+  - generic: Katalog Publik
+- generic: verified_user
+- generic: Berkas Digital & Akses Unduh 30 Hari
+- heading "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda." [level=1]
+- paragraph: Akses unduh 30 hari sejak pembayaran, maksimal 5 unduhan per buku, melalui tautan berkas privat berdurasi 15 menit.
+- generic: star
+- generic: star
+- generic: star
+- generic: star
+- generic: star
+- generic: Pembaca Terverifikasi
+- blockquote: “Bookil mengubah cara tim engineering kami mengakses literatur teknis mendalam tanpa repot DRM kaku. Ekosistem pembelian langsung dan unduhan presigned-nya luar biasa andal.”
+- generic: HW
+- heading "Hendra Wijaya" [level=4]
+- paragraph: Principal Software Architect
+- generic: lock
+- generic: 256-Bit SSL Encryption
+- generic: check_circle
+- generic: Midtrans Verified Gateway
+- heading "Masuk ke Akun Anda" [level=2]
+- paragraph: Lanjutkan akses rak buku digital dan riwayat lisensi Anda.
+- generic: Masuk Akun
+- link "Daftar Baru":
+  - /url: http://127.0.0.1:8002/register
+- generic: Alamat Email
+- generic: mail
+- textbox "nama@email.com"
+- generic: Kata Sandi
+- link "Lupa kata sandi?":
+  - /url: http://127.0.0.1:8002/forgot-password
+- generic: lock
+- textbox "••••••••"
+- button "visibility":
+  - generic: visibility
+- checkbox "Ingat perangkat saya"
+- generic: Ingat perangkat saya
+- button "Masuk ke Bookil arrow_forward":
+  - generic: Masuk ke Bookil
+  - generic: arrow_forward
+- text: Belum memiliki akun Bookil?
+- link "Daftar akun sekarang":
+  - /url: http://127.0.0.1:8002/register

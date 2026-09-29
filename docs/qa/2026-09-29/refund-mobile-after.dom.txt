@@ -1,0 +1,104 @@
+- banner:
+  - link:
+    - /url: /
+  - button "Cari":
+    - generic: search
+  - link "Daftar Gratis":
+    - /url: http://127.0.0.1:8002/register
+  - button "menu":
+    - generic: menu
+- main:
+  - generic: currency_exchange
+  - text: STANDAR REFUND PRODUK DIGITAL
+  - generic: Kebijakan Perlindungan Konsumen & Zero-DRM
+  - heading "Kebijakan Pengembalian Dana (Refund)" [level=1]
+  - paragraph: Pedoman transparan mengenai ketentuan pembatalan pesanan, pembayaran ganda, dan garansi berkas digital e-book di platform Bookil.
+  - button "print Cetak Dokumen":
+    - generic: print
+    - generic: Cetak Dokumen
+  - link "gavel Syarat & Ketentuan":
+    - /url: /terms
+    - generic: gavel
+    - generic: Syarat & Ketentuan
+  - link "lock Kebijakan Privasi":
+    - /url: /privacy
+    - generic: lock
+    - generic: Kebijakan Privasi
+  - link "currency_exchange Kebijakan Pengembalian Dana (Refund)":
+    - /url: /refund-policy
+    - generic: currency_exchange
+    - generic: Kebijakan Pengembalian Dana (Refund)
+  - complementary:
+    - heading "Ketentuan Refund" [level=3]
+    - list:
+      - link "1. Sifat Produk Digital":
+        - /url: "#r-1"
+      - link "2. Kasus yang Memenuhi Syarat Refund":
+        - /url: "#r-2"
+      - link "3. Prosedur Pengajuan Refund":
+        - /url: "#r-3"
+      - link "4. Waktu Proses Pengembalian":
+        - /url: "#r-4"
+  - article:
+    - paragraph: Akses unduh 30 hari sejak pembayaran, maksimal 5 unduhan per buku. Refund atau chargeback mencabut akses unduh pesanan terkait.
+    - heading "1. Sifat Produk Digital & Akses Instan" [level=2]
+    - paragraph: Karena produk yang dijual di Bookil berbentuk barang digital tak berwujud (intangible digital goods) yang dapat diunduh dan disimpan seketika setelah pembayaran terverifikasi, seluruh transaksi penjualan pada prinsipnya bersifat final dan tidak dapat dibatalkan secara sepihak.
+    - heading "2. Kasus yang Memenuhi Syarat Refund" [level=2]
+    - paragraph: "Kami menjamin kepuasan dan integritas transaksi Anda. Pengembalian dana penuh (100% refund) disetujui dalam kondisi berikut:"
+    - list:
+      - strong: "Pembayaran Ganda (Double Billing):"
+      - text: Sistem memotong saldo lebih dari satu kali untuk nomor faktur yang sama karena anomali jaringan.
+      - strong: "Berkas Rusak / Korup (Unrecoverable Corrupted Asset):"
+      - text: Berkas digital yang diunduh terbukti rusak, tidak dapat dibuka di perangkat standar, dan tim teknis kami tidak dapat menyediakan salinan pengganti dalam waktu 2x24 jam.
+      - strong: "Salah Judul / Ketidaksesuaian Materi:"
+      - text: Berkas yang dikirimkan terbukti secara substansial berbeda dengan halaman katalog produk.
+    - heading "3. Prosedur Pengajuan Refund" [level=2]
+    - paragraph:
+      - text: Untuk mengajukan klaim pengembalian dana, kirimkan email ke
+      - code: support@bookil.com
+      - text: dalam kurun waktu
+      - strong: 7 (tujuh) hari kalender
+      - text: "sejak tanggal transaksi dengan menyertakan:"
+    - list:
+      - text: "Nomor Pesanan / Faktur (format:"
+      - code: BK-[ULID]
+      - text: ).
+      - listitem: Alamat email akun Bookil yang digunakan saat checkout.
+      - listitem: Bukti screenshot kendala atau bukti mutasi perbankan untuk kasus pembayaran ganda.
+    - heading "4. Waktu Proses Pengembalian Dana" [level=2]
+    - paragraph: "Setelah klaim diverifikasi dan disetujui oleh tim finance kami:"
+    - list:
+      - strong: "QRIS & E-Wallet:"
+      - text: Saldo dikembalikan dalam 1 - 3 hari kerja.
+      - strong: "Virtual Account & Transfer Bank:"
+      - text: Dana ditransfer balik ke rekening asal dalam 1 - 2 hari kerja.
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

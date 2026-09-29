@@ -1,0 +1,99 @@
+- banner:
+  - link:
+    - /url: /
+  - navigation:
+    - link "Jelajahi Katalog":
+      - /url: http://127.0.0.1:8002/
+    - link "Koleksi Unggulan":
+      - /url: /#katalog
+    - link "Bantuan & FAQ":
+      - /url: /faq
+    - link "local_library Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+      - generic: local_library
+      - generic: Perpustakaan Saya
+  - button "search Cari e-book, topik... ⌘K":
+    - generic: search
+    - generic: Cari e-book, topik...
+    - generic: ⌘K
+  - link "auto_stories Rak Buku":
+    - /url: http://127.0.0.1:8002/library
+    - generic: auto_stories
+    - generic: Rak Buku
+  - button "Q QA Customer A arrow_drop_down":
+    - generic: Q
+    - generic: QA Customer A
+    - generic: arrow_drop_down
+- main:
+  - navigation:
+    - link "Beranda":
+      - /url: /
+    - generic: /
+    - link "Riwayat Pesanan":
+      - /url: http://127.0.0.1:8002/dashboard
+    - generic: /
+    - generic: BK-01M3P6Z0F6BRX68C5J33TWM614
+  - heading "Faktur Pesanan Resmi" [level=1]
+  - button "print Cetak Salinan":
+    - generic: print
+    - generic: Cetak Salinan
+  - text: Nomor Transaksi
+  - generic: BK-01M3P6Z0F6BRX68C5J33TWM614
+  - button "content_copy":
+    - generic: content_copy
+  - paragraph: Dibuat pada 29 September 2026 pukul 16.12 WIB
+  - generic: Kedaluwarsa
+  - heading "Rincian Pembelian" [level=3]
+  - generic: auto_stories
+  - generic: QA Digital Book 06
+  - generic: pdf
+  - heading "QA Digital Book 06" [level=4]
+  - paragraph: "Penulis: QA Author Beta"
+  - generic: pdf
+  - generic: verified
+  - text: Lisensi Penuh
+  - generic: Rp 55.000
+  - generic: Subtotal Pembelian
+  - generic: Rp 55.000
+  - generic: Biaya Gateway (Midtrans Snap)
+  - generic: Rp 0 (Gratis)
+  - generic: PPN Digital Indonesia (11%)
+  - generic: Termasuk
+  - generic: "Total Pembayaran:"
+  - generic: Rp 55.000
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+    - link "Pemrograman & IT":
+      - /url: http://127.0.0.1:8002/?category=programming-tech
+    - link "Bisnis & Startup":
+      - /url: http://127.0.0.1:8002/?category=business-startup
+    - link "Pengembangan Diri":
+      - /url: http://127.0.0.1:8002/?category=self-development
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

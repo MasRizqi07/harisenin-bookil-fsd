@@ -1,0 +1,51 @@
+
+> build
+> tsc && vite build
+
+vite v6.4.3 building for production...
+transforming...
+✓ 1036 modules transformed.
+rendering chunks...
+computing gzip size...
+public/build/manifest.json                                     14.00 kB │ gzip:   1.51 kB
+public/build/assets/app-CEP842_i.css                           89.31 kB │ gzip:  14.20 kB
+public/build/assets/EntitlementNotice-B-rPxIec.js               0.17 kB │ gzip:   0.16 kB
+public/build/assets/TextInput-Dh6dOu9Z.js                       0.76 kB │ gzip:   0.45 kB
+public/build/assets/GuestLayout-C7rQCKRQ.js                     0.96 kB │ gzip:   0.54 kB
+public/build/assets/ConfirmPassword-D7P80s2s.js                 1.08 kB │ gzip:   0.60 kB
+public/build/assets/BookCoverImage-DHS6jy7_.js                  1.09 kB │ gzip:   0.63 kB
+public/build/assets/VerifyEmail-q6f_KS7W.js                     1.21 kB │ gzip:   0.68 kB
+public/build/assets/ResetPassword-BfuQ4HJf.js                   1.68 kB │ gzip:   0.66 kB
+public/build/assets/StatusBadge-CoJs-Fxn.js                     1.70 kB │ gzip:   0.54 kB
+public/build/assets/ApplicationLogo-UMHYxHU8.js                 1.72 kB │ gzip:   0.67 kB
+public/build/assets/ForgotPassword-C54z7Qmx.js                  2.34 kB │ gzip:   1.06 kB
+public/build/assets/UpdateProfileInformationForm-BORPutWc.js    3.77 kB │ gzip:   1.42 kB
+public/build/assets/AuthLayout-yUqlXr_p.js                      4.41 kB │ gzip:   1.51 kB
+public/build/assets/UpdatePasswordForm-B_zaz1-2.js              4.56 kB │ gzip:   1.42 kB
+public/build/assets/Login-CictK-oC.js                           4.74 kB │ gzip:   1.62 kB
+public/build/assets/Register-CJSgeKcm.js                        5.31 kB │ gzip:   1.54 kB
+public/build/assets/Privacy-BgTvcSNP.js                         6.35 kB │ gzip:   1.98 kB
+public/build/assets/ErrorPage-Cy1x60s-.js                       6.52 kB │ gzip:   2.46 kB
+public/build/assets/AdminLayout-DgxKF_7L.js                     6.57 kB │ gzip:   1.91 kB
+public/build/assets/Index-R2KaZtfe.js                           6.66 kB │ gzip:   2.26 kB
+public/build/assets/Index-BkOWRgOn.js                           7.07 kB │ gzip:   2.10 kB
+public/build/assets/InstantCheckoutModal-B0zU4Muv.js            7.25 kB │ gzip:   2.27 kB
+public/build/assets/Index-Wo1HB8gy.js                           7.28 kB │ gzip:   2.47 kB
+public/build/assets/RefundPolicy-M-NlF--7.js                    7.93 kB │ gzip:   2.49 kB
+public/build/assets/Edit-CS3rYPjt.js                            8.43 kB │ gzip:   2.20 kB
+public/build/assets/Terms-BBgpqrQ4.js                           9.44 kB │ gzip:   2.83 kB
+public/build/assets/CommandPalette-l1gGHXa9.js                  9.93 kB │ gzip:   3.21 kB
+public/build/assets/Show-DMHpU-Mf.js                           10.30 kB │ gzip:   2.94 kB
+public/build/assets/Show-DF4wYVlZ.js                           10.84 kB │ gzip:   3.05 kB
+public/build/assets/Form-CxnOcr4Q.js                           11.13 kB │ gzip:   2.88 kB
+public/build/assets/Dashboard-C7gX71FP.js                      11.80 kB │ gzip:   3.04 kB
+public/build/assets/Dashboard-CVmS8phM.js                      11.83 kB │ gzip:   3.09 kB
+public/build/assets/Show-Bo9_7v3W.js                           12.36 kB │ gzip:   3.06 kB
+public/build/assets/StoreLayout-C4iQ1Cvs.js                    13.57 kB │ gzip:   3.33 kB
+public/build/assets/Index-DwrPIEsc.js                          13.72 kB │ gzip:   3.82 kB
+public/build/assets/transition-Ch9XUemw.js                     14.94 kB │ gzip:   5.92 kB
+public/build/assets/Faq-VkAV49KH.js                            16.91 kB │ gzip:   4.77 kB
+public/build/assets/Welcome-C09ztJfg.js                        19.29 kB │ gzip:   5.86 kB
+public/build/assets/DeleteUserForm-Dyfz6fFj.js                 34.81 kB │ gzip:  12.57 kB
+public/build/assets/app-sZfrJ-xo.js                           440.86 kB │ gzip: 143.37 kB
+✓ built in 5.03s

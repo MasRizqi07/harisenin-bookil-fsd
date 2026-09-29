@@ -1,0 +1,11 @@
+BAD MIME HTTP 422
+{"message":"The digital file field must be a file of type: pdf, epub, zip. (and 1 more error)","errors":{"digital_file":["The digital file field must be a file of type: pdf, epub, zip.","Format berkas harus sesuai dengan format yang dipilih."]}}
+MISSING FILE HTTP 422
+{"message":"The digital file field is required.","errors":{"digital_file":["The digital file field is required."]}}
+VALID UPLOAD HTTP 302
+Location: http://127.0.0.1:8002/admin/products
+Product ID: 22
+Private file exists: yes
+File size: 218
+Published: yes
+COVER HTTP 200 image/png

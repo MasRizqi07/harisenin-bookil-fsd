@@ -1,0 +1,86 @@
+- banner:
+  - link:
+    - /url: /
+  - button "Cari":
+    - generic: search
+  - button "Q arrow_drop_down":
+    - generic: Q
+    - generic: arrow_drop_down
+  - button "menu":
+    - generic: menu
+- main:
+  - navigation:
+    - link "home Beranda":
+      - /url: http://127.0.0.1:8002/
+      - generic: home
+      - generic: Beranda
+    - generic: /
+    - generic: Pengaturan Akun & Keamanan
+  - generic: Koneksi Aman TLS 1.3 Terverifikasi
+  - generic: Q
+  - heading "QA Customer A Updated" [level=1]
+  - generic: verified
+  - text: Bookil Member
+  - generic: customer-a@example.test
+  - generic: check_circle
+  - text: Email Terverifikasi
+  - generic: "Peran: Customer"
+  - link "auto_stories Buka Perpustakaan Saya":
+    - /url: http://127.0.0.1:8002/dashboard
+    - generic: auto_stories
+    - generic: Buka Perpustakaan Saya
+  - tablist:
+    - tab "badge Informasi Profil":
+      - generic: badge
+      - generic: Informasi Profil
+    - tab "shield Keamanan & Kata Sandi":
+      - generic: shield
+      - generic: Keamanan & Kata Sandi
+    - tab "devices Sesi & Hapus Akun":
+      - generic: devices
+      - generic: Sesi & Hapus Akun
+    - link "receipt_long Riwayat Transaksi & Faktur":
+      - /url: http://127.0.0.1:8002/dashboard
+      - generic: receipt_long
+      - generic: Riwayat Transaksi & Faktur
+  - heading "Data Diri & Kontak Akun" [level=2]
+  - paragraph: Perbarui nama identitas lisensi e-book dan alamat email penerimaan faktur digital.
+  - generic: Nama Lengkap
+  - generic: person
+  - textbox "Nama Lengkap" [active]: QA Customer A Updated
+  - generic: Alamat Email
+  - generic: mail
+  - textbox "Alamat Email": <redacted>
+  - button "save Simpan Perubahan":
+    - generic: save
+    - generic: Simpan Perubahan
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

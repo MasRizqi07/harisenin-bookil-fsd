@@ -53,6 +53,8 @@ class CustomerOrderController extends Controller
             }
         }
 
+        $order->loadMissing(['items.product.category', 'items.downloadToken']);
+
         return Inertia::render('Orders/Show', [
             'order' => $order,
             'snapToken' => $snapToken,

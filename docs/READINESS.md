@@ -4,6 +4,8 @@ Branch: `session-1`. Evidence snapshot SHA: `68fd094fd9d8a6698207737ccc7fdfbd7d2
 
 This document separates code evidence from owner-run integration and operational acceptance. It does not authorize deployment. The final evidence report supplies the documentation HEAD, origin parity and completed CI result for that exact SHA.
 
+For the subsequent local browser review and its current regression counts, see [Browser QA evidence — 2026-09-29](qa/2026-09-29/REPORT.md). That report distinguishes HTTP/test results from the remaining Chrome download and file-picker denials. The Phase F counts below remain historical evidence; they do not describe the later browser QA checkpoint.
+
 ## Verified locally
 
 - Dedicated PostgreSQL 18.4 test database on PHP 8.5: full `php artisan test --compact --colors=never` produced **197 passed (1184 assertions)** after Phase F. The suite ran on real PostgreSQL, not SQLite.

@@ -43,6 +43,7 @@ export default function AdminLayout({ title, children }: PropsWithChildren<Admin
             {/* Command Palette */}
             <CommandPalette
                 isOpen={commandPaletteOpen}
+                onOpen={() => setCommandPaletteOpen(true)}
                 onClose={() => setCommandPaletteOpen(false)}
             />
 
@@ -120,32 +121,8 @@ export default function AdminLayout({ title, children }: PropsWithChildren<Admin
                     </div>
                 </div>
 
-                {/* Health Metrics & Footer User */}
+                {/* Footer User */}
                 <div>
-                    <div className="p-3.5 m-3 bg-slate-900/80 border border-slate-800 rounded-2xl">
-                        <div className="flex items-center justify-between mb-2">
-                            <span className="text-[10px] uppercase tracking-wider text-slate-400 font-bold">Health Metrics</span>
-                            <span className="flex h-2 w-2 relative">
-                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                            </span>
-                        </div>
-                        <div className="space-y-1 text-[11px] text-slate-400">
-                            <div className="flex items-center justify-between">
-                                <span>Database Cluster</span>
-                                <span className="font-semibold text-emerald-400">99.98%</span>
-                            </div>
-                            <div className="flex items-center justify-between">
-                                <span>Midtrans Webhook</span>
-                                <span className="font-semibold text-emerald-400">SHA-512 OK</span>
-                            </div>
-                            <div className="flex items-center justify-between">
-                                <span>Private S3 Vault</span>
-                                <span className="font-semibold text-emerald-400">Synced</span>
-                            </div>
-                        </div>
-                    </div>
-
                     <div className="p-4 border-t border-slate-800 bg-slate-950/80">
                         <div className="flex items-center justify-between">
                             <div className="flex items-center space-x-3 truncate">
@@ -204,7 +181,7 @@ export default function AdminLayout({ title, children }: PropsWithChildren<Admin
 
                         <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[11px] font-bold text-emerald-400">
                             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                            <span>Production Live</span>
+                            <span>Admin Console</span>
                         </div>
                     </div>
                 </header>

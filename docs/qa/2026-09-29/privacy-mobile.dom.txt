@@ -1,0 +1,89 @@
+- banner:
+  - link:
+    - /url: /
+  - button "Cari":
+    - generic: search
+  - link "Masuk":
+    - /url: http://127.0.0.1:8002/login
+  - link "Daftar Gratis":
+    - /url: http://127.0.0.1:8002/register
+  - button "menu":
+    - generic: menu
+- main:
+  - generic: security
+  - text: KEPATUHAN UU PDP NO. 27 TAHUN 2022
+  - generic: Standar Privasi & Perlindungan Data Pribadi
+  - heading "Kebijakan Privasi Data" [level=1]
+  - paragraph: Transparansi menyeluruh mengenai bagaimana kami mengumpulkan, menyimpan, dan melindungi informasi identitas pribadi serta data transaksi Anda di Bookil.
+  - button "print Cetak Dokumen":
+    - generic: print
+    - generic: Cetak Dokumen
+  - link "gavel Syarat & Ketentuan":
+    - /url: /terms
+    - generic: gavel
+    - generic: Syarat & Ketentuan
+  - link "lock Kebijakan Privasi":
+    - /url: /privacy
+    - generic: lock
+    - generic: Kebijakan Privasi
+  - link "currency_exchange Kebijakan Pengembalian Dana (Refund)":
+    - /url: /refund-policy
+    - generic: currency_exchange
+    - generic: Kebijakan Pengembalian Dana (Refund)
+  - complementary:
+    - heading "Topik Privasi" [level=3]
+    - list:
+      - link "1. Data yang Kami Kumpulkan":
+        - /url: "#p-1"
+      - link "2. Keamanan Pembayaran":
+        - /url: "#p-2"
+      - link "3. Penggunaan Cookie & Sesi":
+        - /url: "#p-3"
+      - link "4. Hak Akses & Penghapusan":
+        - /url: "#p-4"
+  - article:
+    - heading "1. Data yang Kami Kumpulkan" [level=2]
+    - paragraph: Sistem menyimpan nama, alamat email, riwayat pesanan dan notifikasi pembayaran, serta alamat IP dan hasil percobaan unduhan untuk audit akses.
+    - paragraph: Data Anda tidak akan pernah dijual, disewakan, atau dibagikan kepada pengiklan pihak ketiga (Zero Advertising Tracking).
+    - heading "2. Keamanan Pembayaran" [level=2]
+    - paragraph: Seluruh pembayaran diproses melalui saluran aman PCI-DSS Level 1 oleh PT Midtrans. Bookil tidak pernah melihat, memproses, atau menyimpan informasi kartu pembayaran atau PIN Anda di basis data kami.
+    - heading "3. Penggunaan Cookie & Sesi" [level=2]
+    - paragraph: Kami hanya menggunakan cookie esensial HTTP-Only dan CSRF protection token yang dibutuhkan untuk otentikasi sesi Anda saat login dan menjaga keamanan transaksi checkout.
+    - heading "4. Hak Akses & Penghapusan Data" [level=2]
+    - paragraph: Sesuai dengan UU Pelindungan Data Pribadi (UU PDP No. 27/2022), Anda memiliki hak penuh untuk memperbarui data diri Anda atau mengajukan penghapusan akun permanen kapan saja melalui menu Pengaturan Akun.
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+    - link "Pemrograman & IT":
+      - /url: http://127.0.0.1:8002/?category=programming-tech
+    - link "Bisnis & Startup":
+      - /url: http://127.0.0.1:8002/?category=business-startup
+    - link "Pengembangan Diri":
+      - /url: http://127.0.0.1:8002/?category=self-development
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

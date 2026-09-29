@@ -1,0 +1,70 @@
+- banner:
+  - link:
+    - /url: /
+  - button "Cari":
+    - generic: search
+  - link "Masuk":
+    - /url: http://127.0.0.1:8002/login
+  - link "Daftar Gratis":
+    - /url: http://127.0.0.1:8002/register
+  - button "menu":
+    - generic: menu
+- main:
+  - generic: tune
+  - generic: "Uji Coba Kode Status Galat:"
+  - button "404"
+  - button "403"
+  - button "410"
+  - button "429"
+  - button "500"
+  - generic: lock
+  - generic: "403"
+  - generic: HTTP Error Code
+  - generic: Izin Ditolak (Forbidden)
+  - heading "Akses Lisensi Terkunci" [level=1]
+  - paragraph: Anda belum memiliki lisensi kepemilikan yang sah untuk mengakses berkas master ini, atau Anda perlu masuk ke akun yang melakukan pembelian.
+  - generic: info
+  - paragraph: Pastikan Anda telah login menggunakan akun email yang terdaftar pada saat proses checkout.
+  - link "arrow_back Masuk ke Akun Anda":
+    - /url: http://127.0.0.1:8002/login
+    - generic: arrow_back
+    - generic: Masuk ke Akun Anda
+  - link "Jelajahi Katalog":
+    - /url: http://127.0.0.1:8002/
+    - generic: Jelajahi Katalog
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+    - link "Pemrograman & IT":
+      - /url: http://127.0.0.1:8002/?category=programming-tech
+    - link "Bisnis & Startup":
+      - /url: http://127.0.0.1:8002/?category=business-startup
+    - link "Pengembangan Diri":
+      - /url: http://127.0.0.1:8002/?category=self-development
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

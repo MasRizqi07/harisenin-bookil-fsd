@@ -1,0 +1,116 @@
+- banner:
+  - link:
+    - /url: /
+  - button "Cari":
+    - generic: search
+  - button "Q arrow_drop_down":
+    - generic: Q
+    - generic: arrow_drop_down
+  - button "menu":
+    - generic: menu
+- main:
+  - generic: Edisi 2026 Terbaru
+  - generic: Koleksi Terkurasi Praktisi Senior
+  - heading "Buka Pintu Pengetahuan Digital Tanpa Batas." [level=1]
+  - paragraph: Platform e-book arsitektur software, teknologi modern, dan kepemimpinan bisnis terlengkap di Indonesia. Format PDF & EPUB murni, tanpa DRM mengikat, unduh instan ke perangkat Anda.
+  - button "search Cari judul e-book, topik, atau penulis... ⌘K":
+    - generic: search
+    - generic: Cari judul e-book, topik, atau penulis...
+    - generic: ⌘K
+  - link "Jelajahi Koleksi arrow_downward":
+    - /url: "#katalog"
+    - generic: Jelajahi Koleksi
+    - generic: arrow_downward
+  - generic: Editor's Choice
+  - generic: star
+  - text: 4.9 / 5.0
+  - generic: auto_stories
+  - generic: QA Laravel Guide
+  - heading "QA Laravel Guide" [level=3]
+  - paragraph: QA Author Alpha
+  - generic: Rp 30.000
+  - link "Lihat E-Book arrow_forward":
+    - /url: http://127.0.0.1:8002/products/qa-laravel-guide
+    - generic: Lihat E-Book
+    - generic: arrow_forward
+  - generic: group
+  - generic: Bookil
+  - text: Perpustakaan digital pribadi
+  - generic: verified_user
+  - generic: Format Digital
+  - text: Lihat format yang tersedia di tiap produk
+  - generic: bolt
+  - generic: < 2 Detik
+  - text: Akses langsung ke rak digital setelah bayar
+  - generic: Eksplorasi Pustaka
+  - heading "Katalog E-Book Terkurasi" [level=2]
+  - paragraph: Jelajahi produk digital yang tersedia dan lihat detail format serta harganya.
+  - text: Menampilkan
+  - strong: "1"
+  - text: judul tersedia
+  - generic: search
+  - textbox "Saring judul buku, nama penulis, topik...": Laravel
+  - button "close":
+    - generic: close
+  - generic: "Urutkan:"
+  - combobox "Urutkan:":
+    - option "Rilis Terbaru" [selected]
+    - 'option "Harga: Terendah ke Tertinggi"'
+    - 'option "Harga: Tertinggi ke Terendah"'
+  - button "Semua Kategori"
+  - button "Digital Resources"
+  - button "E-Books"
+  - button "QA Browser Category Updated"
+  - button "Templates"
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Laravel Guide" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: E-Books
+  - generic: description
+  - generic: pdf
+  - generic: • 218 Bytes
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Laravel Guide" [level=3]:
+    - link "QA Laravel Guide":
+      - /url: http://127.0.0.1:8002/products/qa-laravel-guide
+  - paragraph: Karya QA Author Alpha
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 30.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

@@ -1,0 +1,87 @@
+- banner:
+  - link:
+    - /url: /
+  - button "Cari":
+    - generic: search
+  - button "Q arrow_drop_down":
+    - generic: Q
+    - generic: arrow_drop_down
+  - button "menu":
+    - generic: menu
+- main:
+  - generic: verified
+  - text: Email Belum Diverifikasi
+  - generic: Bookil Member
+  - heading "Halo, QA Customer B!" [level=1]
+  - paragraph: Akses unduh 30 hari sejak pembayaran, maksimal 5 unduhan per buku. Pantau kuota unduhan, dan kelola faktur pesanan Anda dalam satu konsol aman.
+  - link "add_shopping_cart Tambah Koleksi":
+    - /url: http://127.0.0.1:8002/
+    - generic: add_shopping_cart
+    - generic: Tambah Koleksi
+  - text: Total Buku Dimiliki
+  - generic: "1"
+  - generic: Judul E-Book
+  - generic: auto_stories
+  - text: Unduhan Aktif
+  - generic: "1"
+  - generic: Buku Siap Unduh
+  - generic: download_for_offline
+  - text: Riwayat Pesanan
+  - generic: "1"
+  - generic: Transaksi
+  - generic: receipt_long
+  - button "local_library Rak Buku Digital (1)":
+    - generic: local_library
+    - generic: Rak Buku Digital (1)
+  - button "history Riwayat Transaksi (1)":
+    - generic: history
+    - generic: Riwayat Transaksi (1)
+  - generic: auto_stories
+  - generic: QA Digital Book 07
+  - generic: pdf
+  - generic: pdf • 218 Bytes
+  - heading "QA Digital Book 07" [level=3]
+  - paragraph: QA Author Alpha
+  - text: "Kuota Unduh:"
+  - strong: "0"
+  - text: dari 5
+  - generic: Sisa 5x
+  - generic: schedule
+  - text: "Berlaku hingga:"
+  - generic: 29 Okt 2026
+  - link "Lihat Faktur":
+    - /url: http://127.0.0.1:8002/orders/BK-01M3P6Z0F8EZR1RYWMP40SBQM2
+  - link "download Unduh File":
+    - /url: http://127.0.0.1:8002/downloads/7?expires=1790676715&signature=[REDACTED]
+    - generic: download
+    - generic: Unduh File
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

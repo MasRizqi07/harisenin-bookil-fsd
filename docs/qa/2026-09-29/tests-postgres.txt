@@ -1,0 +1,318 @@
+
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true                                                                                            0.02s  
+
+   PASS  Tests\Feature\Actions\CreateOrderActionTest
+  ✓ it creates an order with server-calculated totals and order items                                            1.17s  
+  ✓ it accepts a simple array of product id integers                                                             0.12s  
+  ✓ it deduplicates items if the same product is sent multiple times                                             0.12s  
+  ✓ it rejects order creation if any product is unpublished                                                      0.11s  
+  ✓ it rejects order creation if any product does not exist                                                      0.09s  
+  ✓ it rejects order creation with empty items                                                                   0.07s  
+
+   PASS  Tests\Feature\Actions\GenerateSecureDownloadActionTest
+  ✓ it issues a private URL and records one granted attempt for a paid owner                                     0.13s  
+  ✓ it rejects a different customer even when they know the purchased item id                                    0.11s  
+  ✓ it rejects an unpaid item even with an active quota record                                                   0.12s  
+  ✓ it rejects an expired entitlement                                                                            0.23s  
+  ✓ it rejects an exhausted quota without incrementing it                                                        0.26s  
+  ✓ it rejects an item without an entitlement record                                                             0.09s  
+  ✓ it does not consume quota when the private asset is missing                                                  0.11s  
+
+   PASS  Tests\Feature\Actions\ProcessPaymentWebhookActionTest
+  ✓ it successfully processes a settlement webhook and updates order to paid                                     0.17s  
+  ✓ it automatically generates download tokens via listener when order settles                                   0.20s  
+  ✓ it rejects webhooks with spoofed or invalid signatures                                                       0.07s  
+  ✓ it is strictly idempotent on repeated settlement webhooks                                                    0.23s  
+  ✓ it maps expire status to expired order status                                                                0.11s  
+  ✓ it maps cancel and deny statuses to failed order status                                                      0.11s  
+  ✓ it rejects a signed notification whose amount differs from the locked order price                            0.09s  
+  ✓ it rejects status tampering despite a valid notification signature                                           0.10s  
+  ✓ it preserves one webhook receipt and one payment on duplicate delivery                                       0.16s  
+  ✓ it revokes an existing entitlement after a gateway-confirmed refund                                          0.13s  
+  ✓ it does not revoke a paid order for a different denied transaction                                           0.14s  
+
+   PASS  Tests\Feature\Admin\AdminCategoryTest
+  ✓ it displays category listing for admin                                                                       0.26s  
+  ✓ it allows admin to store a new category                                                                      0.09s  
+  ✓ it allows admin to update category                                                                           0.08s  
+  ✓ it prevents deletion of category if it contains products                                                     0.09s  
+  ✓ it allows deletion of category if it contains no products                                                    0.08s  
+
+   PASS  Tests\Feature\Admin\AdminDashboardTest
+  ✓ it redirects unauthenticated guests away from admin dashboard                                                0.07s  
+  ✓ it forbids normal customers from accessing admin dashboard with 403                                          0.07s  
+  ✓ it allows admin users to view executive dashboard with analytics and ledger                                  0.13s  
+  ✓ it streams a sales CSV report for administrator                                                              0.10s  
+  ✓ it streams every order across chunks and neutralizes spreadsheet formulas from customer data                 0.37s  
+  ✓ it denies every admin route to a customer who knows its URL                                                  0.20s  
+
+   PASS  Tests\Feature\Admin\AdminOrderTest
+  ✓ it displays orders list on admin order index with filtering                                                  0.18s  
+  ✓ it displays order detail and payment audit ledger for admin                                                  0.20s  
+
+   PASS  Tests\Feature\Admin\AdminProductTest
+  ✓ it displays products list on admin product index                                                             0.11s  
+  ✓ it allows admin to create a new e-book with cover image and digital file                                     0.14s  
+  ✓ it allows admin to toggle publish state of an e-book                                                         0.11s  
+  ✓ it allows admin to update an existing product                                                                0.10s  
+  ✓ it rejects creating a product without a private digital asset                                                0.09s  
+  ✓ it rejects a file whose extension differs from the selected product format                                   0.10s  
+  ✓ it rejects executable uploads as digital products                                                            0.08s  
+  ✓ it blocks publication when the private asset is missing                                                      0.21s  
+  ✓ it does not allow replacing a private asset after a customer has purchased it                                0.12s  
+  ✓ it prevents deletion of products that have been purchased by customers                                       0.20s  
+  ✓ it allows deletion of products with no transaction history                                                   0.09s  
+
+   PASS  Tests\Feature\Auth\AuthenticationTest
+  ✓ login screen can be rendered                                                                                 0.08s  
+  ✓ users can authenticate using the login screen                                                                0.08s  
+  ✓ users can not authenticate with invalid password                                                             0.31s  
+  ✓ users can logout                                                                                             0.10s  
+
+   PASS  Tests\Feature\Auth\EmailVerificationTest
+  ✓ email verification screen can be rendered                                                                    0.20s  
+  ✓ email can be verified                                                                                        0.09s  
+  ✓ email is not verified with invalid hash                                                                      0.08s  
+
+   PASS  Tests\Feature\Auth\PasswordConfirmationTest
+  ✓ confirm password screen can be rendered                                                                      0.08s  
+  ✓ password can be confirmed                                                                                    0.07s  
+  ✓ password is not confirmed with invalid password                                                              0.30s  
+
+   PASS  Tests\Feature\Auth\PasswordResetTest
+  ✓ reset password link screen can be rendered                                                                   0.10s  
+  ✓ reset password link can be requested                                                                         0.27s  
+  ✓ reset password screen can be rendered                                                                        0.30s  
+  ✓ password can be reset with valid token                                                                       0.33s  
+
+   PASS  Tests\Feature\Auth\PasswordUpdateTest
+  ✓ password can be updated                                                                                      0.10s  
+  ✓ correct password must be provided to update password                                                         0.09s  
+
+   PASS  Tests\Feature\Auth\RegistrationTest
+  ✓ registration screen can be rendered                                                                          0.08s  
+  ✓ new users can register                                                                                       0.17s  
+
+   PASS  Tests\Feature\BookilConstraintsTest
+  ✓ it enforces unique business identifiers with dataset "category slug"                                         0.09s  
+  ✓ it enforces unique business identifiers with dataset "product slug"                                          0.09s  
+  ✓ it enforces unique business identifiers with dataset "order number"                                          0.08s  
+  ✓ it enforces unique business identifiers with dataset "gateway transaction"                                   0.09s  
+  ✓ it allows only one copy of a digital product per order                                                       0.22s  
+  ✓ it keeps one quota record per purchased item                                                                 0.10s  
+  ✓ it rejects orphan foreign keys with dataset "product category"                                               0.07s  
+  ✓ it rejects orphan foreign keys with dataset "order customer"                                                 0.07s  
+  ✓ it rejects orphan foreign keys with dataset "item order"                                                     0.10s  
+  ✓ it rejects orphan foreign keys with dataset "payment order"                                                  0.09s  
+  ✓ it rejects orphan foreign keys with dataset "token item"                                                     0.25s  
+  ✓ it rejects an orphan product even through direct database writes                                             0.08s  
+  ✓ it protects referenced catalog and financial records from deletion with ('category')                         0.09s  
+  ✓ it protects referenced catalog and financial records from deletion with ('product')                          0.11s  
+  ✓ it protects referenced catalog and financial records from deletion with ('user')                             0.11s  
+  ✓ it protects orders that have gateway transactions                                                            0.11s  
+  ✓ it cascades order deletion to its items and tokens                                                           0.15s  
+  ✓ it cascades item deletion to its token                                                                       0.12s  
+  ✓ it applies safe database defaults without factory defaults                                                   0.10s  
+  ✓ it enforces status enums at the database boundary with dataset "user role"                                   0.10s  
+  ✓ it enforces status enums at the database boundary with dataset "order status"                                0.10s  
+  ✓ it enforces status enums at the database boundary with dataset "payment status"                              0.10s  
+  ✓ it enforces status enums at the database boundary with dataset "file type"                                   0.11s  
+
+   PASS  Tests\Feature\BookilModelsTest
+  ✓ it persists customer roles by default and hashes passwords                                                   0.12s  
+  ✓ it rejects privilege escalation through mass assignment                                                      0.19s  
+  ✓ it casts all monetary values to fixed decimal strings                                                        0.10s  
+  ✓ it casts order statuses after a database round trip with (App\Enums\OrderStatus Enum (PENDING, 'pending'))   0.08s  
+  ✓ it casts order statuses after a database round trip with (App\Enums\OrderStatus Enum (PAID, 'paid'))         0.08s  
+  ✓ it casts order statuses after a database round trip with (App\Enums\OrderStatus Enum (FAILED, 'failed'))     0.10s  
+  ✓ it casts order statuses after a database round trip with (App\Enums\OrderStatus Enum (EXPIRED, 'expired'))   0.09s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (PENDING, 'pending… 0.11s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (CAPTURE, 'capture… 0.14s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (SETTLEMENT, 'sett… 0.11s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (DENY, 'deny'))     0.10s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (CANCEL, 'cancel')… 0.10s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (EXPIRE, 'expire')… 0.10s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (FAILURE, 'failure… 0.08s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (REFUND, 'refund')… 0.08s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (CHARGEBACK, 'char… 0.12s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (PARTIAL_REFUND, '… 0.08s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (PARTIAL_CHARGEBAC… 0.22s  
+  ✓ it casts gateway statuses after a database round trip with (App\Enums\PaymentStatus Enum (AUTHORIZE, 'autho… 0.14s  
+  ✓ it casts digital file types after a database round trip with (App\Enums\FileType Enum (PDF, 'pdf'))          0.15s  
+  ✓ it casts digital file types after a database round trip with (App\Enums\FileType Enum (EPUB, 'epub'))        0.09s  
+  ✓ it casts digital file types after a database round trip with (App\Enums\FileType Enum (ZIP, 'zip'))          0.10s  
+  ✓ it casts booleans, JSON, counters and immutable timestamps                                                   0.11s  
+  ✓ it does not serialize private asset paths or gateway payloads                                                0.09s  
+  ✓ it loads the purchase graph explicitly in both directions                                                    0.13s  
+  ✓ it retains the purchased price when the catalog price changes                                                0.11s  
+  ✓ it enables all Eloquent strictness safeguards                                                                0.21s  
+  ✓ it seeds categories idempotently without creating accounts or fictional assets                               0.14s  
+PASS APP_ENV
+PASS APP_DEBUG
+PASS APP_URL
+PASS MIDTRANS_SERVER_KEY
+PASS MIDTRANS_IS_PRODUCTION
+PASS PRIVATE_DISK
+PASS BOOKIL_PAYMENT_SIMULATOR_ENABLED
+PASS MAIL_MAILER
+PASS TRUSTED_PROXIES
+PREFLIGHT_REJECTED=FAIL APP_DEBUG EXIT=1
+PREFLIGHT_REJECTED=FAIL APP_ENV EXIT=1
+PREFLIGHT_REJECTED=FAIL APP_URL EXIT=1
+PREFLIGHT_REJECTED=FAIL MIDTRANS_SERVER_KEY EXIT=1
+PREFLIGHT_REJECTED=FAIL MIDTRANS_IS_PRODUCTION EXIT=1
+PREFLIGHT_REJECTED=FAIL PRIVATE_DISK EXIT=1
+PREFLIGHT_REJECTED=FAIL BOOKIL_PAYMENT_SIMULATOR_ENABLED EXIT=1
+PREFLIGHT_REJECTED=FAIL MAIL_MAILER EXIT=1
+PREFLIGHT_REJECTED=FAIL MAIL_MAILER EXIT=1
+PREFLIGHT_REJECTED=WARN TRUSTED_PROXIES EXIT=1
+PREFLIGHT_REJECTED=WARN TRUSTED_PROXIES EXIT=1
+
+   PASS  Tests\Feature\BookilPreflightTest
+  ✓ it passes the synthetic deployment profile without printing its secret value                                 0.23s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "debug"                                0.08s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "environment"                          0.17s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "URL scheme"                           0.08s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "missing key"                          0.06s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "sandbox mode"                         0.07s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "local storage"                        0.07s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "simulator"                            0.08s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "log mailer"                           0.18s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "array mailer"                         0.07s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "missing proxies"                      0.10s  
+  ✓ it fails preflight for each incorrect deployment setting with dataset "wildcard proxy"                       0.10s  
+RECONCILE=pending->paid->paid PAYMENTS=1 PAID_EVENTS=1 STATUS_API_REQUESTS=3
+RECONCILE_WRONG_AMOUNT_EXIT=1 PAYMENTS=0 ORDER_STATUS=pending
+RECONCILE_OUTAGE_EXIT=1 PAYMENTS=0 ORDER_STATUS=pending
+
+   PASS  Tests\Feature\BookilReconcileTest
+  ✓ it reconciles a pending order and treats a repeat reconciliation as a no-op                                  0.17s  
+  ✓ it rejects amount mismatch without recording a payment                                                       0.11s  
+  ✓ it fails cleanly during a Midtrans outage                                                                    0.08s  
+  ✓ it rejects a status response identifying a different order                                                   0.10s  
+
+   PASS  Tests\Feature\BrowserRegressionTest
+  ✓ it serves a signed local PDF as an attachment with its security headers intact                               0.08s  
+  ✓ it rejects a tampered local asset signature without returning the PDF                                        0.09s  
+  ✓ it keeps pending invoice product metadata when Snap is unavailable                                           0.17s  
+  ✓ it rejects an empty product description before writing to the database with ('create')                       0.11s  
+  ✓ it rejects an empty product description before writing to the database with ('update')                       0.12s  
+  ✓ it finds published catalog entries regardless of search capitalization with ('title')                        0.10s  
+  ✓ it finds published catalog entries regardless of search capitalization with ('author')                       0.13s  
+  ✓ it finds published catalog entries regardless of search capitalization with ('description')                  0.14s  
+
+   PASS  Tests\Feature\CatalogTest
+  ✓ it displays published products on the storefront catalog                                                     0.11s  
+  ✓ it does not leak unpublished products on the catalog                                                         0.11s  
+  ✓ it filters catalog products by category slug                                                                 0.24s  
+  ✓ it searches products by title and author                                                                     0.14s  
+  ✓ it displays product detail page for a published product                                                      0.12s  
+  ✓ it returns 404 for unpublished product detail page                                                           0.09s  
+CHECKOUT_CREATED=10 ELEVENTH_HTTP=429 SNAP_CALLS=10 DISTINCT_SNAP_ORDERS=10
+
+   PASS  Tests\Feature\CheckoutRateLimitTest
+  ✓ it allows ten real checkouts and rejects the eleventh before calling Snap                                    0.41s  
+
+   PASS  Tests\Feature\CheckoutTest
+  ✓ it requires authentication to checkout                                                                       0.23s  
+  ✓ it validates product_id is required and must exist                                                           0.11s  
+  ✓ it rejects checkout of an unpublished product                                                                0.08s  
+  ✓ it creates an order and retrieves snap token from midtrans                                                   0.12s  
+  ✓ it allows customer to view their order invoice                                                               0.35s  
+  ✓ it forbids customers from viewing orders belonging to another user                                           0.12s  
+  ✓ it reuses the stored Snap session when a pending order is viewed repeatedly                                  0.15s  
+  ✓ it does not invent a Snap token when the gateway is unavailable                                              0.12s  
+UNVERIFIED_CHECKOUT_HTTP=403 LIBRARY_HTTP=200 ORDER_ROWS=0
+VERIFICATION_EMAILS=6 SEVENTH_HTTP=429
+
+   PASS  Tests\Feature\CustomerIntegrityTest
+  ✓ it requires verification only for checkout and keeps browsing and the library open                           0.13s  
+  ✓ it resends verification mail six times and throttles the seventh attempt                                     0.09s  
+
+   PASS  Tests\Feature\CustomerLibraryTest
+  ✓ it redirects unauthenticated users from personal library dashboard                                           0.18s  
+  ✓ it displays customer personal digital library with active tokens and order history                           0.46s  
+PROXY_SIGNED_SCHEME=https DOWNLOAD_HTTP=302 AUDIT_IP=203.0.113.55
+
+   PASS  Tests\Feature\DeploymentWiringTest
+  ✓ it accepts a signed download behind a trusted HTTPS proxy and records the client IP                          0.44s  
+  ✓ it ignores forwarded IPs from an untrusted peer                                                              0.15s  
+  ✓ it adds report-only browser headers and omits HSTS during testing                                            0.20s  
+  ✓ it adds HSTS only in the production environment                                                              0.23s  
+  ✓ it throttles repeated guest auth submissions with ('/register')                                              0.28s  
+  ✓ it throttles repeated guest auth submissions with ('/forgot-password')                                       0.22s  
+  ✓ it throttles repeated guest auth submissions with ('/reset-password')                                        0.22s  
+BAD_SIGNATURE_REQUESTS=200 DENIED_SIGNATURE_ROWS=1 DENIED_THROTTLED_ROWS=1 QUOTA=0
+THROTTLED_REQUESTS=100 DENIED_THROTTLED_ROWS=1 QUOTA_BEFORE=30 QUOTA_AFTER=30
+ROTATED_IDS=50 THROTTLED_RESPONSES=20 AUDIT_ROWS=2
+PRUNE_DOWNLOAD_ROWS=2->1 PRUNE_WEBHOOK_ROWS=2->1 PAYMENTS=1 ORDERS=1 ITEMS=1
+
+   PASS  Tests\Feature\DownloadAuditRetentionTest
+  ✓ it bounds audit writes for 200 bad signatures without consuming quota                                        2.84s  
+  ✓ it records only one denial for 100 throttled requests and preserves quota                                    2.13s  
+  ✓ it shares a throttle bucket across 50 nonexistent item ids                                                   0.51s  
+  ✓ it prunes old audit rows while retaining recent rows and financial records                                   0.20s  
+
+   PASS  Tests\Feature\DownloadRouteTest
+  ✓ it requires authentication to access digital downloads                                                       0.08s  
+  ✓ it redirects to the private presigned URL for an authorized customer                                         0.18s  
+  ✓ it returns 403 when a user attempts to download an item they do not own                                      0.19s  
+  ✓ it returns 403 when attempting to download an unpaid order item                                              0.18s  
+  ✓ it returns 410 when attempting to download with an expired entitlement                                       1.95s  
+  ✓ it returns 429 when maximum download quota has been exceeded                                                 0.15s  
+  ✓ it rejects unsigned download URLs                                                                            0.10s  
+  ✓ it logs a hand-edited signature denial without charging quota                                                0.23s  
+  ✓ it rejects an expired route signature before charging the download quota                                     0.14s  
+  ✓ it logs the 31st signed download as throttled without charging quota                                         0.49s  
+EXTENSION_EXPIRED=0 MAX_DOWNLOADS=5->8 USED_DOWNLOADS=5 AUDIT_ROWS=1
+EXTENSION_EXPIRED=1 MAX_DOWNLOADS=5->8 USED_DOWNLOADS=5 AUDIT_ROWS=1
+
+   PASS  Tests\Feature\EntitlementExtensionTest
+  ✓ it rejects customer entitlement extensions without changing quota or audit                                   0.14s  
+  ✓ it extends entitlement from the later of now and expiry with an audit row with (false)                       0.11s  
+  ✓ it extends entitlement from the later of now and expiry with an audit row with (true)                        0.12s  
+  ✓ it rejects extensions for a non-paid order                                                                   0.17s  
+  ✓ it rejects an empty extension and negative download deltas with (0)                                          0.17s  
+  ✓ it rejects an empty extension and negative download deltas with (-1)                                         0.16s  
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ it returns a successful response                                                                             0.14s  
+SETTLEMENT_RECEIPTS=1 REPLAY_RECEIPTS=1 REFUND_RECEIPTS=1 PAYMENT_ROWS=1 DOWNLOAD_LINKS_IN_MAIL=0
+
+   PASS  Tests\Feature\OrderReceiptTest
+  ✓ it sends one receipt on settlement and none on replay or refund                                              0.34s  
+WEBHOOK_HTTP=500 PAYMENT_ROWS=0 WEBHOOK_ROWS=0 ORDER_STATUS=pending
+
+   PASS  Tests\Feature\PaymentWebhookRouteTest
+  ✓ it returns a retryable error without recording payment when the status API is unavailable                    0.12s  
+  ✓ it processes a valid midtrans webhook via POST without CSRF verification                                     0.18s  
+  ✓ it rejects midtrans webhooks with an invalid signature with 401                                              0.24s  
+  ✓ it handles duplicate webhook notifications idempotently with HTTP 200                                        0.22s  
+
+   PASS  Tests\Feature\ProfileTest
+  ✓ profile page is displayed                                                                                    0.09s  
+  ✓ profile information can be updated                                                                           0.09s  
+  ✓ email verification status is unchanged when the email address is unchanged                                   0.12s  
+  ✓ user can delete their account                                                                                0.12s  
+  ✓ correct password must be provided to delete account                                                          0.11s  
+
+   PASS  Tests\Feature\RoutingGuardsTest
+  ✓ it returns 404 for both legacy task endpoints                                                                0.11s  
+  ✓ it keeps the download audit throttle and signature middleware in order                                       0.09s  
+
+   PASS  Tests\Migrations\BookilMigrationTest
+  ✓ it upgrades existing users and reverses only the Bookil migrations                                           0.57s  
+
+   PASS  Tests\Migrations\PostgresRowLockTest
+  ✓ it blocks a second connection from locking an order held by the first connection                             0.71s  
+REAL_TRANSACTION=COMMIT RECEIPTS_BEFORE=0 RECEIPTS_AFTER=1
+REAL_TRANSACTION=ROLLBACK RECEIPTS_BEFORE=0 RECEIPTS_AFTER=0
+
+   PASS  Tests\Migrations\ReceiptCommitBoundaryTest
+  ✓ it queues the receipt only after the real outer transaction commits with (true)                              0.20s  
+  ✓ it queues the receipt only after the real outer transaction commits with (false)                             0.16s  
+
+  Tests:    205 passed (1265 assertions)
+  Duration: 38.28s
+

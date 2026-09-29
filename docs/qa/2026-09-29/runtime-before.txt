@@ -1,0 +1,10 @@
+HTTP 200
+Content-Type: application/pdf
+Content-Disposition: inline; filename=browser-sample.pdf
+Content-Security-Policy: default-src 'none'; style-src 'unsafe-inline'; sandbox
+X-Frame-Options: DENY
+Received bytes: 218
+Product 20 persisted slug: qa-digital-book-20
+Granted attempts: 1
+Ownership denials: 1
+Entitlement extensions: 1

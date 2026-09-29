@@ -1,0 +1,377 @@
+- banner:
+  - link:
+    - /url: /
+  - navigation:
+    - link "Jelajahi Katalog":
+      - /url: http://127.0.0.1:8002/
+    - link "Koleksi Unggulan":
+      - /url: /#katalog
+    - link "Bantuan & FAQ":
+      - /url: /faq
+  - button "search Cari e-book, topik... ⌘K":
+    - generic: search
+    - generic: Cari e-book, topik...
+    - generic: ⌘K
+  - link "Masuk":
+    - /url: http://127.0.0.1:8002/login
+  - link "Daftar Gratis":
+    - /url: http://127.0.0.1:8002/register
+- main:
+  - generic: Edisi 2026 Terbaru
+  - generic: Koleksi Terkurasi Praktisi Senior
+  - heading "Buka Pintu Pengetahuan Digital Tanpa Batas." [level=1]
+  - paragraph: Platform e-book arsitektur software, teknologi modern, dan kepemimpinan bisnis terlengkap di Indonesia. Format PDF & EPUB murni, tanpa DRM mengikat, unduh instan ke perangkat Anda.
+  - button "search Cari judul e-book, topik, atau penulis... ⌘K":
+    - generic: search
+    - generic: Cari judul e-book, topik, atau penulis...
+    - generic: ⌘K
+  - link "Jelajahi Koleksi arrow_downward":
+    - /url: "#katalog"
+    - generic: Jelajahi Koleksi
+    - generic: arrow_downward
+  - generic: Editor's Choice
+  - generic: star
+  - text: 4.9 / 5.0
+  - generic: auto_stories
+  - generic: QA Laravel Guide
+  - heading "QA Laravel Guide" [level=3]
+  - paragraph: QA Author Alpha
+  - generic: Rp 30.000
+  - link "Lihat E-Book arrow_forward":
+    - /url: http://127.0.0.1:8002/products/qa-laravel-guide
+    - generic: Lihat E-Book
+    - generic: arrow_forward
+  - generic: group
+  - generic: Bookil
+  - text: Perpustakaan digital pribadi
+  - generic: verified_user
+  - generic: Format Digital
+  - text: Lihat format yang tersedia di tiap produk
+  - generic: bolt
+  - generic: < 2 Detik
+  - text: Akses langsung ke rak digital setelah bayar
+  - generic: Eksplorasi Pustaka
+  - heading "Katalog E-Book Terkurasi" [level=2]
+  - paragraph: Jelajahi produk digital yang tersedia dan lihat detail format serta harganya.
+  - text: Menampilkan
+  - strong: "18"
+  - text: judul tersedia
+  - generic: search
+  - textbox "Saring judul buku, nama penulis, topik..."
+  - generic: "Urutkan:"
+  - combobox "Urutkan:":
+    - option "Rilis Terbaru" [selected]
+    - 'option "Harga: Terendah ke Tertinggi"'
+    - 'option "Harga: Tertinggi ke Terendah"'
+  - button "Semua Kategori"
+  - button "Digital Resources"
+  - button "E-Books"
+  - button "Templates"
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Laravel Guide" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: E-Books
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Laravel Guide" [level=3]:
+    - link "QA Laravel Guide":
+      - /url: http://127.0.0.1:8002/products/qa-laravel-guide
+  - paragraph: Karya QA Author Alpha
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 30.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 02" [level=4]
+  - paragraph: QA Author Beta
+  - generic: Templates
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 02" [level=3]:
+    - link "QA Digital Book 02":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-2
+  - paragraph: Karya QA Author Beta
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 35.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 03" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: Digital Resources
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 03" [level=3]:
+    - link "QA Digital Book 03":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-3
+  - paragraph: Karya QA Author Alpha
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 40.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 04" [level=4]
+  - paragraph: QA Author Beta
+  - generic: E-Books
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 04" [level=3]:
+    - link "QA Digital Book 04":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-4
+  - paragraph: Karya QA Author Beta
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 45.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 05" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: Templates
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 05" [level=3]:
+    - link "QA Digital Book 05":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-5
+  - paragraph: Karya QA Author Alpha
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 50.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 06" [level=4]
+  - paragraph: QA Author Beta
+  - generic: Digital Resources
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 06" [level=3]:
+    - link "QA Digital Book 06":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-6
+  - paragraph: Karya QA Author Beta
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 55.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 07" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: E-Books
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 07" [level=3]:
+    - link "QA Digital Book 07":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-7
+  - paragraph: Karya QA Author Alpha
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 60.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 08" [level=4]
+  - paragraph: QA Author Beta
+  - generic: Templates
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 08" [level=3]:
+    - link "QA Digital Book 08":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-8
+  - paragraph: Karya QA Author Beta
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 65.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 09" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: Digital Resources
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 09" [level=3]:
+    - link "QA Digital Book 09":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-9
+  - paragraph: Karya QA Author Alpha
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 70.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 10" [level=4]
+  - paragraph: QA Author Beta
+  - generic: E-Books
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 10" [level=3]:
+    - link "QA Digital Book 10":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-10
+  - paragraph: Karya QA Author Beta
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 75.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 11" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: Templates
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 11" [level=3]:
+    - link "QA Digital Book 11":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-11
+  - paragraph: Karya QA Author Alpha
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 80.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - generic: auto_stories
+  - generic: Bookil Original
+  - generic: menu_book
+  - heading "QA Digital Book 12" [level=4]
+  - paragraph: QA Author Beta
+  - generic: Digital Resources
+  - generic: description
+  - generic: pdf
+  - generic: • 0 KB
+  - generic: star
+  - generic: "4.9"
+  - generic: Berkas Digital
+  - heading "QA Digital Book 12" [level=3]:
+    - link "QA Digital Book 12":
+      - /url: http://127.0.0.1:8002/products/qa-digital-book-12
+  - paragraph: Karya QA Author Beta
+  - paragraph: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Harga Lisensi
+  - text: Rp 85.000
+  - button "Beli flash_on":
+    - generic: Beli
+    - generic: flash_on
+  - link "« Previous":
+    - /url: ""
+  - link "1":
+    - /url: http://127.0.0.1:8002/?page=1
+  - link "2":
+    - /url: http://127.0.0.1:8002/?page=2
+  - link "Next »":
+    - /url: http://127.0.0.1:8002/?page=2
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+    - link "Pemrograman & IT":
+      - /url: http://127.0.0.1:8002/?category=programming-tech
+    - link "Bisnis & Startup":
+      - /url: http://127.0.0.1:8002/?category=business-startup
+    - link "Pengembangan Diri":
+      - /url: http://127.0.0.1:8002/?category=self-development
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

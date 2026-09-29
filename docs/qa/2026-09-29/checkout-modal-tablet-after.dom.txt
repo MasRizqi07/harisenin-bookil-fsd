@@ -1,0 +1,141 @@
+- banner:
+  - link:
+    - /url: /
+  - button "Cari":
+    - generic: search
+  - button "Q arrow_drop_down":
+    - generic: Q
+    - generic: arrow_drop_down
+  - button "menu":
+    - generic: menu
+- main:
+  - generic: shopping_bag
+  - heading "Konfirmasi Pembelian Instan" [level=3]
+  - paragraph: Akses unduh 30 hari sejak pembayaran, maksimal 5 unduhan per buku.
+  - button "close":
+    - generic: close
+  - generic: auto_stories
+  - generic: QA Laravel Guide
+  - heading "QA Laravel Guide" [level=4]
+  - paragraph: Karya QA Author Alpha
+  - generic: pdf
+  - generic: 5x Kuota Unduh
+  - generic: Rp 30.000
+  - generic: Q
+  - paragraph: "Penerima: QA Customer A Updated"
+  - paragraph: customer-a@example.test
+  - generic: verified
+  - text: Terikat Akun
+  - generic: Harga E-Book
+  - generic: Rp 30.000
+  - text: Biaya Gateway (Midtrans Snap)
+  - generic: Gratis
+  - generic: Rp 0
+  - generic: PPN Digital Indonesia (11%)
+  - generic: Termasuk
+  - generic: "Total Tagihan:"
+  - generic: Rp 30.000
+  - generic: Catatan Pesanan (Opsional)
+  - 'textbox "Contoh: Untuk referensi belajar tim dev..."'
+  - checkbox "Saya menyetujui lisensi digital e-book Bookil dan ketentuan 5x kuota unduh berbatas waktu." [checked]
+  - generic: Saya menyetujui lisensi digital e-book Bookil dan ketentuan 5x kuota unduh berbatas waktu.
+  - button "Lanjut ke Pembayaran Midtrans arrow_forward":
+    - generic: Lanjut ke Pembayaran Midtrans
+    - generic: arrow_forward
+  - navigation:
+    - link "home Beranda":
+      - /url: /
+      - generic: home
+      - generic: Beranda
+    - generic: /
+    - link "Katalog":
+      - /url: http://127.0.0.1:8002/
+    - generic: /
+    - link "E-Books":
+      - /url: http://127.0.0.1:8002/?category=ebooks
+    - generic: /
+    - generic: QA Laravel Guide
+  - generic: Bookil Edition
+  - generic: pdf
+  - generic: auto_stories
+  - heading "QA Laravel Guide" [level=3]
+  - paragraph: QA Author Alpha
+  - button "menu_book Baca Cuplikan":
+    - generic: menu_book
+    - generic: Baca Cuplikan
+  - generic: description
+  - text: Format File
+  - generic: PDF (Zero-DRM)
+  - generic: auto_stories
+  - text: Halaman
+  - generic: Tidak dicantumkan
+  - generic: folder_zip
+  - text: Ukuran Berkas
+  - generic: 218 Bytes
+  - generic: translate
+  - text: Bahasa
+  - generic: Bahasa Indonesia
+  - generic: Q
+  - heading "QA Author Alpha" [level=3]
+  - paragraph: Penulis karya ini.
+  - generic: E-Books
+  - generic: description
+  - generic: pdf
+  - generic: • 218 Bytes
+  - generic: verified
+  - generic: Berkas Digital
+  - heading "QA Laravel Guide" [level=1]
+  - paragraph:
+    - text: Ditulis oleh
+    - strong: QA Author Alpha
+  - generic: Harga Lisensi Digital
+  - text: Rp 30.000
+  - generic: Akses unduh 30 hari sejak pembayaran, maksimal 5 unduhan per buku.
+  - button "shopping_cart_checkout Beli Sekarang" [active]:
+    - generic: shopping_cart_checkout
+    - generic: Beli Sekarang
+  - heading "Sinopsis & Pokok Bahasan" [level=3]
+  - generic: Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: check_circle
+  - generic: 5x Kuota Unduh Fleksibel (30 Hari)
+  - generic: check_circle
+  - generic: Kompatibel untuk iPad, Kindle & Laptop
+  - generic: check_circle
+  - generic: Fulfillment Instan via Midtrans Snap
+  - generic: check_circle
+  - generic: Tersimpan di Rak Digital Akun Anda
+  - generic: Total
+  - text: Rp 30.000
+  - button "Beli Sekarang arrow_forward":
+    - generic: Beli Sekarang
+    - generic: arrow_forward
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

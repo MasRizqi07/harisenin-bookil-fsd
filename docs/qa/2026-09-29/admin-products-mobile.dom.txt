@@ -1,0 +1,380 @@
+- complementary:
+  - link "Bookil Admin Enterprise Console":
+    - /url: /admin/dashboard
+    - generic: Bookil Admin
+    - generic: Enterprise Console
+  - button "close":
+    - generic: close
+  - text: Enterprise Portal
+  - link "space_dashboard Executive Dashboard":
+    - /url: /admin/dashboard
+    - generic: space_dashboard
+    - generic: Executive Dashboard
+  - link "auto_stories Katalog & Produk":
+    - /url: /admin/products
+    - generic: auto_stories
+    - generic: Katalog & Produk
+  - link "account_tree Taksonomi Kategori":
+    - /url: /admin/categories
+    - generic: account_tree
+    - generic: Taksonomi Kategori
+  - link "receipt_long Ledger Pesanan":
+    - /url: /admin/orders
+    - generic: receipt_long
+    - generic: Ledger Pesanan
+  - text: Pintasan Toko
+  - link "storefront Lihat Toko Publik":
+    - /url: /
+    - generic: storefront
+    - generic: Lihat Toko Publik
+  - generic: Health Metrics
+  - generic: Database Cluster
+  - generic: 99.98%
+  - generic: Midtrans Webhook
+  - generic: SHA-512 OK
+  - generic: Private S3 Vault
+  - generic: Synced
+  - generic: Q
+  - generic: QA Administrator
+  - generic: admin@example.test
+  - button "logout":
+    - generic: logout
+- banner:
+  - button "menu":
+    - generic: menu
+  - button "search ⌘K":
+    - generic: search
+    - generic: ⌘K
+- main:
+  - heading "Katalog Produk & E-Book" [level=2]
+  - paragraph: Daftar e-book digital aktif, aset privat, dan publikasi toko.
+  - link "Tambah E-Book Baru":
+    - /url: /admin/products/create
+    - generic: Tambah E-Book Baru
+  - textbox "Cari judul e-book atau nama penulis..."
+  - combobox:
+    - option "Semua Kategori" [selected]
+    - option "Digital Resources"
+    - option "E-Books"
+    - option "QA Browser Category Updated"
+    - option "Templates"
+  - button "Terapkan Filter"
+  - table:
+    - rowgroup:
+      - row "Buku & Penulis Kategori Harga Format / Ukuran Status Terjual Aksi":
+        - columnheader "Buku & Penulis"
+        - columnheader "Kategori"
+        - columnheader "Harga"
+        - columnheader "Format / Ukuran"
+        - columnheader "Status"
+        - columnheader "Terjual"
+        - columnheader "Aksi"
+    - rowgroup:
+      - row "auto_stories QA Laravel Guide pdf QA Laravel Guide QA Author Alpha /qa-laravel-guide E-Books Rp 30.000 pdf 218 Bytes Publik 1x Edit Hapus":
+        - cell "auto_stories QA Laravel Guide pdf QA Laravel Guide QA Author Alpha /qa-laravel-guide":
+          - generic: auto_stories
+          - generic: QA Laravel Guide
+          - generic: pdf
+          - heading "QA Laravel Guide" [level=4]
+          - paragraph: QA Author Alpha
+          - generic: /qa-laravel-guide
+        - cell "E-Books"
+        - cell "Rp 30.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "1x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/1/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 02 pdf QA Digital Book 02 QA Author Beta /qa-digital-book-2 Templates Rp 35.000 pdf 218 Bytes Publik 1x Edit Hapus":
+        - cell "auto_stories QA Digital Book 02 pdf QA Digital Book 02 QA Author Beta /qa-digital-book-2":
+          - generic: auto_stories
+          - generic: QA Digital Book 02
+          - generic: pdf
+          - heading "QA Digital Book 02" [level=4]
+          - paragraph: QA Author Beta
+          - generic: /qa-digital-book-2
+        - cell "Templates"
+        - cell "Rp 35.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "1x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/2/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 03 pdf QA Digital Book 03 QA Author Alpha /qa-digital-book-3 Digital Resources Rp 40.000 pdf 218 Bytes Publik 1x Edit Hapus":
+        - cell "auto_stories QA Digital Book 03 pdf QA Digital Book 03 QA Author Alpha /qa-digital-book-3":
+          - generic: auto_stories
+          - generic: QA Digital Book 03
+          - generic: pdf
+          - heading "QA Digital Book 03" [level=4]
+          - paragraph: QA Author Alpha
+          - generic: /qa-digital-book-3
+        - cell "Digital Resources"
+        - cell "Rp 40.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "1x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/3/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 04 pdf QA Digital Book 04 QA Author Beta /qa-digital-book-4 E-Books Rp 45.000 pdf 218 Bytes Publik 1x Edit Hapus":
+        - cell "auto_stories QA Digital Book 04 pdf QA Digital Book 04 QA Author Beta /qa-digital-book-4":
+          - generic: auto_stories
+          - generic: QA Digital Book 04
+          - generic: pdf
+          - heading "QA Digital Book 04" [level=4]
+          - paragraph: QA Author Beta
+          - generic: /qa-digital-book-4
+        - cell "E-Books"
+        - cell "Rp 45.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "1x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/4/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 05 pdf QA Digital Book 05 QA Author Alpha /qa-digital-book-5 Templates Rp 50.000 pdf 218 Bytes Publik 1x Edit Hapus":
+        - cell "auto_stories QA Digital Book 05 pdf QA Digital Book 05 QA Author Alpha /qa-digital-book-5":
+          - generic: auto_stories
+          - generic: QA Digital Book 05
+          - generic: pdf
+          - heading "QA Digital Book 05" [level=4]
+          - paragraph: QA Author Alpha
+          - generic: /qa-digital-book-5
+        - cell "Templates"
+        - cell "Rp 50.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "1x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/5/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 06 pdf QA Digital Book 06 QA Author Beta /qa-digital-book-6 Digital Resources Rp 55.000 pdf 218 Bytes Publik 1x Edit Hapus":
+        - cell "auto_stories QA Digital Book 06 pdf QA Digital Book 06 QA Author Beta /qa-digital-book-6":
+          - generic: auto_stories
+          - generic: QA Digital Book 06
+          - generic: pdf
+          - heading "QA Digital Book 06" [level=4]
+          - paragraph: QA Author Beta
+          - generic: /qa-digital-book-6
+        - cell "Digital Resources"
+        - cell "Rp 55.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "1x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/6/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 07 pdf QA Digital Book 07 QA Author Alpha /qa-digital-book-7 E-Books Rp 60.000 pdf 218 Bytes Publik 1x Edit Hapus":
+        - cell "auto_stories QA Digital Book 07 pdf QA Digital Book 07 QA Author Alpha /qa-digital-book-7":
+          - generic: auto_stories
+          - generic: QA Digital Book 07
+          - generic: pdf
+          - heading "QA Digital Book 07" [level=4]
+          - paragraph: QA Author Alpha
+          - generic: /qa-digital-book-7
+        - cell "E-Books"
+        - cell "Rp 60.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "1x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/7/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 08 pdf QA Digital Book 08 QA Author Beta /qa-digital-book-8 Templates Rp 65.000 pdf 218 Bytes Publik 0x Edit Hapus":
+        - cell "auto_stories QA Digital Book 08 pdf QA Digital Book 08 QA Author Beta /qa-digital-book-8":
+          - generic: auto_stories
+          - generic: QA Digital Book 08
+          - generic: pdf
+          - heading "QA Digital Book 08" [level=4]
+          - paragraph: QA Author Beta
+          - generic: /qa-digital-book-8
+        - cell "Templates"
+        - cell "Rp 65.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "0x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/8/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 09 pdf QA Digital Book 09 QA Author Alpha /qa-digital-book-9 Digital Resources Rp 70.000 pdf 218 Bytes Publik 0x Edit Hapus":
+        - cell "auto_stories QA Digital Book 09 pdf QA Digital Book 09 QA Author Alpha /qa-digital-book-9":
+          - generic: auto_stories
+          - generic: QA Digital Book 09
+          - generic: pdf
+          - heading "QA Digital Book 09" [level=4]
+          - paragraph: QA Author Alpha
+          - generic: /qa-digital-book-9
+        - cell "Digital Resources"
+        - cell "Rp 70.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "0x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/9/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 10 pdf QA Digital Book 10 QA Author Beta /qa-digital-book-10 E-Books Rp 75.000 pdf 218 Bytes Publik 0x Edit Hapus":
+        - cell "auto_stories QA Digital Book 10 pdf QA Digital Book 10 QA Author Beta /qa-digital-book-10":
+          - generic: auto_stories
+          - generic: QA Digital Book 10
+          - generic: pdf
+          - heading "QA Digital Book 10" [level=4]
+          - paragraph: QA Author Beta
+          - generic: /qa-digital-book-10
+        - cell "E-Books"
+        - cell "Rp 75.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "0x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/10/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 11 pdf QA Digital Book 11 QA Author Alpha /qa-digital-book-11 Templates Rp 80.000 pdf 218 Bytes Publik 0x Edit Hapus":
+        - cell "auto_stories QA Digital Book 11 pdf QA Digital Book 11 QA Author Alpha /qa-digital-book-11":
+          - generic: auto_stories
+          - generic: QA Digital Book 11
+          - generic: pdf
+          - heading "QA Digital Book 11" [level=4]
+          - paragraph: QA Author Alpha
+          - generic: /qa-digital-book-11
+        - cell "Templates"
+        - cell "Rp 80.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "0x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/11/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 12 pdf QA Digital Book 12 QA Author Beta /qa-digital-book-12 Digital Resources Rp 85.000 pdf 218 Bytes Publik 0x Edit Hapus":
+        - cell "auto_stories QA Digital Book 12 pdf QA Digital Book 12 QA Author Beta /qa-digital-book-12":
+          - generic: auto_stories
+          - generic: QA Digital Book 12
+          - generic: pdf
+          - heading "QA Digital Book 12" [level=4]
+          - paragraph: QA Author Beta
+          - generic: /qa-digital-book-12
+        - cell "Digital Resources"
+        - cell "Rp 85.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "0x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/12/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 13 pdf QA Digital Book 13 QA Author Alpha /qa-digital-book-13 E-Books Rp 90.000 pdf 218 Bytes Publik 0x Edit Hapus":
+        - cell "auto_stories QA Digital Book 13 pdf QA Digital Book 13 QA Author Alpha /qa-digital-book-13":
+          - generic: auto_stories
+          - generic: QA Digital Book 13
+          - generic: pdf
+          - heading "QA Digital Book 13" [level=4]
+          - paragraph: QA Author Alpha
+          - generic: /qa-digital-book-13
+        - cell "E-Books"
+        - cell "Rp 90.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "0x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/13/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 14 pdf QA Digital Book 14 QA Author Beta /qa-digital-book-14 Templates Rp 95.000 pdf 218 Bytes Publik 0x Edit Hapus":
+        - cell "auto_stories QA Digital Book 14 pdf QA Digital Book 14 QA Author Beta /qa-digital-book-14":
+          - generic: auto_stories
+          - generic: QA Digital Book 14
+          - generic: pdf
+          - heading "QA Digital Book 14" [level=4]
+          - paragraph: QA Author Beta
+          - generic: /qa-digital-book-14
+        - cell "Templates"
+        - cell "Rp 95.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "0x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/14/edit
+          - button "Hapus"
+      - row "auto_stories QA Digital Book 15 pdf QA Digital Book 15 QA Author Alpha /qa-digital-book-15 Digital Resources Rp 100.000 pdf 218 Bytes Publik 0x Edit Hapus":
+        - cell "auto_stories QA Digital Book 15 pdf QA Digital Book 15 QA Author Alpha /qa-digital-book-15":
+          - generic: auto_stories
+          - generic: QA Digital Book 15
+          - generic: pdf
+          - heading "QA Digital Book 15" [level=4]
+          - paragraph: QA Author Alpha
+          - generic: /qa-digital-book-15
+        - cell "Digital Resources"
+        - cell "Rp 100.000"
+        - cell "pdf 218 Bytes":
+          - text: pdf
+          - generic: 218 Bytes
+        - cell "Publik":
+          - button "Publik": Publik
+        - cell "0x"
+        - cell "Edit Hapus":
+          - link "Edit":
+            - /url: /admin/products/15/edit
+          - button "Hapus"
+  - link "« Previous":
+    - /url: ""
+  - link "1":
+    - /url: http://127.0.0.1:8002/admin/products?page=1
+  - link "2":
+    - /url: http://127.0.0.1:8002/admin/products?page=2
+  - link "Next »":
+    - /url: http://127.0.0.1:8002/admin/products?page=2

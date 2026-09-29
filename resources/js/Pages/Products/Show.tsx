@@ -152,7 +152,7 @@ export default function Show({ product }: ShowProps) {
                                         <span className="material-symbols-outlined text-[15px] text-indigo-600">auto_stories</span>
                                         Halaman
                                     </span>
-                                    <span className="text-xs font-bold text-slate-900">350+ Halaman Lengkap</span>
+                                    <span className="text-xs font-bold text-slate-900">Tidak dicantumkan</span>
                                 </div>
                                 <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/70 shadow-sm flex flex-col gap-1">
                                     <span className="text-[11px] text-slate-500 uppercase font-semibold flex items-center gap-1">
@@ -176,19 +176,13 @@ export default function Show({ product }: ShowProps) {
                                     <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-indigo-600 to-violet-600 text-white font-extrabold text-base flex items-center justify-center ring-2 ring-indigo-200 shadow">
                                         {product.author.charAt(0)}
                                     </div>
-                                    <span className="absolute -bottom-1 -right-1 w-4 h-4 bg-emerald-600 rounded-full flex items-center justify-center text-white ring-2 ring-white">
-                                        <span className="material-symbols-outlined text-[11px]">check</span>
-                                    </span>
                                 </div>
                                 <div className="flex-1 min-w-0">
                                     <div className="flex items-center gap-1.5 flex-wrap">
                                         <h3 className="text-xs font-bold text-slate-900 truncate">{product.author}</h3>
-                                        <span className="text-[10px] px-1.5 py-0.5 rounded bg-indigo-100 text-indigo-700 font-semibold">
-                                            Penulis Terverifikasi
-                                        </span>
                                     </div>
                                     <p className="text-[11px] text-slate-500 mt-1 line-clamp-2">
-                                        Praktisi &amp; Penulis Buku Spesialis Rekayasa Perangkat Lunak, Arsitektur Sistem, dan Kepemimpinan Teknologi.
+                                        Penulis karya ini.
                                     </p>
                                 </div>
                             </div>

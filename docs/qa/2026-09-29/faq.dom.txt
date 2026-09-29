@@ -1,0 +1,145 @@
+- banner:
+  - link:
+    - /url: /
+  - navigation:
+    - link "Jelajahi Katalog":
+      - /url: http://127.0.0.1:8002/
+    - link "Koleksi Unggulan":
+      - /url: /#katalog
+    - link "Bantuan & FAQ":
+      - /url: /faq
+  - button "search Cari e-book, topik... ⌘K":
+    - generic: search
+    - generic: Cari e-book, topik...
+    - generic: ⌘K
+  - link "Masuk":
+    - /url: http://127.0.0.1:8002/login
+  - link "Daftar Gratis":
+    - /url: http://127.0.0.1:8002/register
+- main:
+  - navigation:
+    - link "home Beranda":
+      - /url: http://127.0.0.1:8002/
+      - generic: home
+      - generic: Beranda
+    - generic: /
+    - generic: Pusat Bantuan
+  - generic: support_agent
+  - generic: Bantuan Mandiri 24/7 & Layanan Terintegrasi
+  - heading "Pusat Bantuan & Tanya Jawab Mandiri" [level=1]
+  - paragraph: Temukan solusi instan seputar aktivasi lisensi, metode pembayaran Midtrans, pengelolaan kuota unduhan, dan perlindungan aset digital Anda.
+  - generic: search
+  - 'textbox "Cari topik, kata kunci (mis: QRIS, kuota, kindle, refund)..."'
+  - generic: "Topik populer:"
+  - button "Cara Bayar QRIS"
+  - button "Batas 5x Kuota Unduh"
+  - button "Format EPUB di iPad"
+  - button "Lisensi Zero-DRM"
+  - generic: account_balance_wallet
+  - heading "Pembayaran & Midtrans" [level=3]
+  - paragraph: Lihat jawaban dan petunjuk teknis seputar pembayaran & midtrans.
+  - generic: Eksplorasi Topik
+  - generic: arrow_forward
+  - generic: cloud_download
+  - heading "Unduhan & Kuota" [level=3]
+  - paragraph: Lihat jawaban dan petunjuk teknis seputar unduhan & kuota.
+  - generic: Eksplorasi Topik
+  - generic: arrow_forward
+  - generic: devices
+  - heading "Perangkat & Format" [level=3]
+  - paragraph: Lihat jawaban dan petunjuk teknis seputar perangkat & format.
+  - generic: Eksplorasi Topik
+  - generic: arrow_forward
+  - generic: verified_user
+  - heading "Lisensi & Zero-DRM" [level=3]
+  - paragraph: Lihat jawaban dan petunjuk teknis seputar lisensi & zero-drm.
+  - generic: Eksplorasi Topik
+  - generic: arrow_forward
+  - heading "Pertanyaan yang Sering Diajukan (7)" [level=2]
+  - button "Bagaimana cara membayar via QRIS Dinamis dan Virtual Account? expand_more":
+    - generic: Bagaimana cara membayar via QRIS Dinamis dan Virtual Account?
+    - generic: expand_more
+  - paragraph: Pembayaran diproses melalui Midtrans. Metode dan batas waktu pembayaran ditampilkan pada halaman pembayaran.
+  - generic: "1"
+  - heading "Pilih Metode" [level=4]
+  - paragraph: Pilih QRIS Dinamis (GoPay, OVO, Dana, BCA QR) atau nomor Virtual Account bank pilihan Anda.
+  - generic: "2"
+  - heading "Pindai atau Salin" [level=4]
+  - paragraph: Pindai kode QRIS langsung di layar atau salin nomor Virtual Account ke aplikasi mobile banking Anda.
+  - generic: "3"
+  - heading "Akses Instan" [level=4]
+  - paragraph: Sistem memverifikasi status pembayaran secara instan via Webhook SHA-512 dan e-book langsung siap diunduh.
+  - generic: BCA VA
+  - generic: Mandiri Livin
+  - generic: BRImo
+  - generic: BNI Mobile
+  - generic: QRIS Standar BI
+  - generic: bolt
+  - text: Status mengikuti konfirmasi gateway
+  - button "Berapa lama batas waktu pembayaran sebelum pesanan kedaluwarsa? expand_more":
+    - generic: Berapa lama batas waktu pembayaran sebelum pesanan kedaluwarsa?
+    - generic: expand_more
+  - button "Apakah saya perlu mengunggah bukti transfer secara manual? expand_more":
+    - generic: Apakah saya perlu mengunggah bukti transfer secara manual?
+    - generic: expand_more
+  - button "Apa yang terjadi jika batas 5x kuota unduhan saya habis? expand_more":
+    - generic: Apa yang terjadi jika batas 5x kuota unduhan saya habis?
+    - generic: expand_more
+  - paragraph: Akses unduh berlaku 30 hari sejak pembayaran, maksimal 5 unduhan per buku. Simpan berkas yang telah diunduh untuk penggunaan pribadi sesuai ketentuan lisensi.
+  - paragraph: Jika kuota habis, simpan nomor pesanan dan hubungi pengelola toko untuk meninjau akses Anda.
+  - button "Mengapa tautan unduh memiliki durasi kedaluwarsa 15 menit? expand_more":
+    - generic: Mengapa tautan unduh memiliki durasi kedaluwarsa 15 menit?
+    - generic: expand_more
+  - button "Format apa saja yang disediakan dan bagaimana cara membacanya di Kindle / iPad? expand_more":
+    - generic: Format apa saja yang disediakan dan bagaimana cara membacanya di Kindle / iPad?
+    - generic: expand_more
+  - button "Apa maksud lisensi Zero-DRM di Bookil? expand_more":
+    - generic: Apa maksud lisensi Zero-DRM di Bookil?
+    - generic: expand_more
+  - generic: Customer Care Active
+  - heading "Butuh Bantuan Langsung dari Tim Kami?" [level=2]
+  - paragraph: Jika Anda mengalami kendala pembayaran, butuh reset kuota unduh darurat, atau pertanyaan seputar faktur institusi, tim kami siap membantu.
+  - generic: mail
+  - heading "Email Helpdesk" [level=4]
+  - paragraph: support@bookil.com
+  - paragraph: Balasan < 2 jam di hari kerja
+  - generic: chat
+  - heading "WhatsApp Care" [level=4]
+  - paragraph: +62 812-3456-7890
+  - paragraph: Senin - Minggu 08:00 - 22:00 WIB
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+    - link "Pemrograman & IT":
+      - /url: http://127.0.0.1:8002/?category=programming-tech
+    - link "Bisnis & Startup":
+      - /url: http://127.0.0.1:8002/?category=business-startup
+    - link "Pengembangan Diri":
+      - /url: http://127.0.0.1:8002/?category=self-development
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

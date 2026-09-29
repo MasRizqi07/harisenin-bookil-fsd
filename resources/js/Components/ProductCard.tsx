@@ -18,6 +18,7 @@ export function formatRupiah(amount: string | number): string {
 }
 
 export function formatFileSize(bytes: number): string {
+    if (bytes < 1024) return `${bytes} Bytes`;
     if (bytes >= 1048576) {
         return (bytes / 1048576).toFixed(1) + ' MB';
     }
@@ -31,9 +32,6 @@ export function getCoverImageUrl(path?: string | null): string {
     }
     if (path.startsWith('/')) {
         return path;
-    }
-    if (path.startsWith('covers/')) {
-        return `/images/${path}`;
     }
     return `/storage/${path}`;
 }

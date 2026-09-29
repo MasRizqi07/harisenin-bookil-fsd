@@ -1,0 +1,2000 @@
+[
+  {
+    "id": "catalog-desktop",
+    "url": "http://127.0.0.1:8002/",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "footer-category-before",
+    "url": "http://127.0.0.1:8002/?category=programming-tech",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "footer-category-before",
+    "url": "http://127.0.0.1:8002/?category=programming-tech",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "catalog-category",
+    "url": "http://127.0.0.1:8002/?category=ebooks&sort=latest",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "catalog-pagination",
+    "url": "http://127.0.0.1:8002/?page=2&sort=latest",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "catalog-search",
+    "url": "http://127.0.0.1:8002/?search=Laravel&sort=latest",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "catalog-empty",
+    "url": "http://127.0.0.1:8002/?search=no-such-qa-book&sort=latest",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "catalog-sort",
+    "url": "http://127.0.0.1:8002/?sort=price_desc",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "global-search-before",
+    "url": "http://127.0.0.1:8002/?sort=price_desc",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "product-desktop",
+    "url": "http://127.0.0.1:8002/products/qa-laravel-guide",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA Laravel Guide"
+    ],
+    "scrollWidth": 1466,
+    "title": "QA Laravel Guide — E-Book Resmi Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "product-preview",
+    "url": "http://127.0.0.1:8002/products/qa-laravel-guide",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA Laravel Guide"
+    ],
+    "scrollWidth": 1466,
+    "title": "QA Laravel Guide — E-Book Resmi Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "checkout-guest",
+    "url": "http://127.0.0.1:8002/login",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA Laravel Guide"
+    ],
+    "scrollWidth": 1466,
+    "title": "QA Laravel Guide — E-Book Resmi Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "login-desktop",
+    "url": "http://127.0.0.1:8002/login",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.",
+      "Masuk ke Akun Anda"
+    ],
+    "scrollWidth": 1482,
+    "title": "Masuk ke Akun — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "faq",
+    "url": "http://127.0.0.1:8002/faq",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Pusat Bantuan & Tanya Jawab Mandiri",
+      "Pertanyaan yang Sering Diajukan (7)",
+      "Butuh Bantuan Langsung dari Tim Kami?"
+    ],
+    "scrollWidth": 1466,
+    "title": "Pusat Bantuan & Tanya Jawab Mandiri - Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "terms",
+    "url": "http://127.0.0.1:8002/terms",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Syarat & Ketentuan Layanan",
+      "1. Definisi & Ruang Lingkup",
+      "2. Pembelian & Pembayaran Midtrans",
+      "3. Lisensi Personal Zero-DRM",
+      "4. Batas Kuota & Keamanan Berkas",
+      "5. Batasan Tanggung Jawab & Yurisdiksi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Syarat & Ketentuan Layanan - Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "privacy",
+    "url": "http://127.0.0.1:8002/privacy",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Kebijakan Privasi Data",
+      "1. Data yang Kami Kumpulkan",
+      "2. Keamanan Pembayaran",
+      "3. Penggunaan Cookie & Sesi",
+      "4. Hak Akses & Penghapusan Data"
+    ],
+    "scrollWidth": 1466,
+    "title": "Kebijakan Privasi Data - Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "refund-policy",
+    "url": "http://127.0.0.1:8002/refund-policy",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Kebijakan Pengembalian Dana (Refund)",
+      "1. Sifat Produk Digital & Akses Instan",
+      "2. Kasus yang Memenuhi Syarat Refund",
+      "3. Prosedur Pengajuan Refund",
+      "4. Waktu Proses Pengembalian Dana"
+    ],
+    "scrollWidth": 1466,
+    "title": "Kebijakan Pengembalian Dana (Refund) - Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "register",
+    "url": "http://127.0.0.1:8002/register",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.",
+      "Daftar Akun Baru"
+    ],
+    "scrollWidth": 1482,
+    "title": "Daftar Akun — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "forgot-password",
+    "url": "http://127.0.0.1:8002/forgot-password",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.",
+      "Lupa Kata Sandi?"
+    ],
+    "scrollWidth": 1482,
+    "title": "Pemulihan Kata Sandi — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "reset-password",
+    "url": "http://127.0.0.1:8002/reset-password/qa-invalid-token?email=customer-a%40example.test",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [],
+    "scrollWidth": 1482,
+    "title": "Reset Password - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "error-demo-404",
+    "url": "http://127.0.0.1:8002/errors/404",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Koleksi E-Book Tidak Ditemukan"
+    ],
+    "scrollWidth": 1466,
+    "title": "404 - Koleksi E-Book Tidak Ditemukan - Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "missing-page",
+    "url": "http://127.0.0.1:8002/tasks",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "404"
+    ],
+    "scrollWidth": 1482,
+    "title": "Not Found",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "login-rejected",
+    "url": "http://127.0.0.1:8002/login",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.",
+      "Masuk ke Akun Anda"
+    ],
+    "scrollWidth": 1482,
+    "title": "Masuk ke Akun — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "dashboard-desktop",
+    "url": "http://127.0.0.1:8002/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Halo, QA Customer A!"
+    ],
+    "scrollWidth": 1466,
+    "title": "Perpustakaan Digital Saya — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "dashboard-local-storage",
+    "url": "http://127.0.0.1:8002/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Halo, QA Customer A!"
+    ],
+    "scrollWidth": 1466,
+    "title": "Perpustakaan Digital Saya — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "local-download-blocked",
+    "url": "http://127.0.0.1:8002/storage/qa/browser-sample.pdf?expires=1790674430&signature=[REDACTED]",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "127.0.0.1 is blocked"
+    ],
+    "scrollWidth": 1482,
+    "title": "127.0.0.1",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "customer-order-history",
+    "url": "http://127.0.0.1:8002/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Halo, QA Customer A!"
+    ],
+    "scrollWidth": 1466,
+    "title": "Perpustakaan Digital Saya — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "invoice-paid",
+    "url": "http://127.0.0.1:8002/orders/BK-01M3P6Z0CQVA78NK3GA3834VF4",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Faktur Pesanan Resmi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Faktur #BK-01M3P6Z0CQVA78NK3GA3834VF4 — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "invoice-pending",
+    "url": "http://127.0.0.1:8002/orders/BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Faktur Pesanan Resmi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Faktur #BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "invoice-failed",
+    "url": "http://127.0.0.1:8002/orders/BK-01M3P6Z0F37939TPM4DKSAKYM2",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Faktur Pesanan Resmi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Faktur #BK-01M3P6Z0F37939TPM4DKSAKYM2 — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "invoice-expired",
+    "url": "http://127.0.0.1:8002/orders/BK-01M3P6Z0F6BRX68C5J33TWM614",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Faktur Pesanan Resmi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Faktur #BK-01M3P6Z0F6BRX68C5J33TWM614 — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "order-owner-denied",
+    "url": "http://127.0.0.1:8002/orders/BK-01M3P6Z0F8EZR1RYWMP40SBQM2",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "403"
+    ],
+    "scrollWidth": 1482,
+    "title": "Forbidden",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-customer-denied",
+    "url": "http://127.0.0.1:8002/admin/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "403"
+    ],
+    "scrollWidth": 1482,
+    "title": "Forbidden",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "profile",
+    "url": "http://127.0.0.1:8002/profile",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "QA Customer A",
+      "Data Diri & Kontak Akun"
+    ],
+    "scrollWidth": 1466,
+    "title": "Pengaturan Akun & Keamanan - Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "profile-saved",
+    "url": "http://127.0.0.1:8002/profile",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "QA Customer A Updated",
+      "Data Diri & Kontak Akun"
+    ],
+    "scrollWidth": 1466,
+    "title": "Pengaturan Akun & Keamanan - Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "profile-security",
+    "url": "http://127.0.0.1:8002/profile",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "QA Customer A Updated",
+      "Keamanan & Kata Sandi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Pengaturan Akun & Keamanan - Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "profile-sessions",
+    "url": "http://127.0.0.1:8002/profile",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA Customer A Updated"
+    ],
+    "scrollWidth": 1466,
+    "title": "Pengaturan Akun & Keamanan - Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "confirm-password",
+    "url": "http://127.0.0.1:8002/confirm-password",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [],
+    "scrollWidth": 1482,
+    "title": "Confirm Password - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "download-signature-denied",
+    "url": "http://127.0.0.1:8002/downloads/1?expires=1790674278&signature=[REDACTED]",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "403"
+    ],
+    "scrollWidth": 1482,
+    "title": "Forbidden",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "unverified-library-before",
+    "url": "http://127.0.0.1:8002/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Halo, QA Customer B!"
+    ],
+    "scrollWidth": 1466,
+    "title": "Perpustakaan Digital Saya — Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "download-owner-denied",
+    "url": "http://127.0.0.1:8002/downloads/1?expires=1790674278&signature=[REDACTED]",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "403"
+    ],
+    "scrollWidth": 1482,
+    "title": "Forbidden",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "checkout-modal",
+    "url": "http://127.0.0.1:8002/products/qa-laravel-guide",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "QA Laravel Guide"
+    ],
+    "scrollWidth": 1466,
+    "title": "QA Laravel Guide — E-Book Resmi Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "verify-email",
+    "url": "http://127.0.0.1:8002/verify-email",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [],
+    "scrollWidth": 1482,
+    "title": "Email Verification - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "verification-resent-local",
+    "url": "http://127.0.0.1:8002/verify-email",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [],
+    "scrollWidth": 1482,
+    "title": "Email Verification - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-dashboard-desktop",
+    "url": "http://127.0.0.1:8002/admin/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Ringkasan Eksekutif & Penjualan",
+      "Analisis Penjualan & Performa Platform"
+    ],
+    "scrollWidth": 1466,
+    "title": "Admin Dashboard - Bookil - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-products",
+    "url": "http://127.0.0.1:8002/admin/products",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Kelola Katalog E-Book",
+      "Katalog Produk & E-Book"
+    ],
+    "scrollWidth": 1466,
+    "title": "Kelola Produk - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-product-create",
+    "url": "http://127.0.0.1:8002/admin/products/create",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Tambah E-Book Baru",
+      "Terbitkan E-Book Digital Baru"
+    ],
+    "scrollWidth": 1466,
+    "title": "Tambah E-Book - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "product-edit-errors-before",
+    "url": "http://127.0.0.1:8002/admin/products/20/edit",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Edit: QA Digital Book 20",
+      "Perbarui Data E-Book"
+    ],
+    "scrollWidth": 1466,
+    "title": "Edit E-Book - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-categories",
+    "url": "http://127.0.0.1:8002/admin/categories",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Kelola Kategori E-Book",
+      "Kategori & Taksonomi Produk"
+    ],
+    "scrollWidth": 1482,
+    "title": "Kategori Produk - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-orders",
+    "url": "http://127.0.0.1:8002/admin/orders",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Pesanan & Mutasi Pembayaran",
+      "Buku Besar Transaksi & Pesanan"
+    ],
+    "scrollWidth": 1466,
+    "title": "Kelola Pesanan - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-order-detail",
+    "url": "http://127.0.0.1:8002/admin/orders/2",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Audit Pesanan: BK-01M3P6Z0EAJ3934DD3VH35MM63",
+      "BK-01M3P6Z0EAJ3934DD3VH35MM63"
+    ],
+    "scrollWidth": 1466,
+    "title": "Audit Pesanan BK-01M3P6Z0EAJ3934DD3VH35MM63 - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-entitlement-extended",
+    "url": "http://127.0.0.1:8002/admin/orders/2",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Audit Pesanan: BK-01M3P6Z0EAJ3934DD3VH35MM63",
+      "BK-01M3P6Z0EAJ3934DD3VH35MM63"
+    ],
+    "scrollWidth": 1466,
+    "title": "Audit Pesanan BK-01M3P6Z0EAJ3934DD3VH35MM63 - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "category-created",
+    "url": "http://127.0.0.1:8002/admin/categories",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Kelola Kategori E-Book",
+      "Kategori & Taksonomi Produk"
+    ],
+    "scrollWidth": 1482,
+    "title": "Kategori Produk - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "category-edited",
+    "url": "http://127.0.0.1:8002/admin/categories",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Kelola Kategori E-Book",
+      "Kategori & Taksonomi Produk"
+    ],
+    "scrollWidth": 1482,
+    "title": "Kategori Produk - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-dashboard-mobile",
+    "url": "http://127.0.0.1:8002/admin/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Ringkasan Eksekutif & Penjualan",
+      "Analisis Penjualan & Performa Platform"
+    ],
+    "scrollWidth": 375,
+    "title": "Admin Dashboard - Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-products-mobile",
+    "url": "http://127.0.0.1:8002/admin/products",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Kelola Katalog E-Book",
+      "Katalog Produk & E-Book"
+    ],
+    "scrollWidth": 375,
+    "title": "Kelola Produk - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-product-create-mobile",
+    "url": "http://127.0.0.1:8002/admin/products/create",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Tambah E-Book Baru",
+      "Terbitkan E-Book Digital Baru"
+    ],
+    "scrollWidth": 375,
+    "title": "Tambah E-Book - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-product-edit-mobile",
+    "url": "http://127.0.0.1:8002/admin/products/20/edit",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Edit: QA Digital Book 20",
+      "Perbarui Data E-Book"
+    ],
+    "scrollWidth": 375,
+    "title": "Edit E-Book - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-categories-mobile",
+    "url": "http://127.0.0.1:8002/admin/categories",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Kelola Kategori E-Book",
+      "Kategori & Taksonomi Produk"
+    ],
+    "scrollWidth": 375,
+    "title": "Kategori Produk - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-orders-mobile",
+    "url": "http://127.0.0.1:8002/admin/orders",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Pesanan & Mutasi Pembayaran",
+      "Buku Besar Transaksi & Pesanan"
+    ],
+    "scrollWidth": 375,
+    "title": "Kelola Pesanan - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-order-detail-mobile",
+    "url": "http://127.0.0.1:8002/admin/orders/2",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Audit Pesanan: BK-01M3P6Z0EAJ3934DD3VH35MM63",
+      "BK-01M3P6Z0EAJ3934DD3VH35MM63"
+    ],
+    "scrollWidth": 394,
+    "title": "Audit Pesanan BK-01M3P6Z0EAJ3934DD3VH35MM63 - Bookil Admin - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "catalog-mobile",
+    "url": "http://127.0.0.1:8002/",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 410,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "product-mobile",
+    "url": "http://127.0.0.1:8002/products/qa-laravel-guide",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA Laravel Guide"
+    ],
+    "scrollWidth": 466,
+    "title": "QA Laravel Guide — E-Book Resmi Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "faq-mobile",
+    "url": "http://127.0.0.1:8002/faq",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Pusat Bantuan & Tanya Jawab Mandiri",
+      "Pertanyaan yang Sering Diajukan (7)",
+      "Butuh Bantuan Langsung dari Tim Kami?"
+    ],
+    "scrollWidth": 410,
+    "title": "Pusat Bantuan & Tanya Jawab Mandiri - Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "terms-mobile",
+    "url": "http://127.0.0.1:8002/terms",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Syarat & Ketentuan Layanan",
+      "1. Definisi & Ruang Lingkup",
+      "2. Pembelian & Pembayaran Midtrans",
+      "3. Lisensi Personal Zero-DRM",
+      "4. Batas Kuota & Keamanan Berkas",
+      "5. Batasan Tanggung Jawab & Yurisdiksi"
+    ],
+    "scrollWidth": 410,
+    "title": "Syarat & Ketentuan Layanan - Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "privacy-mobile",
+    "url": "http://127.0.0.1:8002/privacy",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Kebijakan Privasi Data",
+      "1. Data yang Kami Kumpulkan",
+      "2. Keamanan Pembayaran",
+      "3. Penggunaan Cookie & Sesi",
+      "4. Hak Akses & Penghapusan Data"
+    ],
+    "scrollWidth": 410,
+    "title": "Kebijakan Privasi Data - Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "refund-mobile",
+    "url": "http://127.0.0.1:8002/refund-policy",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Kebijakan Pengembalian Dana (Refund)",
+      "1. Sifat Produk Digital & Akses Instan",
+      "2. Kasus yang Memenuhi Syarat Refund",
+      "3. Prosedur Pengajuan Refund",
+      "4. Waktu Proses Pengembalian Dana"
+    ],
+    "scrollWidth": 410,
+    "title": "Kebijakan Pengembalian Dana (Refund) - Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "register-mobile",
+    "url": "http://127.0.0.1:8002/register",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.",
+      "Daftar Akun Baru"
+    ],
+    "scrollWidth": 375,
+    "title": "Daftar Akun — Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "login-mobile",
+    "url": "http://127.0.0.1:8002/login",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.",
+      "Masuk ke Akun Anda"
+    ],
+    "scrollWidth": 375,
+    "title": "Masuk ke Akun — Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "forgot-password-mobile",
+    "url": "http://127.0.0.1:8002/forgot-password",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.",
+      "Lupa Kata Sandi?"
+    ],
+    "scrollWidth": 375,
+    "title": "Pemulihan Kata Sandi — Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "reset-password-mobile",
+    "url": "http://127.0.0.1:8002/reset-password/qa-invalid-token?email=customer-a%40example.test",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [],
+    "scrollWidth": 390,
+    "title": "Reset Password - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "error-mobile",
+    "url": "http://127.0.0.1:8002/errors/403",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Akses Lisensi Terkunci"
+    ],
+    "scrollWidth": 410,
+    "title": "403 - Akses Lisensi Terkunci - Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "faq-search",
+    "url": "http://127.0.0.1:8002/faq",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Pusat Bantuan & Tanya Jawab Mandiri",
+      "Pertanyaan yang Sering Diajukan (1)",
+      "Butuh Bantuan Langsung dari Tim Kami?"
+    ],
+    "scrollWidth": 410,
+    "title": "Pusat Bantuan & Tanya Jawab Mandiri - Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "keyboard-shortcut-before",
+    "url": "http://127.0.0.1:8002/faq",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Pusat Bantuan & Tanya Jawab Mandiri",
+      "Pertanyaan yang Sering Diajukan (7)",
+      "Butuh Bantuan Langsung dari Tim Kami?"
+    ],
+    "scrollWidth": 410,
+    "title": "Pusat Bantuan & Tanya Jawab Mandiri - Bookil - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "global-search-after",
+    "url": "http://127.0.0.1:8002/?search=Laravel",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 390,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Laravel",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "small-phone-before",
+    "url": "http://127.0.0.1:8002/products/qa-laravel-guide",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA Laravel Guide"
+    ],
+    "scrollWidth": 390,
+    "title": "QA Laravel Guide — E-Book Resmi Bookil - Laravel",
+    "viewport": {
+      "height": 740,
+      "width": 320
+    },
+    "logs": []
+  },
+  {
+    "id": "product-mobile-320-after",
+    "url": "http://127.0.0.1:8002/products/qa-laravel-guide",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA Laravel Guide"
+    ],
+    "scrollWidth": 305,
+    "title": "QA Laravel Guide — E-Book Resmi Bookil - Bookil",
+    "viewport": {
+      "height": 740,
+      "width": 320
+    },
+    "logs": []
+  },
+  {
+    "id": "catalog-mobile-after",
+    "url": "http://127.0.0.1:8002/",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 375,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "faq-mobile-after",
+    "url": "http://127.0.0.1:8002/faq",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Pusat Bantuan & Tanya Jawab Mandiri",
+      "Pertanyaan yang Sering Diajukan (7)",
+      "Butuh Bantuan Langsung dari Tim Kami?"
+    ],
+    "scrollWidth": 375,
+    "title": "Pusat Bantuan & Tanya Jawab Mandiri - Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "terms-mobile-after",
+    "url": "http://127.0.0.1:8002/terms",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Syarat & Ketentuan Layanan",
+      "1. Definisi & Ruang Lingkup",
+      "2. Pembelian & Pembayaran Midtrans",
+      "3. Lisensi Personal Zero-DRM",
+      "4. Batas Kuota & Keamanan Berkas",
+      "5. Batasan Tanggung Jawab & Yurisdiksi"
+    ],
+    "scrollWidth": 375,
+    "title": "Syarat & Ketentuan Layanan - Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "privacy-mobile-after",
+    "url": "http://127.0.0.1:8002/privacy",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Kebijakan Privasi Data",
+      "1. Data yang Kami Kumpulkan",
+      "2. Keamanan Pembayaran",
+      "3. Penggunaan Cookie & Sesi",
+      "4. Hak Akses & Penghapusan Data"
+    ],
+    "scrollWidth": 375,
+    "title": "Kebijakan Privasi Data - Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "refund-mobile-after",
+    "url": "http://127.0.0.1:8002/refund-policy",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Kebijakan Pengembalian Dana (Refund)",
+      "1. Sifat Produk Digital & Akses Instan",
+      "2. Kasus yang Memenuhi Syarat Refund",
+      "3. Prosedur Pengajuan Refund",
+      "4. Waktu Proses Pengembalian Dana"
+    ],
+    "scrollWidth": 375,
+    "title": "Kebijakan Pengembalian Dana (Refund) - Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "login-mobile-after",
+    "url": "http://127.0.0.1:8002/login",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.",
+      "Masuk ke Akun Anda"
+    ],
+    "scrollWidth": 375,
+    "title": "Masuk ke Akun — Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "register-mobile-after",
+    "url": "http://127.0.0.1:8002/register",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.",
+      "Daftar Akun Baru"
+    ],
+    "scrollWidth": 375,
+    "title": "Daftar Akun — Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "forgot-mobile-after",
+    "url": "http://127.0.0.1:8002/forgot-password",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Satu Akun untuk Seluruh Aset Pengetahuan Digital Anda.",
+      "Lupa Kata Sandi?"
+    ],
+    "scrollWidth": 375,
+    "title": "Pemulihan Kata Sandi — Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "dashboard-mobile-after",
+    "url": "http://127.0.0.1:8002/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Halo, QA Customer A Updated!"
+    ],
+    "scrollWidth": 375,
+    "title": "Perpustakaan Digital Saya — Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "download-browser-blocked-after",
+    "url": "http://127.0.0.1:8002/storage/qa/browser-sample.pdf?expires=1790676259&signature=[REDACTED]",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "127.0.0.1 is blocked"
+    ],
+    "scrollWidth": 390,
+    "title": "127.0.0.1",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "pending-invoice-mobile-after",
+    "url": "http://127.0.0.1:8002/orders/BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Faktur Pesanan Resmi"
+    ],
+    "scrollWidth": 375,
+    "title": "Faktur #BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV — Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "profile-mobile-after",
+    "url": "http://127.0.0.1:8002/profile",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "QA Customer A Updated",
+      "Data Diri & Kontak Akun"
+    ],
+    "scrollWidth": 375,
+    "title": "Pengaturan Akun & Keamanan - Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "dashboard-tablet",
+    "url": "http://127.0.0.1:8002/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Halo, QA Customer A Updated!"
+    ],
+    "scrollWidth": 810,
+    "title": "Perpustakaan Digital Saya — Bookil - Bookil",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-product-validation-after",
+    "url": "http://127.0.0.1:8002/admin/products/22/edit",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Edit: QA HTTP Uploaded Book",
+      "Perbarui Data E-Book"
+    ],
+    "scrollWidth": 753,
+    "title": "Edit E-Book - Bookil Admin - Bookil",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-product-validation-after",
+    "url": "http://127.0.0.1:8002/admin/products/22/edit",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Edit: QA HTTP Uploaded Book",
+      "Perbarui Data E-Book"
+    ],
+    "scrollWidth": 753,
+    "title": "Edit E-Book - Bookil Admin - Bookil",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-product-update-after",
+    "url": "http://127.0.0.1:8002/admin/products",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Kelola Katalog E-Book",
+      "Katalog Produk & E-Book"
+    ],
+    "scrollWidth": 753,
+    "title": "Kelola Produk - Bookil Admin - Bookil",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-product-filter",
+    "url": "http://127.0.0.1:8002/admin/products?search=Uploaded",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Kelola Katalog E-Book",
+      "Katalog Produk & E-Book"
+    ],
+    "scrollWidth": 768,
+    "title": "Kelola Produk - Bookil Admin - Bookil",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-order-mobile-after",
+    "url": "http://127.0.0.1:8002/admin/orders/1",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Audit Pesanan: BK-01M3P6Z0CQVA78NK3GA3834VF4",
+      "BK-01M3P6Z0CQVA78NK3GA3834VF4"
+    ],
+    "scrollWidth": 375,
+    "title": "Audit Pesanan BK-01M3P6Z0CQVA78NK3GA3834VF4 - Bookil Admin - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "admin-order-payload-expanded",
+    "url": "http://127.0.0.1:8002/admin/orders/1",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "Audit Pesanan: BK-01M3P6Z0CQVA78NK3GA3834VF4",
+      "BK-01M3P6Z0CQVA78NK3GA3834VF4"
+    ],
+    "scrollWidth": 375,
+    "title": "Audit Pesanan BK-01M3P6Z0CQVA78NK3GA3834VF4 - Bookil Admin - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "store-header-admin-320",
+    "url": "http://127.0.0.1:8002/",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 305,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 900,
+      "width": 320
+    },
+    "logs": []
+  },
+  {
+    "id": "store-header-admin-390",
+    "url": "http://127.0.0.1:8002/",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 375,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 900,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "store-header-admin-768",
+    "url": "http://127.0.0.1:8002/",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 753,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 900,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "store-header-admin-1024",
+    "url": "http://127.0.0.1:8002/",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1009,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 900,
+      "width": 1024
+    },
+    "logs": []
+  },
+  {
+    "id": "store-header-admin-1280",
+    "url": "http://127.0.0.1:8002/",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1265,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 900,
+      "width": 1280
+    },
+    "logs": []
+  },
+  {
+    "id": "store-header-admin-1536",
+    "url": "http://127.0.0.1:8002/",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1521,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 900,
+      "width": 1536
+    },
+    "logs": []
+  },
+  {
+    "id": "uploaded-product-after",
+    "url": "http://127.0.0.1:8002/products/qa-http-upload",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA HTTP Uploaded Book Updated"
+    ],
+    "scrollWidth": 1521,
+    "title": "QA HTTP Uploaded Book Updated — E-Book Resmi Bookil - Bookil",
+    "viewport": {
+      "height": 900,
+      "width": 1536
+    },
+    "logs": []
+  },
+  {
+    "id": "uploaded-product-final",
+    "url": "http://127.0.0.1:8002/products/qa-http-upload",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA HTTP Uploaded Book Updated"
+    ],
+    "scrollWidth": 1553,
+    "title": "QA HTTP Uploaded Book Updated — E-Book Resmi Bookil - Bookil",
+    "viewport": {
+      "height": 900,
+      "width": 1536
+    },
+    "logs": []
+  },
+  {
+    "id": "uploaded-product-final",
+    "url": "http://127.0.0.1:8002/products/qa-http-upload",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA HTTP Uploaded Book Updated"
+    ],
+    "scrollWidth": 375,
+    "title": "QA HTTP Uploaded Book Updated — E-Book Resmi Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "unverified-library-after",
+    "url": "http://127.0.0.1:8002/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Halo, QA Customer B!"
+    ],
+    "scrollWidth": 375,
+    "title": "Perpustakaan Digital Saya — Bookil - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "unverified-checkout-guard",
+    "url": "http://127.0.0.1:8002/verify-email",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [],
+    "scrollWidth": 390,
+    "title": "Email Verification - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "verification-resend-success",
+    "url": "http://127.0.0.1:8002/verify-email",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [],
+    "scrollWidth": 390,
+    "title": "Email Verification - Bookil",
+    "viewport": {
+      "height": 844,
+      "width": 390
+    },
+    "logs": []
+  },
+  {
+    "id": "dashboard-tablet-after",
+    "url": "http://127.0.0.1:8002/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Halo, QA Customer A Updated!"
+    ],
+    "scrollWidth": 753,
+    "title": "Perpustakaan Digital Saya — Bookil - Bookil",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "checkout-modal-tablet-after",
+    "url": "http://127.0.0.1:8002/products/qa-laravel-guide",
+    "brokenImages": [],
+    "forms": 1,
+    "headings": [
+      "QA Laravel Guide"
+    ],
+    "scrollWidth": 753,
+    "title": "QA Laravel Guide — E-Book Resmi Bookil - Bookil",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "real-ui-checkout-pending",
+    "url": "http://127.0.0.1:8002/orders/BK-01M3P9K6JRBH5HSAZEV8RWQK78",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Faktur Pesanan Resmi"
+    ],
+    "scrollWidth": 753,
+    "title": "Faktur #BK-01M3P9K6JRBH5HSAZEV8RWQK78 — Bookil - Bookil",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "payment-retry-same-order",
+    "url": "http://127.0.0.1:8002/orders/BK-01M3P9K6JRBH5HSAZEV8RWQK78",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Faktur Pesanan Resmi"
+    ],
+    "scrollWidth": 753,
+    "title": "Faktur #BK-01M3P9K6JRBH5HSAZEV8RWQK78 — Bookil - Bookil",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "keyboard-search-final",
+    "url": "http://127.0.0.1:8002/?search=Laravel",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 753,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 1024,
+      "width": 768
+    },
+    "logs": []
+  },
+  {
+    "id": "dashboard-desktop-final",
+    "url": "http://127.0.0.1:8002/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Halo, QA Customer A Updated!"
+    ],
+    "scrollWidth": 1466,
+    "title": "Perpustakaan Digital Saya — Bookil - Bookil",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "dashboard-desktop-final",
+    "url": "http://127.0.0.1:8002/dashboard",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Halo, QA Customer A Updated!"
+    ],
+    "scrollWidth": 1482,
+    "title": "Perpustakaan Digital Saya — Bookil - Bookil",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "uploaded-product-desktop-final",
+    "url": "http://127.0.0.1:8002/products/qa-http-upload",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "QA HTTP Uploaded Book Updated"
+    ],
+    "scrollWidth": 1466,
+    "title": "QA HTTP Uploaded Book Updated — E-Book Resmi Bookil - Bookil",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "lowercase-search-before",
+    "url": "http://127.0.0.1:8002/?search=laravel&sort=latest",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "lowercase-search-after",
+    "url": "http://127.0.0.1:8002/?search=laravel&sort=latest",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  },
+  {
+    "id": "catalog-desktop-final",
+    "url": "http://127.0.0.1:8002/",
+    "brokenImages": [],
+    "forms": 0,
+    "headings": [
+      "Buka Pintu Pengetahuan Digital Tanpa Batas.",
+      "Katalog E-Book Terkurasi"
+    ],
+    "scrollWidth": 1466,
+    "title": "Katalog E-Book Arsitektur Software & Bisnis Digital - Bookil",
+    "viewport": {
+      "height": 820,
+      "width": 1482
+    },
+    "logs": []
+  }
+]

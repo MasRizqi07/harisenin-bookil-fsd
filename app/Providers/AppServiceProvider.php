@@ -9,6 +9,7 @@ use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\RateLimiter;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
@@ -35,6 +36,9 @@ class AppServiceProvider extends ServiceProvider
         }
 
         Vite::prefetch(concurrency: 3);
+
+        Storage::disk('local')->serveUsing(fn (Request $request, string $path, array $headers): Response => Storage::disk('local')->download($path, headers: $headers)
+        );
 
         RateLimiter::for('downloads', function (Request $request): array {
             $identity = (string) ($request->user()?->getAuthIdentifier() ?? $request->ip());

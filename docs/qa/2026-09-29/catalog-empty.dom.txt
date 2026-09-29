@@ -1,0 +1,106 @@
+- banner:
+  - link:
+    - /url: /
+  - navigation:
+    - link "Jelajahi Katalog":
+      - /url: http://127.0.0.1:8002/
+    - link "Koleksi Unggulan":
+      - /url: /#katalog
+    - link "Bantuan & FAQ":
+      - /url: /faq
+  - button "search Cari e-book, topik... ⌘K":
+    - generic: search
+    - generic: Cari e-book, topik...
+    - generic: ⌘K
+  - link "Masuk":
+    - /url: http://127.0.0.1:8002/login
+  - link "Daftar Gratis":
+    - /url: http://127.0.0.1:8002/register
+- main:
+  - generic: Edisi 2026 Terbaru
+  - generic: Koleksi Terkurasi Praktisi Senior
+  - heading "Buka Pintu Pengetahuan Digital Tanpa Batas." [level=1]
+  - paragraph: Platform e-book arsitektur software, teknologi modern, dan kepemimpinan bisnis terlengkap di Indonesia. Format PDF & EPUB murni, tanpa DRM mengikat, unduh instan ke perangkat Anda.
+  - button "search Cari judul e-book, topik, atau penulis... ⌘K":
+    - generic: search
+    - generic: Cari judul e-book, topik, atau penulis...
+    - generic: ⌘K
+  - link "Jelajahi Koleksi arrow_downward":
+    - /url: "#katalog"
+    - generic: Jelajahi Koleksi
+    - generic: arrow_downward
+  - generic: Editor's Choice
+  - generic: star
+  - text: 4.9 / 5.0
+  - generic: menu_book
+  - heading "Koleksi Terpopuler" [level=3]
+  - link "Lihat Semua Buku":
+    - /url: "#katalog"
+  - generic: group
+  - generic: Bookil
+  - text: Perpustakaan digital pribadi
+  - generic: verified_user
+  - generic: Format Digital
+  - text: Lihat format yang tersedia di tiap produk
+  - generic: bolt
+  - generic: < 2 Detik
+  - text: Akses langsung ke rak digital setelah bayar
+  - generic: Eksplorasi Pustaka
+  - heading "Katalog E-Book Terkurasi" [level=2]
+  - paragraph: Jelajahi produk digital yang tersedia dan lihat detail format serta harganya.
+  - text: Menampilkan
+  - strong: "0"
+  - text: judul tersedia
+  - generic: search
+  - textbox "Saring judul buku, nama penulis, topik..." [active]: no-such-qa-book
+  - button "close":
+    - generic: close
+  - generic: "Urutkan:"
+  - combobox "Urutkan:":
+    - option "Rilis Terbaru" [selected]
+    - 'option "Harga: Terendah ke Tertinggi"'
+    - 'option "Harga: Tertinggi ke Terendah"'
+  - button "Semua Kategori"
+  - button "Digital Resources"
+  - button "E-Books"
+  - button "Templates"
+  - generic: search_off
+  - heading "Buku Belum Ditemukan" [level=3]
+  - paragraph: Tidak ada e-book yang cocok dengan kata kunci pencarian atau kategori yang Anda pilih saat ini.
+  - button "Reset Semua Filter"
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+    - link "Pemrograman & IT":
+      - /url: http://127.0.0.1:8002/?category=programming-tech
+    - link "Bisnis & Startup":
+      - /url: http://127.0.0.1:8002/?category=business-startup
+    - link "Pengembangan Diri":
+      - /url: http://127.0.0.1:8002/?category=self-development
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

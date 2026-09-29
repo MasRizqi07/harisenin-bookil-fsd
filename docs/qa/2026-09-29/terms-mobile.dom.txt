@@ -1,0 +1,122 @@
+- banner:
+  - link:
+    - /url: /
+  - button "Cari":
+    - generic: search
+  - link "Masuk":
+    - /url: http://127.0.0.1:8002/login
+  - link "Daftar Gratis":
+    - /url: http://127.0.0.1:8002/register
+  - button "menu":
+    - generic: menu
+- main:
+  - generic: verified_user
+  - text: DOKUMEN KEPATUHAN RESMI
+  - generic: Standar Regulasi Bank Indonesia & Midtrans Production 2026
+  - heading "Syarat & Ketentuan Layanan" [level=1]
+  - paragraph: Ketentuan resmi mengenai hak lisensi personal e-book digital, transaksi pembayaran Midtrans, tanggung jawab akun, dan integritas perlindungan kekayaan intelektual.
+  - button "print Cetak Dokumen":
+    - generic: print
+    - generic: Cetak Dokumen
+  - generic: history
+  - text: "Terakhir Diperbarui:"
+  - strong: Februari 2026
+  - generic: •
+  - generic: article
+  - text: "Versi Legal:"
+  - strong: v2.4-Enterprise
+  - generic: "Status Kepatuhan: Aktif Beroperasi"
+  - link "gavel Syarat & Ketentuan":
+    - /url: /terms
+    - generic: gavel
+    - generic: Syarat & Ketentuan
+  - link "lock Kebijakan Privasi":
+    - /url: /privacy
+    - generic: lock
+    - generic: Kebijakan Privasi
+  - link "currency_exchange Kebijakan Pengembalian Dana (Refund)":
+    - /url: /refund-policy
+    - generic: currency_exchange
+    - generic: Kebijakan Pengembalian Dana (Refund)
+  - complementary:
+    - heading "Daftar Isi Ketentuan" [level=3]
+    - list:
+      - link "1. Definisi & Ruang Lingkup":
+        - /url: "#sec-1"
+      - link "2. Pembelian & Pembayaran Midtrans":
+        - /url: "#sec-2"
+      - link "3. Lisensi Personal Zero-DRM":
+        - /url: "#sec-3"
+      - link "4. Batas Kuota & Keamanan Berkas":
+        - /url: "#sec-4"
+      - link "5. Batasan Tanggung Jawab & Yurisdiksi":
+        - /url: "#sec-5"
+  - article:
+    - heading "1. Definisi & Ruang Lingkup" [level=2]
+    - paragraph:
+      - text: Platform
+      - strong: Bookil
+      - text: (selanjutnya disebut "Layanan") adalah toko buku digital yang memfasilitasi penjualan e-book teknis premium berformat PDF, EPUB, dan repositori kode sumber (ZIP).
+    - paragraph: Dengan mendaftar, mengakses, atau membeli produk di Bookil, Anda menyatakan telah membaca, memahami, dan menyetujui seluruh ketentuan yang termaktub di dalam dokumen ini.
+    - heading "2. Pembelian & Pembayaran Midtrans" [level=2]
+    - paragraph: Seluruh transaksi moneter di platform Bookil diproses secara aman melalui gerbang pembayaran berlisensi Bank Indonesia (PT Midtrans). Bookil tidak pernah menyimpan nomor kartu kredit, CVV, atau kredensial perbankan pengguna di server kami.
+    - paragraph: Batas waktu pembayaran mengikuti metode dan status transaksi Midtrans. Pesanan dinyatakan kedaluwarsa ketika sistem menerima status kedaluwarsa dari gateway.
+    - heading "3. Lisensi Personal Zero-DRM" [level=2]
+    - paragraph:
+      - text: Pembelian e-book di Bookil memberikan akses unduh
+      - strong: 30 hari sejak pembayaran, maksimal 5 unduhan per buku
+      - text: .
+    - paragraph:
+      - text: Anda diperbolehkan membaca dan menyimpan berkas di perangkat pribadi Anda secara bebas (Zero-DRM). Namun, Anda
+      - strong: dilarang keras
+      - text: mendistribusikan ulang, menjual kembali, menyewakan, atau mengunggah berkas e-book ke repositori publik, platform pembajakan, atau situs file-sharing publik.
+    - heading "4. Batas Kuota & Keamanan Berkas" [level=2]
+    - paragraph:
+      - text: Setiap item pesanan yang telah dibayar dilengkapi dengan kuota awal sebanyak
+      - strong: 5 (lima) kali unduhan
+      - text: dan tautan berdurasi
+      - strong: 15 menit
+      - text: (Presigned Storage URL).
+    - paragraph: Apabila kuota unduhan habis karena penggantian perangkat atau kehilangan berkas lokal secara wajar, pembeli dapat mengajukan permohonan reset kuota secara gratis melalui tim dukungan pelanggan Bookil.
+    - heading "5. Batasan Tanggung Jawab & Yurisdiksi" [level=2]
+    - paragraph: Layanan dan seluruh materi e-book disediakan "sebagaimana adanya" (as-is). Penulis dan Bookil tidak bertanggung jawab atas kerugian tidak langsung yang timbul akibat penerapan materi atau kode sumber di lingkungan produksi pengguna.
+    - paragraph:
+      - text: Syarat dan ketentuan ini diatur dan ditafsirkan sesuai dengan hukum yang berlaku di
+      - strong: Republik Indonesia
+      - text: . Setiap sengketa yang timbul akan diselesaikan secara musyawarah untuk mufakat terlebih dahulu sebelum menempuh jalur yurisdiksi peradilan.
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+    - link "Pemrograman & IT":
+      - /url: http://127.0.0.1:8002/?category=programming-tech
+    - link "Bisnis & Startup":
+      - /url: http://127.0.0.1:8002/?category=business-startup
+    - link "Pengembangan Diri":
+      - /url: http://127.0.0.1:8002/?category=self-development
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19

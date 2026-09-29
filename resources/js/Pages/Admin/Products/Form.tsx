@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Head, Link, useForm, router } from '@inertiajs/react';
+import { Head, Link, useForm } from '@inertiajs/react';
 import AdminLayout from '@/Layouts/AdminLayout';
 import { Category, Product } from '@/types';
 
@@ -11,7 +11,7 @@ interface FormProps {
 export default function Form({ product, categories }: FormProps) {
     const isEdit = !!product;
 
-    const { data, setData, post, processing, errors } = useForm({
+    const { data, setData, post, transform, processing, errors } = useForm({
         category_id: product?.category_id ? String(product.category_id) : (categories[0]?.id ? String(categories[0].id) : ''),
         title: product?.title || '',
         slug: product?.slug || '',
@@ -33,10 +33,8 @@ export default function Form({ product, categories }: FormProps) {
 
         if (isEdit) {
             // Use method spoofing for multipart PUT
-            router.post(`/admin/products/${product.id}`, {
-                _method: 'put',
-                ...data,
-            }, {
+            transform(values => ({ ...values, _method: 'put' }));
+            post(`/admin/products/${product.id}`, {
                 forceFormData: true,
             });
         } else {
@@ -262,13 +260,14 @@ export default function Form({ product, categories }: FormProps) {
                     {/* Description */}
                     <div className="pt-4 border-t border-slate-850">
                         <label className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-2">
-                            Sinopsis & Deskripsi Lengkap
+                            Sinopsis & Deskripsi Lengkap <span className="text-rose-400">*</span>
                         </label>
                         <textarea
                             rows={6}
                             value={data.description}
                             onChange={(e) => setData('description', e.target.value)}
                             placeholder="Tuliskan ikhtisar buku, daftar bab, atau manfaat membaca karya ini..."
+                            required
                             className="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-xs text-white placeholder-slate-500 focus:ring-1 focus:ring-violet-500 focus:border-violet-500 leading-relaxed"
                         />
                         {errors.description && <p className="mt-1 text-[11px] text-rose-400">{errors.description}</p>}

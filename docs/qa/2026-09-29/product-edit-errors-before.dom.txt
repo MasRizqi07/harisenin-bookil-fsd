@@ -1,0 +1,91 @@
+- complementary:
+  - link "Bookil Admin Enterprise Console":
+    - /url: /admin/dashboard
+    - generic: Bookil Admin
+    - generic: Enterprise Console
+  - text: Enterprise Portal
+  - link "space_dashboard Executive Dashboard":
+    - /url: /admin/dashboard
+    - generic: space_dashboard
+    - generic: Executive Dashboard
+  - link "auto_stories Katalog & Produk":
+    - /url: /admin/products
+    - generic: auto_stories
+    - generic: Katalog & Produk
+  - link "account_tree Taksonomi Kategori":
+    - /url: /admin/categories
+    - generic: account_tree
+    - generic: Taksonomi Kategori
+  - link "receipt_long Ledger Pesanan":
+    - /url: /admin/orders
+    - generic: receipt_long
+    - generic: Ledger Pesanan
+  - text: Pintasan Toko
+  - link "storefront Lihat Toko Publik":
+    - /url: /
+    - generic: storefront
+    - generic: Lihat Toko Publik
+  - generic: Health Metrics
+  - generic: Database Cluster
+  - generic: 99.98%
+  - generic: Midtrans Webhook
+  - generic: SHA-512 OK
+  - generic: Private S3 Vault
+  - generic: Synced
+  - generic: Q
+  - generic: QA Administrator
+  - generic: admin@example.test
+  - button "logout":
+    - generic: logout
+- banner:
+  - 'heading "Edit: QA Digital Book 20" [level=1]'
+  - button "search Cari cepat... ⌘K":
+    - generic: search
+    - generic: Cari cepat...
+    - generic: ⌘K
+  - generic: Production Live
+- main:
+  - link "← Kembali ke Daftar E-Book":
+    - /url: /admin/products
+    - generic: ← Kembali ke Daftar E-Book
+  - heading "Perbarui Data E-Book" [level=2]
+  - paragraph: Lengkapi informasi publikasi, unggah cover depan, dan berkas privat digital (PDF, EPUB, ZIP).
+  - generic: Judul E-Book *
+  - 'textbox "Contoh: Arsitektur Cloud Skala Tinggi"': QA Digital Book 20
+  - generic: URL Slug (Opsional)
+  - textbox "arsitektur-cloud-skala-tinggi": qa-laravel-guide
+  - generic: Penulis / Kreator *
+  - textbox "Nama lengkap penulis": QA Author Beta
+  - generic: Kategori *
+  - combobox:
+    - option "Pilih Kategori"
+    - option "Digital Resources"
+    - option "E-Books"
+    - option "Templates" [selected]
+  - generic: Harga Resmi (IDR) *
+  - spinbutton: "125000.00"
+  - generic: Format Berkas Digital *
+  - radio "pdf" [checked]
+  - generic: pdf
+  - radio "epub"
+  - generic: epub
+  - radio "zip"
+  - generic: zip
+  - generic: Visibilitas Katalog
+  - checkbox "Publikasikan langsung ke etalase toko"
+  - generic: Publikasikan langsung ke etalase toko
+  - generic: Cover Depan (JPG / PNG / WEBP)
+  - paragraph: Maksimal 2MB, rasio vertikal 3:4 direkomendasikan
+  - button "Choose File"
+  - generic: Berkas Digital Privat (PDF/EPUB/ZIP)
+  - paragraph: Tersimpan aman di storage privat tanpa tautan publik
+  - button "Choose File"
+  - paragraph: Biarkan kosong jika tidak ingin mengubah berkas buku yang sudah ada.
+  - generic: Sinopsis & Deskripsi Lengkap
+  - textbox "Tuliskan ikhtisar buku, daftar bab, atau manfaat membaca karya ini...": Isolated browser QA fixture. No commercial content or real customer data.
+  - generic: Cuplikan dari Karya (Opsional)
+  - textbox "Tempel cuplikan yang memang berasal dari karya dan boleh dipublikasikan."
+  - link "Batal":
+    - /url: /admin/products
+  - button "Simpan Perubahan" [active]:
+    - generic: Simpan Perubahan

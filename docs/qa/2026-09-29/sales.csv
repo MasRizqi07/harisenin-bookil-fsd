@@ -1,0 +1,8 @@
+﻿Tanggal,"Nomor Pesanan",Pelanggan,Email,"Total Nominal (IDR)","Status Pesanan","Metode Pembayaran","Jumlah Item"
+"2026-09-29 09:12:05",BK-01M3P6Z0CQVA78NK3GA3834VF4,"QA Customer A Updated",customer-a@example.test,30000.00,paid,qris,1
+"2026-09-29 09:12:05",BK-01M3P6Z0EAJ3934DD3VH35MM63,"QA Customer A Updated",customer-a@example.test,35000.00,paid,qris,1
+"2026-09-29 09:12:05",BK-01M3P6Z0EPQ43J9KQQQP5Y3E5H,"QA Customer A Updated",customer-a@example.test,40000.00,paid,qris,1
+"2026-09-29 09:12:05",BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV,"QA Customer A Updated",customer-a@example.test,45000.00,pending,'-,1
+"2026-09-29 09:12:05",BK-01M3P6Z0F37939TPM4DKSAKYM2,"QA Customer A Updated",customer-a@example.test,50000.00,failed,'-,1
+"2026-09-29 09:12:05",BK-01M3P6Z0F6BRX68C5J33TWM614,"QA Customer A Updated",customer-a@example.test,55000.00,expired,'-,1
+"2026-09-29 09:12:05",BK-01M3P6Z0F8EZR1RYWMP40SBQM2,"QA Customer B",customer-b@example.test,60000.00,paid,qris,1

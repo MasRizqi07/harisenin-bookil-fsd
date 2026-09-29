@@ -24,9 +24,9 @@ class ProductCatalogController extends Controller
             ->when($request->filled('search'), function (Builder $query) use ($request): void {
                 $search = '%'.trim((string) $request->input('search')).'%';
                 $query->where(function (Builder $subQuery) use ($search): void {
-                    $subQuery->where('title', 'like', $search)
-                        ->orWhere('author', 'like', $search)
-                        ->orWhere('description', 'like', $search);
+                    $subQuery->whereLike('title', $search)
+                        ->orWhereLike('author', $search)
+                        ->orWhereLike('description', $search);
                 });
             })
             ->when($request->filled('category'), function (Builder $query) use ($request): void {

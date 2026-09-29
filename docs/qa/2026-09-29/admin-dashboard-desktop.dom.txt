@@ -1,0 +1,247 @@
+- complementary:
+  - link "Bookil Admin Enterprise Console":
+    - /url: /admin/dashboard
+    - generic: Bookil Admin
+    - generic: Enterprise Console
+  - text: Enterprise Portal
+  - link "space_dashboard Executive Dashboard":
+    - /url: /admin/dashboard
+    - generic: space_dashboard
+    - generic: Executive Dashboard
+  - link "auto_stories Katalog & Produk":
+    - /url: /admin/products
+    - generic: auto_stories
+    - generic: Katalog & Produk
+  - link "account_tree Taksonomi Kategori":
+    - /url: /admin/categories
+    - generic: account_tree
+    - generic: Taksonomi Kategori
+  - link "receipt_long Ledger Pesanan":
+    - /url: /admin/orders
+    - generic: receipt_long
+    - generic: Ledger Pesanan
+  - text: Pintasan Toko
+  - link "storefront Lihat Toko Publik":
+    - /url: /
+    - generic: storefront
+    - generic: Lihat Toko Publik
+  - generic: Health Metrics
+  - generic: Database Cluster
+  - generic: 99.98%
+  - generic: Midtrans Webhook
+  - generic: SHA-512 OK
+  - generic: Private S3 Vault
+  - generic: Synced
+  - generic: Q
+  - generic: QA Administrator
+  - generic: admin@example.test
+  - button "logout":
+    - generic: logout
+- banner:
+  - heading "Ringkasan Eksekutif & Penjualan" [level=1]
+  - button "search Cari cepat... ⌘K":
+    - generic: search
+    - generic: Cari cepat...
+    - generic: ⌘K
+  - generic: Production Live
+- main:
+  - heading "Analisis Penjualan & Performa Platform" [level=2]
+  - paragraph: Ikhtisar metrik pendapatan kotor, konversi pembayaran, katalog aktif, dan transaksi terbaru.
+  - link "Ekspor Data Transaksi (CSV)":
+    - /url: /admin/export/csv
+    - generic: Ekspor Data Transaksi (CSV)
+  - generic: Pendapatan Bersih
+  - text: Rp 165.000
+  - generic: Dari 4 pesanan lunas
+  - generic: Rasio Sukses Bayar
+  - generic: 57.1%
+  - generic: 7 total pesanan dibuat
+  - generic: Katalog Buku Aktif
+  - text: "18"
+  - generic: E-Book siap dibeli secara publik
+  - generic: Total Pelanggan
+  - text: "2"
+  - generic: Akun pembeli terdaftar
+  - heading "Pendapatan 30 Hari" [level=3]
+  - paragraph: Pesanan lunas menurut tanggal pesanan
+  - img "Pendapatan 30 Hari":
+    - 'generic "2026-08-31: Rp 0"'
+    - 'generic "2026-09-01: Rp 0"'
+    - 'generic "2026-09-02: Rp 0"'
+    - 'generic "2026-09-03: Rp 0"'
+    - 'generic "2026-09-04: Rp 0"'
+    - 'generic "2026-09-05: Rp 0"'
+    - 'generic "2026-09-06: Rp 0"'
+    - 'generic "2026-09-07: Rp 0"'
+    - 'generic "2026-09-08: Rp 0"'
+    - 'generic "2026-09-09: Rp 0"'
+    - 'generic "2026-09-10: Rp 0"'
+    - 'generic "2026-09-11: Rp 0"'
+    - 'generic "2026-09-12: Rp 0"'
+    - 'generic "2026-09-13: Rp 0"'
+    - 'generic "2026-09-14: Rp 0"'
+    - 'generic "2026-09-15: Rp 0"'
+    - 'generic "2026-09-16: Rp 0"'
+    - 'generic "2026-09-17: Rp 0"'
+    - 'generic "2026-09-18: Rp 0"'
+    - 'generic "2026-09-19: Rp 0"'
+    - 'generic "2026-09-20: Rp 0"'
+    - 'generic "2026-09-21: Rp 0"'
+    - 'generic "2026-09-22: Rp 0"'
+    - 'generic "2026-09-23: Rp 0"'
+    - 'generic "2026-09-24: Rp 0"'
+    - 'generic "2026-09-25: Rp 0"'
+    - 'generic "2026-09-26: Rp 0"'
+    - 'generic "2026-09-27: Rp 0"'
+    - 'generic "2026-09-28: Rp 0"'
+    - 'generic "2026-09-29: Rp 165.000"'
+  - generic: 2026-08-31
+  - generic: 2026-09-29
+  - heading "Pendapatan 12 Bulan" [level=3]
+  - paragraph: Pesanan lunas menurut tanggal pesanan
+  - img "Pendapatan 12 Bulan":
+    - 'generic "2025-10: Rp 0"'
+    - 'generic "2025-11: Rp 0"'
+    - 'generic "2025-12: Rp 0"'
+    - 'generic "2026-01: Rp 0"'
+    - 'generic "2026-02: Rp 0"'
+    - 'generic "2026-03: Rp 0"'
+    - 'generic "2026-04: Rp 0"'
+    - 'generic "2026-05: Rp 0"'
+    - 'generic "2026-06: Rp 0"'
+    - 'generic "2026-07: Rp 0"'
+    - 'generic "2026-08: Rp 0"'
+    - 'generic "2026-09: Rp 165.000"'
+  - generic: 2025-10
+  - generic: 2026-09
+  - heading "Status Pesanan" [level=3]
+  - generic: pending
+  - text: "1"
+  - generic: paid
+  - text: "4"
+  - generic: failed
+  - text: "1"
+  - generic: expired
+  - text: "1"
+  - heading "Transaksi Terbaru" [level=3]
+  - paragraph: 10 pesanan mutasi sistem terakhir
+  - link "Lihat Semua →":
+    - /url: /admin/orders
+  - table:
+    - rowgroup:
+      - row "Pesanan Pelanggan Nominal Status Detail":
+        - columnheader "Pesanan"
+        - columnheader "Pelanggan"
+        - columnheader "Nominal"
+        - columnheader "Status"
+        - columnheader "Detail"
+    - rowgroup:
+      - row "BK-01M3P6Z0CQVA78NK3GA3834VF4 QA Customer A Updated customer-a@example.test Rp 30.000 paid Periksa":
+        - cell "BK-01M3P6Z0CQVA78NK3GA3834VF4"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "Rp 30.000"
+        - cell "paid":
+          - generic: paid
+        - cell "Periksa":
+          - link "Periksa":
+            - /url: /admin/orders/1
+      - row "BK-01M3P6Z0EAJ3934DD3VH35MM63 QA Customer A Updated customer-a@example.test Rp 35.000 paid Periksa":
+        - cell "BK-01M3P6Z0EAJ3934DD3VH35MM63"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "Rp 35.000"
+        - cell "paid":
+          - generic: paid
+        - cell "Periksa":
+          - link "Periksa":
+            - /url: /admin/orders/2
+      - row "BK-01M3P6Z0EPQ43J9KQQQP5Y3E5H QA Customer A Updated customer-a@example.test Rp 40.000 paid Periksa":
+        - cell "BK-01M3P6Z0EPQ43J9KQQQP5Y3E5H"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "Rp 40.000"
+        - cell "paid":
+          - generic: paid
+        - cell "Periksa":
+          - link "Periksa":
+            - /url: /admin/orders/3
+      - row "BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV QA Customer A Updated customer-a@example.test Rp 45.000 pending Periksa":
+        - cell "BK-01M3P6Z0EZQ3MT5G3ZC3VB5BDV"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "Rp 45.000"
+        - cell "pending":
+          - generic: pending
+        - cell "Periksa":
+          - link "Periksa":
+            - /url: /admin/orders/4
+      - row "BK-01M3P6Z0F37939TPM4DKSAKYM2 QA Customer A Updated customer-a@example.test Rp 50.000 failed Periksa":
+        - cell "BK-01M3P6Z0F37939TPM4DKSAKYM2"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "Rp 50.000"
+        - cell "failed":
+          - generic: failed
+        - cell "Periksa":
+          - link "Periksa":
+            - /url: /admin/orders/5
+      - row "BK-01M3P6Z0F6BRX68C5J33TWM614 QA Customer A Updated customer-a@example.test Rp 55.000 expired Periksa":
+        - cell "BK-01M3P6Z0F6BRX68C5J33TWM614"
+        - cell "QA Customer A Updated customer-a@example.test":
+          - generic: QA Customer A Updated
+          - generic: customer-a@example.test
+        - cell "Rp 55.000"
+        - cell "expired":
+          - generic: expired
+        - cell "Periksa":
+          - link "Periksa":
+            - /url: /admin/orders/6
+      - row "BK-01M3P6Z0F8EZR1RYWMP40SBQM2 QA Customer B customer-b@example.test Rp 60.000 paid Periksa":
+        - cell "BK-01M3P6Z0F8EZR1RYWMP40SBQM2"
+        - cell "QA Customer B customer-b@example.test":
+          - generic: QA Customer B
+          - generic: customer-b@example.test
+        - cell "Rp 60.000"
+        - cell "paid":
+          - generic: paid
+        - cell "Periksa":
+          - link "Periksa":
+            - /url: /admin/orders/7
+  - heading "Buku Terlaris" [level=3]
+  - paragraph: Volume penjualan tertinggi
+  - link "Kelola":
+    - /url: /admin/products
+  - generic: "1"
+  - heading "QA Digital Book 07" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: 1 terjual
+  - text: Rp 60.000
+  - generic: "2"
+  - heading "QA Digital Book 03" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: 1 terjual
+  - text: Rp 40.000
+  - generic: "3"
+  - heading "QA Digital Book 02" [level=4]
+  - paragraph: QA Author Beta
+  - generic: 1 terjual
+  - text: Rp 35.000
+  - generic: "4"
+  - heading "QA Laravel Guide" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: 1 terjual
+  - text: Rp 30.000
+  - generic: "5"
+  - heading "QA Digital Book 05" [level=4]
+  - paragraph: QA Author Alpha
+  - generic: 0 terjual
+  - text: Rp 50.000
+  - link "Tambah E-Book Baru":
+    - /url: /admin/products/create
+    - generic: Tambah E-Book Baru

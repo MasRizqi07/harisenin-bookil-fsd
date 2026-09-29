@@ -1,0 +1,121 @@
+- banner:
+  - link:
+    - /url: /
+  - button "Cari":
+    - generic: search
+  - button "Q arrow_drop_down":
+    - generic: Q
+    - generic: arrow_drop_down
+  - button "menu":
+    - generic: menu
+- main:
+  - generic: verified
+  - text: Akun Terverifikasi
+  - generic: Bookil Member
+  - heading "Halo, QA Customer A Updated!" [level=1]
+  - paragraph: Akses unduh 30 hari sejak pembayaran, maksimal 5 unduhan per buku. Pantau kuota unduhan, dan kelola faktur pesanan Anda dalam satu konsol aman.
+  - link "add_shopping_cart Tambah Koleksi":
+    - /url: http://127.0.0.1:8002/
+    - generic: add_shopping_cart
+    - generic: Tambah Koleksi
+  - text: Total Buku Dimiliki
+  - generic: "3"
+  - generic: Judul E-Book
+  - generic: auto_stories
+  - text: Unduhan Aktif
+  - generic: "2"
+  - generic: Buku Siap Unduh
+  - generic: download_for_offline
+  - text: Riwayat Pesanan
+  - generic: "6"
+  - generic: Transaksi
+  - generic: receipt_long
+  - button "local_library Rak Buku Digital (3)":
+    - generic: local_library
+    - generic: Rak Buku Digital (3)
+  - button "history Riwayat Transaksi (6)":
+    - generic: history
+    - generic: Riwayat Transaksi (6)
+  - generic: auto_stories
+  - generic: QA Laravel Guide
+  - generic: pdf
+  - generic: pdf • 0 KB
+  - heading "QA Laravel Guide" [level=3]
+  - paragraph: QA Author Alpha
+  - text: "Kuota Unduh:"
+  - strong: "1"
+  - text: dari 5
+  - generic: Sisa 4x
+  - generic: schedule
+  - text: "Berlaku hingga:"
+  - generic: 29 Okt 2026
+  - link "Lihat Faktur":
+    - /url: http://127.0.0.1:8002/orders/BK-01M3P6Z0CQVA78NK3GA3834VF4
+  - link "download Unduh File":
+    - /url: http://127.0.0.1:8002/downloads/1?expires=1790676078&signature=[REDACTED]
+    - generic: download
+    - generic: Unduh File
+  - generic: auto_stories
+  - generic: QA Digital Book 02
+  - generic: pdf
+  - generic: pdf • 0 KB
+  - heading "QA Digital Book 02" [level=3]
+  - paragraph: QA Author Beta
+  - text: "Kuota Unduh:"
+  - strong: "5"
+  - text: dari 7
+  - generic: Sisa 2x
+  - generic: schedule
+  - text: "Berlaku hingga:"
+  - generic: 5 Nov 2026
+  - link "Lihat Faktur":
+    - /url: http://127.0.0.1:8002/orders/BK-01M3P6Z0EAJ3934DD3VH35MM63
+  - link "download Unduh File":
+    - /url: http://127.0.0.1:8002/downloads/2?expires=1790676078&signature=[REDACTED]
+    - generic: download
+    - generic: Unduh File
+  - generic: auto_stories
+  - generic: QA Digital Book 03
+  - generic: pdf
+  - generic: pdf • 0 KB
+  - heading "QA Digital Book 03" [level=3]
+  - paragraph: QA Author Alpha
+  - text: "Kuota Unduh:"
+  - strong: "0"
+  - text: dari 5
+  - generic: Sisa 5x
+  - generic: schedule
+  - text: "Berlaku hingga:"
+  - generic: 28 Sep 2026
+  - link "Lihat Faktur":
+    - /url: http://127.0.0.1:8002/orders/BK-01M3P6Z0EPQ43J9KQQQP5Y3E5H
+- contentinfo:
+  - paragraph: Platform perdagangan e-book arsitektur software, teknologi modern, dan strategi bisnis. Format berkas ditampilkan pada tiap produk. Unduhan pembelian menggunakan tautan privat berbatas waktu.
+  - generic: verified
+  - text: Pembayaran Resmi Midtrans
+  - generic: •
+  - generic: Penyimpanan Privat
+  - heading "Katalog E-Book" [level=3]
+  - list:
+    - link "Semua Koleksi":
+      - /url: http://127.0.0.1:8002/
+  - heading "Layanan Pelanggan" [level=3]
+  - list:
+    - link "Perpustakaan Saya":
+      - /url: http://127.0.0.1:8002/library
+    - link "Pusat Bantuan & FAQ":
+      - /url: /faq
+    - link "Pengaturan Akun":
+      - /url: http://127.0.0.1:8002/profile
+  - heading "Kepatuhan & Legal" [level=3]
+  - list:
+    - link "Syarat & Ketentuan":
+      - /url: /terms
+    - link "Kebijakan Privasi":
+      - /url: /privacy
+    - link "Kebijakan Pengembalian Dana":
+      - /url: /refund-policy
+  - paragraph: © 2026 Bookil. Dilindungi Hak Cipta Undang-Undang. Hak cipta penulis dilindungi.
+  - paragraph:
+    - generic: Dibangun dengan
+    - generic: Laravel 13 & React 19
